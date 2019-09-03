@@ -4,7 +4,7 @@
 {
     'name': 'Agreement',
     'summary': "Adds an agreement object",
-    'version': '12.0.1.0.0',
+    'version': '12.0.1.0.1',
     'category': 'Contract',
     'author': 'Akretion, '
               'Yves Goldberg (Ygol Internetwork), '
@@ -16,6 +16,7 @@
         'security/ir.model.access.csv',
         'security/agreement_security.xml',
         'views/agreement.xml',
+        'views/agreement_type.xml',
         ],
     'demo': ['demo/demo.xml'],
     'development_status': 'Beta',
