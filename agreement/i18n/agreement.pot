@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0\n"
+"Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -46,6 +46,11 @@ msgid "Activity State"
 msgstr ""
 
 #. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: agreement
 #: model:ir.model,name:agreement.model_agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_form
 msgid "Agreement"
@@ -66,6 +71,7 @@ msgstr ""
 #. module: agreement
 #: model:ir.actions.act_window,name:agreement.agreement_type_action
 #: model:ir.model,name:agreement.model_agreement_type
+#: model:ir.ui.menu,name:agreement.agreement_type_menu
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_list_view
 msgid "Agreement Types"
 msgstr ""
@@ -89,11 +95,6 @@ msgstr ""
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__code
-msgid "Code"
 msgstr ""
 
 #. module: agreement
@@ -153,9 +154,19 @@ msgid "Followers (Partners)"
 msgstr ""
 
 #. module: agreement
+#: model:ir.model.fields,help:agreement.field_agreement__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__id
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__id
 msgid "ID"
+msgstr ""
+
+#. module: agreement
+#: model:ir.model.fields,help:agreement.field_agreement__code
+msgid "ID used for internal contract tracking."
 msgstr ""
 
 #. module: agreement
@@ -178,6 +189,12 @@ msgstr ""
 #: model:ir.model.fields,help:agreement.field_agreement__message_has_error
 #: model:ir.model.fields,help:agreement.field_agreement__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: agreement
+#: model:ir.model.fields,help:agreement.field_agreement__active
+msgid ""
+"If unchecked, it will allow you to hide the agreement without removing it."
 msgstr ""
 
 #. module: agreement
@@ -224,7 +241,11 @@ msgid "Messages"
 msgstr ""
 
 #. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__name
+#: model:ir.model.fields,field_description:agreement.field_agreement__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__name
 msgid "Name"
 msgstr ""
@@ -289,6 +310,11 @@ msgid "Purchase"
 msgstr ""
 
 #. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__code
+msgid "Reference"
+msgstr ""
+
+#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_user_id
 msgid "Responsible User"
 msgstr ""
@@ -344,8 +370,18 @@ msgid ""
 msgstr ""
 
 #. module: agreement
+#: model:ir.model.fields,help:agreement.field_agreement__partner_id
+msgid "The customer or vendor this agreement is related to."
+msgstr ""
+
+#. module: agreement
 #: model:ir.model.constraint,message:agreement.constraint_agreement_code_partner_company_unique
 msgid "This agreement code already exists for this partner!"
+msgstr ""
+
+#. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__name
+msgid "Title"
 msgstr ""
 
 #. module: agreement
@@ -386,4 +422,14 @@ msgstr ""
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__website_message_ids
 msgid "Website communication history"
+msgstr ""
+
+#. module: agreement
+#: model:ir.model.fields,help:agreement.field_agreement__end_date
+msgid "When the agreement ends."
+msgstr ""
+
+#. module: agreement
+#: model:ir.model.fields,help:agreement.field_agreement__start_date
+msgid "When the agreement starts."
 msgstr ""
