@@ -11,14 +11,13 @@
     "website": "https://github.com/OCA/contract",
     "category": "Partner",
     "license": "AGPL-3",
-    "version": "12.0.2.0.1",
+    "version": "14.0.1.0.1",
     "depends": ["contacts", "agreement", "product"],
     "data": [
         "data/ir_sequence.xml",
         "data/module_category.xml",
         "data/agreement_stage.xml",
         "data/agreement_type.xml",
-        "data/demo.xml",
         "security/res_groups.xml",
         "security/ir.model.access.csv",
         "report/agreement.xml",
@@ -36,14 +35,8 @@
         "views/agreement.xml",
         "views/menu.xml",
     ],
-    "demo": [
-        "demo/demo.xml"
-    ],
-    "post_init_hook": "post_init_agreement_legal",
+    "demo": ["demo/demo.xml"],
     "application": True,
     "development_status": "Beta",
-    "maintainers": [
-        "max3903",
-        "ygol"
-    ],
+    "maintainers": ["max3903", "ygol"],
 }
