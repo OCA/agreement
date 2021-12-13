@@ -5,7 +5,7 @@
         <field name="name">Agreement needs a review</field>
         <field name="summary">note</field>
         <field name="category">default</field>
-        <field name="res_model_id" ref="model_agreement" />
+        <field name="res_model">agreement</field>
         <field name="icon">fa-tasks</field>
         <field name="delay_count">0</field>
     </record>
