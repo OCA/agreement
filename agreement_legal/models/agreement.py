@@ -127,23 +127,23 @@ class Agreement(models.Model):
         deftext = """
         <h3>Company Information</h3>
         <p>
-        ${object.company_id.partner_id.name or ''}.<br>
-        ${object.company_id.partner_id.street or ''} <br>
-        ${object.company_id.partner_id.state_id.code or ''}
-        ${object.company_id.partner_id.zip or ''}
-        ${object.company_id.partner_id.city or ''}<br>
-        ${object.company_id.partner_id.country_id.name or ''}.<br><br>
-        Represented by <b>${object.company_contact_id.name or ''}.</b>
+        {{object.company_id.partner_id.name or ''}}.<br>
+        {{object.company_id.partner_id.street or ''}} <br>
+        {{object.company_id.partner_id.state_id.code or ''}}
+        {{object.company_id.partner_id.zip or ''}}
+        {{object.company_id.partner_id.city or ''}}<br>
+        {{object.company_id.partner_id.country_id.name or ''}}.<br><br>
+        Represented by <b>{{object.company_contact_id.name or ''}}.</b>
         </p>
         <p></p>
         <h3>Partner Information</h3>
         <p>
-        ${object.partner_id.name or ''}.<br>
-        ${object.partner_id.street or ''} <br>
-        ${object.partner_id.state_id.code or ''}
-        ${object.partner_id.zip or ''} ${object.partner_id.city or ''}<br>
-        ${object.partner_id.country_id.name or ''}.<br><br>
-        Represented by <b>${object.partner_contact_id.name or ''}.</b>
+        {{object.partner_id.name or ''}}.<br>
+        {{object.partner_id.street or ''}} <br>
+        {{object.partner_id.state_id.code or ''}}
+        {{object.partner_id.zip or ''}} {{object.partner_id.city or ''}}<br>
+        {{object.partner_id.country_id.name or ''}}.<br><br>
+        Represented by <b>{{object.partner_contact_id.name or ''}}.</b>
         </p>
         """
         return deftext
@@ -309,7 +309,7 @@ class Agreement(models.Model):
         self.sub_object_id = False
         self.copyvalue = False
         if self.field_id and not self.field_id.relation:
-            self.copyvalue = "${{object.{} or {}}}".format(
+            self.copyvalue = "{{{{object.{} or {}}}}}".format(
                 self.field_id.name, self.default_value or "''"
             )
             self.sub_model_object_field_id = False
@@ -318,7 +318,7 @@ class Agreement(models.Model):
                 [("model", "=", self.field_id.relation)]
             )[0]
         if self.sub_model_object_field_id:
-            self.copyvalue = "${{object.{}.{} or {}}}".format(
+            self.copyvalue = "{{{{object.{}.{} or {}}}}}".format(
                 self.field_id.name,
                 self.sub_model_object_field_id.name,
                 self.default_value or "''",

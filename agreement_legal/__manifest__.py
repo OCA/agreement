@@ -8,7 +8,7 @@
     "Open Source Integrators, "
     "Yves Goldberg (Ygol Internetwork), "
     "Odoo Community Association (OCA)",
-    "website": "https://github.com/OCA/contract",
+    "website": "https://github.com/OCA/agreement",
     "category": "Partner",
     "license": "AGPL-3",
     "version": "15.0.1.0.0",
