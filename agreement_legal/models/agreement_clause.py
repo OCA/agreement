@@ -65,7 +65,7 @@ class AgreementClause(models.Model):
         self.sub_object_id = False
         self.copyvalue = False
         if self.field_id and not self.field_id.relation:
-            self.copyvalue = "${{object.{} or {}}}".format(
+            self.copyvalue = "{{{{object.{} or {}}}}}".format(
                 self.field_id.name,
                 self.default_value or "''",
             )
@@ -75,7 +75,7 @@ class AgreementClause(models.Model):
                 [("model", "=", self.field_id.relation)]
             )[0]
         if self.sub_model_object_field_id:
-            self.copyvalue = "${{object.{}.{} or {}}}".format(
+            self.copyvalue = "{{{{object.{}.{} or {}}}}}".format(
                 self.field_id.name,
                 self.sub_model_object_field_id.name,
                 self.default_value or "''",
