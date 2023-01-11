@@ -32,18 +32,19 @@
                         <group name="left">
                             <field name="code" />
                             <field
+                                name="is_template"
+                                groups="agreement.group_use_agreement_template"
+                            />
+                            <field
                                 name="partner_id"
                                 attrs="{'required': [('is_template', '=', False)]}"
+                                groups="agreement.group_use_agreement_template"
                             />
                             <field
                                 name="agreement_type_id"
                                 groups="agreement.group_use_agreement_type"
                             />
                             <field name="domain" widget="radio" />
-                            <field
-                                name="is_template"
-                                groups="agreement.group_use_agreement_template"
-                            />
                         </group>
                         <group name="right">
                             <field name="signature_date" />
@@ -55,13 +56,13 @@
                             />
                         </group>
                     </group>
-                    <notebook>
-                        <page
-                            name="config"
-                            string="Configuration"
-                            attrs="{'invisible': True}"
-                        />
-                    </notebook>
+<!--                    <notebook>-->
+<!--                        <page-->
+<!--                            name="config"-->
+<!--                            string="Configuration"-->
+<!--                            invisible="1"-->
+<!--                        />-->
+<!--                    </notebook>-->
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids" widget="mail_followers" />
