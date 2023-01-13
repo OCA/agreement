@@ -5,7 +5,7 @@
         <field name="name">Agreement List</field>
         <field name="model">agreement</field>
         <field name="arch" type="xml">
-            <tree default_order="code desc, name">
+            <tree js_class="agreement_template_tree" default_order="code desc, name">
                 <field name="code" />
                 <field name="name" />
                 <field name="partner_id" />
@@ -25,7 +25,7 @@
         <field name="model">agreement</field>
         <field name="priority" eval="1" />
         <field name="arch" type="xml">
-            <form string="Agreement">
+            <form js_class="agreement_template_form" string="Agreement">
                 <header>
                     <button
                         string="New Version"
@@ -100,9 +100,7 @@
                             <field name="readonly" invisible="1" />
                         </group>
                     </group>
-                    <group string="Description">
-                        <field name="description" required="True" nolabel="1" />
-                    </group>
+                    <field name="description" required="True" />
                     <group class="oe_edit_only">
                         <group>
                             <field
@@ -141,29 +139,33 @@
                                 string="Use custom content"
                             />
                         </group>
-                        <group name="cust_parties">
+<!--                        <group name="cust_parties">-->
                             <p>
                                 This section (on the left) allows you to replace the default listing of the parties with custom dynamic content.
                             </p>
-                        </group>
+<!--                        </group>-->
                         <group name="partner" string="Partner">
-                            <div class="o_address_format">
-                                <field
-                                    name="partner_id"
-                                    context="{'show_address': 1}"
-                                    options="{'always_reload': True}"
-                                />
-                            </div>
+                            <field
+                                name="partner_id"
+                                colspan="2"
+                                context="{'show_address': 1}"
+                                options="{'always_reload': True}"
+                                nolabel="1"
+                                class="o_address_format"
+                            />
                         </group>
                         <group name="company" string="Company">
-                            <div class="o_address_format">
+<!--                            <div class="o_address_format">-->
                                 <field
-                                    name="company_id"
-                                    readonly="1"
-                                    context="{'show_address': 1}"
-                                    options="{'always_reload': True}"
-                                />
-                            </div>
+                                name="company_id"
+                                readonly="1"
+                                context="{'show_address': 1}"
+                                options="{'always_reload': True}"
+                                nolabel="1"
+                                colspan="2"
+                                class="o_address_format"
+                            />
+<!--                            </div>-->
                             <field name="company_partner_id" invisible="1" />
                         </group>
                         <group name="partner_left" string="Primary Contact">
@@ -171,18 +173,21 @@
                                 name="partner_contact_id"
                                 domain="[('parent_id', '=', partner_id)]"
                                 nolabel="1"
+                                colspan="2"
                             />
                             <field
                                 name="partner_contact_phone"
                                 widget="phone"
                                 readonly="1"
                                 nolabel="1"
+                                colspan="2"
                             />
                             <field
                                 name="partner_contact_email"
                                 widget="email"
                                 readonly="1"
                                 nolabel="1"
+                                colspan="2"
                             />
                         </group>
                         <group name="contact_right" string="Primary Contact">
@@ -190,18 +195,21 @@
                                 name="company_contact_id"
                                 domain="[('parent_id', '=', company_partner_id)]"
                                 nolabel="1"
+                                colspan="2"
                             />
                             <field
                                 name="company_contact_phone"
                                 widget="phone"
                                 readonly="1"
                                 nolabel="1"
+                                colspan="2"
                             />
                             <field
                                 name="company_contact_email"
                                 widget="email"
                                 readonly="1"
                                 nolabel="1"
+                                colspan="2"
                             />
                         </group>
                     </group>
@@ -246,13 +254,13 @@
                                     name="%(partner_agreement_contract_document_preview)d"
                                     string="Preview"
                                     type="action"
-                                    class="oe_highlight"
+                                    class="oe_highlight mx-1"
                                 />
                                 <button
                                     name="%(partner_agreement_contract_document)d"
                                     string="Print"
                                     type="action"
-                                    class="oe_highlight"
+                                    class="oe_highlight mx-1"
                                 />
                             </div>
                             <separator string="Recitals" />
@@ -341,24 +349,19 @@
                             <p>Perhaps include invoices with total vs costs? </p>
                         </page>
                     </notebook>
-                    <group string="Administration">
-                        <div>
-                            <p>Reviewed by <field
-                                    name="reviewed_user_id"
-                                    class="oe_inline"
-                                /> on <field
-                                    name="reviewed_date"
-                                    class="oe_inline"
-                                />.</p>
+                        <separator string="Administration" />
+<!--                    <group string="Administration">-->
+                        <div name="Administration">
+                            <p class="oe_inline">Reviewed by <field
+                                name="reviewed_user_id"
+                                class="oe_inline"
+                            /> on <field name="reviewed_date" class="oe_inline" />.</p>
                             <p>Approved by <field
-                                    name="approved_user_id"
-                                    class="oe_inline"
-                                /> on <field
-                                    name="approved_date"
-                                    class="oe_inline"
-                                />.</p>
+                                name="approved_user_id"
+                                class="oe_inline"
+                            /> on <field name="approved_date" class="oe_inline" />.</p>
                         </div>
-                    </group>
+<!--                    </group>-->
                     <p name="footer">
                         Version: <field name="version" readonly="True" />.<field
                             name="revision"
@@ -401,7 +404,7 @@
         <field name="name">Agreement Kanban</field>
         <field name="model">agreement</field>
         <field name="arch" type="xml">
-            <kanban default_group_by="stage_id">
+            <kanban js_class="agreement_template_kanban" default_group_by="stage_id">
                 <field name="color" />
                 <field name="assigned_user_id" />
                 <templates>
