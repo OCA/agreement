@@ -1,9 +1,9 @@
 /** @odoo-module **/
 
-import { registry } from "@web/core/registry";
-import { KanbanController } from "@web/views/kanban/kanban_controller";
-import { kanbanView } from "@web/views/kanban/kanban_view";
-import { useService } from "@web/core/utils/hooks";
+import {registry} from "@web/core/registry";
+import {KanbanController} from "@web/views/kanban/kanban_controller";
+import {kanbanView} from "@web/views/kanban/kanban_view";
+import {useService} from "@web/core/utils/hooks";
 
 export class AgreementKanbanController extends KanbanController {
     setup() {
@@ -12,7 +12,7 @@ export class AgreementKanbanController extends KanbanController {
         this.canCreateTemplate = this.props.context.default_is_template || false;
     }
     onClickCreateFromTemplate() {
-        this.action.doAction('agreement_legal.create_agreement_from_template_action')
+        this.action.doAction("agreement_legal.create_agreement_from_template_action");
     }
 }
 
