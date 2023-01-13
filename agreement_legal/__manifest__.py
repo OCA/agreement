@@ -34,12 +34,11 @@
         "wizards/create_agreement_wizard.xml",
     ],
     "demo": ["demo/demo.xml"],
-    "qweb": ["static/src/xml/agreement.xml"],
     "assets": {
         "web.assets_backend": [
             "agreement_legal/static/src/js/**/*",
+            "agreement_legal/static/src/xml/**/*",
         ],
-        "web.assets_qweb": ["agreement_legal/static/src/xml/**/*"],
     },
     "application": True,
     "development_status": "Beta",
