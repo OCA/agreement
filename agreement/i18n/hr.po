@@ -320,6 +320,11 @@ msgid "Reference"
 msgstr "Referenca"
 
 #. module: agreement
+#: model:ir.ui.menu,name:agreement.agreement_reporting_menu
+msgid "Reporting"
+msgstr ""
+
+#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_user_id
 msgid "Responsible User"
 msgstr ""
@@ -352,6 +357,11 @@ msgstr "Odaberi tip sporazuma"
 msgid ""
 "Set if the agreement is a template. Template agreements don't require a "
 "partner."
+msgstr ""
+
+#. module: agreement
+#: model:ir.ui.menu,name:agreement.agreement_setting_menu
+msgid "Settings"
 msgstr ""
 
 #. module: agreement

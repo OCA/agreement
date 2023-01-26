@@ -315,6 +315,11 @@ msgid "Reference"
 msgstr "Referència"
 
 #. module: agreement
+#: model:ir.ui.menu,name:agreement.agreement_reporting_menu
+msgid "Reporting"
+msgstr ""
+
+#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_user_id
 msgid "Responsible User"
 msgstr "Usuari responsable"
@@ -350,6 +355,11 @@ msgid ""
 msgstr ""
 "Definiu si l'acord és una plantilla. Els acords de plantilla no requereixen "
 "un soci."
+
+#. module: agreement
+#: model:ir.ui.menu,name:agreement.agreement_setting_menu
+msgid "Settings"
+msgstr ""
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__signature_date
