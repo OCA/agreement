@@ -315,6 +315,11 @@ msgid "Reference"
 msgstr "Référence"
 
 #. module: agreement
+#: model:ir.ui.menu,name:agreement.agreement_reporting_menu
+msgid "Reporting"
+msgstr ""
+
+#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_user_id
 msgid "Responsible User"
 msgstr "Utilisateur responsable"
@@ -350,6 +355,11 @@ msgid ""
 msgstr ""
 "Définir cet accord comme modèle. Les modèles d'accord ne nécessitent pas de "
 "partenaires."
+
+#. module: agreement
+#: model:ir.ui.menu,name:agreement.agreement_setting_menu
+msgid "Settings"
+msgstr ""
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__signature_date

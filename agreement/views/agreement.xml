@@ -136,18 +136,4 @@
         <field name="res_model">agreement</field>
         <field name="view_mode">tree,form</field>
     </record>
-    <!-- Top menu item -->
-    <menuitem
-        id="agreement_menu_root"
-        name="Agreements"
-        web_icon="agreement,static/description/icon.png"
-        sequence="10"
-    />
-    <menuitem
-        id="agreement_menu"
-        name="Agreements"
-        parent="agreement_menu_root"
-        sequence="0"
-        action="agreement_action"
-    />
 </odoo>
