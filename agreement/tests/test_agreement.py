@@ -25,7 +25,6 @@ class TestAgreement(TransactionCase):
 
     def test_agreement_type_change(self):
         self.agreement.write({"agreement_type_id": self.agreement_type.id})
-        self.agreement.agreement_type_change()
         self.assertEqual(self.agreement.domain, self.agreement_type.domain)
 
     def test_name_get(self):
