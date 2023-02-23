@@ -37,9 +37,11 @@ class Agreement(models.Model):
         help="Select the type of agreement",
     )
     domain = fields.Selection(
-        "_domain_selection",
-        default="sale",
+        selection="_domain_selection",
+        compute="_compute_domain",
         tracking=True,
+        store=True,
+        readonly=False,
     )
     active = fields.Boolean(default=True)
     signature_date = fields.Date(tracking=True)
@@ -53,10 +55,13 @@ class Agreement(models.Model):
             ("purchase", _("Purchase")),
         ]
 
-    @api.onchange("agreement_type_id")
-    def agreement_type_change(self):
-        if self.agreement_type_id and self.agreement_type_id.domain:
-            self.domain = self.agreement_type_id.domain
+    @api.depends("agreement_type_id")
+    def _compute_domain(self):
+        for rec in self:
+            if rec.agreement_type_id and rec.agreement_type_id.domain:
+                rec.domain = rec.agreement_type_id.domain
+            else:
+                rec.domain = "sale"
 
     def name_get(self):
         res = []
