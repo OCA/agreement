@@ -31,6 +31,7 @@
                     <group name="main">
                         <group name="left">
                             <field name="code" />
+                            <field name="is_template" invisible="1" />
                             <field
                                 name="partner_id"
                                 attrs="{'required': [('is_template', '=', False)]}"

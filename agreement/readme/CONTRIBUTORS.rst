@@ -6,3 +6,7 @@
     * Sergio Teruel
 
 * Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
+
+* `Acsone <https://www.acsone.eu/>`_:
+
+  * Maxime Franco

@@ -14,9 +14,23 @@
     <record id="group_use_agreement_type" model="res.groups">
         <field name="name">Use agreement type</field>
         <field name="category_id" ref="base.module_category_hidden" />
+        <field
+            name="users"
+            eval="[
+              Command.link(ref('base.user_root')),
+              Command.link(ref('base.user_admin'))
+          ]"
+        />
     </record>
     <record id="group_use_agreement_template" model="res.groups">
         <field name="name">Use agreement template</field>
         <field name="category_id" ref="base.module_category_hidden" />
+        <field
+            name="users"
+            eval="[
+              Command.link(ref('base.user_root')),
+              Command.link(ref('base.user_admin'))
+          ]"
+        />
     </record>
 </odoo>
