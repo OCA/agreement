@@ -6,15 +6,17 @@ from odoo.tests.common import TransactionCase
 
 
 class TestAgreement(TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.agreement_type = self.env["agreement.type"].create(
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+        cls.agreement_type = cls.env["agreement.type"].create(
             {
                 "name": "Test Agreement Type",
                 "domain": "purchase",
             }
         )
-        self.agreement = self.env.ref("agreement.market1")
+        cls.agreement = cls.env.ref("agreement.market1")
 
     def test_domain_selection(self):
         domain_agreement_type = self.env["agreement.type"]._domain_selection()
