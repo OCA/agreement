@@ -17,6 +17,7 @@ msgstr ""
 "X-Generator: Weblate 4.3.2\n"
 
 #. module: agreement
+#. odoo-python
 #: code:addons/agreement/models/agreement.py:0
 #, python-format
 msgid "%s (copy)"
@@ -181,13 +182,11 @@ msgstr "Icône indiquant une activité d'exception."
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_needaction
-#: model:ir.model.fields,help:agreement.field_agreement__message_unread
 msgid "If checked, new messages require your attention."
 msgstr "Si coché, de nouveaux messages requièrent votre attention."
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_has_error
-#: model:ir.model.fields,help:agreement.field_agreement__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si coché, des messages ont une erreur de livraison."
 
@@ -282,18 +281,13 @@ msgstr ""
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_needaction_counter
-msgid "Number of messages which requires an action"
-msgstr "Nombre de messages qui requièrent une action"
+msgid "Number of messages requiring action"
+msgstr ""
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr "Nombre de messages avec erreur de livraison"
-
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__message_unread_counter
-msgid "Number of unread messages"
-msgstr "Nombre de messages non lus"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__partner_id
@@ -302,6 +296,7 @@ msgid "Partner"
 msgstr "Partenaire"
 
 #. module: agreement
+#. odoo-python
 #: code:addons/agreement/models/agreement.py:0
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
@@ -325,11 +320,7 @@ msgid "Responsible User"
 msgstr "Utilisateur responsable"
 
 #. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr ""
-
-#. module: agreement
+#. odoo-python
 #: code:addons/agreement/models/agreement.py:0
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
@@ -411,16 +402,6 @@ msgid "Type of the exception activity on record."
 msgstr ""
 
 #. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__message_unread
-msgid "Unread Messages"
-msgstr "Messages non-lus"
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__message_unread_counter
-msgid "Unread Messages Counter"
-msgstr "Nombre de messages non lus"
-
-#. module: agreement
 #: model:res.groups,name:agreement.group_use_agreement_template
 msgid "Use agreement template"
 msgstr "Utiliser le modèle d'accord"
@@ -450,8 +431,20 @@ msgstr ""
 msgid "When the agreement starts."
 msgstr ""
 
-#~ msgid "Followers (Channels)"
-#~ msgstr "Abonnés (canaux)"
+#~ msgid "Number of messages which requires an action"
+#~ msgstr "Nombre de messages qui requièrent une action"
 
 #~ msgid "Code"
 #~ msgstr "Code"
+
+#~ msgid "Number of unread messages"
+#~ msgstr "Nombre de messages non lus"
+
+#~ msgid "Unread Messages"
+#~ msgstr "Messages non-lus"
+
+#~ msgid "Unread Messages Counter"
+#~ msgstr "Nombre de messages non lus"
+
+#~ msgid "Followers (Channels)"
+#~ msgstr "Abonnés (canaux)"
