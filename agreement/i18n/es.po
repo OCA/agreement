@@ -7,17 +7,18 @@ msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-14 16:28+0000\n"
-"PO-Revision-Date: 2021-02-14 17:34+0100\n"
-"Last-Translator: Sergio Teruel <sergio.teruel@tecnativa.com>\n"
+"PO-Revision-Date: 2023-10-09 09:12+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: none\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: agreement
+#. odoo-python
 #: code:addons/agreement/models/agreement.py:0
 #, python-format
 msgid "%s (copy)"
@@ -52,7 +53,7 @@ msgstr "Estado de actividad"
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Icono de tipo de actvidad"
 
 #. module: agreement
 #: model:ir.model,name:agreement.model_agreement
@@ -147,17 +148,17 @@ msgstr "Seguidores"
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_partner_ids
 msgid "Followers (Partners)"
-msgstr "Seguidores (Empresas)"
+msgstr "Seguidores (Socios)"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+msgstr "fuente iconos sorprendentes , por ejemplo fa-tasks"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "Tiene mensaje"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__id
@@ -168,7 +169,7 @@ msgstr "ID"
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__code
 msgid "ID used for internal contract tracking."
-msgstr ""
+msgstr "Identificación utilizada para el seguimiento interno del contrato."
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_exception_icon
@@ -182,13 +183,11 @@ msgstr "Icono para indicar una excepción de actividad."
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_needaction
-#: model:ir.model.fields,help:agreement.field_agreement__message_unread
 msgid "If checked, new messages require your attention."
 msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_has_error
-#: model:ir.model.fields,help:agreement.field_agreement__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
 
@@ -196,7 +195,7 @@ msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
 #: model:ir.model.fields,help:agreement.field_agreement__active
 msgid ""
 "If unchecked, it will allow you to hide the agreement without removing it."
-msgstr ""
+msgstr "Si no está marcada, le permitirá ocultar el acuerdo sin eliminarlo."
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_is_follower
@@ -239,12 +238,12 @@ msgstr "Error de Envío de Mensaje"
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_ids
 msgid "Messages"
-msgstr "Messages"
+msgstr "Mensajes"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "fecha límite de mi actividad"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__name
@@ -283,7 +282,7 @@ msgstr "Errores"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_needaction_counter
-msgid "Number of messages which requires an action"
+msgid "Number of messages requiring action"
 msgstr "Número de mensajes que requieren una acción"
 
 #. module: agreement
@@ -292,17 +291,13 @@ msgid "Number of messages with delivery error"
 msgstr "Número de mensajes con error de envío"
 
 #. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__message_unread_counter
-msgid "Number of unread messages"
-msgstr "Número de mensajes no leidos"
-
-#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__partner_id
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 msgid "Partner"
 msgstr "Cliente"
 
 #. module: agreement
+#. odoo-python
 #: code:addons/agreement/models/agreement.py:0
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
@@ -313,12 +308,12 @@ msgstr "Compra"
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__code
 msgid "Reference"
-msgstr ""
+msgstr "referencia"
 
 #. module: agreement
 #: model:ir.ui.menu,name:agreement.agreement_reporting_menu
 msgid "Reporting"
-msgstr ""
+msgstr "Informes"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_user_id
@@ -326,11 +321,7 @@ msgid "Responsible User"
 msgstr "Usuario responsable"
 
 #. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr ""
-
-#. module: agreement
+#. odoo-python
 #: code:addons/agreement/models/agreement.py:0
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
@@ -360,7 +351,7 @@ msgstr ""
 #. module: agreement
 #: model:ir.ui.menu,name:agreement.agreement_setting_menu
 msgid "Settings"
-msgstr ""
+msgstr "Configuraciones"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__signature_date
@@ -389,7 +380,7 @@ msgstr ""
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__partner_id
 msgid "The customer or vendor this agreement is related to."
-msgstr ""
+msgstr "El cliente o proveedor con el que está relacionado este acuerdo."
 
 #. module: agreement
 #: model:ir.model.constraint,message:agreement.constraint_agreement_code_partner_company_unique
@@ -399,7 +390,7 @@ msgstr "¡Este código de acuerdo ya existe para este socio!"
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__name
 msgid "Title"
-msgstr ""
+msgstr "Título"
 
 #. module: agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_list_view
@@ -410,16 +401,6 @@ msgstr "Tipo de acuerdo"
 #: model:ir.model.fields,help:agreement.field_agreement__activity_exception_decoration
 msgid "Type of the exception activity on record."
 msgstr "Tipo de excepción de actividad del registro."
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__message_unread
-msgid "Unread Messages"
-msgstr "Mensajes sin leer"
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__message_unread_counter
-msgid "Unread Messages Counter"
-msgstr "Contador de mensajes no leidos"
 
 #. module: agreement
 #: model:res.groups,name:agreement.group_use_agreement_template
@@ -434,25 +415,40 @@ msgstr "Usar tipo de acuerdo"
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "mensajes de la página web"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Historial de la comunicación en la página web"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__end_date
 msgid "When the agreement ends."
-msgstr ""
+msgstr "Cuando termina el acuerdo."
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__start_date
 msgid "When the agreement starts."
-msgstr ""
+msgstr "Cuando comienza el acuerdo."
 
-#~ msgid "Followers (Channels)"
-#~ msgstr "Seguidores (Canales)"
+#~ msgid "SMS Delivery error"
+#~ msgstr "Error de envio SMS"
+
+#~ msgid "Number of messages which requires an action"
+#~ msgstr "Número de mensajes que requieren una acción"
 
 #~ msgid "Code"
 #~ msgstr "Código"
+
+#~ msgid "Number of unread messages"
+#~ msgstr "Número de mensajes no leidos"
+
+#~ msgid "Unread Messages"
+#~ msgstr "Mensajes sin leer"
+
+#~ msgid "Unread Messages Counter"
+#~ msgstr "Contador de mensajes no leidos"
+
+#~ msgid "Followers (Channels)"
+#~ msgstr "Seguidores (Canales)"
