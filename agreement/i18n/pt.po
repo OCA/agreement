@@ -17,6 +17,7 @@ msgstr ""
 "X-Generator: Weblate 4.3.2\n"
 
 #. module: agreement
+#. odoo-python
 #: code:addons/agreement/models/agreement.py:0
 #, python-format
 msgid "%s (copy)"
@@ -98,6 +99,11 @@ msgid "Attachment Count"
 msgstr "Nº de Anexos"
 
 #. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__code
+msgid "Code"
+msgstr ""
+
+#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__company_id
 msgid "Company"
 msgstr "Empresa"
@@ -165,11 +171,6 @@ msgid "ID"
 msgstr "ID"
 
 #. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__code
-msgid "ID used for internal contract tracking."
-msgstr "ID usado para rastrear os contratos internos."
-
-#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_exception_icon
 msgid "Icon"
 msgstr ""
@@ -181,7 +182,6 @@ msgstr ""
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_needaction
-#: model:ir.model.fields,help:agreement.field_agreement__message_unread
 msgid "If checked, new messages require your attention."
 msgstr "Se assinalado, novas mensagens necessitarão da sua atenção."
 
@@ -190,12 +190,6 @@ msgstr "Se assinalado, novas mensagens necessitarão da sua atenção."
 #: model:ir.model.fields,help:agreement.field_agreement__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Se assinalado, algumas mensagens contêm erro de envio."
-
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__active
-msgid ""
-"If unchecked, it will allow you to hide the agreement without removing it."
-msgstr "Desmarcado, permite esconder o contrato sem o remover."
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_is_follower
@@ -246,6 +240,7 @@ msgid "My Activity Deadline"
 msgstr ""
 
 #. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__name
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__name
 msgid "Name"
 msgstr "Nome"
@@ -291,28 +286,19 @@ msgid "Number of messages with delivery error"
 msgstr "Nº de mensagens com erro de envio"
 
 #. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__message_unread_counter
-msgid "Number of unread messages"
-msgstr "Nº de mensagens não lidas"
-
-#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__partner_id
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 msgid "Partner"
 msgstr "Parceiro"
 
 #. module: agreement
+#. odoo-python
 #: code:addons/agreement/models/agreement.py:0
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
 #, python-format
 msgid "Purchase"
 msgstr "Compra"
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__code
-msgid "Reference"
-msgstr "Referência"
 
 #. module: agreement
 #: model:ir.ui.menu,name:agreement.agreement_reporting_menu
@@ -330,6 +316,7 @@ msgid "SMS Delivery error"
 msgstr ""
 
 #. module: agreement
+#. odoo-python
 #: code:addons/agreement/models/agreement.py:0
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
@@ -386,19 +373,9 @@ msgstr ""
 "Planeada: Atividades futuras."
 
 #. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__partner_id
-msgid "The customer or vendor this agreement is related to."
-msgstr "O cliente ou fornecedor com que este acordo está relacionado."
-
-#. module: agreement
 #: model:ir.model.constraint,message:agreement.constraint_agreement_code_partner_company_unique
 msgid "This agreement code already exists for this partner!"
 msgstr "Este código de acordo já existe para este parceiro!"
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__name
-msgid "Title"
-msgstr "Título"
 
 #. module: agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_list_view
@@ -411,16 +388,6 @@ msgid "Type of the exception activity on record."
 msgstr ""
 
 #. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__message_unread
-msgid "Unread Messages"
-msgstr "Mensagens Não Lidas"
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__message_unread_counter
-msgid "Unread Messages Counter"
-msgstr "Contador de Mensagens Não Lidas"
-
-#. module: agreement
 #: model:res.groups,name:agreement.group_use_agreement_template
 msgid "Use agreement template"
 msgstr "Utilizar modelo de acordo"
@@ -430,25 +397,36 @@ msgstr "Utilizar modelo de acordo"
 msgid "Use agreement type"
 msgstr "Utilizar tipo de acordo"
 
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__website_message_ids
-msgid "Website Messages"
-msgstr ""
+#~ msgid "ID used for internal contract tracking."
+#~ msgstr "ID usado para rastrear os contratos internos."
 
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__website_message_ids
-msgid "Website communication history"
-msgstr ""
+#~ msgid ""
+#~ "If unchecked, it will allow you to hide the agreement without removing it."
+#~ msgstr "Desmarcado, permite esconder o contrato sem o remover."
 
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__end_date
-msgid "When the agreement ends."
-msgstr "Quando termina o acordo."
+#~ msgid "Number of unread messages"
+#~ msgstr "Nº de mensagens não lidas"
 
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__start_date
-msgid "When the agreement starts."
-msgstr "Quando inicia o acordo."
+#~ msgid "Reference"
+#~ msgstr "Referência"
+
+#~ msgid "The customer or vendor this agreement is related to."
+#~ msgstr "O cliente ou fornecedor com que este acordo está relacionado."
+
+#~ msgid "Title"
+#~ msgstr "Título"
+
+#~ msgid "Unread Messages"
+#~ msgstr "Mensagens Não Lidas"
+
+#~ msgid "Unread Messages Counter"
+#~ msgstr "Contador de Mensagens Não Lidas"
+
+#~ msgid "When the agreement ends."
+#~ msgstr "Quando termina o acordo."
+
+#~ msgid "When the agreement starts."
+#~ msgstr "Quando inicia o acordo."
 
 #~ msgid "Followers (Channels)"
 #~ msgstr "Seguidores (Canais)"
