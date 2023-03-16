@@ -18,6 +18,7 @@ msgstr ""
 "X-Generator: Weblate 3.8\n"
 
 #. module: agreement
+#. odoo-python
 #: code:addons/agreement/models/agreement.py:0
 #, python-format
 msgid "%s (copy)"
@@ -102,6 +103,11 @@ msgid "Attachment Count"
 msgstr ""
 
 #. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__code
+msgid "Code"
+msgstr ""
+
+#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__company_id
 msgid "Company"
 msgstr "Tvrtka"
@@ -169,11 +175,6 @@ msgid "ID"
 msgstr "ID"
 
 #. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__code
-msgid "ID used for internal contract tracking."
-msgstr "ID za interno praćenje sporazuma"
-
-#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_exception_icon
 msgid "Icon"
 msgstr ""
@@ -185,7 +186,6 @@ msgstr ""
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_needaction
-#: model:ir.model.fields,help:agreement.field_agreement__message_unread
 msgid "If checked, new messages require your attention."
 msgstr ""
 
@@ -194,12 +194,6 @@ msgstr ""
 #: model:ir.model.fields,help:agreement.field_agreement__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
-
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__active
-msgid ""
-"If unchecked, it will allow you to hide the agreement without removing it."
-msgstr "Ako nije označeno, omogućuje vam skrivanje porazuma bez brisanja."
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_is_follower
@@ -250,6 +244,7 @@ msgid "My Activity Deadline"
 msgstr ""
 
 #. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__name
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__name
 msgid "Name"
 msgstr "Naziv"
@@ -295,11 +290,6 @@ msgid "Number of messages with delivery error"
 msgstr ""
 
 #. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__message_unread_counter
-msgid "Number of unread messages"
-msgstr ""
-
-#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__partner_id
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 #, fuzzy
@@ -307,17 +297,13 @@ msgid "Partner"
 msgstr "Partner"
 
 #. module: agreement
+#. odoo-python
 #: code:addons/agreement/models/agreement.py:0
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
 #, python-format
 msgid "Purchase"
 msgstr ""
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__code
-msgid "Reference"
-msgstr "Referenca"
 
 #. module: agreement
 #: model:ir.ui.menu,name:agreement.agreement_reporting_menu
@@ -335,6 +321,7 @@ msgid "SMS Delivery error"
 msgstr ""
 
 #. module: agreement
+#. odoo-python
 #: code:addons/agreement/models/agreement.py:0
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
@@ -385,18 +372,8 @@ msgid ""
 msgstr ""
 
 #. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__partner_id
-msgid "The customer or vendor this agreement is related to."
-msgstr ""
-
-#. module: agreement
 #: model:ir.model.constraint,message:agreement.constraint_agreement_code_partner_company_unique
 msgid "This agreement code already exists for this partner!"
-msgstr ""
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__name
-msgid "Title"
 msgstr ""
 
 #. module: agreement
@@ -410,16 +387,6 @@ msgid "Type of the exception activity on record."
 msgstr ""
 
 #. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__message_unread
-msgid "Unread Messages"
-msgstr ""
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__message_unread_counter
-msgid "Unread Messages Counter"
-msgstr ""
-
-#. module: agreement
 #: model:res.groups,name:agreement.group_use_agreement_template
 msgid "Use agreement template"
 msgstr ""
@@ -429,22 +396,12 @@ msgstr ""
 msgid "Use agreement type"
 msgstr ""
 
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__website_message_ids
-msgid "Website Messages"
-msgstr ""
+#~ msgid "ID used for internal contract tracking."
+#~ msgstr "ID za interno praćenje sporazuma"
 
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__website_message_ids
-msgid "Website communication history"
-msgstr ""
+#~ msgid ""
+#~ "If unchecked, it will allow you to hide the agreement without removing it."
+#~ msgstr "Ako nije označeno, omogućuje vam skrivanje porazuma bez brisanja."
 
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__end_date
-msgid "When the agreement ends."
-msgstr ""
-
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__start_date
-msgid "When the agreement starts."
-msgstr ""
+#~ msgid "Reference"
+#~ msgstr "Referenca"
