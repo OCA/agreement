@@ -428,16 +428,23 @@ class Agreement(models.Model):
         }
         return default_vals
 
-    def create_new_agreement(self):
+    def _create_new_agreement(self):
         self.ensure_one()
-        res = self.copy(default=self._get_new_agreement_default_vals())
+        return self.copy(default=self._get_new_agreement_default_vals())
+
+    @api.model
+    def action_view_agreement(self, agreement):
         return {
             "res_model": "agreement",
             "type": "ir.actions.act_window",
             "view_mode": "form",
             "view_type": "form",
-            "res_id": res.id,
+            "res_id": agreement.id,
         }
+
+    def create_new_agreement(self):
+        res = self._create_new_agreement()
+        return self.action_view_agreement(res)
 
     def _fill_create_vals(self, vals):
         if vals.get("code", _("New")) == _("New"):
