@@ -428,24 +428,34 @@ class Agreement(models.Model):
         }
         return default_vals
 
-    def create_new_agreement(self):
+    def _create_new_agreement(self):
         self.ensure_one()
-        res = self.copy(default=self._get_new_agreement_default_vals())
+        return self.copy(default=self._get_new_agreement_default_vals())
+
+    @api.model
+    def action_view_agreement(self, agreement):
         return {
             "res_model": "agreement",
             "type": "ir.actions.act_window",
             "view_mode": "form",
             "view_type": "form",
-            "res_id": res.id,
+            "res_id": agreement.id,
         }
 
-    @api.model
-    def create(self, vals):
+    def create_new_agreement(self):
+        res = self._create_new_agreement()
+        return self.action_view_agreement(res)
+
+    def _fill_create_vals(self, vals):
         if vals.get("code", _("New")) == _("New"):
             vals["code"] = self.env["ir.sequence"].next_by_code("agreement") or _("New")
         if not vals.get("stage_id"):
             vals["stage_id"] = self._get_default_stage_id()
-        return super().create(vals)
+        return vals
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        return super().create([self._fill_create_vals(vals) for vals in vals_list])
 
     # Increments the revision on each save action
     def write(self, vals):

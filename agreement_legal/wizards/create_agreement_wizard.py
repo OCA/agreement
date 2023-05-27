@@ -16,10 +16,9 @@ class CreateAgreementWizard(models.TransientModel):
     )
     name = fields.Char(string="Title", required=True)
 
-    def create_agreement(self):
+    def _create_agreement(self):
         self.ensure_one()
-        res = self.template_id.create_new_agreement()
-        agreement = self.env[res["res_model"]].browse(res["res_id"])
+        agreement = self.template_id._create_new_agreement()
         agreement.write(
             {
                 "name": self.name,
@@ -28,4 +27,8 @@ class CreateAgreementWizard(models.TransientModel):
                 "revision": 0,
             }
         )
-        return res
+        return agreement
+
+    def create_agreement(self):
+        agreement = self._create_agreement()
+        return agreement.action_view_agreement(agreement)
