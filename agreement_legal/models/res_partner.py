@@ -25,7 +25,5 @@ class Partner(models.Model):
         action = self.env.ref("agreement.agreement_action")
         result = action.read()[0]
         result["domain"] = [("partner_id", "=", self.id)]
-        result["context"] = {
-            "default_partner_id": self.id,
-        }
+        result["context"] = {"default_partner_id": self.id}
         return result
