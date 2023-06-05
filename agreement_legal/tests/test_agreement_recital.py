@@ -11,10 +11,7 @@ class TestAgreementRectical(TransactionCase):
         super().setUp()
         self.test_customer = self.env["res.partner"].create({"name": "TestCustomer"})
         self.agreement_type = self.env["agreement.type"].create(
-            {
-                "name": "Test Agreement Type",
-                "domain": "sale",
-            }
+            {"name": "Test Agreement Type", "domain": "sale"}
         )
         self.test_agreement = self.env["agreement"].create(
             {
@@ -39,10 +36,7 @@ class TestAgreementRectical(TransactionCase):
     def test_onchange_copyvalue(self):
         recital_01 = self.test_recital
         field_01 = self.env["ir.model.fields"].search(
-            [
-                ("model", "=", "agreement.recital"),
-                ("name", "=", "active"),
-            ]
+            [("model", "=", "agreement.recital"), ("name", "=", "active")]
         )
         recital_01.field_id = field_01.id
         recital_01.onchange_copyvalue()
@@ -53,16 +47,10 @@ class TestAgreementRectical(TransactionCase):
     def test_onchange_copyvalue2(self):
         recital_01 = self.test_recital
         field_01 = self.env["ir.model.fields"].search(
-            [
-                ("model", "=", "agreement.recital"),
-                ("name", "=", "agreement_id"),
-            ]
+            [("model", "=", "agreement.recital"), ("name", "=", "agreement_id")]
         )
         sub_field_01 = self.env["ir.model.fields"].search(
-            [
-                ("model", "=", "agreement"),
-                ("name", "=", "active"),
-            ]
+            [("model", "=", "agreement"), ("name", "=", "active")]
         )
         recital_01.field_id = field_01.id
         recital_01.onchange_copyvalue()
@@ -75,7 +63,4 @@ class TestAgreementRectical(TransactionCase):
     def test_compute_dynamic_content(self):
         recital_01 = self.test_recital
         recital_01.content = "{{object.name}}"
-        self.assertEqual(
-            recital_01.dynamic_content,
-            "<p>TestRecital</p>",
-        )
+        self.assertEqual(recital_01.dynamic_content, "<p>TestRecital</p>")

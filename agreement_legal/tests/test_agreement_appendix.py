@@ -11,10 +11,7 @@ class TestAgreementAppendices(TransactionCase):
         super().setUp()
         self.test_customer = self.env["res.partner"].create({"name": "TestCustomer"})
         self.agreement_type = self.env["agreement.type"].create(
-            {
-                "name": "Test Agreement Type",
-                "domain": "sale",
-            }
+            {"name": "Test Agreement Type", "domain": "sale"}
         )
         self.test_agreement = self.env["agreement"].create(
             {
@@ -39,10 +36,7 @@ class TestAgreementAppendices(TransactionCase):
     def test_onchange_copyvalue(self):
         appendix_01 = self.test_appendices
         field_01 = self.env["ir.model.fields"].search(
-            [
-                ("model", "=", "agreement.appendix"),
-                ("name", "=", "active"),
-            ]
+            [("model", "=", "agreement.appendix"), ("name", "=", "active")]
         )
         appendix_01.field_id = field_01.id
         appendix_01.onchange_copyvalue()
@@ -53,16 +47,10 @@ class TestAgreementAppendices(TransactionCase):
     def test_onchange_copyvalue2(self):
         appendix_01 = self.test_appendices
         field_01 = self.env["ir.model.fields"].search(
-            [
-                ("model", "=", "agreement.appendix"),
-                ("name", "=", "agreement_id"),
-            ]
+            [("model", "=", "agreement.appendix"), ("name", "=", "agreement_id")]
         )
         sub_field_01 = self.env["ir.model.fields"].search(
-            [
-                ("model", "=", "agreement"),
-                ("name", "=", "active"),
-            ]
+            [("model", "=", "agreement"), ("name", "=", "active")]
         )
         appendix_01.field_id = field_01.id
         appendix_01.onchange_copyvalue()
@@ -75,7 +63,4 @@ class TestAgreementAppendices(TransactionCase):
     def test_compute_dynamic_content(self):
         appendix_01 = self.test_appendices
         appendix_01.content = "{{object.name}}"
-        self.assertEqual(
-            appendix_01.dynamic_content,
-            "<p>TestAppendices</p>",
-        )
+        self.assertEqual(appendix_01.dynamic_content, "<p>TestAppendices</p>")
