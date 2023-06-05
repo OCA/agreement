@@ -6,7 +6,7 @@
         <field name="model">agreement</field>
         <field name="arch" type="xml">
             <tree default_order="code desc, name">
-                <field name="code" />
+                <field name="code" invisible="context.get('default_model')" />
                 <field name="name" />
                 <field name="partner_id" />
                 <field name="company_id" />
@@ -593,7 +593,9 @@
         <field name="name">Agreements</field>
         <field name="res_model">agreement</field>
         <field name="domain">[('is_template', '=', False)]</field>
-        <field name="context">{'default_is_template': False}</field>
+        <field
+            name="context"
+        >{'default_is_template': False, 'default_model': True}</field>
         <field name="view_mode">kanban,tree,form</field>
     </record>
 

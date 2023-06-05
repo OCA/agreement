@@ -1,22 +1,29 @@
-<templates>
-    <t t-extend="ListView.buttons">
-        <t t-jquery="button.o_list_button_add" t-operation="after">
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-inherit="web.ListView.Buttons" t-inherit-mode="extension" owl="1">
+        <xpath expr="//button[hasclass('o_list_button_add')]" position="before">
+            <button
+                t-if="props.resModel == 'agreement'"
+                type="button"
+                class="btn btn-primary create_agreement_from_template"
+                data-tooltip="Expand"
+                aria-label="Expand"
+                t-on-click="expandAllGroups"
+                style="margin-right: 10px;"
+            >Create From Template</button>
+        </xpath>
+    </t>
+
+    <t t-inherit="web.KanbanView.Buttons" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('o_cp_buttons')]" position="before">
             <button
                 type="button"
-                t-if="widget and widget.modelName and widget.modelName == 'agreement'"
-                class="create_agreement_from_template btn btn-primary"
-            >Create From Template
-            </button>
-        </t>
+                class="btn btn-primary create_agreement_from_template"
+                data-tooltip="Expand"
+                aria-label="Expand"
+                t-on-click="expandAllGroups"
+            >Create From Template</button>
+        </xpath>
     </t>
-    <t t-extend="KanbanView.buttons">
-        <t t-jquery="button" t-operation="after">
-            <button
-                type="button"
-                t-if="widget and widget.modelName and widget.modelName == 'agreement'"
-                class="create_agreement_from_template btn btn-primary"
-            >Create From Template
-            </button>
-        </t>
-    </t>
+
 </templates>
