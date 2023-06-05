@@ -23,6 +23,5 @@ class AgreementStage(models.Model):
     )
     active = fields.Boolean(default=True)
     readonly = fields.Boolean(
-        default=False,
-        help="The agreement can not edit if set Readonly = True.",
+        default=False, help="The agreement can not edit if set Readonly = True."
     )

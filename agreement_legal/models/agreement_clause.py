@@ -21,8 +21,7 @@ class AgreementClause(models.Model):
     )
     content = fields.Html(string="Clause Content")
     dynamic_content = fields.Html(
-        compute="_compute_dynamic_content",
-        help="compute dynamic Content",
+        compute="_compute_dynamic_content", help="compute dynamic Content"
     )
     active = fields.Boolean(
         default=True,
@@ -52,7 +51,7 @@ class AgreementClause(models.Model):
           model (sub-model).""",
     )
     default_value = fields.Char(
-        help="Optional value to use if the target field is empty.",
+        help="Optional value to use if the target field is empty."
     )
     copyvalue = fields.Char(
         string="Placeholder Expression",
@@ -66,8 +65,7 @@ class AgreementClause(models.Model):
         self.copyvalue = False
         if self.field_id and not self.field_id.relation:
             self.copyvalue = "{{{{object.{} or {}}}}}".format(
-                self.field_id.name,
-                self.default_value or "''",
+                self.field_id.name, self.default_value or "''"
             )
             self.sub_model_object_field_id = False
         if self.field_id and self.field_id.relation:

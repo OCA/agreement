@@ -11,10 +11,7 @@ class TestAgreementSection(TransactionCase):
         super().setUp()
         self.test_customer = self.env["res.partner"].create({"name": "TestCustomer"})
         self.agreement_type = self.env["agreement.type"].create(
-            {
-                "name": "Test Agreement Type",
-                "domain": "sale",
-            }
+            {"name": "Test Agreement Type", "domain": "sale"}
         )
         self.test_agreement = self.env["agreement"].create(
             {
@@ -39,10 +36,7 @@ class TestAgreementSection(TransactionCase):
     def test_onchange_copyvalue(self):
         section_01 = self.test_section
         field_01 = self.env["ir.model.fields"].search(
-            [
-                ("model", "=", "agreement.section"),
-                ("name", "=", "active"),
-            ]
+            [("model", "=", "agreement.section"), ("name", "=", "active")]
         )
         section_01.field_id = field_01.id
         section_01.onchange_copyvalue()
@@ -53,16 +47,10 @@ class TestAgreementSection(TransactionCase):
     def test_onchange_copyvalue2(self):
         section_01 = self.test_section
         field_01 = self.env["ir.model.fields"].search(
-            [
-                ("model", "=", "agreement.section"),
-                ("name", "=", "agreement_id"),
-            ]
+            [("model", "=", "agreement.section"), ("name", "=", "agreement_id")]
         )
         sub_field_01 = self.env["ir.model.fields"].search(
-            [
-                ("model", "=", "agreement"),
-                ("name", "=", "active"),
-            ]
+            [("model", "=", "agreement"), ("name", "=", "active")]
         )
         section_01.field_id = field_01.id
         section_01.onchange_copyvalue()
@@ -75,7 +63,4 @@ class TestAgreementSection(TransactionCase):
     def test_compute_dynamic_content(self):
         section_01 = self.test_section
         section_01.content = "{{object.name}}"
-        self.assertEqual(
-            section_01.dynamic_content,
-            "<p>TestSection</p>",
-        )
+        self.assertEqual(section_01.dynamic_content, "<p>TestSection</p>")

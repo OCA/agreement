@@ -11,10 +11,7 @@ class TestAgreementLine(TransactionCase):
         super().setUp()
         self.test_customer = self.env["res.partner"].create({"name": "TestCustomer"})
         self.agreement_type = self.env["agreement.type"].create(
-            {
-                "name": "Test Agreement Type",
-                "domain": "sale",
-            }
+            {"name": "Test Agreement Type", "domain": "sale"}
         )
         self.test_agreement = self.env["agreement"].create(
             {

@@ -18,8 +18,7 @@ class AgreementSection(models.Model):
     )
     content = fields.Html(string="Section Content")
     dynamic_content = fields.Html(
-        compute="_compute_dynamic_content",
-        help="compute dynamic Content",
+        compute="_compute_dynamic_content", help="compute dynamic Content"
     )
     active = fields.Boolean(
         default=True,
@@ -49,7 +48,7 @@ class AgreementSection(models.Model):
           model (sub-model).""",
     )
     default_value = fields.Char(
-        help="Optional value to use if the target field is empty.",
+        help="Optional value to use if the target field is empty."
     )
     copyvalue = fields.Char(
         string="Placeholder Expression",
