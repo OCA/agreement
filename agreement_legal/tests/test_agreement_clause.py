@@ -11,10 +11,7 @@ class TestAgreementClauses(TransactionCase):
         super().setUp()
         self.test_customer = self.env["res.partner"].create({"name": "TestCustomer"})
         self.agreement_type = self.env["agreement.type"].create(
-            {
-                "name": "Test Agreement Type",
-                "domain": "sale",
-            }
+            {"name": "Test Agreement Type", "domain": "sale"}
         )
         self.test_agreement = self.env["agreement"].create(
             {
@@ -39,10 +36,7 @@ class TestAgreementClauses(TransactionCase):
     def test_onchange_copyvalue(self):
         clause_01 = self.test_clause
         field_01 = self.env["ir.model.fields"].search(
-            [
-                ("model", "=", "agreement.clause"),
-                ("name", "=", "active"),
-            ]
+            [("model", "=", "agreement.clause"), ("name", "=", "active")]
         )
         clause_01.field_id = field_01.id
         clause_01.onchange_copyvalue()
@@ -53,16 +47,10 @@ class TestAgreementClauses(TransactionCase):
     def test_onchange_copyvalue2(self):
         clause_01 = self.test_clause
         field_01 = self.env["ir.model.fields"].search(
-            [
-                ("model", "=", "agreement.clause"),
-                ("name", "=", "agreement_id"),
-            ]
+            [("model", "=", "agreement.clause"), ("name", "=", "agreement_id")]
         )
         sub_field_01 = self.env["ir.model.fields"].search(
-            [
-                ("model", "=", "agreement"),
-                ("name", "=", "active"),
-            ]
+            [("model", "=", "agreement"), ("name", "=", "active")]
         )
         clause_01.field_id = field_01.id
         clause_01.onchange_copyvalue()
@@ -75,7 +63,4 @@ class TestAgreementClauses(TransactionCase):
     def test_compute_dynamic_content(self):
         clause_01 = self.test_clause
         clause_01.content = "{{object.name}}"
-        self.assertEqual(
-            clause_01.dynamic_content,
-            "<p>TestClause</p>",
-        )
+        self.assertEqual(clause_01.dynamic_content, "<p>TestClause</p>")

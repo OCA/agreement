@@ -21,14 +21,11 @@ class Agreement(models.Model):
         "previous versions can be referenced.",
     )
     revision = fields.Integer(
-        default=0,
-        copy=False,
-        help="The revision will increase with every save event.",
+        default=0, copy=False, help="The revision will increase with every save event."
     )
     description = fields.Text(tracking=True, help="Description of the agreement")
     dynamic_description = fields.Text(
-        compute="_compute_dynamic_description",
-        help="Compute dynamic description",
+        compute="_compute_dynamic_description", help="Compute dynamic description"
     )
     start_date = fields.Date(tracking=True, help="When the agreement starts.")
     end_date = fields.Date(tracking=True, help="When the agreement ends.")
@@ -64,8 +61,7 @@ class Agreement(models.Model):
         "agreement/contract.",
     )
     dynamic_special_terms = fields.Text(
-        compute="_compute_dynamic_special_terms",
-        help="Compute dynamic special terms",
+        compute="_compute_dynamic_special_terms", help="Compute dynamic special terms"
     )
     code = fields.Char(
         string="Reference",
@@ -81,8 +77,7 @@ class Agreement(models.Model):
         help="Date that a request for termination was received.",
     )
     termination_date = fields.Date(
-        tracking=True,
-        help="Date that the contract was terminated.",
+        tracking=True, help="Date that the contract was terminated."
     )
     reviewed_date = fields.Date(tracking=True)
     reviewed_user_id = fields.Many2one("res.users", string="Reviewed By", tracking=True)
@@ -150,17 +145,12 @@ class Agreement(models.Model):
         return deftext
 
     parties = fields.Html(
-        tracking=True,
-        default=_get_default_parties,
-        help="Parties of the agreement",
+        tracking=True, default=_get_default_parties, help="Parties of the agreement"
     )
     dynamic_parties = fields.Html(
-        compute="_compute_dynamic_parties",
-        help="Compute dynamic parties",
+        compute="_compute_dynamic_parties", help="Compute dynamic parties"
     )
-    agreement_type_id = fields.Many2one(
-        tracking=True,
-    )
+    agreement_type_id = fields.Many2one(tracking=True)
     agreement_subtype_id = fields.Many2one(
         "agreement.subtype",
         string="Agreement Sub-type",
@@ -261,7 +251,7 @@ class Agreement(models.Model):
           model (sub-model).""",
     )
     default_value = fields.Char(
-        help="Optional value to use if the target field is empty.",
+        help="Optional value to use if the target field is empty."
     )
     copyvalue = fields.Char(
         string="Placeholder Expression",
@@ -269,16 +259,9 @@ class Agreement(models.Model):
          template field.""",
     )
     template_id = fields.Many2one(
-        "agreement",
-        string="Template",
-        domain=[("is_template", "=", True)],
+        "agreement", string="Template", domain=[("is_template", "=", True)]
     )
-    readonly = fields.Boolean(
-        related="stage_id.readonly",
-    )
-    readonly = fields.Boolean(
-        related="stage_id.readonly",
-    )
+    readonly = fields.Boolean(related="stage_id.readonly")
     to_review_date = fields.Date(
         compute="_compute_to_review_date",
         store=True,
@@ -490,8 +473,8 @@ class Agreement(models.Model):
             view_id=view_id, view_type=view_type, toolbar=toolbar, submenu=submenu
         )
         # Readonly fields
-        doc = etree.XML(res["arch"])
         if view_type == "form":
+            doc = etree.XML(res["arch"])
             for node in doc.xpath("//field"):
                 if node.attrib.get("name") in self._exclude_readonly_field():
                     continue

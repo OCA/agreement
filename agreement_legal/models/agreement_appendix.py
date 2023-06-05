@@ -11,14 +11,12 @@ class AgreementAppendix(models.Model):
 
     name = fields.Char(required=True)
     title = fields.Char(
-        required=True,
-        help="The title is displayed on the PDF. The name is not.",
+        required=True, help="The title is displayed on the PDF. The name is not."
     )
     sequence = fields.Integer(default=10)
     content = fields.Html()
     dynamic_content = fields.Html(
-        compute="_compute_dynamic_content",
-        help="compute dynamic Content",
+        compute="_compute_dynamic_content", help="compute dynamic Content"
     )
     agreement_id = fields.Many2one("agreement", string="Agreement", ondelete="cascade")
     active = fields.Boolean(
@@ -49,7 +47,7 @@ class AgreementAppendix(models.Model):
           model (sub-model).""",
     )
     default_value = fields.Char(
-        help="Optional value to use if the target field is empty.",
+        help="Optional value to use if the target field is empty."
     )
     copyvalue = fields.Char(
         string="Placeholder Expression",
@@ -63,8 +61,7 @@ class AgreementAppendix(models.Model):
         self.copyvalue = False
         if self.field_id and not self.field_id.relation:
             self.copyvalue = "{{{{object.{} or {}}}}}".format(
-                self.field_id.name,
-                self.default_value or "''",
+                self.field_id.name, self.default_value or "''"
             )
             self.sub_model_object_field_id = False
         if self.field_id and self.field_id.relation:

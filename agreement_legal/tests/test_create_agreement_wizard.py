@@ -7,10 +7,7 @@ class TestCreateAgreementWizard(TransactionCase):
     def setUp(self):
         super().setUp()
         self.agreement_type = self.env["agreement.type"].create(
-            {
-                "name": "Test Agreement Type",
-                "domain": "sale",
-            }
+            {"name": "Test Agreement Type", "domain": "sale"}
         )
         # Create Agreement Template
         self.agreement_template = self.env["agreement"].create(
@@ -64,10 +61,7 @@ class TestCreateAgreementWizard(TransactionCase):
     def test_create_agreement(self):
         template = self.agreement_template
         wizard = self.env["create.agreement.wizard"].create(
-            {
-                "template_id": self.agreement_template.id,
-                "name": "Test Agreement",
-            }
+            {"template_id": self.agreement_template.id, "name": "Test Agreement"}
         )
         res = wizard.create_agreement()
         agreement = self.env[res["res_model"]].browse(res["res_id"])
