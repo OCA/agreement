@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t
+        t-name="agreement.ListView.Buttons"
+        t-inherit="web.ListView.Buttons"
+        t-inherit-mode="primary"
+        owl="1"
+    >
+        <xpath
+            expr="//*[@class='btn btn-primary o_list_button_add']"
+            position="attributes"
+        >
+            <attribute name="t-if">canCreateTemplate</attribute>
+        </xpath>
+        <xpath expr="//*[@class='btn btn-primary o_list_button_add']" position="after">
+            <t t-call="agreement.TemplateButton" />
+        </xpath>
+    </t>
+    <t t-inherit="web.FormView" t-inherit-mode="extension">
+        <xpath
+            expr="//*[@class='btn btn-outline-primary o_form_button_create']"
+            position="after"
+        >
+            <t t-if="props.resModel === 'agreement'">
+                <t t-call="agreement.TemplateButton" />
+            </t>
+        </xpath>
+        <xpath
+            expr="//*[@class='btn btn-outline-primary o_form_button_create']"
+            position="attributes"
+        >
+            <attribute name="t-if">canCreateTemplate</attribute>
+        </xpath>
+    </t>
+    <t
+        t-name="agreement.KanbanView.Buttons"
+        t-inherit="web.KanbanView.Buttons"
+        t-inherit-mode="primary"
+        owl="1"
+    >
+        <xpath
+            expr="//*[@class='btn btn-primary o-kanban-button-new']"
+            position="after"
+        >
+            <t t-call="agreement.TemplateButton" />
+        </xpath>
+        <xpath
+            expr="//*[@class='btn btn-primary o-kanban-button-new']"
+            position="attributes"
+        >
+            <attribute name="t-if">!noCreate and canCreateTemplate</attribute>
+        </xpath>
+    </t>
+    <t t-name="agreement.TemplateButton" owl="1">
+        <button
+            type="button"
+            t-if="!canCreateTemplate"
+            t-on-click="onClickCreateFromTemplate"
+            class="create_agreement_from_template btn btn-primary mx-1"
+        >
+            Create From Template
+        </button>
+    </t>
+</templates>
