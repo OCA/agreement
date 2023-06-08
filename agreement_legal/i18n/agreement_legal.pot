@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -370,8 +370,7 @@ msgid "Create Agreement Wizard"
 msgstr ""
 
 #. module: agreement_legal
-#. openerp-web
-#: code:addons/agreement_legal/static/src/xml/agreement.xml:0
+#. odoo-javascript
 #: code:addons/agreement_legal/static/src/xml/agreement.xml:0
 #: model:ir.actions.act_window,name:agreement_legal.create_agreement_from_template_action
 #, python-format
@@ -464,7 +463,6 @@ msgstr ""
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__description
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_line__name
-#: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Description"
 msgstr ""
 
@@ -802,6 +800,7 @@ msgid "Name:"
 msgstr ""
 
 #. module: agreement_legal
+#. odoo-python
 #: code:addons/agreement_legal/models/agreement.py:0
 #: code:addons/agreement_legal/models/agreement.py:0
 #: code:addons/agreement_legal/models/agreement.py:0
