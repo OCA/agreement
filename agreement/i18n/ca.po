@@ -99,11 +99,6 @@ msgid "Attachment Count"
 msgstr "Nombre d'annexes"
 
 #. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__code
-msgid "Code"
-msgstr ""
-
-#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__company_id
 msgid "Company"
 msgstr "Companyia"
@@ -171,6 +166,11 @@ msgid "ID"
 msgstr "ID"
 
 #. module: agreement
+#: model:ir.model.fields,help:agreement.field_agreement__code
+msgid "ID used for internal contract tracking."
+msgstr "ID utilitzat per al seguiment intern dels contractes."
+
+#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_exception_icon
 msgid "Icon"
 msgstr "Icon"
@@ -190,6 +190,12 @@ msgstr "Si està marcat, els missatges nous requereixen la vostra atenció."
 #: model:ir.model.fields,help:agreement.field_agreement__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si està marcat, alguns missatges tenen un error d'entrega."
+
+#. module: agreement
+#: model:ir.model.fields,help:agreement.field_agreement__active
+msgid ""
+"If unchecked, it will allow you to hide the agreement without removing it."
+msgstr "Si no està marcat, us permetrà ocultar l'acord sense eliminar-lo."
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_is_follower
@@ -240,7 +246,6 @@ msgid "My Activity Deadline"
 msgstr "Data límit de la meva activitat"
 
 #. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__name
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__name
 msgid "Name"
 msgstr "Nom"
@@ -299,6 +304,11 @@ msgstr "Soci"
 #, python-format
 msgid "Purchase"
 msgstr "Compra"
+
+#. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__code
+msgid "Reference"
+msgstr "Referència"
 
 #. module: agreement
 #: model:ir.ui.menu,name:agreement.agreement_reporting_menu
@@ -373,9 +383,19 @@ msgstr ""
 "Planificades: Activitats futures."
 
 #. module: agreement
+#: model:ir.model.fields,help:agreement.field_agreement__partner_id
+msgid "The customer or vendor this agreement is related to."
+msgstr "El client o proveïdor amb el qual està relacionat aquest acord."
+
+#. module: agreement
 #: model:ir.model.constraint,message:agreement.constraint_agreement_code_partner_company_unique
 msgid "This agreement code already exists for this partner!"
 msgstr "Aquest codi d'acord ja existeix per a aquest soci!"
+
+#. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__name
+msgid "Title"
+msgstr "Títol"
 
 #. module: agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_list_view
@@ -397,24 +417,18 @@ msgstr "Utilitzeu la plantilla d'acord"
 msgid "Use agreement type"
 msgstr "Utilitzeu el tipus d'acord"
 
-#~ msgid "ID used for internal contract tracking."
-#~ msgstr "ID utilitzat per al seguiment intern dels contractes."
+#. module: agreement
+#: model:ir.model.fields,help:agreement.field_agreement__end_date
+msgid "When the agreement ends."
+msgstr "Quan finalitzi l'acord."
 
-#~ msgid ""
-#~ "If unchecked, it will allow you to hide the agreement without removing it."
-#~ msgstr "Si no està marcat, us permetrà ocultar l'acord sense eliminar-lo."
+#. module: agreement
+#: model:ir.model.fields,help:agreement.field_agreement__start_date
+msgid "When the agreement starts."
+msgstr "Quan comença l'acord."
 
 #~ msgid "Number of unread messages"
 #~ msgstr "Número de mensajes no leídos"
-
-#~ msgid "Reference"
-#~ msgstr "Referència"
-
-#~ msgid "The customer or vendor this agreement is related to."
-#~ msgstr "El client o proveïdor amb el qual està relacionat aquest acord."
-
-#~ msgid "Title"
-#~ msgstr "Títol"
 
 #~ msgid "Unread Messages"
 #~ msgstr "Missatges no llegits"
@@ -427,12 +441,6 @@ msgstr "Utilitzeu el tipus d'acord"
 
 #~ msgid "Website communication history"
 #~ msgstr "Historial de comunicacions del lloc web"
-
-#~ msgid "When the agreement ends."
-#~ msgstr "Quan finalitzi l'acord."
-
-#~ msgid "When the agreement starts."
-#~ msgstr "Quan comença l'acord."
 
 #~ msgid "Followers (Channels)"
 #~ msgstr "Seguidors/res (canals)"
