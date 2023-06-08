@@ -151,7 +151,6 @@ msgstr "Tipos de Acordos"
 #: model:ir.ui.menu,name:agreement_legal.operations_agreements
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_graph_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_pivot_view
-#: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_list_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_section_search_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_form
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
@@ -192,7 +191,6 @@ msgstr ""
 #: model:ir.actions.act_window,name:agreement_legal.agreement_appendix_action
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__appendix_ids
 #: model:ir.ui.menu,name:agreement_legal.agreement_appendices
-#: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_appendix_tree
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Appendices"
 msgstr "Adendos"
@@ -273,7 +271,6 @@ msgstr "Conteúdo das Cláusulas"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__clauses_ids
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__clauses_ids
 #: model:ir.ui.menu,name:agreement_legal.agreement_clauses
-#: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_clause_list_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_section_form_view
 msgid "Clauses"
@@ -379,7 +376,7 @@ msgid "Create Agreement Wizard"
 msgstr ""
 
 #. module: agreement_legal
-#. openerp-web
+#. odoo-javascript
 #: code:addons/agreement_legal/static/src/xml/agreement.xml:0
 #: model:ir.actions.act_window,name:agreement_legal.create_agreement_from_template_action
 #, python-format
@@ -472,7 +469,6 @@ msgstr "Valor Padrão"
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__description
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_line__name
-#: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Description"
 msgstr "Descrição"
 
@@ -482,7 +478,6 @@ msgid "Description of the agreement"
 msgstr "Descrição do acordo"
 
 #. module: agreement_legal
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement__display_name
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__display_name
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__display_name
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_line__display_name
@@ -490,10 +485,7 @@ msgstr "Descrição do acordo"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__display_name
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage__display_name
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype__display_name
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_type__display_name
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__display_name
-#: model:ir.model.fields,field_description:agreement_legal.field_res_config_settings__display_name
-#: model:ir.model.fields,field_description:agreement_legal.field_res_partner__display_name
 msgid "Display Name"
 msgstr "Exibir Nome"
 
@@ -598,7 +590,6 @@ msgid "Helpdesk"
 msgstr "Central de ajuda"
 
 #. module: agreement_legal
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement__id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_line__id
@@ -606,10 +597,7 @@ msgstr "Central de ajuda"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage__id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype__id
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_type__id
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__id
-#: model:ir.model.fields,field_description:agreement_legal.field_res_config_settings__id
-#: model:ir.model.fields,field_description:agreement_legal.field_res_partner__id
 msgid "ID"
 msgstr "ID"
 
@@ -654,7 +642,6 @@ msgid "Is Folded"
 msgstr "É Dobrado"
 
 #. module: agreement_legal
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement____last_update
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix____last_update
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause____last_update
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_line____last_update
@@ -662,10 +649,7 @@ msgstr "É Dobrado"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section____last_update
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage____last_update
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_type____last_update
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_res_config_settings____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_res_partner____last_update
 msgid "Last Modified on"
 msgstr "Última Modificação Feita em"
 
@@ -827,6 +811,7 @@ msgid "Name:"
 msgstr "Nome:"
 
 #. module: agreement_legal
+#. odoo-python
 #: code:addons/agreement_legal/models/agreement.py:0
 #, python-format
 msgid "New"
@@ -1027,7 +1012,6 @@ msgstr "Considerando"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__recital_ids
 #: model:ir.ui.menu,name:agreement_legal.agreement_recitals
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_recital_search
-#: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_recital_tree
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.report_agreement_document
 msgid "Recitals"
@@ -1114,7 +1098,6 @@ msgstr "Conteúdo da Seção"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__sections_ids
 #: model:ir.ui.menu,name:agreement_legal.agreement_sections
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
-#: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_section_list_view
 msgid "Sections"
 msgstr "Seções"
 
@@ -1348,11 +1331,9 @@ msgstr "Data Solicitada de Rescisão"
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__notification_address_id
 msgid ""
-"The address to send notificaitons to, if different from customer address."
+"The address to send notifications to, if different from customer address."
 "(Address Type = Other)"
 msgstr ""
-"O endereço para enviar notificações para, se diferente do endereço do "
-"cliente. (Tipo de endereço = Outros)"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__readonly
@@ -1490,6 +1471,11 @@ msgid "Units Of Measure"
 msgstr "Unidades de Medida"
 
 #. module: agreement_legal
+#: model:ir.model.fields,field_description:agreement_legal.field_agreement__use_parties_content
+msgid "Use Parties Content"
+msgstr ""
+
+#. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Use custom content"
 msgstr "Use conteúdo personalizado"
@@ -1498,11 +1484,6 @@ msgstr "Use conteúdo personalizado"
 #: model:ir.model.fields,help:agreement_legal.field_agreement__use_parties_content
 msgid "Use custom content for parties"
 msgstr "Use conteúdo personalizado para festas"
-
-#. module: agreement_legal
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement__use_parties_content
-msgid "Use parties content"
-msgstr "Usar conteúdo de terceiros"
 
 #. module: agreement_legal
 #: model:res.groups,name:agreement_legal.group_agreement_user
@@ -1585,6 +1566,16 @@ msgstr "|  Criado por:"
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "|  Created On:"
 msgstr "|  Criado em:"
+
+#~ msgid ""
+#~ "The address to send notificaitons to, if different from customer address."
+#~ "(Address Type = Other)"
+#~ msgstr ""
+#~ "O endereço para enviar notificações para, se diferente do endereço do "
+#~ "cliente. (Tipo de endereço = Outros)"
+
+#~ msgid "Use parties content"
+#~ msgstr "Usar conteúdo de terceiros"
 
 #~ msgid "# Code editor"
 #~ msgstr "# Editor de código"
