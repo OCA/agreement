@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-02-01 19:46+0000\n"
-"Last-Translator: Francesco Foresti <francesco.foresti@ooops404.com>\n"
+"PO-Revision-Date: 2023-06-23 15:09+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: agreement
 #. odoo-python
@@ -137,7 +137,7 @@ msgstr "Dominio"
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__end_date
 msgid "End Date"
-msgstr "Data di fine"
+msgstr "Data fine"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_follower_ids
