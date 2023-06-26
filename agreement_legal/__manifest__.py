@@ -12,8 +12,9 @@
     "category": "Partner",
     "license": "AGPL-3",
     "version": "16.0.1.0.0",
-    "depends": ["contacts", "agreement", "product"],
+    "depends": ["contacts", "agreement", "product", "web"],
     "data": [
+        "data/cron.xml",
         "data/ir_sequence.xml",
         "data/agreement_stage.xml",
         "data/agreement_type.xml",

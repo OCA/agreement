@@ -13,10 +13,7 @@ class TestAgreement(TransactionCase):
         super().setUp()
         self.test_customer = self.env["res.partner"].create({"name": "TestCustomer"})
         self.agreement_type = self.env["agreement.type"].create(
-            {
-                "name": "Test Agreement Type",
-                "domain": "sale",
-            }
+            {"name": "Test Agreement Type", "domain": "sale"}
         )
         self.test_agreement = self.env["agreement"].create(
             {
@@ -34,10 +31,7 @@ class TestAgreement(TransactionCase):
     def test_onchange_copyvalue(self):
         agreement_01 = self.test_agreement
         field_01 = self.env["ir.model.fields"].search(
-            [
-                ("model", "=", "agreement"),
-                ("name", "=", "active"),
-            ]
+            [("model", "=", "agreement"), ("name", "=", "active")]
         )
         agreement_01.field_id = field_01.id
         agreement_01.onchange_copyvalue()
@@ -48,16 +42,10 @@ class TestAgreement(TransactionCase):
     def test_onchange_copyvalue2(self):
         agreement_01 = self.test_agreement
         field_01 = self.env["ir.model.fields"].search(
-            [
-                ("model", "=", "agreement"),
-                ("name", "=", "agreement_type_id"),
-            ]
+            [("model", "=", "agreement"), ("name", "=", "agreement_type_id")]
         )
         sub_field_01 = self.env["ir.model.fields"].search(
-            [
-                ("model", "=", "agreement.type"),
-                ("name", "=", "active"),
-            ]
+            [("model", "=", "agreement.type"), ("name", "=", "active")]
         )
         agreement_01.field_id = field_01.id
         agreement_01.onchange_copyvalue()
@@ -73,17 +61,11 @@ class TestAgreement(TransactionCase):
         agreement_01 = self.test_agreement
         agreement_01.create_new_version()
         old_agreement = self.env["agreement"].search(
-            [
-                ("code", "=", agreement_01.code + "-V1"),
-                ("active", "=", False),
-            ]
+            [("code", "=", agreement_01.code + "-V1"), ("active", "=", False)]
         )
         self.assertEqual(len(old_agreement), 1)
         new_agreement = self.env["agreement"].search(
-            [
-                ("name", "=", "TestAgreement"),
-                ("version", "=", 2),
-            ]
+            [("name", "=", "TestAgreement"), ("version", "=", 2)]
         )
         self.assertEqual(len(new_agreement), 1)
 
@@ -98,28 +80,19 @@ class TestAgreement(TransactionCase):
     def test_compute_dynamic_description(self):
         agreement_01 = self.test_agreement
         agreement_01.description = "{{object.name}}"
-        self.assertEqual(
-            agreement_01.dynamic_description,
-            "TestAgreement",
-        )
+        self.assertEqual(agreement_01.dynamic_description, "TestAgreement")
 
     # TEST 06: Test Parties Dynamic Field
     def test_compute_dynamic_parties(self):
         agreement_01 = self.test_agreement
         agreement_01.parties = "{{object.name}}"
-        self.assertEqual(
-            agreement_01.dynamic_parties,
-            "<p>TestAgreement</p>",
-        )
+        self.assertEqual(agreement_01.dynamic_parties, "<p>TestAgreement</p>")
 
     # TEST 07: Test Special Terms Dynamic Field
     def test_compute_dynamic_special_terms(self):
         agreement_01 = self.test_agreement
         agreement_01.special_terms = "{{object.name}}"
-        self.assertEqual(
-            agreement_01.dynamic_special_terms,
-            "TestAgreement",
-        )
+        self.assertEqual(agreement_01.dynamic_special_terms, "TestAgreement")
 
     # TEST 02: Check Read Stages
     def test_read_group_stage_ids(self):
@@ -127,22 +100,66 @@ class TestAgreement(TransactionCase):
         self.assertEqual(
             agreement_01._read_group_stage_ids(self.env["agreement.stage"], [], "id"),
             self.env["agreement.stage"].search(
-                [("stage_type", "=", "agreement")],
-                order="id",
+                [("stage_type", "=", "agreement")], order="id"
             ),
         )
 
     # Test fields_view_get
     def test_agreement_fields_view_get(self):
-        res = self.env["agreement"].get_view(
+        res = self.env["agreement"].fields_view_get(
             view_id=self.ref("agreement_legal.partner_agreement_form_view"),
             view_type="form",
         )
         doc = etree.XML(res["arch"])
         field = doc.xpath("//field[@name='partner_contact_id']")
-        self.assertEqual(field[0].get("modifiers", ""), "")
+        self.assertEqual(
+            field[0].get("modifiers", ""), '{"readonly": [["readonly", "=", true]]}'
+        )
 
     def test_action_create_new_version(self):
         self.test_agreement.create_new_version()
         self.assertEqual(self.test_agreement.state, "draft")
         self.assertEqual(len(self.test_agreement.previous_version_agreements_ids), 1)
+
+    def test_cron(self):
+        self.agreement_type.write(
+            {"review_user_id": self.env.user.id, "review_days": 0}
+        )
+        self.agreement_type.flush()
+        self.test_agreement.write({"agreement_type_id": self.agreement_type.id})
+        self.test_agreement.flush()
+        self.test_agreement.refresh()
+        self.assertFalse(
+            self.env["mail.activity"].search_count(
+                [
+                    ("res_id", "=", self.test_agreement.id),
+                    ("res_model", "=", self.test_agreement._name),
+                ]
+            )
+        )
+        self.env["agreement"]._alert_to_review_date()
+        self.assertFalse(
+            self.env["mail.activity"].search_count(
+                [
+                    ("res_id", "=", self.test_agreement.id),
+                    ("res_model", "=", self.test_agreement._name),
+                ]
+            )
+        )
+        self.test_agreement.to_review_date = fields.Date.today()
+        self.env["agreement"]._alert_to_review_date()
+        self.assertTrue(
+            self.env["mail.activity"].search_count(
+                [
+                    ("res_id", "=", self.test_agreement.id),
+                    ("res_model", "=", self.test_agreement._name),
+                ]
+            )
+        )
+
+    def test_partner_action(self):
+        action = self.test_agreement.partner_id.action_open_agreement()
+        self.assertIn(
+            self.test_agreement, self.env[action["res_model"]].search(action["domain"])
+        )
+        self.assertEqual(1, self.test_agreement.partner_id.agreements_count)

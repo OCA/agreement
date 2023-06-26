@@ -3,6 +3,7 @@
 
 import ast
 import json as simplejson
+from datetime import timedelta
 
 from lxml import etree
 
@@ -20,14 +21,11 @@ class Agreement(models.Model):
         "previous versions can be referenced.",
     )
     revision = fields.Integer(
-        default=0,
-        copy=False,
-        help="The revision will increase with every save event.",
+        default=0, copy=False, help="The revision will increase with every save event."
     )
     description = fields.Text(tracking=True, help="Description of the agreement")
     dynamic_description = fields.Text(
-        compute="_compute_dynamic_description",
-        help="Compute dynamic description",
+        compute="_compute_dynamic_description", help="Compute dynamic description"
     )
     start_date = fields.Date(tracking=True, help="When the agreement starts.")
     end_date = fields.Date(tracking=True, help="When the agreement ends.")
@@ -63,8 +61,7 @@ class Agreement(models.Model):
         "agreement/contract.",
     )
     dynamic_special_terms = fields.Text(
-        compute="_compute_dynamic_special_terms",
-        help="Compute dynamic special terms",
+        compute="_compute_dynamic_special_terms", help="Compute dynamic special terms"
     )
     code = fields.Char(
         string="Reference",
@@ -80,8 +77,7 @@ class Agreement(models.Model):
         help="Date that a request for termination was received.",
     )
     termination_date = fields.Date(
-        tracking=True,
-        help="Date that the contract was terminated.",
+        tracking=True, help="Date that the contract was terminated."
     )
     reviewed_date = fields.Date(tracking=True)
     reviewed_user_id = fields.Many2one("res.users", string="Reviewed By", tracking=True)
@@ -149,17 +145,12 @@ class Agreement(models.Model):
         return deftext
 
     parties = fields.Html(
-        tracking=True,
-        default=_get_default_parties,
-        help="Parties of the agreement",
+        tracking=True, default=_get_default_parties, help="Parties of the agreement"
     )
     dynamic_parties = fields.Html(
-        compute="_compute_dynamic_parties",
-        help="Compute dynamic parties",
+        compute="_compute_dynamic_parties", help="Compute dynamic parties"
     )
-    agreement_type_id = fields.Many2one(
-        tracking=True,
-    )
+    agreement_type_id = fields.Many2one(tracking=True)
     agreement_subtype_id = fields.Many2one(
         "agreement.subtype",
         string="Agreement Sub-type",
@@ -260,7 +251,7 @@ class Agreement(models.Model):
           model (sub-model).""",
     )
     default_value = fields.Char(
-        help="Optional value to use if the target field is empty.",
+        help="Optional value to use if the target field is empty."
     )
     copyvalue = fields.Char(
         string="Placeholder Expression",
@@ -268,13 +259,44 @@ class Agreement(models.Model):
          template field.""",
     )
     template_id = fields.Many2one(
-        "agreement",
-        string="Template",
-        domain=[("is_template", "=", True)],
+        "agreement", string="Template", domain=[("is_template", "=", True)]
     )
-    readonly = fields.Boolean(
-        related="stage_id.readonly",
+    readonly = fields.Boolean(related="stage_id.readonly")
+    to_review_date = fields.Date(
+        compute="_compute_to_review_date",
+        store=True,
+        readonly=False,
+        help="Date used to warn us some days before agreement expires",
     )
+
+    @api.depends("agreement_type_id", "end_date")
+    def _compute_to_review_date(self):
+        for record in self:
+            if record.end_date:
+                record.to_review_date = record.end_date + timedelta(
+                    days=-record.agreement_type_id.review_days
+                )
+
+    @api.model
+    def _alert_to_review_date(self):
+        agreements = self.search(
+            [
+                ("to_review_date", "=", fields.Date.today()),
+                ("agreement_type_id.review_user_id", "!=", False),
+            ]
+        )
+        for agreement in agreements:
+            if (
+                self.env["mail.activity"].search_count(
+                    [("res_id", "=", agreement.id), ("res_model", "=", self._name)]
+                )
+                == 0
+            ):
+                agreement.activity_schedule(
+                    "agreement_legal.mail_activity_review_agreement",
+                    user_id=agreement.agreement_type_id.review_user_id.id,
+                    note=_("Your activity is going to end soon"),
+                )
 
     # compute the dynamic content for jinja expression
     def _compute_dynamic_description(self):
@@ -389,24 +411,34 @@ class Agreement(models.Model):
         }
         return default_vals
 
-    def create_new_agreement(self):
+    def _create_new_agreement(self):
         self.ensure_one()
-        res = self.copy(default=self._get_new_agreement_default_vals())
+        return self.copy(default=self._get_new_agreement_default_vals())
+
+    @api.model
+    def action_view_agreement(self, agreement):
         return {
             "res_model": "agreement",
             "type": "ir.actions.act_window",
             "view_mode": "form",
             "view_type": "form",
-            "res_id": res.id,
+            "res_id": agreement.id,
         }
 
-    @api.model
-    def create(self, vals):
+    def create_new_agreement(self):
+        res = self._create_new_agreement()
+        return self.action_view_agreement(res)
+
+    def _fill_create_vals(self, vals):
         if vals.get("code", _("New")) == _("New"):
             vals["code"] = self.env["ir.sequence"].next_by_code("agreement") or _("New")
         if not vals.get("stage_id"):
             vals["stage_id"] = self._get_default_stage_id()
-        return super().create(vals)
+        return vals
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        return super().create([self._fill_create_vals(vals) for vals in vals_list])
 
     # Increments the revision on each save action
     def write(self, vals):
@@ -441,8 +473,8 @@ class Agreement(models.Model):
             view_id=view_id, view_type=view_type, toolbar=toolbar, submenu=submenu
         )
         # Readonly fields
-        doc = etree.XML(res["arch"])
         if view_type == "form":
+            doc = etree.XML(res["arch"])
             for node in doc.xpath("//field"):
                 if node.attrib.get("name") in self._exclude_readonly_field():
                     continue

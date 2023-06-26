@@ -6,7 +6,7 @@
         <field name="model">agreement</field>
         <field name="arch" type="xml">
             <tree js_class="agreement_template_tree" default_order="code desc, name">
-                <field name="code" />
+                <field name="code" invisible="context.get('default_model')" />
                 <field name="name" />
                 <field name="partner_id" />
                 <field name="company_id" />
@@ -233,6 +233,10 @@
                             <field
                                 name="end_date"
                                 attrs="{'required': [('is_template', '=', False)], 'invisible': [('is_template', '=', True)]}"
+                            />
+                            <field
+                                name="to_review_date"
+                                attrs="{'required': [('is_template', '=', False), ('end_date', '!=', False)], 'invisible': [('is_template', '=', True)]}"
                             />
                             <field name="expiration_notice" />
                             <field name="change_notice" />
@@ -527,6 +531,11 @@
                     domain="[('active','=',True),('is_template', '=', True)]"
                 />
                 <filter
+                    name="filter_to_review"
+                    string="Agreements to review"
+                    domain="[('to_review_date', '&lt;=', context_today().strftime('%Y-%m-%d')), ('end_date', '&gt;=', context_today().strftime('%Y-%m-%d'))]"
+                />
+                <filter
                     name="group_partner_id"
                     string="Partners"
                     icon="terp-partner"
@@ -587,7 +596,9 @@
         <field name="name">Agreements</field>
         <field name="res_model">agreement</field>
         <field name="domain">[('is_template', '=', False)]</field>
-        <field name="context">{'default_is_template': False}</field>
+        <field
+            name="context"
+        >{'default_is_template': False, 'default_model': True}</field>
         <field name="view_mode">kanban,tree,form</field>
     </record>
 
