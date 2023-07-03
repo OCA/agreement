@@ -25,7 +25,7 @@ class AgreementServiceProfile(models.Model):
     active = fields.Boolean(
         default=True,
         help="""If unchecked, it will allow you to hide this service profile
-                without removing it."""
+                without removing it.""",
     )
 
     notes = fields.Text()
