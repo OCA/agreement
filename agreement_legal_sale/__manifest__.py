@@ -8,7 +8,7 @@
     "license": "AGPL-3",
     "author": "Open Source Integrators, Odoo Community Association (OCA)",
     "category": "Agreement",
-    "website": "https://github.com/OCA/contract",
+    "website": "https://github.com/OCA/agreement",
     "depends": ["agreement_legal", "agreement_sale", "agreement_serviceprofile"],
     "data": [
         "views/agreement.xml",
