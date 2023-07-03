@@ -24,7 +24,8 @@ class AgreementServiceProfile(models.Model):
     agreement_id = fields.Many2one("agreement", string="Agreement", ondelete="cascade")
     active = fields.Boolean(
         default=True,
-        help="If unchecked, it will allow you to hide this service profile without removing it.",
+        help="If unchecked, it will allow you to hide this service profile",
+         "without removing it.",
     )
 
     notes = fields.Text()
