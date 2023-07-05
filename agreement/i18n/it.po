@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2023-07-05 13:10+0000\n"
+"PO-Revision-Date: 2023-07-05 16:10+0000\n"
 "Last-Translator: Giuseppe Tavormina <gtavormina@dinamicheaziendali.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -337,12 +337,12 @@ msgstr "Vendita"
 #. module: agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 msgid "Search Agreements"
-msgstr ""
+msgstr "Cerca contratti"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__agreement_type_id
 msgid "Select the type of agreement"
-msgstr ""
+msgstr "Selezione il tipo di contratto"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__is_template
