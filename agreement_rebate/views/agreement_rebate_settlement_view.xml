@@ -114,7 +114,7 @@
                         <field name="amount_rebate" />
                     </group>
                     <group string="Lines">
-                        <field name="line_ids" nolabel="1">
+                        <field name="line_ids" nolabel="1" colspan="2">
                             <tree>
                                 <field name="rebate_type" invisible="1" />
                                 <field name="partner_id" readonly="1" />

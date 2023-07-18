@@ -28,7 +28,7 @@ class Agreement(models.Model):
         inverse_name="agreement_id",
         copy=True,
     )
-    rebate_discount = fields.Float()
+    rebate_discount = fields.Float(digits="Discount", default=0.0)
     is_rebate = fields.Boolean(
         related="agreement_type_id.is_rebate", string="Is rebate agreement type"
     )

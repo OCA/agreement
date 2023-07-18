@@ -4,7 +4,7 @@
 {
     "name": "Agreement Rebate",
     "summary": "Rebate in agreements",
-    "version": "15.0.1.1.0",
+    "version": "16.0.1.0.0",
     "development_status": "Beta",
     "category": "Agreement",
     "website": "https://github.com/OCA/agreement",
@@ -12,7 +12,7 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "depends": ["account", "account_invoice_refund_link", "agreement"],
+    "depends": ["account_invoice_refund_link", "agreement"],
     "data": [
         "data/agreement_rebate_data.xml",
         "security/agreement_rebate_security.xml",
