@@ -11,60 +11,62 @@ from odoo.tests.common import Form, TransactionCase, tagged
 @freeze_time("2022-02-01 09:30:00")
 @tagged("-at_install", "post_install")
 class TestAgreementRebate(TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.Partner = self.env["res.partner"]
-        self.ProductTemplate = self.env["product.template"]
-        self.Product = self.env["product.product"]
-        self.ProductCategory = self.env["product.category"]
-        self.AccountInvoice = self.env["account.move"]
-        self.AccountInvoiceLine = self.env["account.move.line"]
-        self.AccountJournal = self.env["account.journal"]
-        self.Agreement = self.env["agreement"]
-        self.AgreementType = self.env["agreement.type"]
-        self.ProductAttribute = self.env["product.attribute"]
-        self.ProductAttributeValue = self.env["product.attribute.value"]
-        self.ProductTmplAttributeValue = self.env["product.template.attribute.value"]
-        self.AgreementSettlement = self.env["agreement.rebate.settlement"]
-        self.AgreementSettlementCreateWiz = self.env["agreement.settlement.create.wiz"]
-        self.rebate_type = [
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+        cls.Partner = cls.env["res.partner"]
+        cls.ProductTemplate = cls.env["product.template"]
+        cls.Product = cls.env["product.product"]
+        cls.ProductCategory = cls.env["product.category"]
+        cls.AccountInvoice = cls.env["account.move"]
+        cls.AccountInvoiceLine = cls.env["account.move.line"]
+        cls.AccountJournal = cls.env["account.journal"]
+        cls.Agreement = cls.env["agreement"]
+        cls.AgreementType = cls.env["agreement.type"]
+        cls.ProductAttribute = cls.env["product.attribute"]
+        cls.ProductAttributeValue = cls.env["product.attribute.value"]
+        cls.ProductTmplAttributeValue = cls.env["product.template.attribute.value"]
+        cls.AgreementSettlement = cls.env["agreement.rebate.settlement"]
+        cls.AgreementSettlementCreateWiz = cls.env["agreement.settlement.create.wiz"]
+        cls.rebate_type = [
             "global",
             "line",
             "section_total",
             "section_prorated",
         ]
-        self.category_all = self.env.ref("product.product_category_all")
-        self.categ_1 = self.ProductCategory.create(
-            {"parent_id": self.category_all.id, "name": "Category 1"}
+        cls.category_all = cls.env.ref("product.product_category_all")
+        cls.categ_1 = cls.ProductCategory.create(
+            {"parent_id": cls.category_all.id, "name": "Category 1"}
         )
-        self.categ_2 = self.ProductCategory.create(
-            {"parent_id": self.category_all.id, "name": "Category 2"}
+        cls.categ_2 = cls.ProductCategory.create(
+            {"parent_id": cls.category_all.id, "name": "Category 2"}
         )
-        self.product_1 = self.Product.create(
+        cls.product_1 = cls.Product.create(
             {
                 "name": "Product test 1",
-                "categ_id": self.categ_1.id,
+                "categ_id": cls.categ_1.id,
                 "list_price": 1000.00,
             }
         )
-        self.product_2 = self.Product.create(
+        cls.product_2 = cls.Product.create(
             {
                 "name": "Product test 2",
-                "categ_id": self.categ_2.id,
+                "categ_id": cls.categ_2.id,
                 "list_price": 2000.00,
             }
         )
         # Create a product with variants
-        self.product_attribute = self.ProductAttribute.create(
+        cls.product_attribute = cls.ProductAttribute.create(
             {"name": "Test", "create_variant": "always"}
         )
-        self.product_attribute_value_test_1 = self.ProductAttributeValue.create(
-            {"name": "Test v1", "attribute_id": self.product_attribute.id}
+        cls.product_attribute_value_test_1 = cls.ProductAttributeValue.create(
+            {"name": "Test v1", "attribute_id": cls.product_attribute.id}
         )
-        self.product_attribute_value_test_2 = self.ProductAttributeValue.create(
-            {"name": "Test v2", "attribute_id": self.product_attribute.id}
+        cls.product_attribute_value_test_2 = cls.ProductAttributeValue.create(
+            {"name": "Test v2", "attribute_id": cls.product_attribute.id}
         )
-        self.product_template = self.ProductTemplate.create(
+        cls.product_template = cls.ProductTemplate.create(
             {
                 "name": "Product template with variant test",
                 "type": "consu",
@@ -74,36 +76,37 @@ class TestAgreementRebate(TransactionCase):
                         0,
                         0,
                         {
-                            "attribute_id": self.product_attribute.id,
+                            "attribute_id": cls.product_attribute.id,
                             "value_ids": [
-                                (4, self.product_attribute_value_test_1.id),
-                                (4, self.product_attribute_value_test_2.id),
+                                (4, cls.product_attribute_value_test_1.id),
+                                (4, cls.product_attribute_value_test_2.id),
                             ],
                         },
                     ),
                 ],
             }
         )
-        self.partner_1 = self.Partner.create(
+        cls.partner_1 = cls.Partner.create(
             {"name": "partner test rebate 1", "ref": "TST-001"}
         )
-        self.partner_2 = self.Partner.create(
+        cls.partner_2 = cls.Partner.create(
             {"name": "partner test rebate 2", "ref": "TST-002"}
         )
-        self.invoice_partner_1 = self.create_invoice(self.partner_1)
-        self.invoice_partner_2 = self.create_invoice(self.partner_2)
-        self.agreement_type = self.AgreementType.create(
+        cls.invoice_partner_1 = cls.create_invoice(cls.partner_1)
+        cls.invoice_partner_2 = cls.create_invoice(cls.partner_2)
+        cls.agreement_type = cls.AgreementType.create(
             {"name": "Rebate", "domain": "sale", "is_rebate": True}
         )
         # Product to use when we create invoices from settlements
-        self.product_rappel = self.Product.create(
-            {"name": "Rappel sales", "categ_id": self.categ_1.id, "list_price": 1.00}
+        cls.product_rappel = cls.Product.create(
+            {"name": "Rappel sales", "categ_id": cls.categ_1.id, "list_price": 1.00}
         )
 
+    @classmethod
     # Create some invoices for partner
-    def create_invoice(self, partner):
+    def create_invoice(cls, partner):
         move_form = Form(
-            self.env["account.move"].with_context(default_move_type="out_invoice")
+            cls.env["account.move"].with_context(default_move_type="out_invoice")
         )
         move_form.invoice_date = fields.Date.from_string(
             "{}-01-01".format(fields.Date.today().year)
@@ -111,21 +114,22 @@ class TestAgreementRebate(TransactionCase):
         move_form.ref = "Test Customer Invoice"
         move_form.partner_id = partner
         products = (
-            self.product_template.product_variant_ids + self.product_1 + self.product_2
+            cls.product_template.product_variant_ids + cls.product_1 + cls.product_2
         )
-        self.create_invoice_line(move_form, products)
+        cls.create_invoice_line(move_form, products)
         invoice = move_form.save()
         invoice.action_post()
         return invoice
 
-    def create_invoice_line(self, invoice_form, products):
+    @classmethod
+    def create_invoice_line(cls, invoice_form, products):
         for product in products:
             with invoice_form.invoice_line_ids.new() as line_form:
                 line_form.product_id = product
                 # Assign distinct prices for product with variants
-                if product == self.product_template.product_variant_ids[0]:
+                if product == cls.product_template.product_variant_ids[0]:
                     line_form.price_unit = 300.00
-                if product == self.product_template.product_variant_ids[1]:
+                if product == cls.product_template.product_variant_ids[1]:
                     line_form.price_unit = 500.00
 
     # Create Agreements rebates for customers for all available types

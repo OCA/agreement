@@ -270,7 +270,7 @@ class AgreementRebateSettlementLine(models.Model):
         )
         if not journal_id:
             raise UserError(
-                _("Please define an accounting sales journal for" " this company.")
+                _("Please define an accounting sales journal for this company.")
             )
         vinvoice = self.env["account.move"].new(
             {
@@ -322,8 +322,8 @@ class AgreementRebateSettlementLine(models.Model):
             .new(invoice_vals_new)
         )
         invoice_line.move_id = invoice
-        # Get other invoice line values from product onchange
-        invoice_line._onchange_product_id()
+        # Compute invoice line's name field
+        invoice_line._compute_name()
         invoice_line_vals = invoice_line._convert_to_write(invoice_line._cache)
         invoice_line_vals.update(
             {

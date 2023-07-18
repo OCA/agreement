@@ -27,6 +27,7 @@
                         domain="[('type', '=', domain)]"
                         options="{'no_create': True}"
                         nolabel="1"
+                        colspan="2"
                     />
                 </group>
                 <group string="Agreement types">
@@ -36,6 +37,7 @@
                         options="{'no_create': True}"
                         widget="many2many_tags"
                         nolabel="1"
+                        colspan="2"
                     />
                 </group>
                 <group string="Agreements">
@@ -45,6 +47,7 @@
                         options="{'no_create': True}"
                         widget="many2many_tags"
                         nolabel="1"
+                        colspan="2"
                     />
                 </group>
                 <footer>
