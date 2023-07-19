@@ -96,7 +96,7 @@ class AgreementSettlementInvoiceCreateWiz(models.TransientModel):
         )
         settlements -= settlements.filtered(
             lambda s: any(
-                ail.move_id.type == self.invoice_type
+                ail.move_id.move_type == self.invoice_type
                 for ail in s.line_ids.mapped("invoice_line_ids").filtered(
                     lambda ln: ln.parent_state != "cancel"
                 )

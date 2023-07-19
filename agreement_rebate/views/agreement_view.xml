@@ -37,6 +37,7 @@
                             name="rebate_line_ids"
                             context="{'hide_rebate_discount': rebate_type != 'line'}"
                             nolabel="1"
+                            colspan="2"
                         >
                             <tree>
                                 <field name="rebate_target" />
@@ -55,7 +56,7 @@
                         string="Sections"
                         attrs="{'invisible': [('rebate_type', 'not in', ['section_total', 'section_prorated'])]}"
                     >
-                        <field name="rebate_section_ids" nolabel="1" />
+                        <field name="rebate_section_ids" nolabel="1" colspan="2" />
                     </group>
                 </page>
             </notebook>

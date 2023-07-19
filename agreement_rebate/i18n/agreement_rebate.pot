@@ -4,8 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-19 09:07+0000\n"
+"PO-Revision-Date: 2023-07-19 09:07+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,6 +21,7 @@ msgid "% Dto"
 msgstr ""
 
 #. module: agreement_rebate
+#. odoo-python
 #: code:addons/agreement_rebate/models/agreement_rebate_settlement.py:0
 #, python-format
 msgid "%(name)s - Period: %(date_from)s - %(date_to)s"
@@ -269,6 +272,7 @@ msgid "Dates filter"
 msgstr ""
 
 #. module: agreement_rebate
+#. odoo-python
 #: code:addons/agreement_rebate/models/agreement_rebate_settlement.py:0
 #: code:addons/agreement_rebate/models/agreement_rebate_settlement.py:0
 #, python-format
@@ -493,6 +497,7 @@ msgid "Period"
 msgstr ""
 
 #. module: agreement_rebate
+#. odoo-python
 #: code:addons/agreement_rebate/models/agreement_rebate_settlement.py:0
 #, python-format
 msgid "Please define an accounting sales journal for this company."
@@ -597,6 +602,7 @@ msgid "Rebate settlements"
 msgstr ""
 
 #. module: agreement_rebate
+#: model:ir.model.fields,field_description:agreement_rebate.field_agreement__rebate_type
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_settlement_line__rebate_type
 msgid "Rebate type"
 msgstr ""
@@ -692,9 +698,4 @@ msgstr ""
 #. module: agreement_rebate
 #: model:ir.model.fields.selection,name:agreement_rebate.selection__agreement_invoice_create_wiz__invoice_type__in_refund
 msgid "Vendor Credit Note"
-msgstr ""
-
-#. module: agreement_rebate
-#: model:ir.model.fields,field_description:agreement_rebate.field_agreement__rebate_type
-msgid "rebate type"
 msgstr ""

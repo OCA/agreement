@@ -14,7 +14,7 @@ class Agreement(models.Model):
             ("section_total", "Compute total and apply discount rule match"),
             ("section_prorated", "Calculate the discount in each amount section"),
         ],
-        string="rebate type",
+        string="Rebate type",
     )
     rebate_line_ids = fields.One2many(
         comodel_name="agreement.rebate.line",

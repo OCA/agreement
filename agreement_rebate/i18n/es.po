@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-18 18:50+0000\n"
-"PO-Revision-Date: 2022-02-18 19:52+0100\n"
+"POT-Creation-Date: 2023-07-19 09:07+0000\n"
+"PO-Revision-Date: 2023-07-19 11:15+0200\n"
 "Last-Translator: Sergio Teruel <sergio.teruel@tecnativa.com>\n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #. module: agreement_rebate
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_section__rebate_discount
@@ -23,10 +23,11 @@ msgid "% Dto"
 msgstr "% Dto"
 
 #. module: agreement_rebate
+#. odoo-python
 #: code:addons/agreement_rebate/models/agreement_rebate_settlement.py:0
 #, python-format
 msgid "%(name)s - Period: %(date_from)s - %(date_to)s"
-msgstr ""
+msgstr "%(name)s - Periodo: %(date_from)s - %(date_to)s"
 
 #. module: agreement_rebate
 #: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_form
@@ -54,18 +55,18 @@ msgstr "<span>Detalles</span>"
 #. module: agreement_rebate
 #: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_form
 msgid "<span>Lines</span>"
-msgstr ""
+msgstr "<span>Líneas</span>"
 
 #. module: agreement_rebate
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_settlement__active
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_settlement_line__active
 msgid "Active"
-msgstr ""
+msgstr "Activo"
 
 #. module: agreement_rebate
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement__additional_consumption
 msgid "Additional Consumption"
-msgstr ""
+msgstr "Consumo adicional"
 
 #. module: agreement_rebate
 #: model:ir.model,name:agreement_rebate.model_agreement
@@ -108,9 +109,8 @@ msgstr "Tipos de Acuerdo"
 
 #. module: agreement_rebate
 #: model:ir.model,name:agreement_rebate.model_agreement_invoice_create_wiz
-#, fuzzy
 msgid "Agreement invoice create wizard"
-msgstr "Líneas de rappel"
+msgstr "Asistente para facturas de acuerdos"
 
 #. module: agreement_rebate
 #: model:ir.actions.act_window,name:agreement_rebate.agreement_rebate_condition_action
@@ -129,9 +129,8 @@ msgstr "Tramos de rappel"
 
 #. module: agreement_rebate
 #: model:ir.model,name:agreement_rebate.model_agreement_settlement_create_wiz
-#, fuzzy
 msgid "Agreement settlement create wizard"
-msgstr "Líneas de liquidaciones del acuerdo"
+msgstr "Asistente de líneas de liquidaciones del acuerdo"
 
 #. module: agreement_rebate
 #: model:ir.actions.act_window,name:agreement_rebate.agreement_rebate_settlement_line_action
@@ -162,26 +161,26 @@ msgstr "Acuerdos"
 #. module: agreement_rebate
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_settlement_line__amount_gross
 msgid "Amount Gross"
-msgstr ""
+msgstr "Importe bruto"
 
 #. module: agreement_rebate
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_settlement__amount_invoiced
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_settlement_line__amount_invoiced
 msgid "Amount Invoiced"
-msgstr ""
+msgstr "Importe facturado"
 
 #. module: agreement_rebate
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_settlement__amount_rebate
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_settlement_line__amount_rebate
 msgid "Amount Rebate"
-msgstr ""
+msgstr "Importe de rappel"
 
 #. module: agreement_rebate
 #: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_form
 #: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_search
 #: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_search
 msgid "Archived"
-msgstr ""
+msgstr "Archivado"
 
 #. module: agreement_rebate
 #: model:ir.model.fields.selection,name:agreement_rebate.selection__agreement__rebate_type__section_prorated
@@ -280,6 +279,7 @@ msgid "Dates filter"
 msgstr "Filtrar por fechas"
 
 #. module: agreement_rebate
+#. odoo-python
 #: code:addons/agreement_rebate/models/agreement_rebate_settlement.py:0
 #, python-format
 msgid "Details"
@@ -410,9 +410,8 @@ msgstr "Diario"
 
 #. module: agreement_rebate
 #: model:ir.model,name:agreement_rebate.model_account_move_line
-#, fuzzy
 msgid "Journal Item"
-msgstr "Diario"
+msgstr "Apunte contable"
 
 #. module: agreement_rebate
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_settlement_create_wiz__journal_ids
@@ -506,6 +505,7 @@ msgid "Period"
 msgstr "Período"
 
 #. module: agreement_rebate
+#. odoo-python
 #: code:addons/agreement_rebate/models/agreement_rebate_settlement.py:0
 #, python-format
 msgid "Please define an accounting sales journal for this company."
@@ -549,12 +549,12 @@ msgstr "Rappel"
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement__rebate_discount
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_line__rebate_discount
 msgid "Rebate Discount"
-msgstr ""
+msgstr "Descuento de rappel"
 
 #. module: agreement_rebate
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_line__rebate_domain
 msgid "Rebate Domain"
-msgstr ""
+msgstr "Dominio de rappel"
 
 #. module: agreement_rebate
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_settlement_line__rebate_line_id
@@ -610,6 +610,7 @@ msgid "Rebate settlements"
 msgstr "Liquidaciónes rappel"
 
 #. module: agreement_rebate
+#: model:ir.model.fields,field_description:agreement_rebate.field_agreement__rebate_type
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_settlement_line__rebate_type
 msgid "Rebate type"
 msgstr "Tipo rappel"
@@ -707,10 +708,8 @@ msgstr "Factura de proveedor"
 msgid "Vendor Credit Note"
 msgstr "Factura rectificativa de proveedor"
 
-#. module: agreement_rebate
-#: model:ir.model.fields,field_description:agreement_rebate.field_agreement__rebate_type
-msgid "rebate type"
-msgstr "Tipo rappel"
+#~ msgid "rebate type"
+#~ msgstr "Tipo rappel"
 
 #~ msgid "Settings"
 #~ msgstr "Ajustes"
