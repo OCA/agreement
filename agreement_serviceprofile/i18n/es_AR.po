@@ -75,11 +75,7 @@ msgid "Created on"
 msgstr "Creado en"
 
 #. module: agreement_serviceprofile
-#: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement__display_name
 #: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement_serviceprofile__display_name
-#: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement_stage__display_name
-#: model:ir.model.fields,field_description:agreement_serviceprofile.field_product_product__display_name
-#: model:ir.model.fields,field_description:agreement_serviceprofile.field_product_template__display_name
 msgid "Display Name"
 msgstr "Mostrar Nombre"
 
@@ -89,21 +85,17 @@ msgid "Followers"
 msgstr "Seguidores"
 
 #. module: agreement_serviceprofile
-#: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement_serviceprofile__message_channel_ids
-msgid "Followers (Channels)"
-msgstr "Seguidores (Canales)"
-
-#. module: agreement_serviceprofile
 #: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement_serviceprofile__message_partner_ids
 msgid "Followers (Partners)"
 msgstr "Seguidores (Contactos)"
 
 #. module: agreement_serviceprofile
-#: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement__id
+#: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement_serviceprofile__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: agreement_serviceprofile
 #: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement_serviceprofile__id
-#: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement_stage__id
-#: model:ir.model.fields,field_description:agreement_serviceprofile.field_product_product__id
-#: model:ir.model.fields,field_description:agreement_serviceprofile.field_product_template__id
 msgid "ID"
 msgstr "ID"
 
@@ -144,11 +136,7 @@ msgid "Is Follower"
 msgstr "Es Seguidor"
 
 #. module: agreement_serviceprofile
-#: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement____last_update
 #: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement_serviceprofile____last_update
-#: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement_stage____last_update
-#: model:ir.model.fields,field_description:agreement_serviceprofile.field_product_product____last_update
-#: model:ir.model.fields,field_description:agreement_serviceprofile.field_product_template____last_update
 msgid "Last Modified on"
 msgstr "Última Modificación el"
 
@@ -269,7 +257,6 @@ msgstr "Perfil de Servicio"
 #: model:ir.ui.menu,name:agreement_serviceprofile.agreement_serviceprofiles
 #: model:ir.ui.menu,name:agreement_serviceprofile.dashboard_serviceprofiles
 #: model_terms:ir.ui.view,arch_db:agreement_serviceprofile.agreement_fsm_order_form_view
-#: model_terms:ir.ui.view,arch_db:agreement_serviceprofile.agreement_serviceprofile_tree
 msgid "Service Profiles"
 msgstr "Perfiles de Servicio"
 
@@ -312,3 +299,6 @@ msgstr "Mensajes del Sitio Web"
 #: model:ir.model.fields,help:agreement_serviceprofile.field_agreement_serviceprofile__website_message_ids
 msgid "Website communication history"
 msgstr "Historial de comunicación del sitio web"
+
+#~ msgid "Followers (Channels)"
+#~ msgstr "Seguidores (Canales)"
