@@ -282,8 +282,8 @@ msgstr "Nombre d'errors"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_needaction_counter
-msgid "Number of messages which requires an action"
-msgstr "Nombre de missatges que requereixen una acció"
+msgid "Number of messages requiring action"
+msgstr ""
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_has_error_counter
@@ -426,6 +426,9 @@ msgstr "Quan finalitzi l'acord."
 #: model:ir.model.fields,help:agreement.field_agreement__start_date
 msgid "When the agreement starts."
 msgstr "Quan comença l'acord."
+
+#~ msgid "Number of messages which requires an action"
+#~ msgstr "Nombre de missatges que requereixen una acció"
 
 #~ msgid "Number of unread messages"
 #~ msgstr "Número de mensajes no leídos"
