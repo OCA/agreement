@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-14 16:28+0000\n"
-"PO-Revision-Date: 2023-07-20 23:10+0000\n"
+"PO-Revision-Date: 2023-09-04 19:38+0000\n"
 "Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -284,7 +284,7 @@ msgstr "Errores"
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "Número de mensajes que requieren una acción"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_has_error_counter
