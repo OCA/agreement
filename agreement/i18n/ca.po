@@ -418,6 +418,16 @@ msgid "Use agreement type"
 msgstr "Utilitzeu el tipus d'acord"
 
 #. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__website_message_ids
+msgid "Website Messages"
+msgstr "Missatges del lloc web"
+
+#. module: agreement
+#: model:ir.model.fields,help:agreement.field_agreement__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicacions del lloc web"
+
+#. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__end_date
 msgid "When the agreement ends."
 msgstr "Quan finalitzi l'acord."
@@ -438,12 +448,6 @@ msgstr "Quan comença l'acord."
 
 #~ msgid "Unread Messages Counter"
 #~ msgstr "Comptador de missatges no llegits"
-
-#~ msgid "Website Messages"
-#~ msgstr "Missatges del lloc web"
-
-#~ msgid "Website communication history"
-#~ msgstr "Historial de comunicacions del lloc web"
 
 #~ msgid "Followers (Channels)"
 #~ msgstr "Seguidors/res (canals)"
