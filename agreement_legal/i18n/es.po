@@ -473,7 +473,8 @@ msgstr "Fecha en que el cliente firmó el contrato."
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__to_review_date
 msgid "Date used to warn us some days before agreement expires"
-msgstr "Fecha utilizada para avisarnos unos días antes de que expire el acuerdo"
+msgstr ""
+"Fecha utilizada para avisarnos unos días antes de que expire el acuerdo"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.report_agreement_document
@@ -1539,7 +1540,8 @@ msgstr "Usuario"
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement_type__review_user_id
 msgid "User assigned automatically the activity on review date"
-msgstr "Usuario asignado automáticamente a la actividad en la fecha de revisión"
+msgstr ""
+"Usuario asignado automáticamente a la actividad en la fecha de revisión"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__version
