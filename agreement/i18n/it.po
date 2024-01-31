@@ -187,7 +187,6 @@ msgstr "Se selezionata, nuovi messaggi richiedono attenzione."
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_has_error
-#: model:ir.model.fields,help:agreement.field_agreement__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Se selezionata, alcuni messaggi hanno un errore di consegna."
 
@@ -325,11 +324,6 @@ msgid "Responsible User"
 msgstr "Utente responsabile"
 
 #. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Errore consegna SMS"
-
-#. module: agreement
 #: code:addons/agreement/models/agreement.py:0
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
@@ -443,3 +437,6 @@ msgstr ""
 #: model:ir.model.fields,help:agreement.field_agreement__start_date
 msgid "When the agreement starts."
 msgstr ""
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Errore consegna SMS"

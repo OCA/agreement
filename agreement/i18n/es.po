@@ -188,7 +188,6 @@ msgstr "Si está marcado, hay nuevos mensajes que requieren su atención."
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_has_error
-#: model:ir.model.fields,help:agreement.field_agreement__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
 
@@ -326,11 +325,6 @@ msgid "Responsible User"
 msgstr "Usuario responsable"
 
 #. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Error en la entrega de SMS"
-
-#. module: agreement
 #: code:addons/agreement/models/agreement.py:0
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
@@ -450,6 +444,9 @@ msgstr "Cuando termina el acuerdo."
 #: model:ir.model.fields,help:agreement.field_agreement__start_date
 msgid "When the agreement starts."
 msgstr "Cuando comienza el acuerdo."
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Error en la entrega de SMS"
 
 #~ msgid "Followers (Channels)"
 #~ msgstr "Seguidores (Canales)"

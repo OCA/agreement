@@ -187,7 +187,6 @@ msgstr "Se assinalado, novas mensagens necessitarão da sua atenção."
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_has_error
-#: model:ir.model.fields,help:agreement.field_agreement__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Se assinalado, algumas mensagens contêm erro de envio."
 
@@ -323,11 +322,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_user_id
 msgid "Responsible User"
 msgstr "Utilizador Responsável"
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr ""
 
 #. module: agreement
 #: code:addons/agreement/models/agreement.py:0
