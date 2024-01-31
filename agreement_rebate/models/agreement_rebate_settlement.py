@@ -88,7 +88,7 @@ class AgreementRebateSettlement(models.Model):
             if values.pop("check_amount", 0.0) < 0.0:
                 for line_vals in values["invoice_line_ids"]:
                     line_vals[2]["price_unit"] *= -1
-                values["type"] = self._reverse_type_map(values["type"])
+                values["move_type"] = self._reverse_type_map(values["move_type"])
         invoices = self.env["account.move"].create(invoice_dic.values())
         return invoices
 
