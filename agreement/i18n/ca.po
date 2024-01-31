@@ -187,7 +187,6 @@ msgstr "Si està marcat, els missatges nous requereixen la vostra atenció."
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_has_error
-#: model:ir.model.fields,help:agreement.field_agreement__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si està marcat, alguns missatges tenen un error d'entrega."
 
@@ -321,11 +320,6 @@ msgid "Responsible User"
 msgstr "Usuari responsable"
 
 #. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Error d'entrega d'SMS"
-
-#. module: agreement
 #. odoo-python
 #: code:addons/agreement/models/agreement.py:0
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
@@ -436,6 +430,9 @@ msgstr "Quan finalitzi l'acord."
 #: model:ir.model.fields,help:agreement.field_agreement__start_date
 msgid "When the agreement starts."
 msgstr "Quan comença l'acord."
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Error d'entrega d'SMS"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Nombre de missatges que requereixen una acció"
