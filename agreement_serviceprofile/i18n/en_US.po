@@ -115,7 +115,6 @@ msgstr ""
 
 #. module: agreement_serviceprofile
 #: model:ir.model.fields,help:agreement_serviceprofile.field_agreement_serviceprofile__message_has_error
-#: model:ir.model.fields,help:agreement_serviceprofile.field_agreement_serviceprofile__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
@@ -217,11 +216,6 @@ msgstr ""
 #. module: agreement_serviceprofile
 #: model_terms:ir.ui.view,arch_db:agreement_serviceprofile.agreement_serviceprofile_search
 msgid "Product Variant"
-msgstr ""
-
-#. module: agreement_serviceprofile
-#: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement_serviceprofile__message_has_sms_error
-msgid "SMS Delivery error"
 msgstr ""
 
 #. module: agreement_serviceprofile

@@ -117,7 +117,6 @@ msgstr "Si está marcado, los nuevos mensajes requieren su atención."
 
 #. module: agreement_serviceprofile
 #: model:ir.model.fields,help:agreement_serviceprofile.field_agreement_serviceprofile__message_has_error
-#: model:ir.model.fields,help:agreement_serviceprofile.field_agreement_serviceprofile__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
 
@@ -224,11 +223,6 @@ msgid "Product Variant"
 msgstr "Variante del producto"
 
 #. module: agreement_serviceprofile
-#: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement_serviceprofile__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Error en la entrega de sms"
-
-#. module: agreement_serviceprofile
 #: model_terms:ir.ui.view,arch_db:agreement_serviceprofile.product_product_form_view
 #: model_terms:ir.ui.view,arch_db:agreement_serviceprofile.product_template_form_view
 msgid "Service"
@@ -299,6 +293,9 @@ msgstr "Mensajes del Sitio Web"
 #: model:ir.model.fields,help:agreement_serviceprofile.field_agreement_serviceprofile__website_message_ids
 msgid "Website communication history"
 msgstr "Historial de comunicación del sitio web"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Error en la entrega de sms"
 
 #~ msgid "Followers (Channels)"
 #~ msgstr "Seguidores (Canales)"
