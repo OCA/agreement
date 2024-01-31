@@ -189,7 +189,6 @@ msgstr ""
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_has_error
-#: model:ir.model.fields,help:agreement.field_agreement__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 "Wenn diese Option aktiviert ist, liegt bei einigen Nachrichten ein "
@@ -327,11 +326,6 @@ msgid "Responsible User"
 msgstr "Verantwortlicher Benutzer"
 
 #. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Fehler bei der SMS-Zustellung"
-
-#. module: agreement
 #. odoo-python
 #: code:addons/agreement/models/agreement.py:0
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
@@ -442,6 +436,9 @@ msgstr "Wann die Vereinbarung endet."
 #: model:ir.model.fields,help:agreement.field_agreement__start_date
 msgid "When the agreement starts."
 msgstr "Wann die Vereinbarung startet."
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Fehler bei der SMS-Zustellung"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Anzahl der Nachrichten, die eine Aktion erfordern"
