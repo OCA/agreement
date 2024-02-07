@@ -25,4 +25,11 @@
         parent="agreement_menu_root"
         sequence="20"
     />
+    <menuitem
+        id="agreement_type_menu"
+        name="Agreement types"
+        parent="agreement_setting_menu"
+        sequence="10"
+        action="agreement_type_action"
+    />
 </odoo>
