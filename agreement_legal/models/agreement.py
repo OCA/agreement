@@ -376,12 +376,12 @@ class Agreement(models.Model):
     def _get_old_version_default_vals(self):
         self.ensure_one()
         default_vals = {
-            "name": "{} - OLD VERSION".format(self.name),
+            "name": f"{self.name} - OLD VERSION",
             "active": False,
             "parent_agreement_id": self.id,
             "version": self.version,
             "revision": self.revision,
-            "code": "{}-V{}".format(self.code, str(self.version)),
+            "code": f"{self.code}-V{str(self.version)}",
             "stage_id": self.stage_id.id,
         }
         return default_vals
