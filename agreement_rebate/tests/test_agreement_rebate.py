@@ -109,7 +109,7 @@ class TestAgreementRebate(TransactionCase):
             cls.env["account.move"].with_context(default_move_type="out_invoice")
         )
         move_form.invoice_date = fields.Date.from_string(
-            "{}-01-01".format(fields.Date.today().year)
+            f"{fields.Date.today().year}-01-01"
         )
         move_form.ref = "Test Customer Invoice"
         move_form.partner_id = partner
@@ -137,12 +137,10 @@ class TestAgreementRebate(TransactionCase):
         agreement = self.Agreement.create(
             {
                 "domain": "sale",
-                "start_date": "{}-01-01".format(fields.Date.today().year),
+                "start_date": f"{fields.Date.today().year}-01-01",
                 "rebate_type": rebate_type,
-                "name": "A discount {} for all lines for {}".format(
-                    rebate_type, partner.name
-                ),
-                "code": "R-{}-{}".format(rebate_type, partner.ref),
+                "name": f"A discount {rebate_type} for all lines for {partner.name}",
+                "code": f"R-{rebate_type}-{partner.ref}",
                 "partner_id": partner.id,
                 "agreement_type_id": self.agreement_type.id,
                 "rebate_discount": 10,
@@ -229,7 +227,7 @@ class TestAgreementRebate(TransactionCase):
 
     def create_settlement_wizard(self, agreements=False):
         vals = {
-            "date_to": "{}-12-31".format(fields.Date.today().year),
+            "date_to": f"{fields.Date.today().year}-12-31",
         }
         if agreements:
             vals["agreement_ids"] = [(6, 0, agreements.ids)]

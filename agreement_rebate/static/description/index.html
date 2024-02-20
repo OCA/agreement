@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -368,9 +369,9 @@ ul.auto-toc {
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !! source digest: sha256:5b7242b1d8b9588b1724ec1d569cbd0ea5999c7ba01c2223a0efcc0c6a286fa4
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/licence-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/agreement/tree/16.0/agreement_rebate"><img alt="OCA/agreement" src="https://img.shields.io/badge/github-OCA%2Fagreement-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/agreement-16-0/agreement-16-0-agreement_rebate"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/agreement&amp;target_branch=16.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
-<p>This module extends the functionality of agreement module to allow define
-rebate conditions.</p>
+<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/licence-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/agreement/tree/17.0/agreement_rebate"><img alt="OCA/agreement" src="https://img.shields.io/badge/github-OCA%2Fagreement-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/agreement-17-0/agreement-17-0-agreement_rebate"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/agreement&amp;target_branch=17.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
+<p>This module extends the functionality of agreement module to allow
+define rebate conditions.</p>
 <p><strong>Table of contents</strong></p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -395,32 +396,33 @@ rebate conditions.</p>
 <li><p class="first">Set a rappel type.</p>
 <blockquote>
 <p>Basic global rappel discount</p>
-<img alt="https://raw.githubusercontent.com/OCA/agreement/16.0/agreement_rebate/static/img/agreement_discount_global.png" class="align-center" src="https://raw.githubusercontent.com/OCA/agreement/16.0/agreement_rebate/static/img/agreement_discount_global.png" style="width: 80%;" />
+<p><img alt="image" src="https://raw.githubusercontent.com/OCA/agreement/17.0/agreement_rebate/static/img/agreement_discount_global.png" /></p>
 <p>Basic rappel discount by line items</p>
-<img alt="https://raw.githubusercontent.com/OCA/agreement/16.0/agreement_rebate/static/img/agreement_discount_line.png" class="align-center" src="https://raw.githubusercontent.com/OCA/agreement/16.0/agreement_rebate/static/img/agreement_discount_line.png" style="width: 80%;" />
+<p><img alt="image1" src="https://raw.githubusercontent.com/OCA/agreement/17.0/agreement_rebate/static/img/agreement_discount_line.png" /></p>
 <p>Section rappel discount rule match</p>
-<img alt="https://raw.githubusercontent.com/OCA/agreement/16.0/agreement_rebate/static/img/agreement_discount_section_rule_match.png" class="align-center" src="https://raw.githubusercontent.com/OCA/agreement/16.0/agreement_rebate/static/img/agreement_discount_section_rule_match.png" style="width: 80%;" />
+<p><img alt="image2" src="https://raw.githubusercontent.com/OCA/agreement/17.0/agreement_rebate/static/img/agreement_discount_section_rule_match.png" /></p>
 <p>Calculate the discount in each amount section</p>
-<img alt="https://raw.githubusercontent.com/OCA/agreement/16.0/agreement_rebate/static/img/agreement_discount_section.png" class="align-center" src="https://raw.githubusercontent.com/OCA/agreement/16.0/agreement_rebate/static/img/agreement_discount_section.png" style="width: 80%;" />
+<p><img alt="image3" src="https://raw.githubusercontent.com/OCA/agreement/17.0/agreement_rebate/static/img/agreement_discount_section.png" /></p>
 </blockquote>
 </li>
 <li><p class="first">Create any rebate lines to apply this agreement.</p>
 <blockquote>
 <p>Add a product template filter to apply this agreement</p>
-<img alt="https://raw.githubusercontent.com/OCA/agreement/16.0/agreement_rebate/static/img/agreement_rebate_lines_filter.png" class="align-center" src="https://raw.githubusercontent.com/OCA/agreement/16.0/agreement_rebate/static/img/agreement_rebate_lines_filter.png" style="width: 80%;" />
+<p><img alt="image4" src="https://raw.githubusercontent.com/OCA/agreement/17.0/agreement_rebate/static/img/agreement_rebate_lines_filter.png" /></p>
 </blockquote>
 </li>
 <li><p class="first">Do some invoices of products included in any rebate agreement</p>
 </li>
-<li><p class="first">Create rebate settlements from <em>Agreements &gt; Settlements &gt; Create Settlements</em>
-wizard</p>
+<li><p class="first">Create rebate settlements from <em>Agreements &gt; Settlements &gt; Create
+Settlements</em> wizard</p>
 <blockquote>
-<img alt="https://raw.githubusercontent.com/OCA/agreement/16.0/agreement_rebate/static/img/create_settlements_wizard.png" class="align-center" src="https://raw.githubusercontent.com/OCA/agreement/16.0/agreement_rebate/static/img/create_settlements_wizard.png" style="width: 80%;" />
+<p><img alt="image5" src="https://raw.githubusercontent.com/OCA/agreement/17.0/agreement_rebate/static/img/create_settlements_wizard.png" /></p>
 </blockquote>
 </li>
-<li><p class="first">Create rappel invoices from <em>Agreements &gt; Settlements &gt; Create Invoices</em> wizard</p>
+<li><p class="first">Create rappel invoices from <em>Agreements &gt; Settlements &gt; Create
+Invoices</em> wizard</p>
 <blockquote>
-<img alt="https://raw.githubusercontent.com/OCA/agreement/16.0/agreement_rebate/static/img/create_settlement_invoices.png" class="align-center" src="https://raw.githubusercontent.com/OCA/agreement/16.0/agreement_rebate/static/img/create_settlement_invoices.png" style="width: 80%;" />
+<p><img alt="image6" src="https://raw.githubusercontent.com/OCA/agreement/17.0/agreement_rebate/static/img/create_settlement_invoices.png" /></p>
 </blockquote>
 </li>
 </ol>
@@ -430,7 +432,7 @@ wizard</p>
 <p>Bugs are tracked on <a class="reference external" href="https://github.com/OCA/agreement/issues">GitHub Issues</a>.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-<a class="reference external" href="https://github.com/OCA/agreement/issues/new?body=module:%20agreement_rebate%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**">feedback</a>.</p>
+<a class="reference external" href="https://github.com/OCA/agreement/issues/new?body=module:%20agreement_rebate%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**">feedback</a>.</p>
 <p>Do not contact contributors directly about support or help with technical issues.</p>
 </div>
 <div class="section" id="credits">
@@ -461,7 +463,7 @@ If you spotted it first, help us to smash it by providing a detailed and welcome
 <p>OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.</p>
-<p>This module is part of the <a class="reference external" href="https://github.com/OCA/agreement/tree/16.0/agreement_rebate">OCA/agreement</a> project on GitHub.</p>
+<p>This module is part of the <a class="reference external" href="https://github.com/OCA/agreement/tree/17.0/agreement_rebate">OCA/agreement</a> project on GitHub.</p>
 <p>You are welcome to contribute. To learn how please visit <a class="reference external" href="https://odoo-community.org/page/Contribute">https://odoo-community.org/page/Contribute</a>.</p>
 </div>
 </div>
