@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  © 2017 Akretion (Alexis de Lattre <alexis.delattre@akretion.com>)
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo noupdate="1">
+    <record id="agreement_rule_company" model="ir.rule">
+        <field name="name">Agreement multi-company</field>
+        <field name="model_id" ref="model_agreement" />
+        <field
+            name="domain_force"
+        >['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="agreement_type_group_use" model="res.groups">
+        <field name="name">Use agreement type</field>
+        <field name="category_id" ref="base.module_category_hidden" />
+        <field
+            name="users"
+            eval="[
+              Command.link(ref('base.user_root')),
+              Command.link(ref('base.user_admin'))
+          ]"
+        />
+    </record>
+    <record id="agreement_template_group_use" model="res.groups">
+        <field name="name">Use agreement template</field>
+        <field name="category_id" ref="base.module_category_hidden" />
+        <field
+            name="users"
+            eval="[
+              Command.link(ref('base.user_root')),
+              Command.link(ref('base.user_admin'))
+          ]"
+        />
+    </record>
+</odoo>
