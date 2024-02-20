@@ -56,19 +56,19 @@ msgstr ""
 
 #. module: agreement
 #: model:ir.model,name:agreement.model_agreement
-#: model_terms:ir.ui.view,arch_db:agreement.agreement_form
+#: model_terms:ir.ui.view,arch_db:agreement.agreement_view_form
 msgid "Agreement"
 msgstr "Acordo"
 
 #. module: agreement
-#: model_terms:ir.ui.view,arch_db:agreement.agreement_form
+#: model_terms:ir.ui.view,arch_db:agreement.agreement_view_form
 msgid "Agreement Name"
 msgstr "Nome do Acordo"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__agreement_type_id
-#: model_terms:ir.ui.view,arch_db:agreement.agreement_type_form_view
-#: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
+#: model_terms:ir.ui.view,arch_db:agreement.agreement_type_view_form
+#: model_terms:ir.ui.view,arch_db:agreement.agreement_type_view_search
 msgid "Agreement Type"
 msgstr "Tipo de Acordo"
 
@@ -86,10 +86,10 @@ msgid "Agreements"
 msgstr "Acordos"
 
 #. module: agreement
-#: model_terms:ir.ui.view,arch_db:agreement.agreement_form
-#: model_terms:ir.ui.view,arch_db:agreement.agreement_search
-#: model_terms:ir.ui.view,arch_db:agreement.agreement_type_form_view
-#: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
+#: model_terms:ir.ui.view,arch_db:agreement.agreement_view_form
+#: model_terms:ir.ui.view,arch_db:agreement.agreement_view_search
+#: model_terms:ir.ui.view,arch_db:agreement.agreement_type_view_form
+#: model_terms:ir.ui.view,arch_db:agreement.agreement_type_view_search
 msgid "Archived"
 msgstr "Arquivado"
 
@@ -104,7 +104,7 @@ msgid "Company"
 msgstr "Empresa"
 
 #. module: agreement
-#: model_terms:ir.ui.view,arch_db:agreement.agreement_form
+#: model_terms:ir.ui.view,arch_db:agreement.agreement_view_form
 msgid "Configuration"
 msgstr "Configuração"
 
@@ -129,8 +129,8 @@ msgstr "Nome a Apresentar"
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__domain
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__domain
-#: model_terms:ir.ui.view,arch_db:agreement.agreement_search
-#: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
+#: model_terms:ir.ui.view,arch_db:agreement.agreement_view_search
+#: model_terms:ir.ui.view,arch_db:agreement.agreement_type_view_search
 msgid "Domain"
 msgstr "Domínio"
 
@@ -250,7 +250,7 @@ msgid "Name"
 msgstr "Nome"
 
 #. module: agreement
-#: model_terms:ir.ui.view,arch_db:agreement.agreement_search
+#: model_terms:ir.ui.view,arch_db:agreement.agreement_view_search
 msgid "Name or Number"
 msgstr "Nome ou Número"
 
@@ -291,15 +291,15 @@ msgstr "Nº de mensagens com erro de envio"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__partner_id
-#: model_terms:ir.ui.view,arch_db:agreement.agreement_search
+#: model_terms:ir.ui.view,arch_db:agreement.agreement_view_search
 msgid "Partner"
 msgstr "Parceiro"
 
 #. module: agreement
 #. odoo-python
 #: code:addons/agreement/models/agreement.py:0
-#: model_terms:ir.ui.view,arch_db:agreement.agreement_search
-#: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
+#: model_terms:ir.ui.view,arch_db:agreement.agreement_view_search
+#: model_terms:ir.ui.view,arch_db:agreement.agreement_type_view_search
 #, python-format
 msgid "Purchase"
 msgstr "Compra"
@@ -310,7 +310,7 @@ msgid "Reference"
 msgstr "Referência"
 
 #. module: agreement
-#: model:ir.ui.menu,name:agreement.agreement_reporting_menu
+#: model:ir.ui.menu,name:agreement.agreement_menu_reporting
 msgid "Reporting"
 msgstr ""
 
@@ -322,14 +322,14 @@ msgstr "Utilizador Responsável"
 #. module: agreement
 #. odoo-python
 #: code:addons/agreement/models/agreement.py:0
-#: model_terms:ir.ui.view,arch_db:agreement.agreement_search
-#: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
+#: model_terms:ir.ui.view,arch_db:agreement.agreement_view_search
+#: model_terms:ir.ui.view,arch_db:agreement.agreement_type_view_search
 #, python-format
 msgid "Sale"
 msgstr "Venda"
 
 #. module: agreement
-#: model_terms:ir.ui.view,arch_db:agreement.agreement_search
+#: model_terms:ir.ui.view,arch_db:agreement.agreement_view_search
 msgid "Search Agreements"
 msgstr "Pesquisar Acordos"
 
@@ -348,13 +348,13 @@ msgstr ""
 "parceiro."
 
 #. module: agreement
-#: model:ir.ui.menu,name:agreement.agreement_setting_menu
+#: model:ir.ui.menu,name:agreement.agreement_menu_setting
 msgid "Settings"
 msgstr ""
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__signature_date
-#: model_terms:ir.ui.view,arch_db:agreement.agreement_search
+#: model_terms:ir.ui.view,arch_db:agreement.agreement_view_search
 msgid "Signature Date"
 msgstr "Data da Assinatura"
 
@@ -392,7 +392,7 @@ msgid "Title"
 msgstr "Título"
 
 #. module: agreement
-#: model_terms:ir.ui.view,arch_db:agreement.agreement_type_list_view
+#: model_terms:ir.ui.view,arch_db:agreement.agreement_type_view_tree
 msgid "Type Name"
 msgstr "Nome do Tipo"
 
@@ -402,12 +402,12 @@ msgid "Type of the exception activity on record."
 msgstr ""
 
 #. module: agreement
-#: model:res.groups,name:agreement.group_use_agreement_template
+#: model:res.groups,name:agreement.agreement_template_group_use
 msgid "Use agreement template"
 msgstr "Utilizar modelo de acordo"
 
 #. module: agreement
-#: model:res.groups,name:agreement.group_use_agreement_type
+#: model:res.groups,name:agreement.agreement_type_group_use
 msgid "Use agreement type"
 msgstr "Utilizar tipo de acordo"
 

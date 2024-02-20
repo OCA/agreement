@@ -16,7 +16,7 @@ class TestAgreement(TransactionCase):
                 "domain": "purchase",
             }
         )
-        cls.agreement = cls.env.ref("agreement.market1")
+        cls.agreement = cls.env.ref("agreement.market1_demo")
 
     def test_domain_selection(self):
         domain_agreement_type = self.env["agreement.type"]._domain_selection()

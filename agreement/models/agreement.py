@@ -48,12 +48,13 @@ class Agreement(models.Model):
     start_date = fields.Date(tracking=True)
     end_date = fields.Date(tracking=True)
 
-    @api.model
-    def _domain_selection(self):
-        return [
-            ("sale", _("Sale")),
-            ("purchase", _("Purchase")),
-        ]
+    _sql_constraints = [
+        (
+            "code_partner_company_unique",
+            "unique(code, partner_id, company_id)",
+            "This agreement code already exists for this partner!",
+        )
+    ]
 
     @api.depends("agreement_type_id")
     def _compute_domain(self):
@@ -63,22 +64,13 @@ class Agreement(models.Model):
             else:
                 rec.domain = "sale"
 
-    def name_get(self):
-        res = []
+    @api.depends("code")
+    def _compute_display_name(self):
         for agr in self:
             name = agr.name
             if agr.code:
                 name = f"[{agr.code}] {agr.name}"
-            res.append((agr.id, name))
-        return res
-
-    _sql_constraints = [
-        (
-            "code_partner_company_unique",
-            "unique(code, partner_id, company_id)",
-            "This agreement code already exists for this partner!",
-        )
-    ]
+            agr.display_name = name
 
     def copy(self, default=None):
         """Always assign a value for code because is required"""
@@ -87,3 +79,10 @@ class Agreement(models.Model):
             return super().copy(default)
         default.setdefault("code", _("%s (copy)") % (self.code))
         return super().copy(default)
+
+    @api.model
+    def _domain_selection(self):
+        return [
+            ("sale", _("Sale")),
+            ("purchase", _("Purchase")),
+        ]
