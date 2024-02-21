@@ -6,7 +6,7 @@
         <field name="priority" eval="40" />
         <field name="inherit_id" ref="base.res_config_settings_view_form" />
         <field name="arch" type="xml">
-            <xpath expr="//div[hasclass('settings')]" position="inside">
+            <xpath expr="//form" position="inside">
                 <div
                     class="app_settings_block"
                     data-string="Agreements"
@@ -26,10 +26,7 @@
                                     Sell and purchase products in different units of measure
                                 </div>
                                 <div class="content-group">
-                                    <div
-                                        class="mt16"
-                                        attrs="{'invisible': [('group_uom', '=', False)]}"
-                                    >
+                                    <div class="mt16" invisible="group_uom == False">
                                         <button
                                             name="%(uom.product_uom_form_action)d"
                                             icon="fa-arrow-right"
@@ -57,7 +54,7 @@
                         </div>
                         <div
                             class="col-xs-12 col-md-6 o_setting_box"
-                            attrs="{'invisible': [('module_agreement_sale', '!=', True)]}"
+                            invisible="module_agreement_sale != True"
                         >
                             <div class="o_setting_left_pane">
                                 <field name="module_agreement_sale_subscription" />

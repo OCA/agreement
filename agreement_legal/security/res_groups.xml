@@ -13,7 +13,7 @@
         />
         <field
             name="implied_ids"
-            eval="[(4, ref('base.group_user')), (4, ref('agreement.group_use_agreement_type')), (4, ref('agreement.group_use_agreement_template'))]"
+            eval="[(4, ref('base.group_user')), (4, ref('agreement.agreement_type_group_use')), (4, ref('agreement.agreement_template_group_use'))]"
         />
     </record>
 
