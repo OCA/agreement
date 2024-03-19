@@ -26,7 +26,7 @@ msgid "%(name)s - Period: %(date_from)s - %(date_to)s"
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_form
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_view_form
 msgid ""
 "<i class=\"fa fa-filter\"/>\n"
 "                            You can create a filter to apply the rebate.\n"
@@ -34,17 +34,17 @@ msgid ""
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_form
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_view_form
 msgid "<span>Agreement</span>"
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_form
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_view_form
 msgid "<span>Details</span>"
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_form
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_view_form
 msgid "<span>Lines</span>"
 msgstr ""
 
@@ -64,7 +64,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_line__agreement_id
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_section__agreement_id
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_settlement_line__agreement_id
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_search
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_view_search
 msgid "Agreement"
 msgstr ""
 
@@ -136,16 +136,16 @@ msgstr ""
 #. module: agreement_rebate
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_invoice_create_wiz__agreement_type_ids
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_settlement_create_wiz__agreement_type_ids
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.view_invoice_create_wiz
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.view_settlement_create_wiz
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_invoice_create_wiz_view_form
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_settlement_create_wiz_view_form
 msgid "Agreement types"
 msgstr ""
 
 #. module: agreement_rebate
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_invoice_create_wiz__agreement_ids
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_settlement_create_wiz__agreement_ids
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.view_invoice_create_wiz
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.view_settlement_create_wiz
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_invoice_create_wiz_view_form
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_settlement_create_wiz_view_form
 msgid "Agreements"
 msgstr ""
 
@@ -167,9 +167,9 @@ msgid "Amount Rebate"
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_form
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_search
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_search
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_view_form
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_view_search
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_view_search
 msgid "Archived"
 msgstr ""
 
@@ -179,8 +179,8 @@ msgid "Calculate the discount in each amount section"
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.view_invoice_create_wiz
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.view_settlement_create_wiz
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_invoice_create_wiz_view_form
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_settlement_create_wiz_view_form
 msgid "Cancel"
 msgstr ""
 
@@ -202,13 +202,13 @@ msgstr ""
 
 #. module: agreement_rebate
 #: model:ir.ui.menu,name:agreement_rebate.agreement_invoice_create_menu
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.view_invoice_create_wiz
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_invoice_create_wiz_view_form
 msgid "Create invoices"
 msgstr ""
 
 #. module: agreement_rebate
 #: model:ir.ui.menu,name:agreement_rebate.agreement_settlement_create_menu
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.view_settlement_create_wiz
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_settlement_create_wiz_view_form
 msgid "Create settlements"
 msgstr ""
 
@@ -248,8 +248,8 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_settlement__date
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_settlement_line__date
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_settlement_create_wiz__date
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_search
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_search
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_view_search
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_view_search
 msgid "Date"
 msgstr ""
 
@@ -264,8 +264,8 @@ msgid "Date To"
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.view_invoice_create_wiz
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.view_settlement_create_wiz
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_invoice_create_wiz_view_form
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_settlement_create_wiz_view_form
 msgid "Dates filter"
 msgstr ""
 
@@ -324,7 +324,7 @@ msgid "Global (A discount global for all lines)"
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_search
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_view_search
 msgid "Group By"
 msgstr ""
 
@@ -367,12 +367,12 @@ msgid "Invoice Type"
 msgstr ""
 
 #. module: agreement_rebate
-#: model:ir.actions.act_window,name:agreement_rebate.agreement_invoice_create_action
+#: model:ir.actions.act_window,name:agreement_rebate.agreement_invoice_create_wiz_action
 msgid "Invoice create"
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.view_invoice_create_wiz
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_invoice_create_wiz_view_form
 msgid "Invoice data"
 msgstr ""
 
@@ -382,8 +382,8 @@ msgid "Invoice lines"
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_search
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_search
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_view_search
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_view_search
 msgid "Invoiced"
 msgstr ""
 
@@ -405,7 +405,7 @@ msgstr ""
 
 #. module: agreement_rebate
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_settlement_create_wiz__journal_ids
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.view_settlement_create_wiz
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_settlement_create_wiz_view_form
 msgid "Journals"
 msgstr ""
 
@@ -448,8 +448,8 @@ msgid "Line (A discount for every line)"
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_form
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_form
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_view_form
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_view_form
 msgid "Lines"
 msgstr ""
 
@@ -459,13 +459,13 @@ msgid "Name"
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_search
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_view_search
 msgid "Name or agreement code"
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_search
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_search
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_view_search
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_view_search
 msgid "Not invoiced"
 msgstr ""
 
@@ -478,8 +478,8 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_settlement__partner_id
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_settlement_line__partner_id
 #: model:ir.model.fields.selection,name:agreement_rebate.selection__agreement_invoice_create_wiz__invoice_group__partner
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_search
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_search
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_view_search
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_view_search
 msgid "Partner"
 msgstr ""
 
@@ -489,8 +489,8 @@ msgid "Percent"
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_search
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_search
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_view_search
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_view_search
 msgid "Period"
 msgstr ""
 
@@ -529,9 +529,9 @@ msgid "Products"
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_form
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_search
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_type_search
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_view_form
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_view_search
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_type_view_search
 msgid "Rebate"
 msgstr ""
 
@@ -552,12 +552,12 @@ msgid "Rebate Line"
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_line_form
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_line_view_form
 msgid "Rebate Lines"
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_form
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_view_form
 msgid "Rebate Settlements"
 msgstr ""
 
@@ -570,7 +570,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_condition__name
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_line__rebate_condition_id
 #: model:ir.model.fields.selection,name:agreement_rebate.selection__agreement_rebate_line__rebate_target__condition
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_condition_form
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_condition_view_form
 msgid "Rebate condition"
 msgstr ""
 
@@ -605,28 +605,28 @@ msgid "Rebate type"
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_search
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_view_search
 msgid "Search agreement settlements"
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_search
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_view_search
 msgid "Search settlement lines"
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_form
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_view_form
 msgid "Sections"
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_line_form
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_line_view_form
 msgid "Select items"
 msgstr ""
 
 #. module: agreement_rebate
 #: model:ir.model.fields.selection,name:agreement_rebate.selection__agreement_invoice_create_wiz__invoice_group__settlement
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_search
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_view_search
 msgid "Settlement"
 msgstr ""
 
@@ -637,7 +637,7 @@ msgid "Settlement Lines"
 msgstr ""
 
 #. module: agreement_rebate
-#: model:ir.actions.act_window,name:agreement_rebate.agreement_settlement_create_action
+#: model:ir.actions.act_window,name:agreement_rebate.agreement_settlement_create_wiz_action
 msgid "Settlement create"
 msgstr ""
 
@@ -649,13 +649,13 @@ msgstr ""
 #. module: agreement_rebate
 #: model:ir.ui.menu,name:agreement_rebate.agreement_rebate_settlement_menu
 #: model:ir.ui.menu,name:agreement_rebate.agreement_rebate_settlement_menu_root
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.view_invoice_create_wiz
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_invoice_create_wiz_view_form
 msgid "Settlements"
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_form
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_tree
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_view_form
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_view_tree
 msgid "Show details"
 msgstr ""
 
@@ -678,7 +678,7 @@ msgid "To Invoice"
 msgstr ""
 
 #. module: agreement_rebate
-#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_tree
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_line_view_tree
 msgid "Total"
 msgstr ""
 

@@ -1,3 +1,3 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-from . import invoice_create
-from . import settlement_create
+from . import agreement_invoice_create_wiz
+from . import agreement_settlement_create_wiz
