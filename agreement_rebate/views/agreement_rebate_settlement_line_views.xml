@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="agreement_rebate_settlement_line_view_tree" model="ir.ui.view">
+        <field name="name">agreement.rebate.settlement.line</field>
+        <field name="model">agreement.rebate.settlement.line</field>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false">
+                <field name="date" />
+                <field name="partner_id" />
+                <field name="agreement_id" />
+                <field name="amount_invoiced" sum="Total" />
+                <field name="percent" />
+                <field name="amount_rebate" sum="Total" />
+                <field name="amount_from" />
+                <field name="amount_to" />
+                <field name="invoice_status" optional="show" />
+                <button
+                    name="action_show_detail"
+                    type="object"
+                    icon="fa-table"
+                    title="Show details"
+                />
+                <field
+                    name="target_domain"
+                    groups="base.group_no_one"
+                    optional="hidden"
+                />
+            </tree>
+        </field>
+    </record>
+    <record id="agreement_rebate_settlement_line_view_search" model="ir.ui.view">
+        <field name="name">agreement.rebate.settlement.line.search</field>
+        <field name="model">agreement.rebate.settlement.line</field>
+        <field name="arch" type="xml">
+            <search string="Search settlement lines">
+                <field name="partner_id" operator="child_of" />
+                <field name="agreement_id" string="Agreement" />
+                <field name="settlement_id" />
+                <filter
+                    name="not_invoiced"
+                    string="Not invoiced"
+                    domain="[('invoice_status', 'in', ['no', 'to_invoice'])]"
+                />
+                <filter
+                    name="invoiced"
+                    string="Invoiced"
+                    domain="[('invoice_status', '=', 'invoiced')]"
+                />
+                <separator />
+                <filter name="date" string="Period" date="date" />
+                <separator />
+                <filter
+                    string="Archived"
+                    name="inactive"
+                    domain="[('active', '=', False)]"
+                />
+                <group expand="0" string="Group By">
+                    <filter
+                        name="group_by_partner_id"
+                        string="Partner"
+                        context="{'group_by':'partner_id'}"
+                    />
+                    <filter
+                        name="group_by_agreement_id"
+                        string="Agreement"
+                        context="{'group_by':'agreement_id'}"
+                    />
+                    <filter
+                        name="group_by_settlement_id"
+                        string="Settlement"
+                        context="{'group_by':'settlement_id'}"
+                    />
+                    <separator />
+                    <filter string="Date" name="date" context="{'group_by':'date'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="agreement_rebate_settlement_line_action" model="ir.actions.act_window">
+        <field name="name">Agreement settlement lines</field>
+        <field name="res_model">agreement.rebate.settlement.line</field>
+        <field name="view_mode">tree,form,pivot</field>
+        <field name="context">{'search_default_not_invoiced': 1}</field>
+    </record>
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="agreement_rebate_section_view_tree" model="ir.ui.view">
+        <field name="name">agreement.rebate.section.tree</field>
+        <field name="model">agreement.rebate.section</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="amount_from" />
+                <field name="amount_to" />
+                <field name="rebate_discount" />
+            </tree>
+        </field>
+    </record>
+</odoo>
