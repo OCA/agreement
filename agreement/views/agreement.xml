@@ -15,7 +15,7 @@
                         name="web_ribbon"
                         title="Archived"
                         bg_color="bg-danger"
-                        attrs="{'invisible': [('active', '=', True)]}"
+                        invisible="active"
                     />
                     <field name="active" invisible="1" />
                     <div class="oe_title">
@@ -32,10 +32,7 @@
                         <group name="left">
                             <field name="code" />
                             <field name="is_template" invisible="1" />
-                            <field
-                                name="partner_id"
-                                attrs="{'required': [('is_template', '=', False)]}"
-                            />
+                            <field name="partner_id" required="not is_template" />
                             <field
                                 name="agreement_type_id"
                                 groups="agreement.group_use_agreement_type"
@@ -57,11 +54,7 @@
                         </group>
                     </group>
                     <notebook>
-                        <page
-                            name="config"
-                            string="Configuration"
-                            attrs="{'invisible': True}"
-                        />
+                        <page name="config" string="Configuration" invisible="True" />
                     </notebook>
                 </sheet>
                 <div class="oe_chatter">
