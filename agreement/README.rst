@@ -17,29 +17,28 @@ Agreement
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fagreement-lightgray.png?logo=github
-    :target: https://github.com/OCA/agreement/tree/16.0/agreement
+    :target: https://github.com/OCA/agreement/tree/17.0/agreement
     :alt: OCA/agreement
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/agreement-16-0/agreement-16-0-agreement
+    :target: https://translation.odoo-community.org/projects/agreement-17-0/agreement-17-0-agreement
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/agreement&target_branch=16.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/agreement&target_branch=17.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
 This module adds an *Agreement* object with the following properties:
 
-* code,
-* name,
-* link to a partner,
-* signature date.
-* start date.
-* end date.
+-  code,
+-  name,
+-  link to a partner,
+-  signature date.
+-  start date.
+-  end date.
 
-Optionally, you can also enable using:
-* agreement types
-* a flag to set an agreement as a template agreement
+Optionally, you can also enable using: \* agreement types \* a flag to
+set an agreement as a template agreement
 
 (Install agreement_sale to get the configuration settings for these).
 
@@ -54,7 +53,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/agreement/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/agreement/issues/new?body=module:%20agreement%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/agreement/issues/new?body=module:%20agreement%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -62,29 +61,32 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Akretion
 * Yves Goldberg (Ygol Internetwork)
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Alexis de Lattre <alexis.delattre@akretion.com>
-* Yves Goldberg <yves@ygol.com>
-* Alexandre Fayolle <alexandre.fayolle@camptocamp.com>
-* `Tecnativa <https://www.tecnativa.com>`_:
+-  Alexis de Lattre <alexis.delattre@akretion.com>
 
-    * Sergio Teruel
+-  Yves Goldberg <yves@ygol.com>
 
-* Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
+-  Alexandre Fayolle <alexandre.fayolle@camptocamp.com>
 
-* `Acsone <https://www.acsone.eu/>`_:
+-  `Tecnativa <https://www.tecnativa.com>`__:
 
-  * Maxime Franco
+      -  Sergio Teruel
+
+-  Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
+
+-  `Acsone <https://www.acsone.eu/>`__:
+
+   -  Maxime Franco
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
@@ -107,6 +109,6 @@ Current `maintainers <https://odoo-community.org/page/maintainer-role>`__:
 
 |maintainer-ygol| |maintainer-alexis-via| 
 
-This module is part of the `OCA/agreement <https://github.com/OCA/agreement/tree/16.0/agreement>`_ project on GitHub.
+This module is part of the `OCA/agreement <https://github.com/OCA/agreement/tree/17.0/agreement>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
