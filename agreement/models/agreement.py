@@ -68,7 +68,7 @@ class Agreement(models.Model):
         for agr in self:
             name = agr.name
             if agr.code:
-                name = "[{}] {}".format(agr.code, agr.name)
+                name = f"[{agr.code}] {agr.name}"
             res.append((agr.id, name))
         return res
 
