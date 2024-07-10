@@ -14,13 +14,11 @@ class TestProduct(TransactionCase):
     # TEST 01: Test onchange_type product.template
     def test_product_template_onchange_type(self):
         product_01 = self.test_product1
-        product_01.is_serviceprofile = True
-        product_01.onchange_type()
+        product_01.detailed_type = "serviceprofile"
         self.assertEqual(product_01.type, "service")
 
     # TEST 02: Test onchange_type product.product
     def test_product_product_onchange_type(self):
         product_02 = self.test_product2
-        product_02.is_serviceprofile = True
-        product_02.onchange_type()
+        product_02.detailed_type = "serviceprofile"
         self.assertEqual(product_02.type, "service")

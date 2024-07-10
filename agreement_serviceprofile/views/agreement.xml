@@ -27,12 +27,12 @@
                                     <field name="use_product_variant" />
                                     <field
                                         name="product_variant_id"
-                                        context="{'default_is_serviceprofile': True, 'default_type': 'service'}"
+                                        context="{'default_detailed_type': 'serviceprofile', 'default_type': 'service'}"
                                         attrs="{'invisible': [('use_product_variant', '=', False)], 'required': [('use_product_variant','!=', False)]}"
                                     />
                                     <field
                                         name="product_id"
-                                        context="{'default_is_serviceprofile': True, 'default_type': 'service'}"
+                                        context="{'default_detailed_type': 'serviceprofile', 'default_type': 'service'}"
                                         attrs="{'invisible': [('use_product_variant', '!=', False)], 'required': [('use_product_variant','=', False)]}"
                                     />
                                 </group>
