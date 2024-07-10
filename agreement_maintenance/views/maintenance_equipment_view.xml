@@ -7,16 +7,19 @@
         <field name="name">maintenance.equipment.form.agreement</field>
         <field name="model">maintenance.equipment</field>
         <field name="inherit_id" ref="maintenance.hr_equipment_view_form" />
-        <field
-            name="groups_id"
-            eval="[(4, ref('agreement_legal.group_agreement_readonly'))]"
-        />
         <field name="arch" type="xml">
             <xpath expr="//group/group[1]" position="inside">
-                <field name="agreement_id" />
+                <field
+                    name="agreement_id"
+                    groups="agreement_legal.group_agreement_readonly"
+                />
             </xpath>
             <xpath expr="//notebook" position="inside">
-                <page string="Services" id="services">
+                <page
+                    string="Services"
+                    id="services"
+                    groups="agreement_legal.group_agreement_readonly"
+                >
                     <field
                         name="serviceprofile_ids"
                         domain="[('equipment_id', '=', False)]"
@@ -45,6 +48,7 @@
                     string="Agreement"
                     name="agreement_id"
                     domain="[]"
+                    groups="agreement_legal.group_agreement_readonly"
                     context="{'group_by': 'agreement_id'}"
                 />
             </xpath>
