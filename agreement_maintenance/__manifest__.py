@@ -8,7 +8,7 @@
     "author": "Pavlov Media, "
     "Open Source Integrators, "
     "Odoo Community Association (OCA)",
-    "website": "https://github.com/OCA/contract",
+    "website": "https://github.com/OCA/agreement",
     "category": "Maintenance",
     "license": "AGPL-3",
     "version": "14.0.1.2.0",
