@@ -1,0 +1,1 @@
+odoo-addon-agreement_legal @ git+https://github.com/OCA/agreement.git@refs/pull/8/head#subdirectory=setup/agreement_legal
