@@ -9,3 +9,5 @@
   - Murtuza Saleh \<<murtuzasaleh@serpentcs.com>\>
 - [Mc Master Lawn and Pest Services](https://www.mcmpest.com):
   - Brian McMaster \<<brian@mcmpest.com>\>
+- [Camptocamp](https://www.camptocamp.com):
+  - Italo LOPES \<<italo.lopes@camptocamp.com>\>

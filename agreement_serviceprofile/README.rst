@@ -82,6 +82,10 @@ Contributors
 
    -  Brian McMaster <brian@mcmpest.com>
 
+-  `Camptocamp <https://www.camptocamp.com>`__:
+
+   -  Italo LOPES <italo.lopes@camptocamp.com>
+
 Maintainers
 -----------
 

@@ -11,7 +11,7 @@
                 <field name="partner_id" />
                 <field name="product_id" />
                 <field name="product_variant_id" />
-                <field name="active" invisible="1" />
+                <field name="active" column_invisible="1" />
             </tree>
         </field>
     </record>
@@ -37,7 +37,7 @@
                         name="web_ribbon"
                         title="Archived"
                         bg_color="bg-danger"
-                        attrs="{'invisible': [('active', '=', True)]}"
+                        invisible="active == True"
                     />
                     <field name="active" invisible="1" />
                     <div class="oe_title">
@@ -54,12 +54,14 @@
                             <field
                                 name="product_id"
                                 context="{'default_is_serviceprofile': True, 'default_type': 'service'}"
-                                attrs="{'invisible': [('use_product_variant', '!=', False)], 'required': [('use_product_variant','=', False)]}"
+                                invisible="use_product_variant != False"
+                                required="use_product_variant == False"
                             />
                             <field
                                 name="product_variant_id"
                                 context="{'default_is_serviceprofile': True, 'default_type': 'service'}"
-                                attrs="{'invisible': [('use_product_variant', '=', False)], 'required': [('use_product_variant','!=', False)]}"
+                                invisible="use_product_variant == False"
+                                required="use_product_variant != False"
                             />
                             <field name="use_product_variant" />
                         </group>
