@@ -57,6 +57,7 @@ Contributors
 ------------
 
 -  Alexis de Lattre <alexis.delattre@akretion.com>
+-  Italo LOPES <italo.lopes@camptocamp.com>
 
 Maintainers
 -----------

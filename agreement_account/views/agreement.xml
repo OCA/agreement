@@ -55,8 +55,8 @@
                     class="oe_stat_button"
                     type="action"
                     name="%(account.action_move_out_invoice_type)d"
-                    context="{'search_default_agreement_id': active_id, 'default_agreement_id': active_id, 'default_partner_id': partner_id}"
-                    attrs="{'invisible': [('domain', '!=', 'sale')]}"
+                    context="{'search_default_agreement_id': id, 'default_agreement_id': id, 'default_partner_id': partner_id}"
+                    invisible="domain != 'sale'"
                     icon="fa-pencil-square-o"
                 >
                     <field
@@ -69,8 +69,8 @@
                     class="oe_stat_button"
                     type="action"
                     name="%(account.action_move_in_invoice_type)d"
-                    context="{'search_default_agreement_id': active_id, 'default_agreement_id': active_id, 'default_partner_id': partner_id}"
-                    attrs="{'invisible': [('domain', '!=', 'purchase')]}"
+                    context="{'search_default_agreement_id': id, 'default_agreement_id': id, 'default_partner_id': partner_id}"
+                    invisible="domain != 'purchase'"
                     icon="fa-pencil-square-o"
                 >
                     <field

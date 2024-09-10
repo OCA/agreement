@@ -14,7 +14,5 @@ class AccountMove(models.Model):
         string="Agreement",
         ondelete="restrict",
         tracking=True,
-        readonly=True,
         copy=False,
-        states={"draft": [("readonly", False)]},
     )

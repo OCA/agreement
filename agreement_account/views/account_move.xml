@@ -16,6 +16,7 @@
                     name="agreement_id"
                     domain="[('partner_id', 'child_of', commercial_partner_id), ('domain', '=', 'sale')]"
                     context="{'default_partner_id': commercial_partner_id, 'default_domain': 'sale'}"
+                    readonly="state != 'draft'"
                 />
                 <field name="commercial_partner_id" invisible="1" />
             </xpath>
