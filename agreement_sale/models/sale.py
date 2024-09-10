@@ -13,9 +13,7 @@ class SaleOrder(models.Model):
         string="Agreement",
         ondelete="restrict",
         tracking=True,
-        readonly=True,
         copy=False,
-        states={"draft": [("readonly", False)], "sent": [("readonly", False)]},
     )
 
     agreement_type_id = fields.Many2one(
@@ -23,7 +21,5 @@ class SaleOrder(models.Model):
         string="Agreement Type",
         ondelete="restrict",
         tracking=True,
-        readonly=True,
         copy=True,
-        states={"draft": [("readonly", False)], "sent": [("readonly", False)]},
     )
