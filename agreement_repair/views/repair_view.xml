@@ -14,32 +14,11 @@
                                 name="agreement_id"
                                 domain="[('partner_id', '=', partner_id)]"
                             />
-                            <field
-                                name="serviceprofile_id"
-                                domain="[('agreement_id', '=', agreement_id)]"
-                            />
                         </group>
                         <group id="agreement-right" />
                     </group>
                 </page>
             </notebook>
-        </field>
-    </record>
-
-    <!-- Inherit mrp repair search view-->
-    <record id="view_repair_order_form_filter_agreement" model="ir.ui.view">
-        <field name="name">repair.order.select.agreement</field>
-        <field name="model">repair.order</field>
-        <field name="inherit_id" ref="repair.view_repair_order_form_filter" />
-        <field name="arch" type="xml">
-            <xpath expr="//group" position="inside">
-                <filter
-                    string="Service Profile"
-                    name="serviceprofile_id"
-                    domain="[]"
-                    context="{'group_by':'serviceprofile_id'}"
-                />
-            </xpath>
         </field>
     </record>
 

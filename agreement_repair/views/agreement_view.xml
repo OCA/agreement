@@ -6,7 +6,7 @@
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">repair.order</field>
         <field name="view_mode">tree,form</field>
-        <field name="domain">[('agreement_id', '=', active_id)]</field>
+        <field name="domain">[('agreement_id', '=', id)]</field>
         <field name="context">{'create': False, 'edit': False}</field>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
@@ -18,7 +18,7 @@
     <record id="partner_agreement_form_view_repair" model="ir.ui.view">
         <field name="name">agreement.form.repair</field>
         <field name="model">agreement</field>
-        <field name="inherit_id" ref="agreement_legal.partner_agreement_form_view" />
+        <field name="inherit_id" ref="agreement.agreement_form" />
         <field name="arch" type="xml">
             <xpath expr="//div[@name='button_box']" position="inside">
                 <button

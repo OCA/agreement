@@ -7,7 +7,7 @@ from odoo import fields
 
 class TestAgreementRepair(common.TransactionCase):
     def setUp(self):
-        super(TestAgreementRepair, self).setUp()
+        super().setUp()
 
         self.agreement_obj = self.env["agreement"]
         self.agreement_type_id = self.env["agreement.type"].create(
@@ -19,7 +19,7 @@ class TestAgreementRepair(common.TransactionCase):
         agreement_vals = {
             "name": "Test Agreement",
             "agreement_type_id": self.agreement_type_id.id,
-            "description": "Test Agreement",
+            "code": "TestAgreement",
             "start_date": fields.Date.today(),
             "end_date": fields.Date.today(),
         }

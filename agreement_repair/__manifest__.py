@@ -9,7 +9,7 @@
     "author": "Open Source Integrators, " "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/agreement",
     "depends": [
-        "agreement_serviceprofile",
+        "agreement",
         "repair",
     ],
     "data": [
