@@ -4,10 +4,10 @@
 {
     "name": "Agreement - Repair",
     "summary": "Link repair orders to an agreement",
-    "version": "14.0.1.0.0",
+    "version": "17.0.1.0.0",
     "category": "Contract",
     "author": "Open Source Integrators, " "Odoo Community Association (OCA)",
-    "website": "https://github.com/OCA/contract",
+    "website": "https://github.com/OCA/agreement",
     "depends": [
         "agreement_serviceprofile",
         "repair",
