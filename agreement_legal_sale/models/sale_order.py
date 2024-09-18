@@ -12,7 +12,7 @@ class SaleOrder(models.Model):
     )
 
     def _action_confirm(self):
-        res = super(SaleOrder, self)._action_confirm()
+        res = super()._action_confirm()
         for order in self:
             if order.agreement_template_id:
                 order.agreement_id = order.agreement_template_id.copy(
@@ -77,4 +77,4 @@ class SaleOrder(models.Model):
                 and not agreement.analytic_account_id
             ):
                 agreement.analytic_account_id = order.analytic_account_id
-        return super(SaleOrder, self).action_confirm()
+        return super().action_confirm()
