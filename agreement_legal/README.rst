@@ -17,26 +17,27 @@ Agreements Legal
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fagreement-lightgray.png?logo=github
-    :target: https://github.com/OCA/agreement/tree/16.0/agreement_legal
+    :target: https://github.com/OCA/agreement/tree/17.0/agreement_legal
     :alt: OCA/agreement
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/agreement-16-0/agreement-16-0-agreement_legal
+    :target: https://translation.odoo-community.org/projects/agreement-17-0/agreement-17-0-agreement_legal
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/agreement&target_branch=16.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/agreement&target_branch=17.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This module allows you to manage agreements, letter of intent and contract content.
-The module is meant to be used by the legal team of a company and to allow them
-to define sections, clauses and templates with their respective content that can
-be dynamic.
+This module allows you to manage agreements, letter of intent and
+contract content. The module is meant to be used by the legal team of a
+company and to allow them to define sections, clauses and templates with
+their respective content that can be dynamic.
 
-Based on the template, an agreement can be created and the pdf document generated.
+Based on the template, an agreement can be created and the pdf document
+generated.
 
-The agreement would go through a workflow to finally become a contract with the
-customer signature.
+The agreement would go through a workflow to finally become a contract
+with the customer signature.
 
 **Table of contents**
 
@@ -48,28 +49,29 @@ Configuration
 
 To configure this module:
 
-* Go to Agreement > Configuration > Templates
-* Create a new template with sections and clauses and their respective content
-* Go to Agreement > Configuration > Stages
-* Create and reorder stages to match your process
+-  Go to Agreement > Configuration > Templates
+-  Create a new template with sections and clauses and their respective
+   content
+-  Go to Agreement > Configuration > Stages
+-  Create and reorder stages to match your process
 
 Usage
 =====
 
 To use this module:
 
-* Go to Agreement > Agreements
-* Create a new agreement
-* Select a template
-* Follow the process to get the required approval
-* Send the invitation to the customer to review and sign the agreement
+-  Go to Agreement > Agreements
+-  Create a new agreement
+-  Select a template
+-  Follow the process to get the required approval
+-  Send the invitation to the customer to review and sign the agreement
 
 Known issues / Roadmap
 ======================
 
-* Split the module to remove the dependencies on sale and account and provide
-  the same feature in extra modules (agreement_sale, agreement_account,
-  agreement_purchase)
+-  Split the module to remove the dependencies on sale and account and
+   provide the same feature in extra modules (agreement_sale,
+   agreement_account, agreement_purchase)
 
 Bug Tracker
 ===========
@@ -77,7 +79,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/agreement/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/agreement/issues/new?body=module:%20agreement_legal%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/agreement/issues/new?body=module:%20agreement_legal%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -85,34 +87,34 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Pavlov Media
 * Open Source Integrators
 * Yves Goldberg (Ygol Internetwork)
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Patrick Wilson <pwilson@pavlovmedia.com>
-* Bhavesh Odedra <bodedra@opensourceintegrators.com>
-* Wolfgang Hall <whall@opensourceintegrators.com>
-* Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
-* Sandip Mangukiya <smangukiya@opensourceintegrators.com>
-* Yves Goldberg <yves@ygol.com>
-* Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
+-  Patrick Wilson <pwilson@pavlovmedia.com>
+-  Bhavesh Odedra <bodedra@opensourceintegrators.com>
+-  Wolfgang Hall <whall@opensourceintegrators.com>
+-  Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
+-  Sandip Mangukiya <smangukiya@opensourceintegrators.com>
+-  Yves Goldberg <yves@ygol.com>
+-  Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
 
 Other credits
-~~~~~~~~~~~~~
+-------------
 
 The development of this module has been financially supported by:
 
-* Pavlov Media
-* Open Source Integrators
-* Yves Goldberg
+-  Pavlov Media
+-  Open Source Integrators
+-  Yves Goldberg
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
@@ -135,6 +137,6 @@ Current `maintainers <https://odoo-community.org/page/maintainer-role>`__:
 
 |maintainer-max3903| |maintainer-ygol| 
 
-This module is part of the `OCA/agreement <https://github.com/OCA/agreement/tree/16.0/agreement_legal>`_ project on GitHub.
+This module is part of the `OCA/agreement <https://github.com/OCA/agreement/tree/17.0/agreement_legal>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
