@@ -10,7 +10,7 @@
                 <field name="name" />
                 <field name="title" />
                 <field name="agreement_id" />
-                <field name="active" invisible="1" />
+                <field name="active" column_invisible="1" />
             </tree>
         </field>
     </record>
@@ -27,7 +27,7 @@
                         name="web_ribbon"
                         title="Archived"
                         bg_color="bg-danger"
-                        attrs="{'invisible': [('active', '=', True)]}"
+                        invisible="active == True"
                     />
                     <field name="active" invisible="1" />
                     <div class="oe_title">
@@ -50,7 +50,7 @@
                                 <group>
                                     <field
                                         name="field_id"
-                                        domain="[('model_id', '=', active_model),
+                                        domain="[('model_id', '=', 'agreement.section'),
                                             ('ttype', '!=', 'one2many'),
                                             ('ttype', '!=', 'many2many')]"
                                     />
@@ -60,8 +60,8 @@
                                         domain="[('model_id', '=', sub_object_id),
                                             ('ttype', '!=', 'one2many'),
                                             ('ttype', '!=', 'many2many')]"
-                                        attrs="{'readonly':[('sub_object_id', '=', False)],
-                                           'required':[('sub_object_id', '!=', False)]}"
+                                        readonly="sub_object_id == False"
+                                        required="sub_object_id != False"
                                     />
                                     <field name="default_value" />
                                     <field name="copyvalue" />
@@ -83,7 +83,7 @@
                             <field
                                 name="clauses_ids"
                                 nolabel="1"
-                                context="{'default_section_id': active_id, 'default_agreement_id': agreement_id}"
+                                context="{'default_section_id': id, 'default_agreement_id': agreement_id}"
                             >
                                 <tree>
                                     <field name="sequence" widget="handle" />
@@ -134,7 +134,7 @@
                 <attribute name="default_order">sequence</attribute>
             </tree>
             <field name="agreement_id" position="attributes">
-                <attribute name="invisible">1</attribute>
+                <attribute name="column_invisible">1</attribute>
             </field>
         </field>
     </record>

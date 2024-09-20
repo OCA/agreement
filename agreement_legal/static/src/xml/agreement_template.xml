@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+
+    <t t-name="agreement_legal.TemplateButton">
+        <button
+            type="button"
+            t-if="!canCreateTemplate"
+            t-on-click="onClickCreateFromTemplate"
+            class="create_agreement_from_template btn btn-primary mx-1"
+        >
+            Create From Template
+        </button>
+    </t>
+
+</templates>
