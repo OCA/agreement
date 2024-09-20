@@ -144,9 +144,7 @@ class Agreement(models.Model):
         """
         return deftext
 
-    parties = fields.Html(
-        tracking=True, default=_get_default_parties, help="Parties of the agreement"
-    )
+    parties = fields.Html(default=_get_default_parties, help="Parties of the agreement")
     dynamic_parties = fields.Html(
         compute="_compute_dynamic_parties", help="Compute dynamic parties"
     )
@@ -466,12 +464,8 @@ class Agreement(models.Model):
         return ["stage_id"]
 
     @api.model
-    def fields_view_get(
-        self, view_id=None, view_type=False, toolbar=False, submenu=False
-    ):
-        res = super().fields_view_get(
-            view_id=view_id, view_type=view_type, toolbar=toolbar, submenu=submenu
-        )
+    def get_view(self, view_id=None, view_type=False, **options):
+        res = super().get_view(view_id, view_type, **options)
         # Readonly fields
         if view_type == "form":
             doc = etree.XML(res["arch"])
