@@ -106,15 +106,13 @@ class TestAgreement(TransactionCase):
 
     # Test fields_view_get
     def test_agreement_fields_view_get(self):
-        res = self.env["agreement"].fields_view_get(
+        res = self.env["agreement"].get_view(
             view_id=self.ref("agreement_legal.partner_agreement_form_view"),
             view_type="form",
         )
         doc = etree.XML(res["arch"])
         field = doc.xpath("//field[@name='partner_contact_id']")
-        self.assertEqual(
-            field[0].get("modifiers", ""), '{"readonly": [["readonly", "=", true]]}'
-        )
+        self.assertEqual(field[0].get("readonly", ""), "readonly")
 
     def test_action_create_new_version(self):
         self.test_agreement.create_new_version()
@@ -125,10 +123,10 @@ class TestAgreement(TransactionCase):
         self.agreement_type.write(
             {"review_user_id": self.env.user.id, "review_days": 0}
         )
-        self.agreement_type.flush()
+        self.agreement_type.flush_recordset()
         self.test_agreement.write({"agreement_type_id": self.agreement_type.id})
-        self.test_agreement.flush()
-        self.test_agreement.refresh()
+        self.test_agreement.flush_recordset()
+        self.test_agreement.invalidate_recordset()
         self.assertFalse(
             self.env["mail.activity"].search_count(
                 [

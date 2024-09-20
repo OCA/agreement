@@ -1,8 +1,6 @@
 # Copyright (C) 2018 - TODAY, Pavlov Media
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-import ast
-import json as simplejson
 from datetime import timedelta
 
 from lxml import etree
@@ -144,9 +142,7 @@ class Agreement(models.Model):
         """
         return deftext
 
-    parties = fields.Html(
-        tracking=True, default=_get_default_parties, help="Parties of the agreement"
-    )
+    parties = fields.Html(default=_get_default_parties, help="Parties of the agreement")
     dynamic_parties = fields.Html(
         compute="_compute_dynamic_parties", help="Compute dynamic parties"
     )
@@ -233,9 +229,9 @@ class Agreement(models.Model):
     field_id = fields.Many2one(
         "ir.model.fields",
         string="Field",
-        help="""Select target field from the related document model. If it is a
-         relationship field you will be able to select a target field at the
-         destination of the relationship.""",
+        help="""You can select a target field from the related document model.
+        If it is a relationship field you will be able to select a target field
+        at the destination of the relationship.""",
     )
     sub_object_id = fields.Many2one(
         "ir.model",
@@ -466,43 +462,18 @@ class Agreement(models.Model):
         return ["stage_id"]
 
     @api.model
-    def fields_view_get(
-        self, view_id=None, view_type=False, toolbar=False, submenu=False
-    ):
-        res = super().fields_view_get(
-            view_id=view_id, view_type=view_type, toolbar=toolbar, submenu=submenu
-        )
+    def get_view(self, view_id=None, view_type=False, **options):
+        res = super().get_view(view_id, view_type, **options)
         # Readonly fields
         if view_type == "form":
             doc = etree.XML(res["arch"])
             for node in doc.xpath("//field"):
                 if node.attrib.get("name") in self._exclude_readonly_field():
                     continue
-                attrs = ast.literal_eval(node.attrib.get("attrs", "{}"))
-                if attrs:
-                    if attrs.get("readonly"):
-                        attrs["readonly"] = ["|", ("readonly", "=", True)] + attrs[
-                            "readonly"
-                        ]
-                    else:
-                        attrs["readonly"] = [("readonly", "=", True)]
-                else:
-                    attrs["readonly"] = [("readonly", "=", True)]
-                node.set("attrs", simplejson.dumps(attrs))
-                modifiers = ast.literal_eval(
-                    node.attrib.get("modifiers", "{}")
-                    .replace("true", "True")
-                    .replace("false", "False")
-                )
-                readonly = modifiers.get("readonly")
-                invisible = modifiers.get("invisible")
-                required = modifiers.get("required")
-                if isinstance(readonly, bool) and readonly:
-                    attrs["readonly"] = readonly
-                if isinstance(invisible, bool) and invisible:
-                    attrs["invisible"] = invisible
-                if isinstance(required, bool) and required:
-                    attrs["required"] = required
-                node.set("modifiers", simplejson.dumps(attrs))
+                new_r_modifier = "readonly"
+                old_r_modifier = node.attrib.get("readonly")
+                if old_r_modifier:
+                    new_r_modifier = f"({old_r_modifier}) or ({new_r_modifier})"
+                node.attrib["readonly"] = new_r_modifier
             res["arch"] = etree.tostring(doc)
         return res

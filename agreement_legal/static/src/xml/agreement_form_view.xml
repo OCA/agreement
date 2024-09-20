@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+
+    <t t-inherit="web.FormView" t-inherit-mode="extension">
+        <xpath
+            expr="//*[@class='btn btn-secondary o_form_button_create']"
+            position="after"
+        >
+            <t t-if="props.resModel === 'agreement'">
+                <t t-call="agreement_legal.TemplateButton" />
+            </t>
+        </xpath>
+        <xpath
+            expr="//*[@class='btn btn-secondary o_form_button_create']"
+            position="attributes"
+        >
+            <attribute name="t-if">canCreateTemplate</attribute>
+        </xpath>
+    </t>
+
+</templates>
