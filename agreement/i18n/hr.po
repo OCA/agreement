@@ -13,15 +13,15 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.8\n"
 
 #. module: agreement
 #. odoo-python
 #: code:addons/agreement/models/agreement.py:0
 #, python-format
-msgid "%s (copy)"
+msgid "%(code)s (copy)"
 msgstr ""
 
 #. module: agreement
@@ -79,6 +79,7 @@ msgstr "Tip sporazuma"
 #. module: agreement
 #: model:ir.actions.act_window,name:agreement.agreement_type_action
 #: model:ir.model,name:agreement.model_agreement_type
+#: model:ir.ui.menu,name:agreement.agreement_type_menu
 msgid "Agreement Types"
 msgstr "Tipovi sporazuma"
 
@@ -100,6 +101,11 @@ msgstr "Arhivirano"
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_attachment_count
 msgid "Attachment Count"
+msgstr ""
+
+#. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__code
+msgid "Code"
 msgstr ""
 
 #. module: agreement
@@ -170,11 +176,6 @@ msgid "ID"
 msgstr "ID"
 
 #. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__code
-msgid "ID used for internal contract tracking."
-msgstr "ID za interno praćenje sporazuma"
-
-#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_exception_icon
 msgid "Icon"
 msgstr ""
@@ -195,12 +196,6 @@ msgid "If checked, some messages have a delivery error."
 msgstr ""
 
 #. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__active
-msgid ""
-"If unchecked, it will allow you to hide the agreement without removing it."
-msgstr "Ako nije označeno, omogućuje vam skrivanje porazuma bez brisanja."
-
-#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_is_follower
 msgid "Is Follower"
 msgstr ""
@@ -209,12 +204,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement.field_agreement__is_template
 msgid "Is a Template?"
 msgstr "Je predložak?"
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement____last_update
-#: model:ir.model.fields,field_description:agreement.field_agreement_type____last_update
-msgid "Last Modified on"
-msgstr "Zadnje uređivano"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__write_uid
@@ -227,11 +216,6 @@ msgstr "Zadnje ažurirano"
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__write_date
 msgid "Last Updated on"
 msgstr "Zadnje ažuriranje"
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__message_main_attachment_id
-msgid "Main Attachment"
-msgstr ""
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_has_error
@@ -249,6 +233,7 @@ msgid "My Activity Deadline"
 msgstr ""
 
 #. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__name
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__name
 msgid "Name"
 msgstr "Naziv"
@@ -308,11 +293,6 @@ msgstr "Partner"
 #, python-format
 msgid "Purchase"
 msgstr ""
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__code
-msgid "Reference"
-msgstr "Referenca"
 
 #. module: agreement
 #: model:ir.ui.menu,name:agreement.agreement_reporting_menu
@@ -376,18 +356,8 @@ msgid ""
 msgstr ""
 
 #. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__partner_id
-msgid "The customer or vendor this agreement is related to."
-msgstr ""
-
-#. module: agreement
 #: model:ir.model.constraint,message:agreement.constraint_agreement_code_partner_company_unique
 msgid "This agreement code already exists for this partner!"
-msgstr ""
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__name
-msgid "Title"
 msgstr ""
 
 #. module: agreement
@@ -420,12 +390,15 @@ msgstr ""
 msgid "Website communication history"
 msgstr ""
 
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__end_date
-msgid "When the agreement ends."
-msgstr ""
+#~ msgid "ID used for internal contract tracking."
+#~ msgstr "ID za interno praćenje sporazuma"
 
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__start_date
-msgid "When the agreement starts."
-msgstr ""
+#~ msgid ""
+#~ "If unchecked, it will allow you to hide the agreement without removing it."
+#~ msgstr "Ako nije označeno, omogućuje vam skrivanje porazuma bez brisanja."
+
+#~ msgid "Last Modified on"
+#~ msgstr "Zadnje uređivano"
+
+#~ msgid "Reference"
+#~ msgstr "Referenca"
