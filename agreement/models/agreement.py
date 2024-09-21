@@ -85,5 +85,5 @@ class Agreement(models.Model):
         default = dict(default or {})
         if default.get("code", False):
             return super().copy(default)
-        default.setdefault("code", _("%s (copy)") % (self.code))
+        default.setdefault("code", _("%(code)s (copy)", code=self.code))
         return super().copy(default)
