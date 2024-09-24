@@ -20,8 +20,8 @@ msgstr ""
 #. odoo-python
 #: code:addons/agreement/models/agreement.py:0
 #, python-format
-msgid "%s (copy)"
-msgstr "%s (copia)"
+msgid "%(code)s (copy)"
+msgstr ""
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_needaction
@@ -99,6 +99,11 @@ msgid "Attachment Count"
 msgstr "Conteggio allegati"
 
 #. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__code
+msgid "Code"
+msgstr ""
+
+#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__company_id
 msgid "Company"
 msgstr "Azienda"
@@ -166,11 +171,6 @@ msgid "ID"
 msgstr "ID"
 
 #. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__code
-msgid "ID used for internal contract tracking."
-msgstr "ID utilizzato per il monitoraggio del contratto interno."
-
-#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_exception_icon
 msgid "Icon"
 msgstr "Icona"
@@ -191,12 +191,6 @@ msgid "If checked, some messages have a delivery error."
 msgstr "Se selezionata, alcuni messaggi hanno un errore di consegna."
 
 #. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__active
-msgid ""
-"If unchecked, it will allow you to hide the agreement without removing it."
-msgstr ""
-
-#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_is_follower
 msgid "Is Follower"
 msgstr ""
@@ -205,12 +199,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement.field_agreement__is_template
 msgid "Is a Template?"
 msgstr "È un modello?"
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement____last_update
-#: model:ir.model.fields,field_description:agreement.field_agreement_type____last_update
-msgid "Last Modified on"
-msgstr "Ultima modifica il"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__write_uid
@@ -223,11 +211,6 @@ msgstr "Ultimo aggiornamento di"
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__write_date
 msgid "Last Updated on"
 msgstr "Ultimo aggiornamento il"
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__message_main_attachment_id
-msgid "Main Attachment"
-msgstr "Allegato principale"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_has_error
@@ -245,6 +228,7 @@ msgid "My Activity Deadline"
 msgstr ""
 
 #. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__name
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__name
 msgid "Name"
 msgstr "Nome"
@@ -303,11 +287,6 @@ msgstr "Partner"
 #, python-format
 msgid "Purchase"
 msgstr "Acquisto"
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__code
-msgid "Reference"
-msgstr "Riferimento"
 
 #. module: agreement
 #: model:ir.ui.menu,name:agreement.agreement_reporting_menu
@@ -375,19 +354,9 @@ msgstr ""
 "Pianificato: attività future."
 
 #. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__partner_id
-msgid "The customer or vendor this agreement is related to."
-msgstr "Il cliente o fornitore a cui è correlato questo contratto."
-
-#. module: agreement
 #: model:ir.model.constraint,message:agreement.constraint_agreement_code_partner_company_unique
 msgid "This agreement code already exists for this partner!"
 msgstr "Questo codice contratto esiste già per questo partner!"
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__name
-msgid "Title"
-msgstr "Titolo"
 
 #. module: agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_list_view
@@ -409,25 +378,30 @@ msgstr ""
 msgid "Use agreement type"
 msgstr ""
 
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__website_message_ids
-msgid "Website Messages"
-msgstr "Messaggi sito web"
+#, python-format
+#~ msgid "%s (copy)"
+#~ msgstr "%s (copia)"
 
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__website_message_ids
-msgid "Website communication history"
-msgstr ""
+#~ msgid "ID used for internal contract tracking."
+#~ msgstr "ID utilizzato per il monitoraggio del contratto interno."
 
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__end_date
-msgid "When the agreement ends."
-msgstr ""
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modifica il"
 
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__start_date
-msgid "When the agreement starts."
-msgstr ""
+#~ msgid "Main Attachment"
+#~ msgstr "Allegato principale"
+
+#~ msgid "Reference"
+#~ msgstr "Riferimento"
+
+#~ msgid "The customer or vendor this agreement is related to."
+#~ msgstr "Il cliente o fornitore a cui è correlato questo contratto."
+
+#~ msgid "Title"
+#~ msgstr "Titolo"
+
+#~ msgid "Website Messages"
+#~ msgstr "Messaggi sito web"
 
 #~ msgid "SMS Delivery error"
 #~ msgstr "Errore consegna SMS"
