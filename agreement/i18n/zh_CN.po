@@ -78,6 +78,7 @@ msgstr "协议类型"
 #. module: agreement
 #: model:ir.actions.act_window,name:agreement.agreement_type_action
 #: model:ir.model,name:agreement.model_agreement_type
+#: model:ir.ui.menu,name:agreement.agreement_type_menu
 msgid "Agreement Types"
 msgstr "协议类型"
 
@@ -376,6 +377,16 @@ msgstr "使用协议模板"
 #: model:res.groups,name:agreement.group_use_agreement_type
 msgid "Use agreement type"
 msgstr "使用协议类型"
+
+#. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: agreement
+#: model:ir.model.fields,help:agreement.field_agreement__website_message_ids
+msgid "Website communication history"
+msgstr ""
 
 #~ msgid "ID used for internal contract tracking."
 #~ msgstr "用于内部合同跟踪的ID。"

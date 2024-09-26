@@ -75,6 +75,7 @@ msgstr "Tipus d'acord"
 #. module: agreement
 #: model:ir.actions.act_window,name:agreement.agreement_type_action
 #: model:ir.model,name:agreement.model_agreement_type
+#: model:ir.ui.menu,name:agreement.agreement_type_menu
 msgid "Agreement Types"
 msgstr "Tipus d'acord"
 
@@ -380,6 +381,16 @@ msgstr "Utilitzeu la plantilla d'acord"
 msgid "Use agreement type"
 msgstr "Utilitzeu el tipus d'acord"
 
+#. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__website_message_ids
+msgid "Website Messages"
+msgstr "Missatges del lloc web"
+
+#. module: agreement
+#: model:ir.model.fields,help:agreement.field_agreement__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicacions del lloc web"
+
 #, python-format
 #~ msgid "%s (copy)"
 #~ msgstr "%s (copiar)"
@@ -405,12 +416,6 @@ msgstr "Utilitzeu el tipus d'acord"
 
 #~ msgid "Title"
 #~ msgstr "Títol"
-
-#~ msgid "Website Messages"
-#~ msgstr "Missatges del lloc web"
-
-#~ msgid "Website communication history"
-#~ msgstr "Historial de comunicacions del lloc web"
 
 #~ msgid "When the agreement ends."
 #~ msgstr "Quan finalitzi l'acord."
