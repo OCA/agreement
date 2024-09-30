@@ -24,6 +24,7 @@ addon | version | maintainers | summary
 [agreement](agreement/) | 16.0.1.0.0 | [![ygol](https://github.com/ygol.png?size=30px)](https://github.com/ygol) [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Adds an agreement object
 [agreement_legal](agreement_legal/) | 16.0.2.0.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) [![ygol](https://github.com/ygol.png?size=30px)](https://github.com/ygol) | Manage Agreements, LOI and Contracts
 [agreement_rebate](agreement_rebate/) | 16.0.1.0.1 |  | Rebate in agreements
+[agreement_sale](agreement_sale/) | 16.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) [![bealdav](https://github.com/bealdav.png?size=30px)](https://github.com/bealdav) | Agreement on sales
 
 [//]: # (end addons)
 

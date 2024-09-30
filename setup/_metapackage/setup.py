@@ -11,6 +11,7 @@ setuptools.setup(
         'odoo-addon-agreement>=16.0dev,<16.1dev',
         'odoo-addon-agreement_legal>=16.0dev,<16.1dev',
         'odoo-addon-agreement_rebate>=16.0dev,<16.1dev',
+        'odoo-addon-agreement_sale>=16.0dev,<16.1dev',
     ],
     classifiers=[
         'Programming Language :: Python',
