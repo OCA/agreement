@@ -75,6 +75,7 @@ msgstr "Tipo de Acuerdo"
 #. module: agreement
 #: model:ir.actions.act_window,name:agreement.agreement_type_action
 #: model:ir.model,name:agreement.model_agreement_type
+#: model:ir.ui.menu,name:agreement.agreement_type_menu
 msgid "Agreement Types"
 msgstr "Tipos de Acuerdo"
 
