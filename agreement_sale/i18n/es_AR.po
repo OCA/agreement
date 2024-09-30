@@ -42,27 +42,9 @@ msgid "Config Settings"
 msgstr "Configurar Ajustes"
 
 #. module: agreement_sale
-#: model:ir.model.fields,field_description:agreement_sale.field_res_config_settings__display_name
-#: model:ir.model.fields,field_description:agreement_sale.field_sale_order__display_name
-msgid "Display Name"
-msgstr "Mostrar Nombre"
-
-#. module: agreement_sale
 #: model_terms:ir.ui.view,arch_db:agreement_sale.res_config_settings_view_form
 msgid "Have a special kind of agreements which act as templates"
 msgstr "Tiene un tipo especial de acuerdos que actúan como plantillas"
-
-#. module: agreement_sale
-#: model:ir.model.fields,field_description:agreement_sale.field_res_config_settings__id
-#: model:ir.model.fields,field_description:agreement_sale.field_sale_order__id
-msgid "ID"
-msgstr "ID"
-
-#. module: agreement_sale
-#: model:ir.model.fields,field_description:agreement_sale.field_res_config_settings____last_update
-#: model:ir.model.fields,field_description:agreement_sale.field_sale_order____last_update
-msgid "Last Modified on"
-msgstr "Última Modificación el"
 
 #. module: agreement_sale
 #: model_terms:ir.ui.view,arch_db:agreement_sale.res_config_settings_view_form
@@ -83,3 +65,12 @@ msgstr "Usar una plantilla de acuerdo"
 #: model:ir.model.fields,field_description:agreement_sale.field_res_config_settings__group_use_agreement_type
 msgid "Use agreement types"
 msgstr "Usa tipos de acuerdo"
+
+#~ msgid "Display Name"
+#~ msgstr "Mostrar Nombre"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Última Modificación el"
