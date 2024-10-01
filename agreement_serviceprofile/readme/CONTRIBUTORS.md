@@ -1,0 +1,13 @@
+- [Pavlov Media](https://www.pavlovmedia.com):
+  - Patrick Wilson \<<pwilson@pavlovmedia.com>\>
+- [Open Source Integrators](https://www.opensourceintegrators.com):
+  - Bhavesh Odedra \<<bodedra@opensourceintegrators.com>\>
+  - Wolfgang Hall \<<whall@opensourceintegrators.com>\>
+  - Maxime Chambreuil \<<mchambreuil@opensourceintegrators.com>\>
+  - Sandip Mangukiya \<<smangukiya@opensourceintegrators.com>\>
+- [Serpent Consulting Services Pvt. Ltd.](https://www.serpentcs.com):
+  - Murtuza Saleh \<<murtuzasaleh@serpentcs.com>\>
+- [Mc Master Lawn and Pest Services](https://www.mcmpest.com):
+  - Brian McMaster \<<brian@mcmpest.com>\>
+- [Camptocamp](https://www.camptocamp.com):
+  - Italo LOPES \<<italo.lopes@camptocamp.com>\>
