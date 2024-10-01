@@ -1,0 +1,44 @@
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.agreement</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="11" />
+        <field name="inherit_id" ref="sale.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='sale_management']" position="inside">
+                <block title="Agreements" name="agreement_settings">
+                    <setting id="sales_settings_agreement_type_group">
+                        <field name="group_use_agreement_type" />
+                        <label for="group_use_agreement_type" />
+                        <div class="text-muted">
+                            Manage agreements by types
+                        </div>
+                        <div
+                            class="content-group"
+                            invisible="group_use_agreement_type == False"
+                        >
+                            <div class="mt16">
+                                <button
+                                    name="%(agreement.agreement_type_action)d"
+                                    icon="fa-arrow-right"
+                                    type="action"
+                                    string="Agreement types"
+                                    class="btn-link"
+                                />
+                            </div>
+                        </div>
+                    </setting>
+                    <setting id="sales_settings_agreement_template_group">
+                        <setting>
+                            <field name="group_use_agreement_template" />
+                            <label for="group_use_agreement_template" />
+                            <div class="text-muted">
+                                Have a special kind of agreements which act as templates
+                            </div>
+                        </setting>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
