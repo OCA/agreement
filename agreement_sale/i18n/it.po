@@ -6,60 +6,62 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2024-10-03 17:06+0000\n"
+"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #. module: agreement_sale
 #: model:ir.model.fields,field_description:agreement_sale.field_sale_order__agreement_id
 msgid "Agreement"
-msgstr ""
+msgstr "Contratto"
 
 #. module: agreement_sale
 #: model:ir.model.fields,field_description:agreement_sale.field_sale_order__agreement_type_id
 msgid "Agreement Type"
-msgstr ""
+msgstr "Tipo contratto"
 
 #. module: agreement_sale
 #: model_terms:ir.ui.view,arch_db:agreement_sale.res_config_settings_view_form
 msgid "Agreement types"
-msgstr ""
+msgstr "Tipi contratto"
 
 #. module: agreement_sale
 #: model_terms:ir.ui.view,arch_db:agreement_sale.res_config_settings_view_form
 msgid "Agreements"
-msgstr ""
+msgstr "Contratti"
 
 #. module: agreement_sale
 #: model:ir.model,name:agreement_sale.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "Impostazioni configurazione"
 
 #. module: agreement_sale
 #: model_terms:ir.ui.view,arch_db:agreement_sale.res_config_settings_view_form
 msgid "Have a special kind of agreements which act as templates"
-msgstr ""
+msgstr "Hanno un tipo speciale di accordi che fungono da modelli"
 
 #. module: agreement_sale
 #: model_terms:ir.ui.view,arch_db:agreement_sale.res_config_settings_view_form
 msgid "Manage agreements by types"
-msgstr ""
+msgstr "Gestione contratti per tipo"
 
 #. module: agreement_sale
 #: model:ir.model,name:agreement_sale.model_sale_order
 msgid "Sales Order"
-msgstr ""
+msgstr "Ordine di vendita"
 
 #. module: agreement_sale
 #: model:ir.model.fields,field_description:agreement_sale.field_res_config_settings__group_use_agreement_template
 msgid "Use agreement template"
-msgstr ""
+msgstr "Utilizza modello contratto"
 
 #. module: agreement_sale
 #: model:ir.model.fields,field_description:agreement_sale.field_res_config_settings__group_use_agreement_type
 msgid "Use agreement types"
-msgstr ""
+msgstr "Usa tipi contratto"
