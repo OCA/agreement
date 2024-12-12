@@ -5,10 +5,10 @@
         <field name="name">Agreement Type List</field>
         <field name="model">agreement.type</field>
         <field name="arch" type="xml">
-            <tree default_order="name">
+            <list default_order="name">
                 <field name="name" string="Type Name" />
                 <field name="domain" />
-            </tree>
+            </list>
         </field>
     </record>
     <!-- Agreement Type Form View -->
@@ -25,7 +25,6 @@
                         bg_color="bg-danger"
                         invisible="active"
                     />
-                    <field name="active" invisible="1" />
                     <div class="oe_title">
                         <label for="name" class="oe_edit_only" />
                         <h1>
@@ -72,6 +71,6 @@
     <record id="agreement_type_action" model="ir.actions.act_window">
         <field name="name">Agreement Types</field>
         <field name="res_model">agreement.type</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 </odoo>

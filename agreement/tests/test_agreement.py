@@ -27,13 +27,12 @@ class TestAgreement(TransactionCase):
         self.agreement.write({"agreement_type_id": self.agreement_type.id})
         self.assertEqual(self.agreement.domain, self.agreement_type.domain)
 
-    def test_name_get(self):
-        res = self.agreement.name_get()
-        self.assertEqual(res[0][0], self.agreement.id)
-        self.assertEqual(res[0][1], f"[{self.agreement.code}] {self.agreement.name}")
+    def test_compute_display_name(self):
+        display_name = self.agreement.display_name
+        self.assertEqual(display_name, f"[{self.agreement.code}] {self.agreement.name}")
 
     def test_copy(self):
         agreement1 = self.agreement.copy(default={"code": "Test Code"})
         agreement2 = self.agreement.copy()
         self.assertEqual(agreement1.code, "Test Code")
-        self.assertEqual(agreement2.code, "%s (copy)" % (self.agreement.code))
+        self.assertEqual(agreement2.code, f"{self.agreement.code} (copy)")
