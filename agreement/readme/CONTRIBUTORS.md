@@ -13,3 +13,6 @@
 - [Acsone](https://www.acsone.eu/):
 
   - Maxime Franco
+- [Trobz](https://www.trobz.com/):
+
+  - Nhan Tran \<<nhant@trobz.com>\>

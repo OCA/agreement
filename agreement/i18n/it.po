@@ -19,7 +19,6 @@ msgstr ""
 #. module: agreement
 #. odoo-python
 #: code:addons/agreement/models/agreement.py:0
-#, python-format
 msgid "%(code)s (copy)"
 msgstr "%(code)s (copia)"
 
@@ -100,11 +99,6 @@ msgid "Attachment Count"
 msgstr "Conteggio allegati"
 
 #. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__code
-msgid "Code"
-msgstr "Codice"
-
-#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__company_id
 msgid "Company"
 msgstr "Azienda"
@@ -172,6 +166,11 @@ msgid "ID"
 msgstr "ID"
 
 #. module: agreement
+#: model:ir.model.fields,help:agreement.field_agreement__code
+msgid "ID used for internal contract tracking."
+msgstr "ID utilizzato per il monitoraggio del contratto interno."
+
+#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_exception_icon
 msgid "Icon"
 msgstr "Icona"
@@ -190,6 +189,12 @@ msgstr "Se selezionata, nuovi messaggi richiedono attenzione."
 #: model:ir.model.fields,help:agreement.field_agreement__message_has_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Se selezionata, alcuni messaggi hanno un errore di consegna."
+
+#. module: agreement
+#: model:ir.model.fields,help:agreement.field_agreement__active
+msgid ""
+"If unchecked, it will allow you to hide the agreement without removing it."
+msgstr ""
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_is_follower
@@ -229,7 +234,6 @@ msgid "My Activity Deadline"
 msgstr "Scadenza mia attività"
 
 #. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__name
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__name
 msgid "Name"
 msgstr "Nome"
@@ -285,9 +289,13 @@ msgstr "Partner"
 #: code:addons/agreement/models/agreement.py:0
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
-#, python-format
 msgid "Purchase"
 msgstr "Acquisto"
+
+#. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__code
+msgid "Reference"
+msgstr "Riferimento"
 
 #. module: agreement
 #: model:ir.ui.menu,name:agreement.agreement_reporting_menu
@@ -304,7 +312,6 @@ msgstr "Utente responsabile"
 #: code:addons/agreement/models/agreement.py:0
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
-#, python-format
 msgid "Sale"
 msgstr "Vendita"
 
@@ -357,9 +364,19 @@ msgstr ""
 "Pianificato: attività future."
 
 #. module: agreement
+#: model:ir.model.fields,help:agreement.field_agreement__partner_id
+msgid "The customer or vendor this agreement is related to."
+msgstr "Il cliente o fornitore a cui è correlato questo contratto."
+
+#. module: agreement
 #: model:ir.model.constraint,message:agreement.constraint_agreement_code_partner_company_unique
 msgid "This agreement code already exists for this partner!"
 msgstr "Questo codice contratto esiste già per questo partner!"
+
+#. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__name
+msgid "Title"
+msgstr "Titolo"
 
 #. module: agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_list_view
@@ -391,30 +408,31 @@ msgstr "Messaggi sito web"
 msgid "Website communication history"
 msgstr "Cronologia comunicazioni sito web"
 
+#. module: agreement
+#: model:ir.model.fields,help:agreement.field_agreement__end_date
+msgid "When the agreement ends."
+msgstr ""
+
+#. module: agreement
+#: model:ir.model.fields,help:agreement.field_agreement__start_date
+msgid "When the agreement starts."
+msgstr ""
+
+#~ msgid "Code"
+#~ msgstr "Codice"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Errore consegna SMS"
+
 #, python-format
 #~ msgid "%s (copy)"
 #~ msgstr "%s (copia)"
-
-#~ msgid "ID used for internal contract tracking."
-#~ msgstr "ID utilizzato per il monitoraggio del contratto interno."
 
 #~ msgid "Last Modified on"
 #~ msgstr "Ultima modifica il"
 
 #~ msgid "Main Attachment"
 #~ msgstr "Allegato principale"
-
-#~ msgid "Reference"
-#~ msgstr "Riferimento"
-
-#~ msgid "The customer or vendor this agreement is related to."
-#~ msgstr "Il cliente o fornitore a cui è correlato questo contratto."
-
-#~ msgid "Title"
-#~ msgstr "Titolo"
-
-#~ msgid "SMS Delivery error"
-#~ msgstr "Errore consegna SMS"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Numero di messaggi che richiedono un'azione"

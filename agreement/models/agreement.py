@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 
 
 class Agreement(models.Model):
@@ -26,7 +26,6 @@ class Agreement(models.Model):
     )
     is_template = fields.Boolean(
         string="Is a Template?",
-        default=False,
         copy=False,
         help="Set if the agreement is a template. "
         "Template agreements don't require a partner.",
@@ -51,8 +50,8 @@ class Agreement(models.Model):
     @api.model
     def _domain_selection(self):
         return [
-            ("sale", _("Sale")),
-            ("purchase", _("Purchase")),
+            ("sale", self.env._("Sale")),
+            ("purchase", self.env._("Purchase")),
         ]
 
     @api.depends("agreement_type_id")
@@ -63,14 +62,9 @@ class Agreement(models.Model):
             else:
                 rec.domain = "sale"
 
-    def name_get(self):
-        res = []
-        for agr in self:
-            name = agr.name
-            if agr.code:
-                name = f"[{agr.code}] {agr.name}"
-            res.append((agr.id, name))
-        return res
+    def _compute_display_name(self):
+        for rec in self:
+            rec.display_name = f"[{rec.code}] {rec.name}"
 
     _sql_constraints = [
         (
@@ -85,5 +79,5 @@ class Agreement(models.Model):
         default = dict(default or {})
         if default.get("code", False):
             return super().copy(default)
-        default.setdefault("code", _("%(code)s (copy)", code=self.code))
+        default.setdefault("code", self.env._("%(code)s (copy)", code=self.code))
         return super().copy(default)
