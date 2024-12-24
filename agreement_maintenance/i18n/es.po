@@ -45,33 +45,9 @@ msgid "Create Maintenance Requests"
 msgstr "Crear Solicitudes de Mantenimiento"
 
 #. module: agreement_maintenance
-#: model:ir.model.fields,field_description:agreement_maintenance.field_agreement__display_name
-#: model:ir.model.fields,field_description:agreement_maintenance.field_agreement_serviceprofile__display_name
-#: model:ir.model.fields,field_description:agreement_maintenance.field_maintenance_equipment__display_name
-#: model:ir.model.fields,field_description:agreement_maintenance.field_maintenance_request__display_name
-msgid "Display Name"
-msgstr "Mostrar Nombre"
-
-#. module: agreement_maintenance
 #: model:ir.model.fields,field_description:agreement_maintenance.field_agreement_serviceprofile__equipment_id
 msgid "Equipment"
 msgstr "Equipamiento"
-
-#. module: agreement_maintenance
-#: model:ir.model.fields,field_description:agreement_maintenance.field_agreement__id
-#: model:ir.model.fields,field_description:agreement_maintenance.field_agreement_serviceprofile__id
-#: model:ir.model.fields,field_description:agreement_maintenance.field_maintenance_equipment__id
-#: model:ir.model.fields,field_description:agreement_maintenance.field_maintenance_request__id
-msgid "ID"
-msgstr "ID"
-
-#. module: agreement_maintenance
-#: model:ir.model.fields,field_description:agreement_maintenance.field_agreement____last_update
-#: model:ir.model.fields,field_description:agreement_maintenance.field_agreement_serviceprofile____last_update
-#: model:ir.model.fields,field_description:agreement_maintenance.field_maintenance_equipment____last_update
-#: model:ir.model.fields,field_description:agreement_maintenance.field_maintenance_request____last_update
-msgid "Last Modified on"
-msgstr "Última Modificación el"
 
 #. module: agreement_maintenance
 #: model:ir.model,name:agreement_maintenance.model_maintenance_equipment
@@ -103,3 +79,12 @@ msgstr "Perfiles de Servicio"
 #: model_terms:ir.ui.view,arch_db:agreement_maintenance.maintenance_equipment_form_view_agreement
 msgid "Services"
 msgstr "Servicios"
+
+#~ msgid "Display Name"
+#~ msgstr "Mostrar Nombre"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Última Modificación el"
