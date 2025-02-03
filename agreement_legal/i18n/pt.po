@@ -147,7 +147,6 @@ msgstr ""
 
 #. module: agreement_legal
 #: model:ir.actions.server,name:agreement_legal.ir_cron_test_acc_move_except_ir_actions_server
-#: model:ir.cron,cron_name:agreement_legal.ir_cron_test_acc_move_except
 msgid "Agreement: Check to Review Days"
 msgstr ""
 
@@ -393,7 +392,7 @@ msgstr ""
 
 #. module: agreement_legal
 #. odoo-javascript
-#: code:addons/agreement_legal/static/src/xml/agreement.xml:0
+#: code:addons/agreement_legal/static/src/xml/agreement_template.xml:0
 #: model:ir.actions.act_window,name:agreement_legal.create_agreement_from_template_action
 #, python-format
 msgid "Create From Template"
@@ -660,18 +659,6 @@ msgstr "Inventário"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage__fold
 msgid "Is Folded"
 msgstr "Está guardado"
-
-#. module: agreement_legal
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_line____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_section____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard____last_update
-msgid "Last Modified on"
-msgstr "Modificado em"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__write_uid
@@ -1133,7 +1120,6 @@ msgid "Sections"
 msgstr "Secções"
 
 #. module: agreement_legal
-#: model:ir.model.fields,help:agreement_legal.field_agreement__field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_appendix__field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_clause__field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_recital__field_id
@@ -1576,6 +1562,15 @@ msgid "When the agreement starts."
 msgstr "Quando inicia o acordo."
 
 #. module: agreement_legal
+#: model:ir.model.fields,help:agreement_legal.field_agreement__field_id
+msgid ""
+"You can select a target field from the related document model.\n"
+"        If it is a relationship field you will be able to select a target "
+"field\n"
+"        at the destination of the relationship."
+msgstr ""
+
+#. module: agreement_legal
 #. odoo-python
 #: code:addons/agreement_legal/models/agreement.py:0
 #, python-format
@@ -1619,6 +1614,9 @@ msgstr "|  Criado Por:"
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "|  Created On:"
 msgstr "|  Criado Em:"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Modificado em"
 
 #~ msgid ""
 #~ "The address to send notificaitons to, if different from customer address."
