@@ -145,7 +145,6 @@ msgstr ""
 
 #. module: agreement_legal
 #: model:ir.actions.server,name:agreement_legal.ir_cron_test_acc_move_except_ir_actions_server
-#: model:ir.cron,cron_name:agreement_legal.ir_cron_test_acc_move_except
 msgid "Agreement: Check to Review Days"
 msgstr ""
 
@@ -195,8 +194,8 @@ msgstr ""
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__special_terms
 msgid ""
-"Any terms that you have agreed to and want to track on the "
-"agreement/contract."
+"Any terms that you have agreed to and want to track on the agreement/"
+"contract."
 msgstr ""
 
 #. module: agreement_legal
@@ -388,7 +387,7 @@ msgstr ""
 
 #. module: agreement_legal
 #. odoo-javascript
-#: code:addons/agreement_legal/static/src/xml/agreement.xml:0
+#: code:addons/agreement_legal/static/src/xml/agreement_template.xml:0
 #: model:ir.actions.act_window,name:agreement_legal.create_agreement_from_template_action
 #, python-format
 msgid "Create From Template"
@@ -655,18 +654,6 @@ msgid "Is Folded"
 msgstr ""
 
 #. module: agreement_legal
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_line____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_section____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard____last_update
-msgid "Last Modified on"
-msgstr ""
-
-#. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__write_uid
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__write_uid
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_line__write_uid
@@ -694,8 +681,8 @@ msgstr ""
 #: model:ir.model.fields,help:agreement_legal.field_agreement__parent_agreement_id
 msgid ""
 "Link this agreement to a parent agreement. For example if this agreement is "
-"an amendment to another agreement. This list will only show other agreements"
-" related to the same account."
+"an amendment to another agreement. This list will only show other agreements "
+"related to the same account."
 msgstr ""
 
 #. module: agreement_legal
@@ -823,10 +810,6 @@ msgstr ""
 
 #. module: agreement_legal
 #. odoo-python
-#: code:addons/agreement_legal/models/agreement.py:0
-#: code:addons/agreement_legal/models/agreement.py:0
-#: code:addons/agreement_legal/models/agreement.py:0
-#: code:addons/agreement_legal/models/agreement.py:0
 #: code:addons/agreement_legal/models/agreement.py:0
 #, python-format
 msgid "New"
@@ -1127,14 +1110,14 @@ msgid "Sections"
 msgstr ""
 
 #. module: agreement_legal
-#: model:ir.model.fields,help:agreement_legal.field_agreement__field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_appendix__field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_clause__field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_recital__field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_section__field_id
 msgid ""
 "Select target field from the related document model. If it is a\n"
-"         relationship field you will be able to select a target field at the\n"
+"         relationship field you will be able to select a target field at "
+"the\n"
 "         destination of the relationship."
 msgstr ""
 
@@ -1353,8 +1336,8 @@ msgstr ""
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__notification_address_id
 msgid ""
-"The address to send notifications to, if different from customer "
-"address.(Address Type = Other)"
+"The address to send notifications to, if different from customer address."
+"(Address Type = Other)"
 msgstr ""
 
 #. module: agreement_legal
@@ -1529,7 +1512,8 @@ msgstr ""
 #: model:ir.model.fields,help:agreement_legal.field_agreement_section__sub_model_object_field_id
 msgid ""
 "When a relationship field is selected as first field, this\n"
-"         field lets you select the target field within the destination document\n"
+"         field lets you select the target field within the destination "
+"document\n"
 "          model (sub-model)."
 msgstr ""
 
@@ -1552,6 +1536,15 @@ msgstr ""
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__start_date
 msgid "When the agreement starts."
+msgstr ""
+
+#. module: agreement_legal
+#: model:ir.model.fields,help:agreement_legal.field_agreement__field_id
+msgid ""
+"You can select a target field from the related document model.\n"
+"        If it is a relationship field you will be able to select a target "
+"field\n"
+"        at the destination of the relationship."
 msgstr ""
 
 #. module: agreement_legal
