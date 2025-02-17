@@ -1,13 +1,15 @@
 # Copyright (C) 2021 - TODAY, Open Source Integrators
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-import odoo.tests.common as common
 from odoo import fields
 
+from odoo.addons.base.tests.common import BaseCommon
 
-class TestAgreementMaintenance(common.TransactionCase):
-    def setUp(self):
-        super().setUp()
+
+class TestAgreementMaintenance(BaseCommon):
+    @classmethod
+    def setUpClass(self):
+        super().setUpClass()
 
         self.agreement_obj = self.env["agreement"]
         self.agreement_type_id = self.env["agreement.type"].create(

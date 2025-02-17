@@ -87,6 +87,9 @@ Contributors
 - Wolfgang Hall <whall@opensourceintegrators.com>
 - Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
 - Serpent Consulting Services Pvt. Ltd. <support@serpentcs.com>
+- `Heliconia Solutions Pvt. Ltd. <https://www.heliconia.io>`__
+
+  - Bhavesh Heliconia
 
 Other credits
 -------------
