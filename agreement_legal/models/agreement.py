@@ -226,7 +226,7 @@ class Agreement(models.Model):
         "customer address.(Address Type = Other)",
     )
     signed_contract_filename = fields.Char(string="Filename")
-    signed_contract = fields.Binary(string="Signed Document", tracking=True)
+    signed_contract = fields.Binary(string="Signed Document")
     template_id = fields.Many2one(
         "agreement", string="Template", domain=[("is_template", "=", True)]
     )
