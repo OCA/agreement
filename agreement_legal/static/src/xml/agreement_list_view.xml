@@ -12,6 +12,4 @@
             <t t-call="agreement_legal.TemplateButton" />
         </xpath>
     </t>
-
-
 </templates>

@@ -1,5 +1,4 @@
 <odoo>
-
     <record id="partner_agreement_contract_document" model="ir.actions.report">
         <field name="name">Agreement</field>
         <field name="model">agreement</field>
@@ -46,8 +45,8 @@
                                 </div>
                                 <div name="company_contact">
                                     Represented by <span
-                                        t-field="doc.company_contact_id.name"
-                                    />.
+                                    t-field="doc.company_contact_id.name"
+                                />.
                                 </div>
                                 <h3>Partner Information</h3>
                                 <div name="partner_address">
@@ -58,8 +57,8 @@
                                 </div>
                                 <div name="partner_contact">
                                     Represented by <span
-                                        t-field="doc.partner_contact_id.name"
-                                    />.
+                                    t-field="doc.partner_contact_id.name"
+                                />.
                                 </div>
                             </t>
                             <h2>Agreement</h2>
@@ -136,13 +135,13 @@
                                             <p>By: </p>
                                             <p>
                                                 Name: <span
-                                                    t-field="doc.partner_contact_id.name"
-                                                />
+                                                t-field="doc.partner_contact_id.name"
+                                            />
                                             </p>
                                             <p>
                                                 Title: <span
-                                                    t-field="doc.partner_contact_id.function"
-                                                />
+                                                t-field="doc.partner_contact_id.function"
+                                            />
                                             </p>
                                             <p>Date: </p>
                                         </td>
@@ -151,13 +150,13 @@
                                             <p>By: </p>
                                             <p>
                                                 Name: <span
-                                                    t-field="doc.company_contact_id.name"
-                                                />
+                                                t-field="doc.company_contact_id.name"
+                                            />
                                             </p>
                                             <p>
                                                 Title: <span
-                                                    t-field="doc.company_contact_id.function"
-                                                />
+                                                t-field="doc.company_contact_id.function"
+                                            />
                                             </p>
                                             <p>Date: </p>
                                         </td>
@@ -179,5 +178,4 @@
             </t>
         </t>
     </template>
-
 </odoo>

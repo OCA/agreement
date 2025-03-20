@@ -1,5 +1,4 @@
 <odoo>
-
     <!-- Agreement Type List View-->
     <record model="ir.ui.view" id="partner_agreement_type_list_view">
         <field name="name">Agreement Type List</field>
@@ -9,7 +8,7 @@
             <field name="name" position="after">
                 <field name="agreement_subtypes_ids" widget="many2many_tags" />
             </field>
-       </field>
+        </field>
     </record>
 
     <!-- Agreement Type Form View -->
@@ -23,9 +22,9 @@
             </xpath>
             <xpath expr="//sheet" position="inside">
                 <field name="agreement_subtypes_ids" nolabel="1">
-                    <tree editable="bottom">
+                    <list editable="bottom">
                         <field name="name" />
-                    </tree>
+                    </list>
                 </field>
             </xpath>
         </field>
@@ -35,7 +34,6 @@
     <record model="ir.actions.act_window" id="partner_agreement_action_type">
         <field name="name">Agreement Types</field>
         <field name="res_model">agreement.type</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
-
 </odoo>

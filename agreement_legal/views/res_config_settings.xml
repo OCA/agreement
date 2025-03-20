@@ -1,5 +1,4 @@
 <odoo>
-
     <record id="res_config_settings_view_form" model="ir.ui.view">
         <field name="name">res.config.settings.view.form.agreement</field>
         <field name="model">res.config.settings</field>
@@ -35,7 +34,6 @@
                     </block>
                     <block title="Advanced Features">
                         <setting>
-
                             <field name="module_agreement_sale" />
 
                             <label for="module_agreement_sale" string="Sales" />
@@ -44,7 +42,6 @@
                             </div>
                         </setting>
                         <setting invisible="module_agreement_sale != True">
-
                             <field name="module_agreement_sale_subscription" />
 
                             <label
@@ -56,7 +53,6 @@
                             </div>
                         </setting>
                         <setting>
-
                             <field name="module_fieldservice_agreement" />
 
                             <label
@@ -68,7 +64,6 @@
                             </div>
                         </setting>
                         <setting>
-
                             <field name="module_agreement_stock" />
 
                             <label for="module_agreement_stock" string="Inventory" />
@@ -77,7 +72,6 @@
                             </div>
                         </setting>
                         <setting>
-
                             <field name="module_agreement_rma" />
 
                             <label for="module_agreement_rma" string="Returns" />
@@ -86,7 +80,6 @@
                             </div>
                         </setting>
                         <setting>
-
                             <field name="module_agreement_maintenance" />
 
                             <label
@@ -98,7 +91,6 @@
                             </div>
                         </setting>
                         <setting>
-
                             <field name="module_agreement_mrp" />
 
                             <label for="module_agreement_mrp" string="Manufacturing" />
@@ -107,7 +99,6 @@
                             </div>
                         </setting>
                         <setting>
-
                             <field name="module_agreement_repair" />
 
                             <label for="module_agreement_repair" string="Repair" />
@@ -116,7 +107,6 @@
                             </div>
                         </setting>
                         <setting>
-
                             <field name="module_agreement_project" />
 
                             <label for="module_agreement_project" string="Project" />
@@ -125,7 +115,6 @@
                             </div>
                         </setting>
                         <setting>
-
                             <field name="module_agreement_helpdesk" />
 
                             <label for="module_agreement_helpdesk" string="Helpdesk" />
@@ -148,5 +137,4 @@
         <field name="target">inline</field>
         <field name="context">{'module': 'agreement_legal'}</field>
     </record>
-
 </odoo>
