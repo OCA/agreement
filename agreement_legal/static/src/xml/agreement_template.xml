@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates>
-
     <t t-name="agreement_legal.TemplateButton">
         <button
             type="button"
@@ -11,5 +10,4 @@
             Create From Template
         </button>
     </t>
-
 </templates>

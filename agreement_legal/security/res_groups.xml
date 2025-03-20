@@ -2,7 +2,7 @@
     <record id="module_agreement_legal_category" model="ir.module.category">
         <field name="name">Agreement</field>
         <field name="sequence">17</field>
-   </record>
+    </record>
 
     <!-- Readonly group -->
     <record id="group_agreement_readonly" model="res.groups">

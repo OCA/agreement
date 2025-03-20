@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates>
-
     <t t-inherit="web.FormView" t-inherit-mode="extension">
         <xpath
             expr="//*[@class='btn btn-secondary o_form_button_create']"
@@ -17,5 +16,4 @@
             <attribute name="t-if">canCreateTemplate</attribute>
         </xpath>
     </t>
-
 </templates>

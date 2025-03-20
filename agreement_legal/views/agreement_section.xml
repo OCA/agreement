@@ -1,17 +1,16 @@
 <odoo>
-
     <!-- Agreement Sections List View-->
     <record model="ir.ui.view" id="partner_agreement_section_list_view">
         <field name="name">Agreement Section List</field>
         <field name="model">agreement.section</field>
         <field name="arch" type="xml">
-            <tree default_order="agreement_id, sequence">
+            <list default_order="agreement_id, sequence">
                 <field name="sequence" widget="handle" />
                 <field name="name" />
                 <field name="title" />
                 <field name="agreement_id" />
                 <field name="active" column_invisible="1" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -32,7 +31,9 @@
                     <field name="active" invisible="1" />
                     <div class="oe_title">
                         <label for="name" class="oe_edit_only" />
-                        <h1><field name="name" /></h1>
+                        <h1>
+                            <field name="name" />
+                        </h1>
                     </div>
                     <group>
                         <group>
@@ -69,13 +70,13 @@
                                 <p>
                                     This section (on the left) allows you to add dynamic fields inside the content.
                                     <ol>
-                                        <li>Select the section field</li>
-                                        <li>Select the sub-field</li>
-                                        <li
-                                        >Enter the default value if the field is empty</li>
-                                        <li
-                                        >Copy and paste the placeholder expression in the content</li>
-                                    </ol>
+                                    <li>Select the section field</li>
+                                    <li>Select the sub-field</li>
+                                    <li
+                                    >Enter the default value if the field is empty</li>
+                                    <li
+                                    >Copy and paste the placeholder expression in the content</li>
+                                </ol>
                                 </p>
                             </group>
                         </page>
@@ -85,11 +86,11 @@
                                 nolabel="1"
                                 context="{'default_section_id': id, 'default_agreement_id': agreement_id}"
                             >
-                                <tree>
+                                <list>
                                     <field name="sequence" widget="handle" />
                                     <field name="name" />
                                     <field name="title" />
-                                </tree>
+                                </list>
                             </field>
                         </page>
                     </notebook>
@@ -119,7 +120,7 @@
     <record model="ir.actions.act_window" id="partner_agreement_action_section">
         <field name="name">Agreement Sections</field>
         <field name="res_model">agreement.section</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <!-- Agreement Sections List View 2 (Call this view from agreement)-->
@@ -130,9 +131,9 @@
         <field name="mode">primary</field>
         <field name="priority">999</field>
         <field name="arch" type="xml">
-            <tree position="attributes">
+            <list position="attributes">
                 <attribute name="default_order">sequence</attribute>
-            </tree>
+            </list>
             <field name="agreement_id" position="attributes">
                 <attribute name="column_invisible">1</attribute>
             </field>
@@ -152,5 +153,4 @@
             </field>
         </field>
     </record>
-
 </odoo>
