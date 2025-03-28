@@ -112,9 +112,7 @@ class TestAgreement(TransactionCase):
         )
         doc = etree.XML(res["arch"])
         field = doc.xpath("//field[@name='partner_contact_id']")
-        self.assertEqual(
-            field[0].get("modifiers", ""), '{"readonly": [["readonly", "=", true]]}'
-        )
+        self.assertEqual(field[0].get("modifiers", ""), '{"readonly": true}')
 
     def test_action_create_new_version(self):
         self.test_agreement.create_new_version()

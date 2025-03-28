@@ -485,13 +485,11 @@ class Agreement(models.Model):
                 attrs = ast.literal_eval(node.attrib.get("attrs", "{}"))
                 if attrs:
                     if attrs.get("readonly"):
-                        attrs["readonly"] = ["|", ("readonly", "=", True)] + attrs[
-                            "readonly"
-                        ]
+                        attrs["readonly"] = {"readonly: True"} + attrs["readonly"]
                     else:
-                        attrs["readonly"] = [("readonly", "=", True)]
+                        attrs["readonly"] = True
                 else:
-                    attrs["readonly"] = [("readonly", "=", True)]
+                    attrs["readonly"] = True
                 node.set("attrs", simplejson.dumps(attrs))
                 modifiers = ast.literal_eval(
                     node.attrib.get("modifiers", "{}")
