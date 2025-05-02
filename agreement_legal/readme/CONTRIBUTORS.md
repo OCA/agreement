@@ -6,3 +6,5 @@
 - Yves Goldberg \<<yves@ygol.com>\>
 - Tharathip Chaweewongphan \<<tharathipc@ecosoft.co.th>\>
 - Italo LOPES \<<italo.lopes@camptocamp.com>\>
+- [APSL-Nagarro](https://www.apsl.tech):
+  - Antoni Marroig \<<amarroig@apsl.net>\>

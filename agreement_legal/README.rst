@@ -53,29 +53,29 @@ Configuration
 
 To configure this module:
 
-- Go to Agreement > Configuration > Templates
-- Create a new template with sections and clauses and their respective
-  content
-- Go to Agreement > Configuration > Stages
-- Create and reorder stages to match your process
+-  Go to Agreement > Configuration > Templates
+-  Create a new template with sections and clauses and their respective
+   content
+-  Go to Agreement > Configuration > Stages
+-  Create and reorder stages to match your process
 
 Usage
 =====
 
 To use this module:
 
-- Go to Agreement > Agreements
-- Create a new agreement
-- Select a template
-- Follow the process to get the required approval
-- Send the invitation to the customer to review and sign the agreement
+-  Go to Agreement > Agreements
+-  Create a new agreement
+-  Select a template
+-  Follow the process to get the required approval
+-  Send the invitation to the customer to review and sign the agreement
 
 Known issues / Roadmap
 ======================
 
-- Split the module to remove the dependencies on sale and account and
-  provide the same feature in extra modules (agreement_sale,
-  agreement_account, agreement_purchase)
+-  Split the module to remove the dependencies on sale and account and
+   provide the same feature in extra modules (agreement_sale,
+   agreement_account, agreement_purchase)
 
 Bug Tracker
 ===========
@@ -100,23 +100,26 @@ Authors
 Contributors
 ------------
 
-- Patrick Wilson <pwilson@pavlovmedia.com>
-- Bhavesh Odedra <bodedra@opensourceintegrators.com>
-- Wolfgang Hall <whall@opensourceintegrators.com>
-- Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
-- Sandip Mangukiya <smangukiya@opensourceintegrators.com>
-- Yves Goldberg <yves@ygol.com>
-- Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
-- Italo LOPES <italo.lopes@camptocamp.com>
+-  Patrick Wilson <pwilson@pavlovmedia.com>
+-  Bhavesh Odedra <bodedra@opensourceintegrators.com>
+-  Wolfgang Hall <whall@opensourceintegrators.com>
+-  Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
+-  Sandip Mangukiya <smangukiya@opensourceintegrators.com>
+-  Yves Goldberg <yves@ygol.com>
+-  Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
+-  Italo LOPES <italo.lopes@camptocamp.com>
+-  `APSL-Nagarro <https://www.apsl.tech>`__:
+
+   -  Antoni Marroig <amarroig@apsl.net>
 
 Other credits
 -------------
 
 The development of this module has been financially supported by:
 
-- Pavlov Media
-- Open Source Integrators
-- Yves Goldberg
+-  Pavlov Media
+-  Open Source Integrators
+-  Yves Goldberg
 
 Maintainers
 -----------

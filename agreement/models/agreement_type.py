@@ -8,7 +8,7 @@ class AgreementType(models.Model):
     _name = "agreement.type"
     _description = "Agreement Types"
 
-    name = fields.Char(required=True)
+    name = fields.Char(required=True, translate=True)
     active = fields.Boolean(default=True)
     domain = fields.Selection("_domain_selection", default="sale")
 
