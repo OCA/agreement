@@ -11,7 +11,7 @@ class AgreementStage(models.Model):
     _order = "sequence"
 
     # General
-    name = fields.Char(string="Stage Name", required=True)
+    name = fields.Char(string="Stage Name", required=True, translate=True)
     sequence = fields.Integer(default="1", required=False)
     fold = fields.Boolean(
         string="Is Folded",

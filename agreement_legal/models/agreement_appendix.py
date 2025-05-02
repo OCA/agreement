@@ -10,14 +10,18 @@ class AgreementAppendix(models.Model):
     _description = "Agreement Appendices"
     _order = "sequence"
 
-    name = fields.Char(required=True)
+    name = fields.Char(required=True, translate=True)
     title = fields.Char(
-        required=True, help="The title is displayed on the PDF. The name is not."
+        required=True,
+        help="The title is displayed on the PDF. The name is not.",
+        translate=True,
     )
     sequence = fields.Integer(default=10)
-    content = fields.Html()
+    content = fields.Html(translate=True)
     dynamic_content = fields.Html(
-        compute="_compute_dynamic_content", help="compute dynamic Content"
+        compute="_compute_dynamic_content",
+        help="compute dynamic Content",
+        translate=True,
     )
     agreement_id = fields.Many2one("agreement", string="Agreement", ondelete="cascade")
     active = fields.Boolean(
