@@ -1,13 +1,15 @@
 # Copyright (C) 2020 - TODAY, Marcel Savegnago - Escodoo
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-
 import odoo.tests.common as common
 
+from odoo.addons.base.tests.common import DISABLED_MAIL_CONTEXT
 
-class TestAgreementHelpdeskMgmt(common.SavepointCase):
+
+class TestAgreementHelpdeskMgmt(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        cls.env = cls.env(context=dict(cls.env.context, **DISABLED_MAIL_CONTEXT))
         cls.partner = cls.env["res.partner"].create(
             {
                 "name": "Test Partner",
@@ -17,6 +19,7 @@ class TestAgreementHelpdeskMgmt(common.SavepointCase):
         cls.agreement = cls.env["agreement"].create(
             {
                 "name": "Test Agreement",
+                "code": "AGREEMENT001",
                 "partner_id": cls.partner.id,
             }
         )

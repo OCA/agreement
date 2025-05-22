@@ -17,16 +17,17 @@ class Agreement(models.Model):
         for rec in self:
             rec.ticket_count = len(rec.ticket_ids)
 
-    @api.multi
     def action_view_ticket(self):
-        for agreement in self:
-            action = self.env.ref("helpdesk_mgmt.helpdesk_ticket_action").read()[0]
-            action["context"] = {}
-            if len(self.ticket_ids) == 1:
-                action["views"] = [
-                    (self.env.ref("helpdesk_mgmt.ticket_view_form").id, "form")
-                ]
-                action["res_id"] = self.ticket_ids.ids[0]
-            else:
-                action["domain"] = [("id", "in", self.ticket_ids.ids)]
-            return action
+        self.ensure_one()
+        action = self.env["ir.actions.actions"]._for_xml_id(
+            "helpdesk_mgmt.helpdesk_ticket_action"
+        )
+        action["context"] = {}
+        if len(self.ticket_ids) == 1:
+            action["views"] = [
+                (self.env.ref("helpdesk_mgmt.ticket_view_form").id, "form")
+            ]
+            action["res_id"] = self.ticket_ids.ids[0]
+        else:
+            action["domain"] = [("id", "in", self.ticket_ids.ids)]
+        return action
