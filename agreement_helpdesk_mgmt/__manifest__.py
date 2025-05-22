@@ -2,23 +2,21 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    'name': 'Agreement Helpdesk Mgmt',
-    'summary': """
+    "name": "Agreement Helpdesk Mgmt",
+    "summary": """
             Link a helpdesk ticket to an agreement""",
-    'version': '12.0.1.0.2',
-    'license': 'AGPL-3',
-    'author': 'Open Source Integrators,Odoo Community Association (OCA)',
-    'website': 'https://github.com/OCA/contract',
-    'images': ['static/description/banner.png'],
-    'depends': [
+    "version": "12.0.1.0.2",
+    "license": "AGPL-3",
+    "author": "Open Source Integrators,Odoo Community Association (OCA)",
+    "website": "https://github.com/OCA/agreement",
+    "images": ["static/description/banner.png"],
+    "depends": [
         "helpdesk_mgmt",
         "agreement_serviceprofile",
     ],
-    'data': [
-        'views/helpdesk_ticket.xml',
-        'views/agreement.xml',
+    "data": [
+        "views/helpdesk_ticket.xml",
+        "views/agreement.xml",
     ],
-    'maintainers': [
-        'bodedra'
-    ],
+    "maintainers": ["bodedra"],
 }
