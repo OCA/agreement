@@ -17,16 +17,15 @@ class Agreement(models.Model):
         for rec in self:
             rec.ticket_count = len(rec.ticket_ids)
 
-    @api.multi
     def action_view_ticket(self):
         for agreement in self:
-            action = self.env.ref("helpdesk_mgmt.helpdesk_ticket_action").read()[0]
+            action = agreement.env.ref("helpdesk_mgmt.helpdesk_ticket_action").read()[0]
             action["context"] = {}
-            if len(self.ticket_ids) == 1:
+            if len(agreement.ticket_ids) == 1:
                 action["views"] = [
-                    (self.env.ref("helpdesk_mgmt.ticket_view_form").id, "form")
+                    (agreement.env.ref("helpdesk_mgmt.ticket_view_form").id, "form")
                 ]
-                action["res_id"] = self.ticket_ids.ids[0]
+                action["res_id"] = agreement.ticket_ids.ids[0]
             else:
-                action["domain"] = [("id", "in", self.ticket_ids.ids)]
+                action["domain"] = [("id", "in", agreement.ticket_ids.ids)]
             return action
