@@ -16,8 +16,15 @@ class Agreement(models.Model):
         "res.partner",
         string="Partner",
         ondelete="restrict",
-        domain=[("parent_id", "=", False)],
         tracking=True,
+    )
+    commercial_partner_id = fields.Many2one(
+        "res.partner",
+        string="Commercial Entity",
+        compute="_compute_commercial_partner_id",
+        tracking=True,
+        precompute=True,
+        store=True,
     )
     company_id = fields.Many2one(
         "res.company",
@@ -54,6 +61,11 @@ class Agreement(models.Model):
             ("purchase", self.env._("Purchase")),
         ]
 
+    @api.depends("partner_id")
+    def _compute_commercial_partner_id(self):
+        for rec in self:
+            rec.commercial_partner_id = rec.partner_id.commercial_partner_id
+
     @api.depends("agreement_type_id")
     def _compute_domain(self):
         for rec in self:
@@ -69,8 +81,8 @@ class Agreement(models.Model):
     _sql_constraints = [
         (
             "code_partner_company_unique",
-            "unique(code, partner_id, company_id)",
-            "This agreement code already exists for this partner!",
+            "unique(code, commercial_partner_id, company_id)",
+            "This agreement code already exists for this commercial entity!",
         )
     ]
 
