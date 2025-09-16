@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-11-20 13:06+0000\n"
+"PO-Revision-Date: 2025-09-16 11:42+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #. module: agreement
 #. odoo-python
@@ -195,6 +195,7 @@ msgstr "Se selezionata, alcuni messaggi hanno un errore di consegna."
 msgid ""
 "If unchecked, it will allow you to hide the agreement without removing it."
 msgstr ""
+"Se non selezionato, permette di nascondere il contratto senza rimuoverlo."
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_is_follower
@@ -411,12 +412,12 @@ msgstr "Cronologia comunicazioni sito web"
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__end_date
 msgid "When the agreement ends."
-msgstr ""
+msgstr "Quando termina il contratto."
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__start_date
 msgid "When the agreement starts."
-msgstr ""
+msgstr "Quando inizia il contratto."
 
 #~ msgid "Code"
 #~ msgstr "Codice"
