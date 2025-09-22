@@ -80,10 +80,19 @@ msgstr "Avtalstyper"
 
 #. module: agreement
 #: model:ir.actions.act_window,name:agreement.agreement_action
+#: model:ir.model.fields,field_description:agreement.field_res_partner__agreement_ids
+#: model:ir.model.fields,field_description:agreement.field_res_users__agreement_ids
 #: model:ir.ui.menu,name:agreement.agreement_menu
 #: model:ir.ui.menu,name:agreement.agreement_menu_root
+#: model_terms:ir.ui.view,arch_db:agreement.partner_form
 msgid "Agreements"
 msgstr "Avtal"
+
+#. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_res_partner__agreements_count
+#: model:ir.model.fields,field_description:agreement.field_res_users__agreements_count
+msgid "Agreements Count"
+msgstr ""
 
 #. module: agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_form
@@ -107,6 +116,11 @@ msgstr "Bolag"
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_form
 msgid "Configuration"
 msgstr "Konfiguration"
+
+#. module: agreement
+#: model:ir.model,name:agreement.model_res_partner
+msgid "Contact"
+msgstr ""
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__create_uid

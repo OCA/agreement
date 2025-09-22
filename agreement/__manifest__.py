@@ -4,7 +4,7 @@
 {
     "name": "Agreement",
     "summary": "Adds an agreement object",
-    "version": "18.0.1.0.1",
+    "version": "18.0.1.1.0",
     "category": "Contract",
     "author": "Akretion, "
     "Yves Goldberg (Ygol Internetwork), "
@@ -18,6 +18,7 @@
         "views/agreement.xml",
         "views/agreement_type.xml",
         "views/agreement_menu.xml",
+        "views/res_partner.xml",
     ],
     "demo": ["demo/demo.xml"],
     "development_status": "Beta",
