@@ -10,4 +10,3 @@ from . import agreement_recital
 from . import agreement_section
 from . import agreement_type
 from . import agreement_subtype
-from . import res_partner

@@ -1,7 +1,3 @@
-.. image:: https://odoo-community.org/readme-banner-image
-   :target: https://odoo-community.org/get-involved?utm_source=readme
-   :alt: Odoo Community Association
-
 ================
 Agreements Legal
 ================
@@ -17,7 +13,7 @@ Agreements Legal
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fagreement-lightgray.png?logo=github
@@ -53,29 +49,29 @@ Configuration
 
 To configure this module:
 
-- Go to Agreement > Configuration > Templates
-- Create a new template with sections and clauses and their respective
-  content
-- Go to Agreement > Configuration > Stages
-- Create and reorder stages to match your process
+-  Go to Agreement > Configuration > Templates
+-  Create a new template with sections and clauses and their respective
+   content
+-  Go to Agreement > Configuration > Stages
+-  Create and reorder stages to match your process
 
 Usage
 =====
 
 To use this module:
 
-- Go to Agreement > Agreements
-- Create a new agreement
-- Select a template
-- Follow the process to get the required approval
-- Send the invitation to the customer to review and sign the agreement
+-  Go to Agreement > Agreements
+-  Create a new agreement
+-  Select a template
+-  Follow the process to get the required approval
+-  Send the invitation to the customer to review and sign the agreement
 
 Known issues / Roadmap
 ======================
 
-- Split the module to remove the dependencies on sale and account and
-  provide the same feature in extra modules (agreement_sale,
-  agreement_account, agreement_purchase)
+-  Split the module to remove the dependencies on sale and account and
+   provide the same feature in extra modules (agreement_sale,
+   agreement_account, agreement_purchase)
 
 Bug Tracker
 ===========
@@ -100,23 +96,23 @@ Authors
 Contributors
 ------------
 
-- Patrick Wilson <pwilson@pavlovmedia.com>
-- Bhavesh Odedra <bodedra@opensourceintegrators.com>
-- Wolfgang Hall <whall@opensourceintegrators.com>
-- Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
-- Sandip Mangukiya <smangukiya@opensourceintegrators.com>
-- Yves Goldberg <yves@ygol.com>
-- Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
-- Italo LOPES <italo.lopes@camptocamp.com>
+-  Patrick Wilson <pwilson@pavlovmedia.com>
+-  Bhavesh Odedra <bodedra@opensourceintegrators.com>
+-  Wolfgang Hall <whall@opensourceintegrators.com>
+-  Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
+-  Sandip Mangukiya <smangukiya@opensourceintegrators.com>
+-  Yves Goldberg <yves@ygol.com>
+-  Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
+-  Italo LOPES <italo.lopes@camptocamp.com>
 
 Other credits
 -------------
 
 The development of this module has been financially supported by:
 
-- Pavlov Media
-- Open Source Integrators
-- Yves Goldberg
+-  Pavlov Media
+-  Open Source Integrators
+-  Yves Goldberg
 
 Maintainers
 -----------

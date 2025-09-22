@@ -29,7 +29,6 @@
         "views/agreement_stages.xml",
         "views/agreement_type.xml",
         "views/agreement_subtype.xml",
-        "views/res_partner.xml",
         "views/agreement.xml",
         "views/menu.xml",
         "wizards/create_agreement_wizard.xml",
