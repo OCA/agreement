@@ -67,6 +67,7 @@ msgstr "Nombre de acuerdo"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__agreement_type_id
+#: model:ir.ui.menu,name:agreement.agreement_type_menu_main
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_form_view
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
 msgid "Agreement Type"
@@ -81,10 +82,19 @@ msgstr "Tipos de Acuerdo"
 
 #. module: agreement
 #: model:ir.actions.act_window,name:agreement.agreement_action
+#: model:ir.model.fields,field_description:agreement.field_res_partner__agreement_ids
+#: model:ir.model.fields,field_description:agreement.field_res_users__agreement_ids
 #: model:ir.ui.menu,name:agreement.agreement_menu
 #: model:ir.ui.menu,name:agreement.agreement_menu_root
+#: model_terms:ir.ui.view,arch_db:agreement.partner_form
 msgid "Agreements"
 msgstr "Acuerdos"
+
+#. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_res_partner__agreements_count
+#: model:ir.model.fields,field_description:agreement.field_res_users__agreements_count
+msgid "Agreements Count"
+msgstr ""
 
 #. module: agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_form
@@ -100,6 +110,11 @@ msgid "Attachment Count"
 msgstr "Nº de archivos adjuntos"
 
 #. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__commercial_partner_id
+msgid "Commercial Entity"
+msgstr ""
+
+#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__company_id
 msgid "Company"
 msgstr "Compañía"
@@ -108,6 +123,11 @@ msgstr "Compañía"
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_form
 msgid "Configuration"
 msgstr "Configuración"
+
+#. module: agreement
+#: model:ir.model,name:agreement.model_res_partner
+msgid "Contact"
+msgstr ""
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__create_uid
@@ -371,8 +391,8 @@ msgstr "El cliente o proveedor con el que está relacionado este acuerdo."
 
 #. module: agreement
 #: model:ir.model.constraint,message:agreement.constraint_agreement_code_partner_company_unique
-msgid "This agreement code already exists for this partner!"
-msgstr "¡Este código de acuerdo ya existe para este socio!"
+msgid "This agreement code already exists for this commercial entity!"
+msgstr ""
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__name
@@ -400,16 +420,6 @@ msgid "Use agreement type"
 msgstr "Usar tipo de acuerdo"
 
 #. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__website_message_ids
-msgid "Website Messages"
-msgstr "mensajes de la página web"
-
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__website_message_ids
-msgid "Website communication history"
-msgstr "Historial de la comunicación en la página web"
-
-#. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__end_date
 msgid "When the agreement ends."
 msgstr "Cuando termina el acuerdo."
@@ -418,6 +428,15 @@ msgstr "Cuando termina el acuerdo."
 #: model:ir.model.fields,help:agreement.field_agreement__start_date
 msgid "When the agreement starts."
 msgstr "Cuando comienza el acuerdo."
+
+#~ msgid "Website Messages"
+#~ msgstr "mensajes de la página web"
+
+#~ msgid "Website communication history"
+#~ msgstr "Historial de la comunicación en la página web"
+
+#~ msgid "This agreement code already exists for this partner!"
+#~ msgstr "¡Este código de acuerdo ya existe para este socio!"
 
 #~ msgid "Code"
 #~ msgstr "Código"

@@ -70,6 +70,7 @@ msgstr "Tip sporazuma"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__agreement_type_id
+#: model:ir.ui.menu,name:agreement.agreement_type_menu_main
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_form_view
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
 msgid "Agreement Type"
@@ -84,10 +85,19 @@ msgstr "Tipovi sporazuma"
 
 #. module: agreement
 #: model:ir.actions.act_window,name:agreement.agreement_action
+#: model:ir.model.fields,field_description:agreement.field_res_partner__agreement_ids
+#: model:ir.model.fields,field_description:agreement.field_res_users__agreement_ids
 #: model:ir.ui.menu,name:agreement.agreement_menu
 #: model:ir.ui.menu,name:agreement.agreement_menu_root
+#: model_terms:ir.ui.view,arch_db:agreement.partner_form
 msgid "Agreements"
 msgstr "Sporazumi"
+
+#. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_res_partner__agreements_count
+#: model:ir.model.fields,field_description:agreement.field_res_users__agreements_count
+msgid "Agreements Count"
+msgstr ""
 
 #. module: agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_form
@@ -103,6 +113,11 @@ msgid "Attachment Count"
 msgstr ""
 
 #. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__commercial_partner_id
+msgid "Commercial Entity"
+msgstr ""
+
+#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__company_id
 msgid "Company"
 msgstr "Tvrtka"
@@ -111,6 +126,11 @@ msgstr "Tvrtka"
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_form
 msgid "Configuration"
 msgstr "Postavke"
+
+#. module: agreement
+#: model:ir.model,name:agreement.model_res_partner
+msgid "Contact"
+msgstr ""
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__create_uid
@@ -369,7 +389,7 @@ msgstr ""
 
 #. module: agreement
 #: model:ir.model.constraint,message:agreement.constraint_agreement_code_partner_company_unique
-msgid "This agreement code already exists for this partner!"
+msgid "This agreement code already exists for this commercial entity!"
 msgstr ""
 
 #. module: agreement
@@ -395,16 +415,6 @@ msgstr ""
 #. module: agreement
 #: model:res.groups,name:agreement.group_use_agreement_type
 msgid "Use agreement type"
-msgstr ""
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__website_message_ids
-msgid "Website Messages"
-msgstr ""
-
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__website_message_ids
-msgid "Website communication history"
 msgstr ""
 
 #. module: agreement

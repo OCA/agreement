@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-09-16 11:42+0000\n"
+"PO-Revision-Date: 2026-01-14 15:42+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -66,6 +66,7 @@ msgstr "Nome contratto"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__agreement_type_id
+#: model:ir.ui.menu,name:agreement.agreement_type_menu_main
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_form_view
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
 msgid "Agreement Type"
@@ -80,10 +81,19 @@ msgstr "Tipi contratto"
 
 #. module: agreement
 #: model:ir.actions.act_window,name:agreement.agreement_action
+#: model:ir.model.fields,field_description:agreement.field_res_partner__agreement_ids
+#: model:ir.model.fields,field_description:agreement.field_res_users__agreement_ids
 #: model:ir.ui.menu,name:agreement.agreement_menu
 #: model:ir.ui.menu,name:agreement.agreement_menu_root
+#: model_terms:ir.ui.view,arch_db:agreement.partner_form
 msgid "Agreements"
 msgstr "Contratti"
+
+#. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_res_partner__agreements_count
+#: model:ir.model.fields,field_description:agreement.field_res_users__agreements_count
+msgid "Agreements Count"
+msgstr "Numero contratti"
 
 #. module: agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_form
@@ -99,6 +109,11 @@ msgid "Attachment Count"
 msgstr "Conteggio allegati"
 
 #. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__commercial_partner_id
+msgid "Commercial Entity"
+msgstr "Entità commerciale"
+
+#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__company_id
 msgid "Company"
 msgstr "Azienda"
@@ -107,6 +122,11 @@ msgstr "Azienda"
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_form
 msgid "Configuration"
 msgstr "Configurazione"
+
+#. module: agreement
+#: model:ir.model,name:agreement.model_res_partner
+msgid "Contact"
+msgstr "Contatto"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__create_uid
@@ -371,8 +391,8 @@ msgstr "Il cliente o fornitore a cui è correlato questo contratto."
 
 #. module: agreement
 #: model:ir.model.constraint,message:agreement.constraint_agreement_code_partner_company_unique
-msgid "This agreement code already exists for this partner!"
-msgstr "Questo codice contratto esiste già per questo partner!"
+msgid "This agreement code already exists for this commercial entity!"
+msgstr "Esiste già questo codice contratto per questa entità commerciale!"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__name
@@ -400,16 +420,6 @@ msgid "Use agreement type"
 msgstr "Usa tipo accordo"
 
 #. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__website_message_ids
-msgid "Website Messages"
-msgstr "Messaggi sito web"
-
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__website_message_ids
-msgid "Website communication history"
-msgstr "Cronologia comunicazioni sito web"
-
-#. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__end_date
 msgid "When the agreement ends."
 msgstr "Quando termina il contratto."
@@ -418,6 +428,15 @@ msgstr "Quando termina il contratto."
 #: model:ir.model.fields,help:agreement.field_agreement__start_date
 msgid "When the agreement starts."
 msgstr "Quando inizia il contratto."
+
+#~ msgid "Website Messages"
+#~ msgstr "Messaggi sito web"
+
+#~ msgid "Website communication history"
+#~ msgstr "Cronologia comunicazioni sito web"
+
+#~ msgid "This agreement code already exists for this partner!"
+#~ msgstr "Questo codice contratto esiste già per questo partner!"
 
 #~ msgid "Code"
 #~ msgstr "Codice"
