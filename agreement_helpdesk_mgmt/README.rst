@@ -44,12 +44,12 @@ helpdesk tickets.
 Usage
 =====
 
-- Go to Helpdesk > Tickets
-- Select or create a helpdesk ticket and set the agreement
-- Go to Agreement > Agreements
-- Open the previous agreement
-- Click on the smart button "Tickets" to see the list of related
-  helpdesk tickets
+-  Go to Helpdesk > Tickets
+-  Select or create a helpdesk ticket and set the agreement
+-  Go to Agreement > Agreements
+-  Open the previous agreement
+-  Click on the smart button "Tickets" to see the list of related
+   helpdesk tickets
 
 Bug Tracker
 ===========
@@ -72,17 +72,17 @@ Authors
 Contributors
 ------------
 
-- Bhavesh Odedra <bodedra@opensourceintegrators.com>
-- Sandip Mangukiya <smangukiya@opensourceintegrators.com>
-- Serpent Consulting Services Pvt. Ltd. <support@serpentcs.com>
-- Marcel Savegnago - Escodoo <marcel.savegnago@escodoo.com.br>
+-  Bhavesh Odedra <bodedra@opensourceintegrators.com>
+-  Sandip Mangukiya <smangukiya@opensourceintegrators.com>
+-  Serpent Consulting Services Pvt. Ltd. <support@serpentcs.com>
+-  Marcel Savegnago - Escodoo <marcel.savegnago@escodoo.com.br>
 
 Other credits
 -------------
 
 The development of this module has been financially supported by:
 
-- Open Source Integrators
+-  Open Source Integrators
 
 Maintainers
 -----------

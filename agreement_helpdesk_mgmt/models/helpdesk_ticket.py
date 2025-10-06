@@ -11,4 +11,3 @@ class HelpdeskTicket(models.Model):
         "agreement",
         string="Agreement",
     )
-    serviceprofile_id = fields.Many2one("agreement.serviceprofile", "Service Profile")

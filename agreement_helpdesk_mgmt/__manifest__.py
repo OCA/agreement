@@ -11,8 +11,8 @@
     "website": "https://github.com/OCA/agreement",
     "images": ["static/description/banner.png"],
     "depends": [
+        "agreement",
         "helpdesk_mgmt",
-        "agreement_serviceprofile",
     ],
     "data": [
         "views/helpdesk_ticket.xml",
