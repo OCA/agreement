@@ -6,18 +6,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2025-11-04 11:20+0000\n"
+"Last-Translator: jakobkrabbe <jakob@syscare.se>\n"
 "Language-Team: none\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
 msgid "<span class=\"fa fa-ellipsis-v\" aria-hidden=\"true\" title=\"Icon\"/>"
-msgstr ""
+msgstr "<span class=\"fa fa-ellipsis-v\" aria-hidden=\"true\" title=\"Ikon\"/>"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__active
@@ -29,17 +31,17 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype__active
 #: model:ir.model.fields.selection,name:agreement_legal.selection__agreement__state__active
 msgid "Active"
-msgstr ""
+msgstr "Aktiv"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Administration"
-msgstr ""
+msgstr "Administration"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Advanced Features"
-msgstr ""
+msgstr "Avancerade funktioner"
 
 #. module: agreement_legal
 #: model:ir.actions.report,name:agreement_legal.partner_agreement_contract_document
@@ -54,75 +56,75 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.report_agreement_document
 msgid "Agreement"
-msgstr ""
+msgstr "Avtal"
 
 #. module: agreement_legal
 #: model:ir.model,name:agreement_legal.model_agreement_appendix
 msgid "Agreement Appendices"
-msgstr ""
+msgstr "Avtalsbilagor"
 
 #. module: agreement_legal
 #: model:ir.model,name:agreement_legal.model_agreement_clause
 msgid "Agreement Clauses"
-msgstr ""
+msgstr "Avtalsklausuler"
 
 #. module: agreement_legal
 #: model:ir.model,name:agreement_legal.model_agreement_line
 msgid "Agreement Lines"
-msgstr ""
+msgstr "Avtalslinjer"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Agreement Name"
-msgstr ""
+msgstr "Avtalets namn"
 
 #. module: agreement_legal
 #: model:ir.actions.report,name:agreement_legal.partner_agreement_contract_document_preview
 msgid "Agreement Preview"
-msgstr ""
+msgstr "Förhandsgranskning av avtal"
 
 #. module: agreement_legal
 #: model:ir.model,name:agreement_legal.model_agreement_recital
 msgid "Agreement Recitals"
-msgstr ""
+msgstr "Avtalsskäl"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_search_view
 msgid "Agreement Search"
-msgstr ""
+msgstr "Avtalssökning"
 
 #. module: agreement_legal
 #: model:ir.actions.act_window,name:agreement_legal.partner_agreement_action_section
 #: model:ir.model,name:agreement_legal.model_agreement_section
 msgid "Agreement Sections"
-msgstr ""
+msgstr "Avtalets avsnitt"
 
 #. module: agreement_legal
 #: model:ir.actions.act_window,name:agreement_legal.partner_agreement_action_stage
 msgid "Agreement Stage"
-msgstr ""
+msgstr "Avtalsfas"
 
 #. module: agreement_legal
 #: model:ir.model,name:agreement_legal.model_agreement_stage
 msgid "Agreement Stages"
-msgstr ""
+msgstr "Avtalets stadier"
 
 #. module: agreement_legal
 #: model:ir.actions.act_window,name:agreement_legal.partner_agreement_action_subtype
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_subtype_form_view
 msgid "Agreement Sub-Types"
-msgstr ""
+msgstr "Undertyper av avtal"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__agreement_subtype_id
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_search_view
 msgid "Agreement Sub-type"
-msgstr ""
+msgstr "Avtal Undertyp"
 
 #. module: agreement_legal
 #: model:ir.model,name:agreement_legal.model_agreement_subtype
 msgid "Agreement Subtypes"
-msgstr ""
+msgstr "Undertyper av avtal"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__agreement_type_id
@@ -130,23 +132,23 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_search_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_subtype_search_view
 msgid "Agreement Type"
-msgstr ""
+msgstr "Typ av avtal"
 
 #. module: agreement_legal
 #: model:ir.actions.act_window,name:agreement_legal.partner_agreement_action_type
 #: model:ir.model,name:agreement_legal.model_agreement_type
 msgid "Agreement Types"
-msgstr ""
+msgstr "Typer av avtal"
 
 #. module: agreement_legal
 #: model:mail.activity.type,name:agreement_legal.mail_activity_review_agreement
 msgid "Agreement needs a review"
-msgstr ""
+msgstr "Avtalet behöver ses över"
 
 #. module: agreement_legal
 #: model:ir.actions.server,name:agreement_legal.ir_cron_test_acc_move_except_ir_actions_server
 msgid "Agreement: Check to Review Days"
-msgstr ""
+msgstr "Överenskommelse: Kontrollera för att granska dagar"
 
 #. module: agreement_legal
 #: model:ir.actions.act_window,name:agreement_legal.action_agreement_report_order
@@ -163,33 +165,33 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_form
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Agreements"
-msgstr ""
+msgstr "Avtal"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_res_partner__agreements_count
 #: model:ir.model.fields,field_description:agreement_legal.field_res_users__agreements_count
 msgid "Agreements Count"
-msgstr ""
+msgstr "Antal avtal"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_stage_form_view
 msgid "Agreements Stage Form"
-msgstr ""
+msgstr "Avtal Stage Form"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_stage_search_view
 msgid "Agreements Stage Search"
-msgstr ""
+msgstr "Avtal Steg Sök"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_subtype_search_view
 msgid "Agreements Sub-Types Search"
-msgstr ""
+msgstr "Undertyper av avtal Sök"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_search_view
 msgid "Agreements to review"
-msgstr ""
+msgstr "Avtal att granska"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__special_terms
@@ -197,6 +199,8 @@ msgid ""
 "Any terms that you have agreed to and want to track on the "
 "agreement/contract."
 msgstr ""
+"Alla villkor som du har kommit överens om och vill spåra på avtalet/"
+"kontraktet."
 
 #. module: agreement_legal
 #: model:ir.actions.act_window,name:agreement_legal.agreement_appendix_action
@@ -204,28 +208,28 @@ msgstr ""
 #: model:ir.ui.menu,name:agreement_legal.agreement_appendices
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Appendices"
-msgstr ""
+msgstr "Bilagor"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_appendix_form
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_appendix_search
 msgid "Appendix"
-msgstr ""
+msgstr "Bilaga"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__approved_user_id
 msgid "Approved By"
-msgstr ""
+msgstr "Godkänd av"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__approved_date
 msgid "Approved Date"
-msgstr ""
+msgstr "Godkänt datum"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Approved by"
-msgstr ""
+msgstr "Godkänd av"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_appendix_form
@@ -238,44 +242,44 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_subtype_form_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_subtype_search_view
 msgid "Archived"
-msgstr ""
+msgstr "Arkiverad"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__assigned_user_id
 msgid "Assigned To"
-msgstr ""
+msgstr "Tilldelad till"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.report_agreement_document
 msgid "By:"
-msgstr ""
+msgstr "Av:"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.create_agreement_from_template_form_view
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__change_notice
 msgid "Change Notice (Days)"
-msgstr ""
+msgstr "Meddelande om ändring (dagar)"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__child_agreements_ids
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Child Agreements"
-msgstr ""
+msgstr "Underordnat avtal"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_clause_search_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_clause_form_view
 msgid "Clause"
-msgstr ""
+msgstr "Klausul"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__content
 msgid "Clause Content"
-msgstr ""
+msgstr "Klausulens innehåll"
 
 #. module: agreement_legal
 #: model:ir.actions.act_window,name:agreement_legal.partner_agreement_action_clause
@@ -285,80 +289,80 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_section_form_view
 msgid "Clauses"
-msgstr ""
+msgstr "Klausuler"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__color
 msgid "Color"
-msgstr ""
+msgstr "Färg"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.report_agreement_document
 msgid "Company"
-msgstr ""
+msgstr "Bolag"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__company_contact_id
 msgid "Company Contact"
-msgstr ""
+msgstr "Kontakt med bolaget"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.report_agreement_document
 msgid "Company Information"
-msgstr ""
+msgstr "Information om bolaget"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__company_partner_id
 msgid "Company's Partner"
-msgstr ""
+msgstr "Bolagets partner"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__dynamic_description
 msgid "Compute dynamic description"
-msgstr ""
+msgstr "Beräkna dynamisk beskrivning"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__dynamic_parties
 msgid "Compute dynamic parties"
-msgstr ""
+msgstr "Beräkna dynamiska parter"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__dynamic_special_terms
 msgid "Compute dynamic special terms"
-msgstr ""
+msgstr "Beräkna dynamiska specialvillkor"
 
 #. module: agreement_legal
 #: model:ir.model,name:agreement_legal.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "Konfigureringsinställningar"
 
 #. module: agreement_legal
 #: model:ir.ui.menu,name:agreement_legal.agreement_configuration
 msgid "Configuration"
-msgstr ""
+msgstr "Konfiguration"
 
 #. module: agreement_legal
 #: model:ir.model,name:agreement_legal.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__partner_signed_user_id
 msgid "Contact on the account that signed the agreement/contract."
-msgstr ""
+msgstr "Kontakt på det konto som undertecknat avtalet/kontraktet."
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__content
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital__content
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_section_form_view
 msgid "Content"
-msgstr ""
+msgstr "Innehåll"
 
 #. module: agreement_legal
 #: model:ir.ui.menu,name:agreement_legal.agreement_data_contents
 msgid "Contents"
-msgstr ""
+msgstr "Innehåll"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_appendix_form
@@ -366,7 +370,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_clause_form_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_section_form_view
 msgid "Copy and paste the placeholder expression in the content"
-msgstr ""
+msgstr "Kopiera och klistra in platshållaruttrycket i innehållet"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
@@ -374,33 +378,35 @@ msgid ""
 "Copy and paste the placeholder expression in the description or the special "
 "terms"
 msgstr ""
+"Kopiera och klistra in platshållaruttrycket i beskrivningen eller de "
+"särskilda villkoren"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.create_agreement_from_template_form_view
 msgid "Create Agreement"
-msgstr ""
+msgstr "Skapa avtal"
 
 #. module: agreement_legal
 #: model:ir.model,name:agreement_legal.model_create_agreement_wizard
 msgid "Create Agreement Wizard"
-msgstr ""
+msgstr "Skapa avtalsguide"
 
 #. module: agreement_legal
 #. odoo-javascript
 #: code:addons/agreement_legal/static/src/xml/agreement_template.xml:0
 #: model:ir.actions.act_window,name:agreement_legal.create_agreement_from_template_action
 msgid "Create From Template"
-msgstr ""
+msgstr "Skapa från mall"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_res_config_settings__module_agreement_sale
 msgid "Create an agreement when the sale order is confirmed."
-msgstr ""
+msgstr "Skapa ett avtal när försäljningsordern är bekräftad."
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Create an agreement when the sales order is confirmed"
-msgstr ""
+msgstr "Skapa ett avtal när försäljningsordern bekräftas"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__create_uid
@@ -412,12 +418,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype__create_uid
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Skapad av"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__create_uid_parent
 msgid "Created by (parent)"
-msgstr ""
+msgstr "Skapad av (överordnad)"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__create_date
@@ -429,47 +435,47 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype__create_date
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Skapad den"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__create_date_parent
 msgid "Created on (parent)"
-msgstr ""
+msgstr "Skapad den (förälder)"
 
 #. module: agreement_legal
 #: model:ir.ui.menu,name:agreement_legal.agreement_dashboard
 msgid "Dashboard"
-msgstr ""
+msgstr "Instrumentpanel"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__termination_requested
 msgid "Date that a request for termination was received."
-msgstr ""
+msgstr "Datum då en begäran om uppsägning mottogs."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__termination_date
 msgid "Date that the contract was terminated."
-msgstr ""
+msgstr "Datum då avtalet sades upp."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__company_signed_date
 msgid "Date the contract was signed by Company."
-msgstr ""
+msgstr "Datum då avtalet undertecknades av bolaget."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__partner_signed_date
 msgid "Date the contract was signed by the Partner."
-msgstr ""
+msgstr "Datum då avtalet undertecknades av partnern."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__to_review_date
 msgid "Date used to warn us some days before agreement expires"
-msgstr ""
+msgstr "Datum som används för att varna oss några dagar innan avtalet löper ut"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.report_agreement_document
 msgid "Date:"
-msgstr ""
+msgstr "Datum:"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__default_value
@@ -478,18 +484,18 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital__default_value
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__default_value
 msgid "Default Value"
-msgstr ""
+msgstr "Standardvärde"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__description
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_line__name
 msgid "Description"
-msgstr ""
+msgstr "Beskrivning"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__description
 msgid "Description of the agreement"
-msgstr ""
+msgstr "Beskrivning av avtalet"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__display_name
@@ -501,12 +507,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype__display_name
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Visningsnamn"
 
 #. module: agreement_legal
 #: model:ir.model.fields.selection,name:agreement_legal.selection__agreement__state__draft
 msgid "Draft"
-msgstr ""
+msgstr "Utkast"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__dynamic_content
@@ -514,37 +520,37 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital__dynamic_content
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__dynamic_content
 msgid "Dynamic Content"
-msgstr ""
+msgstr "Dynamiskt innehåll"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__dynamic_description
 msgid "Dynamic Description"
-msgstr ""
+msgstr "Dynamisk beskrivning"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__dynamic_parties
 msgid "Dynamic Parties"
-msgstr ""
+msgstr "Dynamiska parter"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__dynamic_special_terms
 msgid "Dynamic Special Terms"
-msgstr ""
+msgstr "Dynamiska särskilda villkor"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
 msgid "Edit"
-msgstr ""
+msgstr "Redigera"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__company_contact_email
 msgid "Email"
-msgstr ""
+msgstr "E-post"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__end_date
 msgid "End Date"
-msgstr ""
+msgstr "Slutdatum"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_appendix_form
@@ -553,12 +559,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_section_form_view
 msgid "Enter the default value if the field is empty"
-msgstr ""
+msgstr "Ange standardvärdet om fältet är tomt"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__expiration_notice
 msgid "Exp. Notice (Days)"
-msgstr ""
+msgstr "Meddelande som förfaller (dagar)"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__field_id
@@ -567,17 +573,17 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital__field_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__field_id
 msgid "Field"
-msgstr ""
+msgstr "Fält"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Field Service"
-msgstr ""
+msgstr "Fältservice"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__signed_contract_filename
 msgid "Filename"
-msgstr ""
+msgstr "Filnamn"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__copyvalue
@@ -589,16 +595,18 @@ msgid ""
 "Final placeholder expression, to be copy-pasted in the desired\n"
 "         template field."
 msgstr ""
+"Slutligt uttryck för placeholder, som ska kopieras och klistras in i\n"
+"         önskat mallfältet."
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "General"
-msgstr ""
+msgstr "Allmänt"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Helpdesk"
-msgstr ""
+msgstr "Helpdesk"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__id
@@ -610,12 +618,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype__id
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__code
 msgid "ID used for internal contract tracking."
-msgstr ""
+msgstr "ID som används för intern avtalsspårning."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__active
@@ -623,34 +631,34 @@ msgstr ""
 #: model:ir.model.fields,help:agreement_legal.field_agreement_section__active
 msgid ""
 "If unchecked, it will allow you to hide the agreement without removing it."
-msgstr ""
+msgstr "Om omarkerad, kan du dölja avtalet utan att ta bort det."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement_appendix__active
 msgid ""
 "If unchecked, it will allow you to hide this appendix without removing it."
-msgstr ""
+msgstr "Om omarkerad, kan du dölja bilagan utan att ta bort den."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement_recital__active
 msgid ""
 "If unchecked, it will allow you to hide this recital without removing it."
-msgstr ""
+msgstr "Om omarkerad, kan du dölja detta skäl utan att ta bort det."
 
 #. module: agreement_legal
 #: model:ir.model.fields.selection,name:agreement_legal.selection__agreement__state__inactive
 msgid "Inactive"
-msgstr ""
+msgstr "Inaktiv"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Inventory"
-msgstr ""
+msgstr "Inventarieförteckning"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage__fold
 msgid "Is Folded"
-msgstr ""
+msgstr "Är vikt"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__write_uid
@@ -662,7 +670,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype__write_uid
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Senast uppdaterad av"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__write_date
@@ -674,7 +682,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype__write_date
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Senast uppdaterad den"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__parent_agreement_id
@@ -683,116 +691,119 @@ msgid ""
 "an amendment to another agreement. This list will only show other agreements"
 " related to the same account."
 msgstr ""
+"Länka detta avtal till ett överordnat avtal. Till exempel om det här avtalet "
+"är ett tillägg till ett annat avtal. Den här listan visar bara andra avtal "
+"som är relaterade till samma konto."
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Link your Field Service orders and equipments to an agreement"
-msgstr ""
+msgstr "Koppla dina Field Service-order och utrustning till ett avtal"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_res_config_settings__module_fieldservice_agreement
 msgid "Link your Field Service orders and equipments to an agreement."
-msgstr ""
+msgstr "Länka dina Field Service-order och utrustning till ett avtal."
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Link your Helpdesk tickets to an agreement"
-msgstr ""
+msgstr "Koppla dina Helpdesk-ärenden till ett avtal"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_res_config_settings__module_agreement_helpdesk
 msgid "Link your Helpdesk tickets to an agreement."
-msgstr ""
+msgstr "Koppla dina Helpdesk-ärenden till ett avtal."
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_res_config_settings__module_agreement_rma
 msgid "Link your RMAs to an agreement."
-msgstr ""
+msgstr "Koppla dina RMA:n till ett avtal."
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Link your manufacturing orders to an agreement"
-msgstr ""
+msgstr "Koppla dina tillverkningsorder till ett avtal"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_res_config_settings__module_agreement_mrp
 msgid "Link your manufacturing orders to an agreement."
-msgstr ""
+msgstr "Koppla dina tillverkningsorder till ett avtal."
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_res_config_settings__module_agreement_stock
 msgid "Link your pickings to an agreement."
-msgstr ""
+msgstr "Koppla dina plockningar till ett avtal."
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Link your projects and tasks to an agreement"
-msgstr ""
+msgstr "Koppla dina projekt och uppgifter till ett avtal"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_res_config_settings__module_agreement_project
 msgid "Link your projects and tasks to an agreement."
-msgstr ""
+msgstr "Koppla dina projekt och uppgifter till ett avtal."
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Link your repair orders to an agreement"
-msgstr ""
+msgstr "Länka dina reparationsorder till ett avtal"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_res_config_settings__module_agreement_repair
 msgid "Link your repair orders to an agreement."
-msgstr ""
+msgstr "Länka dina reparationsorder till ett avtal."
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Link your returns to an agreement"
-msgstr ""
+msgstr "Koppla dina returer till ett avtal"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Link your subscriptions to an agreement"
-msgstr ""
+msgstr "Koppla dina prenumerationer till ett avtal"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_res_config_settings__module_agreement_sale_subscription
 msgid "Link your subscriptions to an agreement."
-msgstr ""
+msgstr "Koppla dina prenumerationer till ett avtal."
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Link your transfers to an agreement"
-msgstr ""
+msgstr "Koppla dina överföringar till ett avtal"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Maintenance"
-msgstr ""
+msgstr "Underhåll"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Manage maintenance agreements and contracts"
-msgstr ""
+msgstr "Hantera underhållsavtal och kontrakt"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_res_config_settings__module_agreement_maintenance
 msgid "Manage maintenance agreements and contracts."
-msgstr ""
+msgstr "Hantera underhållsavtal och kontrakt."
 
 #. module: agreement_legal
 #: model:res.groups,name:agreement_legal.group_agreement_manager
 msgid "Manager"
-msgstr ""
+msgstr "Chef"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Manufacturing"
-msgstr ""
+msgstr "Tillverkning"
 
 #. module: agreement_legal
 #: model:ir.ui.menu,name:agreement_legal.agreement_masterdata
 msgid "Master Data"
-msgstr ""
+msgstr "Masterdata"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__name
@@ -800,54 +811,54 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital__name
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__name
 msgid "Name"
-msgstr ""
+msgstr "Namn"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.report_agreement_document
 msgid "Name:"
-msgstr ""
+msgstr "Namn:"
 
 #. module: agreement_legal
 #. odoo-python
 #: code:addons/agreement_legal/models/agreement.py:0
 msgid "New"
-msgstr ""
+msgstr "Ny"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "New Agreement"
-msgstr ""
+msgstr "Nytt avtal"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "New Version"
-msgstr ""
+msgstr "Ny version"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_search_view
 msgid "Non-Templates"
-msgstr ""
+msgstr "Icke-mallar"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__notification_address_id
 msgid "Notification Address"
-msgstr ""
+msgstr "Adress för meddelande"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__expiration_notice
 msgid "Number of Days before expiration to be notified."
-msgstr ""
+msgstr "Antal dagar före förfallodagen som du vill bli underrättad."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__change_notice
 msgid "Number of Days to be notified before changes."
-msgstr ""
+msgstr "Antal dagar som ska meddelas före ändringar."
 
 #. module: agreement_legal
 #: model:ir.ui.menu,name:agreement_legal.agreement_operations
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Operations"
-msgstr ""
+msgstr "Verksamhet"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__default_value
@@ -856,76 +867,76 @@ msgstr ""
 #: model:ir.model.fields,help:agreement_legal.field_agreement_recital__default_value
 #: model:ir.model.fields,help:agreement_legal.field_agreement_section__default_value
 msgid "Optional value to use if the target field is empty."
-msgstr ""
+msgstr "Valfritt värde som ska användas om målfältet är tomt."
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__parent_agreement_id
 msgid "Parent Agreement"
-msgstr ""
+msgstr "Föräldraavtal"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__parties
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.report_agreement_document
 msgid "Parties"
-msgstr ""
+msgstr "Parterna"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Parties Content"
-msgstr ""
+msgstr "Parternas innehåll"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__parties
 msgid "Parties of the agreement"
-msgstr ""
+msgstr "Parter i avtalet"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__partner_id
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.report_agreement_document
 msgid "Partner"
-msgstr ""
+msgstr "Partner"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__partner_contact_id
 msgid "Partner Contact"
-msgstr ""
+msgstr "Kontaktperson för partner"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__partner_contact_email
 msgid "Partner Email"
-msgstr ""
+msgstr "Partner e-post"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.report_agreement_document
 msgid "Partner Information"
-msgstr ""
+msgstr "Information om partner"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__partner_contact_phone
 msgid "Partner Phone"
-msgstr ""
+msgstr "Partner Telefon"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_search_view
 msgid "Partners"
-msgstr ""
+msgstr "Partner"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Performance"
-msgstr ""
+msgstr "Prestanda"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Perhaps include invoices with total vs costs?"
-msgstr ""
+msgstr "Kanske inkludera fakturor med totalbelopp kontra kostnader?"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__company_contact_phone
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__copyvalue
@@ -934,74 +945,74 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital__copyvalue
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__copyvalue
 msgid "Placeholder Expression"
-msgstr ""
+msgstr "Uttryck för placeholder"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Preview"
-msgstr ""
+msgstr "Förhandsgranskning"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__previous_version_agreements_ids
 msgid "Previous Versions"
-msgstr ""
+msgstr "Tidigare versioner"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Previouse Versions"
-msgstr ""
+msgstr "Tidigare versioner"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Primary Contact"
-msgstr ""
+msgstr "Primär kontakt"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Print"
-msgstr ""
+msgstr "Skriv ut"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_line__product_id
 msgid "Product"
-msgstr ""
+msgstr "Produkt"
 
 #. module: agreement_legal
 #: model:ir.ui.menu,name:agreement_legal.agreement_products
 msgid "Products"
-msgstr ""
+msgstr "Produkter"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__line_ids
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Products/Services"
-msgstr ""
+msgstr "Produkter/Tjänster"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Project"
-msgstr ""
+msgstr "Projekt"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_line__qty
 msgid "Quantity"
-msgstr ""
+msgstr "Kvantitet"
 
 #. module: agreement_legal
 #: model:res.groups,name:agreement_legal.group_agreement_readonly
 msgid "Read-Only Users"
-msgstr ""
+msgstr "Skrivskyddade användare"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__readonly
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage__readonly
 msgid "Readonly"
-msgstr ""
+msgstr "Endast läsbar"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_recital_form
 msgid "Recital"
-msgstr ""
+msgstr "Skäl"
 
 #. module: agreement_legal
 #: model:ir.actions.act_window,name:agreement_legal.agreement_recital_action
@@ -1011,101 +1022,101 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.report_agreement_document
 msgid "Recitals"
-msgstr ""
+msgstr "Skäl"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
 msgid "Record's Colour"
-msgstr ""
+msgstr "Postens färg"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__code
 msgid "Reference"
-msgstr ""
+msgstr "Referens"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Repair"
-msgstr ""
+msgstr "Reparation"
 
 #. module: agreement_legal
 #: model:ir.ui.menu,name:agreement_legal.agreement_reporting
 msgid "Reporting"
-msgstr ""
+msgstr "Rapportering"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.report_agreement_document
 msgid "Represented by"
-msgstr ""
+msgstr "Företrädd av"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Returns"
-msgstr ""
+msgstr "Returnerar"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_type__review_days
 msgid "Review Days"
-msgstr ""
+msgstr "Granska dagar"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_type__review_user_id
 msgid "Review User"
-msgstr ""
+msgstr "Granska användare"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__reviewed_user_id
 msgid "Reviewed By"
-msgstr ""
+msgstr "Granskad av"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__reviewed_date
 msgid "Reviewed Date"
-msgstr ""
+msgstr "Granskat datum"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Reviewed by"
-msgstr ""
+msgstr "Granskad av"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__revision
 msgid "Revision"
-msgstr ""
+msgstr "Revision"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Revisions"
-msgstr ""
+msgstr "Revideringar"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Sale Subscriptions"
-msgstr ""
+msgstr "Prenumerationsförsäljning"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Sales"
-msgstr ""
+msgstr "Försäljning"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__section_id
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_section_form_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_section_search_view
 msgid "Section"
-msgstr ""
+msgstr "Avsnitt"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__content
 msgid "Section Content"
-msgstr ""
+msgstr "Avsnittets innehåll"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__sections_ids
 #: model:ir.ui.menu,name:agreement_legal.agreement_sections
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Sections"
-msgstr ""
+msgstr "Avsnitt"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement_appendix__field_id
@@ -1117,36 +1128,39 @@ msgid ""
 "         relationship field you will be able to select a target field at the\n"
 "         destination of the relationship."
 msgstr ""
+"Välj målfält från den relaterade dokumentmodellen. Om det är ett\n"
+"         relationsfält kommer du att kunna välja ett målfält på\n"
+"         destination för relationen."
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Select the agreement field"
-msgstr ""
+msgstr "Välj avtalsfältet"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_appendix_form
 msgid "Select the appendix field"
-msgstr ""
+msgstr "Välj fältet för bilagan"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_clause_form_view
 msgid "Select the clause field"
-msgstr ""
+msgstr "Välj klausulfältet"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__stage_id
 msgid "Select the current stage of the agreement."
-msgstr ""
+msgstr "Välj aktuellt skede i avtalet."
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_recital_form
 msgid "Select the recital field"
-msgstr ""
+msgstr "Välj fält för skäl"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_section_form_view
 msgid "Select the section field"
-msgstr ""
+msgstr "Välj områdesfältet"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_appendix_form
@@ -1155,7 +1169,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_section_form_view
 msgid "Select the sub-field"
-msgstr ""
+msgstr "Välj underfält"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__agreement_subtype_id
@@ -1163,21 +1177,22 @@ msgid ""
 "Select the sub-type of this agreement. Sub-Types are related to agreement "
 "types."
 msgstr ""
+"Välj undertyp för detta avtal. Undertyperna är relaterade till avtalstyperna."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__agreement_type_id
 msgid "Select the type of agreement"
-msgstr ""
+msgstr "Välj typ av avtal"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__assigned_user_id
 msgid "Select the user who manages this agreement."
-msgstr ""
+msgstr "Välj den användare som hanterar detta avtal."
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Sell and purchase products in different units of measure"
-msgstr ""
+msgstr "Sälja och köpa produkter i olika måttenheter"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__sequence
@@ -1186,97 +1201,97 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__sequence
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage__sequence
 msgid "Sequence"
-msgstr ""
+msgstr "Sekvens"
 
 #. module: agreement_legal
 #: model:ir.actions.act_window,name:agreement_legal.action_agreement_config
 #: model:ir.ui.menu,name:agreement_legal.agreement_settings
 msgid "Settings"
-msgstr ""
+msgstr "Inställningar"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.report_agreement_document
 msgid "Signatures"
-msgstr ""
+msgstr "Underskrifter"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__company_signed_user_id
 msgid "Signed By"
-msgstr ""
+msgstr "Undertecknad av"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__partner_signed_user_id
 msgid "Signed By (Partner)"
-msgstr ""
+msgstr "Undertecknad av (Partner)"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__signed_contract
 msgid "Signed Document"
-msgstr ""
+msgstr "Undertecknat dokument"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__company_signed_date
 msgid "Signed on"
-msgstr ""
+msgstr "Undertecknad på"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__partner_signed_date
 msgid "Signed on (Partner)"
-msgstr ""
+msgstr "Undertecknat av (Partner)"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__special_terms
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.report_agreement_document
 msgid "Special Terms"
-msgstr ""
+msgstr "Särskilda villkor"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__stage_id
 msgid "Stage"
-msgstr ""
+msgstr "Läge"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage__name
 msgid "Stage Name"
-msgstr ""
+msgstr "Lägets namn"
 
 #. module: agreement_legal
 #: model:ir.ui.menu,name:agreement_legal.agreement_stages
 msgid "Stages"
-msgstr ""
+msgstr "Lägen"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__start_date
 msgid "Start Date"
-msgstr ""
+msgstr "Startdatum"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__state
 msgid "State"
-msgstr ""
+msgstr "Läge"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_search_view
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Structure"
-msgstr ""
+msgstr "Struktur"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype__name
 msgid "Sub-Type Name"
-msgstr ""
+msgstr "Undertypens namn"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_type__agreement_subtypes_ids
 #: model:ir.ui.menu,name:agreement_legal.agreement_subtypes
 msgid "Sub-Types"
-msgstr ""
+msgstr "Undertyper"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__sub_model_object_field_id
@@ -1285,7 +1300,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital__sub_model_object_field_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__sub_model_object_field_id
 msgid "Sub-field"
-msgstr ""
+msgstr "Underfält"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__sub_object_id
@@ -1294,41 +1309,41 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital__sub_object_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__sub_object_id
 msgid "Sub-model"
-msgstr ""
+msgstr "Undermodell"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__temp_agreement_id
 msgid "Temp Agreement"
-msgstr ""
+msgstr "Tillfälligt avtal"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__template_id
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__template_id
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Template"
-msgstr ""
+msgstr "Mall"
 
 #. module: agreement_legal
 #: model:ir.actions.act_window,name:agreement_legal.partner_agreement_agreement_templates
 #: model:ir.ui.menu,name:agreement_legal.template
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_search_view
 msgid "Templates"
-msgstr ""
+msgstr "Mallar"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Term Dates"
-msgstr ""
+msgstr "Terminsdatum"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__termination_date
 msgid "Termination Date"
-msgstr ""
+msgstr "Uppsägningsdatum"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__termination_requested
 msgid "Termination Requested Date"
-msgstr ""
+msgstr "Begärd uppsägning Datum"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__notification_address_id
@@ -1336,32 +1351,34 @@ msgid ""
 "The address to send notifications to, if different from customer "
 "address.(Address Type = Other)"
 msgstr ""
+"Den adress som meddelanden ska skickas till, om den skiljer sig från "
+"kundadressen. (Adresstyp = Annan)"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__readonly
 #: model:ir.model.fields,help:agreement_legal.field_agreement_stage__readonly
 msgid "The agreement can not edit if set Readonly = True."
-msgstr ""
+msgstr "Avtalet kan inte redigeras om det är inställt på Readonly = True."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__partner_id
 msgid "The customer or vendor this agreement is related to."
-msgstr ""
+msgstr "Den kund eller leverantör som detta avtal avser."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__company_contact_id
 msgid "The primary contact in the company."
-msgstr ""
+msgstr "Den primära kontakten i företaget."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__partner_contact_id
 msgid "The primary partner contact (If Applicable)."
-msgstr ""
+msgstr "Den primära partnerkontakten (om tillämpligt)."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__revision
 msgid "The revision will increase with every save event."
-msgstr ""
+msgstr "Revisionen kommer att öka med varje sparad händelse."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement_appendix__title
@@ -1369,13 +1386,15 @@ msgstr ""
 #: model:ir.model.fields,help:agreement_legal.field_agreement_recital__title
 #: model:ir.model.fields,help:agreement_legal.field_agreement_section__title
 msgid "The title is displayed on the PDF. The name is not."
-msgstr ""
+msgstr "Titeln visas på PDF-filen. Inte namnet."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__company_signed_user_id
 msgid ""
 "The user at our company who authorized/signed the agreement or contract."
 msgstr ""
+"Den användare på vårt företag som godkände/undertecknade avtalet eller "
+"kontraktet."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__version
@@ -1383,11 +1402,13 @@ msgid ""
 "The versions are used to keep track of document history and previous "
 "versions can be referenced."
 msgstr ""
+"Versionerna används för att hålla reda på dokumenthistoriken och tidigare "
+"versioner kan refereras till."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement_clause__temp_agreement_id
 msgid "This field help to filter section."
-msgstr ""
+msgstr "Detta fält hjälper till att filtrera avsnitt."
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_appendix_form
@@ -1398,6 +1419,8 @@ msgid ""
 "This section (on the left) allows you to add dynamic fields inside the "
 "content."
 msgstr ""
+"I det här avsnittet (till vänster) kan du lägga till dynamiska fält i "
+"innehållet."
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
@@ -1405,6 +1428,8 @@ msgid ""
 "This section (on the left) allows you to add dynamic fields inside the "
 "description and special terms."
 msgstr ""
+"I det här avsnittet (till vänster) kan du lägga till dynamiska fält i "
+"beskrivningen och de särskilda villkoren."
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
@@ -1412,6 +1437,8 @@ msgid ""
 "This section (on the left) allows you to replace the default listing of the "
 "parties with custom dynamic content."
 msgstr ""
+"I det här avsnittet (till vänster) kan du ersätta standardlistan över "
+"partierna med anpassat dynamiskt innehåll."
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
@@ -1419,11 +1446,13 @@ msgid ""
 "This section is a place where financial records will show the current "
 "performance of this agreement."
 msgstr ""
+"Detta avsnitt är en plats där finansiella uppgifter kommer att visa det "
+"aktuella resultatet av detta avtal."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement_stage__fold
 msgid "This stage is folded in the kanban view by default."
-msgstr ""
+msgstr "Detta steg viks som standard in i kanban-vyn."
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__name
@@ -1433,73 +1462,73 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__title
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__name
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.report_agreement_document
 msgid "Title:"
-msgstr ""
+msgstr "Titel:"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__to_review_date
 msgid "To Review Date"
-msgstr ""
+msgstr "Att granska Datum"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage__stage_type
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_stage_search_view
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
 #. module: agreement_legal
 #: model:ir.ui.menu,name:agreement_legal.agreement_types
 msgid "Types"
-msgstr ""
+msgstr "Typer"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_line__uom_id
 msgid "Unit of Measure"
-msgstr ""
+msgstr "Måttenhet"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Units Of Measure"
-msgstr ""
+msgstr "Måttenheter"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__use_parties_content
 msgid "Use Parties Content"
-msgstr ""
+msgstr "Använda parternas innehåll"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Use custom content"
-msgstr ""
+msgstr "Använd anpassat innehåll"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__use_parties_content
 msgid "Use custom content for parties"
-msgstr ""
+msgstr "Använd anpassat innehåll för fester"
 
 #. module: agreement_legal
 #: model:res.groups,name:agreement_legal.group_agreement_user
 msgid "User"
-msgstr ""
+msgstr "Användare"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement_type__review_user_id
 msgid "User assigned automatically the activity on review date"
-msgstr ""
+msgstr "Användaren tilldelas automatiskt aktiviteten på granskningsdatumet"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__version
 msgid "Version"
-msgstr ""
+msgstr "Version"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Version:"
-msgstr ""
+msgstr "Version:"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__sub_model_object_field_id
@@ -1512,6 +1541,9 @@ msgid ""
 "         field lets you select the target field within the destination document\n"
 "          model (sub-model)."
 msgstr ""
+"När ett relationsfält väljs som första fält kan du i detta fält\n"
+"         kan du i detta fält välja målfält inom måldokumentets\n"
+"          modell (undermodell)."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__sub_object_id
@@ -1523,16 +1555,18 @@ msgid ""
 "When a relationship field is selected as first field, this\n"
 "         field shows the document model the relationship goes to."
 msgstr ""
+"När ett relationsfält väljs som första fält visar detta fält\n"
+"         visar fältet den dokumentmodell som relationen gäller."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__end_date
 msgid "When the agreement ends."
-msgstr ""
+msgstr "När avtalet upphör att gälla."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__start_date
 msgid "When the agreement starts."
-msgstr ""
+msgstr "När avtalet börjar gälla."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__field_id
@@ -1541,12 +1575,15 @@ msgid ""
 "        If it is a relationship field you will be able to select a target field\n"
 "        at the destination of the relationship."
 msgstr ""
+"Du kan välja ett målfält från den relaterade dokumentmodellen.\n"
+"        Om det är ett relationsfält kommer du att kunna välja ett målfält\n"
+"        på destinationen för relationen."
 
 #. module: agreement_legal
 #. odoo-python
 #: code:addons/agreement_legal/models/agreement.py:0
 msgid "Your activity is going to end soon"
-msgstr ""
+msgstr "Din aktivitet kommer snart att upphöra"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement_appendix__dynamic_content
@@ -1554,34 +1591,34 @@ msgstr ""
 #: model:ir.model.fields,help:agreement_legal.field_agreement_recital__dynamic_content
 #: model:ir.model.fields,help:agreement_legal.field_agreement_section__dynamic_content
 msgid "compute dynamic Content"
-msgstr ""
+msgstr "beräkna dynamiskt innehåll"
 
 #. module: agreement_legal
 #: model:mail.activity.type,summary:agreement_legal.mail_activity_review_agreement
 msgid "note"
-msgstr ""
+msgstr "notera"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
 msgid "oe_kanban_text_red"
-msgstr ""
+msgstr "oe_kanban_text_röd"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "on"
-msgstr ""
+msgstr "på"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
 msgid "user & picture"
-msgstr ""
+msgstr "användare & bild"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "|  Created By:"
-msgstr ""
+msgstr "| Skapad av:"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "|  Created On:"
-msgstr ""
+msgstr "| Skapad den:"
