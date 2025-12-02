@@ -7,9 +7,9 @@
 
 <!-- /!\ do not modify above this line -->
 
-# agreement
+# Agreement
 
-agreement
+Manage agreements and contracts
 
 <!-- /!\ do not modify below this line -->
 
