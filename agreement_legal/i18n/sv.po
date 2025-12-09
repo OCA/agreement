@@ -154,24 +154,15 @@ msgstr "Överenskommelse: Kontrollera för att granska dagar"
 #: model:ir.actions.act_window,name:agreement_legal.action_agreement_report_order
 #: model:ir.actions.act_window,name:agreement_legal.agreement_dashboard_agreement
 #: model:ir.actions.act_window,name:agreement_legal.agreement_operations_agreement
-#: model:ir.model.fields,field_description:agreement_legal.field_res_partner__agreement_ids
-#: model:ir.model.fields,field_description:agreement_legal.field_res_users__agreement_ids
 #: model:ir.ui.menu,name:agreement_legal.agreement_agreement_reporting
 #: model:ir.ui.menu,name:agreement_legal.dashboard_agreements
 #: model:ir.ui.menu,name:agreement_legal.operations_agreements
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_graph_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_pivot_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_section_search_view
-#: model_terms:ir.ui.view,arch_db:agreement_legal.partner_form
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Agreements"
 msgstr "Avtal"
-
-#. module: agreement_legal
-#: model:ir.model.fields,field_description:agreement_legal.field_res_partner__agreements_count
-#: model:ir.model.fields,field_description:agreement_legal.field_res_users__agreements_count
-msgid "Agreements Count"
-msgstr "Antal avtal"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_stage_form_view
@@ -196,8 +187,8 @@ msgstr "Avtal att granska"
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__special_terms
 msgid ""
-"Any terms that you have agreed to and want to track on the "
-"agreement/contract."
+"Any terms that you have agreed to and want to track on the agreement/"
+"contract."
 msgstr ""
 "Alla villkor som du har kommit överens om och vill spåra på avtalet/"
 "kontraktet."
@@ -341,11 +332,6 @@ msgstr "Konfigureringsinställningar"
 #: model:ir.ui.menu,name:agreement_legal.agreement_configuration
 msgid "Configuration"
 msgstr "Konfiguration"
-
-#. module: agreement_legal
-#: model:ir.model,name:agreement_legal.model_res_partner
-msgid "Contact"
-msgstr "Kontakt"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__partner_signed_user_id
@@ -688,8 +674,8 @@ msgstr "Senast uppdaterad den"
 #: model:ir.model.fields,help:agreement_legal.field_agreement__parent_agreement_id
 msgid ""
 "Link this agreement to a parent agreement. For example if this agreement is "
-"an amendment to another agreement. This list will only show other agreements"
-" related to the same account."
+"an amendment to another agreement. This list will only show other agreements "
+"related to the same account."
 msgstr ""
 "Länka detta avtal till ett överordnat avtal. Till exempel om det här avtalet "
 "är ett tillägg till ett annat avtal. Den här listan visar bara andra avtal "
@@ -1125,7 +1111,8 @@ msgstr "Avsnitt"
 #: model:ir.model.fields,help:agreement_legal.field_agreement_section__field_id
 msgid ""
 "Select target field from the related document model. If it is a\n"
-"         relationship field you will be able to select a target field at the\n"
+"         relationship field you will be able to select a target field at "
+"the\n"
 "         destination of the relationship."
 msgstr ""
 "Välj målfält från den relaterade dokumentmodellen. Om det är ett\n"
@@ -1348,8 +1335,8 @@ msgstr "Begärd uppsägning Datum"
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__notification_address_id
 msgid ""
-"The address to send notifications to, if different from customer "
-"address.(Address Type = Other)"
+"The address to send notifications to, if different from customer address."
+"(Address Type = Other)"
 msgstr ""
 "Den adress som meddelanden ska skickas till, om den skiljer sig från "
 "kundadressen. (Adresstyp = Annan)"
@@ -1538,7 +1525,8 @@ msgstr "Version:"
 #: model:ir.model.fields,help:agreement_legal.field_agreement_section__sub_model_object_field_id
 msgid ""
 "When a relationship field is selected as first field, this\n"
-"         field lets you select the target field within the destination document\n"
+"         field lets you select the target field within the destination "
+"document\n"
 "          model (sub-model)."
 msgstr ""
 "När ett relationsfält väljs som första fält kan du i detta fält\n"
@@ -1572,7 +1560,8 @@ msgstr "När avtalet börjar gälla."
 #: model:ir.model.fields,help:agreement_legal.field_agreement__field_id
 msgid ""
 "You can select a target field from the related document model.\n"
-"        If it is a relationship field you will be able to select a target field\n"
+"        If it is a relationship field you will be able to select a target "
+"field\n"
 "        at the destination of the relationship."
 msgstr ""
 "Du kan välja ett målfält från den relaterade dokumentmodellen.\n"
@@ -1622,3 +1611,9 @@ msgstr "| Skapad av:"
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "|  Created On:"
 msgstr "| Skapad den:"
+
+#~ msgid "Agreements Count"
+#~ msgstr "Antal avtal"
+
+#~ msgid "Contact"
+#~ msgstr "Kontakt"

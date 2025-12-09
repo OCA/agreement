@@ -154,24 +154,15 @@ msgstr ""
 #: model:ir.actions.act_window,name:agreement_legal.action_agreement_report_order
 #: model:ir.actions.act_window,name:agreement_legal.agreement_dashboard_agreement
 #: model:ir.actions.act_window,name:agreement_legal.agreement_operations_agreement
-#: model:ir.model.fields,field_description:agreement_legal.field_res_partner__agreement_ids
-#: model:ir.model.fields,field_description:agreement_legal.field_res_users__agreement_ids
 #: model:ir.ui.menu,name:agreement_legal.agreement_agreement_reporting
 #: model:ir.ui.menu,name:agreement_legal.dashboard_agreements
 #: model:ir.ui.menu,name:agreement_legal.operations_agreements
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_graph_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_pivot_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_section_search_view
-#: model_terms:ir.ui.view,arch_db:agreement_legal.partner_form
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Agreements"
 msgstr "Acuerdos"
-
-#. module: agreement_legal
-#: model:ir.model.fields,field_description:agreement_legal.field_res_partner__agreements_count
-#: model:ir.model.fields,field_description:agreement_legal.field_res_users__agreements_count
-msgid "Agreements Count"
-msgstr "Cuenta de Acuerdos"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_stage_form_view
@@ -342,11 +333,6 @@ msgid "Configuration"
 msgstr "Configuración"
 
 #. module: agreement_legal
-#: model:ir.model,name:agreement_legal.model_res_partner
-msgid "Contact"
-msgstr "Contacto"
-
-#. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__partner_signed_user_id
 msgid "Contact on the account that signed the agreement/contract."
 msgstr "Contacto en la cuenta que firmó el acuerdo/contrato."
@@ -394,7 +380,6 @@ msgstr "Crear Asistente de Acuerdo"
 #. odoo-javascript
 #: code:addons/agreement_legal/static/src/xml/agreement_template.xml:0
 #: model:ir.actions.act_window,name:agreement_legal.create_agreement_from_template_action
-#, python-format
 msgid "Create From Template"
 msgstr "Crear Formulario de Plantilla"
 
@@ -823,7 +808,6 @@ msgstr "Nombre:"
 #. module: agreement_legal
 #. odoo-python
 #: code:addons/agreement_legal/models/agreement.py:0
-#, python-format
 msgid "New"
 msgstr "Nuevo"
 
@@ -1586,7 +1570,6 @@ msgstr ""
 #. module: agreement_legal
 #. odoo-python
 #: code:addons/agreement_legal/models/agreement.py:0
-#, python-format
 msgid "Your activity is going to end soon"
 msgstr ""
 
@@ -1627,6 +1610,12 @@ msgstr "|  Creado Por:"
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "|  Created On:"
 msgstr "|  Creado El:"
+
+#~ msgid "Agreements Count"
+#~ msgstr "Cuenta de Acuerdos"
+
+#~ msgid "Contact"
+#~ msgstr "Contacto"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Última Modificación el"

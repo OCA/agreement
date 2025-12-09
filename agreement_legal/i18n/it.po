@@ -19,7 +19,8 @@ msgstr ""
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
 msgid "<span class=\"fa fa-ellipsis-v\" aria-hidden=\"true\" title=\"Icon\"/>"
-msgstr "<span class=\"fa fa-ellipsis-v\" aria-hidden=\"true\" title=\"Icona\"/>"
+msgstr ""
+"<span class=\"fa fa-ellipsis-v\" aria-hidden=\"true\" title=\"Icona\"/>"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__active
@@ -154,24 +155,15 @@ msgstr "Contratto: controllo per giorni revisione"
 #: model:ir.actions.act_window,name:agreement_legal.action_agreement_report_order
 #: model:ir.actions.act_window,name:agreement_legal.agreement_dashboard_agreement
 #: model:ir.actions.act_window,name:agreement_legal.agreement_operations_agreement
-#: model:ir.model.fields,field_description:agreement_legal.field_res_partner__agreement_ids
-#: model:ir.model.fields,field_description:agreement_legal.field_res_users__agreement_ids
 #: model:ir.ui.menu,name:agreement_legal.agreement_agreement_reporting
 #: model:ir.ui.menu,name:agreement_legal.dashboard_agreements
 #: model:ir.ui.menu,name:agreement_legal.operations_agreements
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_graph_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_pivot_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_section_search_view
-#: model_terms:ir.ui.view,arch_db:agreement_legal.partner_form
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
 msgid "Agreements"
 msgstr "Contratti"
-
-#. module: agreement_legal
-#: model:ir.model.fields,field_description:agreement_legal.field_res_partner__agreements_count
-#: model:ir.model.fields,field_description:agreement_legal.field_res_users__agreements_count
-msgid "Agreements Count"
-msgstr "Numero contratti"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_stage_form_view
@@ -198,7 +190,8 @@ msgstr "Contratti da revisionare"
 msgid ""
 "Any terms that you have agreed to and want to track on the agreement/"
 "contract."
-msgstr "Qualsiasi temine contrattuale accettato di cui si vuole tenere traccia."
+msgstr ""
+"Qualsiasi temine contrattuale accettato di cui si vuole tenere traccia."
 
 #. module: agreement_legal
 #: model:ir.actions.act_window,name:agreement_legal.agreement_appendix_action
@@ -341,11 +334,6 @@ msgid "Configuration"
 msgstr "Configurazione"
 
 #. module: agreement_legal
-#: model:ir.model,name:agreement_legal.model_res_partner
-msgid "Contact"
-msgstr "Contatto"
-
-#. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__partner_signed_user_id
 msgid "Contact on the account that signed the agreement/contract."
 msgstr "Contatto sul conto che ha firmato il contratto."
@@ -393,7 +381,6 @@ msgstr "Procedura guidata creazione contratto"
 #. odoo-javascript
 #: code:addons/agreement_legal/static/src/xml/agreement_template.xml:0
 #: model:ir.actions.act_window,name:agreement_legal.create_agreement_from_template_action
-#, python-format
 msgid "Create From Template"
 msgstr "Crea modello maschera"
 
@@ -824,7 +811,6 @@ msgstr "Nome:"
 #. module: agreement_legal
 #. odoo-python
 #: code:addons/agreement_legal/models/agreement.py:0
-#, python-format
 msgid "New"
 msgstr "Nuovo"
 
@@ -1593,7 +1579,6 @@ msgstr ""
 #. module: agreement_legal
 #. odoo-python
 #: code:addons/agreement_legal/models/agreement.py:0
-#, python-format
 msgid "Your activity is going to end soon"
 msgstr "Le vostre attività finiranno a breve"
 
@@ -1634,3 +1619,9 @@ msgstr "|  Creato da:"
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "|  Created On:"
 msgstr "|  Creato il:"
+
+#~ msgid "Agreements Count"
+#~ msgstr "Numero contratti"
+
+#~ msgid "Contact"
+#~ msgstr "Contatto"
