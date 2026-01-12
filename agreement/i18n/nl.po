@@ -66,6 +66,7 @@ msgstr "Overeenkomst naam"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__agreement_type_id
+#: model:ir.ui.menu,name:agreement.agreement_type_menu_main
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_form_view
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
 msgid "Agreement Type"
@@ -105,6 +106,11 @@ msgstr "Gearchiveerd"
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_attachment_count
 msgid "Attachment Count"
+msgstr ""
+
+#. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__commercial_partner_id
+msgid "Commercial Entity"
 msgstr ""
 
 #. module: agreement
@@ -378,7 +384,7 @@ msgstr ""
 
 #. module: agreement
 #: model:ir.model.constraint,message:agreement.constraint_agreement_code_partner_company_unique
-msgid "This agreement code already exists for this partner!"
+msgid "This agreement code already exists for this commercial entity!"
 msgstr ""
 
 #. module: agreement
@@ -404,16 +410,6 @@ msgstr ""
 #. module: agreement
 #: model:res.groups,name:agreement.group_use_agreement_type
 msgid "Use agreement type"
-msgstr ""
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__website_message_ids
-msgid "Website Messages"
-msgstr ""
-
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__website_message_ids
-msgid "Website communication history"
 msgstr ""
 
 #. module: agreement
