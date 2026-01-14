@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-11-04 11:20+0000\n"
+"PO-Revision-Date: 2026-01-14 12:36+0000\n"
 "Last-Translator: jakobkrabbe <jakob@syscare.se>\n"
 "Language-Team: none\n"
 "Language: sv\n"
@@ -148,7 +148,7 @@ msgstr "Avtalet behöver ses över"
 #. module: agreement_legal
 #: model:ir.actions.server,name:agreement_legal.ir_cron_test_acc_move_except_ir_actions_server
 msgid "Agreement: Check to Review Days"
-msgstr "Överenskommelse: Kontrollera för att granska dagar"
+msgstr "Avtal: Kontrollera för att granska dagar"
 
 #. module: agreement_legal
 #: model:ir.actions.act_window,name:agreement_legal.action_agreement_report_order
@@ -858,7 +858,7 @@ msgstr "Valfritt värde som ska användas om målfältet är tomt."
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__parent_agreement_id
 msgid "Parent Agreement"
-msgstr "Föräldraavtal"
+msgstr "Överliggande avtal"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__parties
