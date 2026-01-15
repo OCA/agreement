@@ -109,6 +109,11 @@ msgid "Attachment Count"
 msgstr "Nombre de pièces jointes"
 
 #. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__code
+msgid "Code"
+msgstr "Code"
+
+#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__commercial_partner_id
 msgid "Commercial Entity"
 msgstr ""
@@ -143,6 +148,7 @@ msgstr "Créé le"
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__display_name
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__display_name
+#: model:ir.model.fields,field_description:agreement.field_res_partner__display_name
 msgid "Display Name"
 msgstr "Nom d'affichage"
 
@@ -182,13 +188,9 @@ msgstr ""
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__id
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__id
+#: model:ir.model.fields,field_description:agreement.field_res_partner__id
 msgid "ID"
 msgstr "ID"
-
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__code
-msgid "ID used for internal contract tracking."
-msgstr ""
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_exception_icon
@@ -209,12 +211,6 @@ msgstr "Si coché, de nouveaux messages requièrent votre attention."
 #: model:ir.model.fields,help:agreement.field_agreement__message_has_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si coché, des messages ont une erreur de livraison."
-
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__active
-msgid ""
-"If unchecked, it will allow you to hide the agreement without removing it."
-msgstr ""
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_is_follower
@@ -254,6 +250,7 @@ msgid "My Activity Deadline"
 msgstr ""
 
 #. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__name
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__name
 msgid "Name"
 msgstr "Nom"
@@ -313,8 +310,8 @@ msgid "Purchase"
 msgstr "Achat"
 
 #. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__code
-msgid "Reference"
+#: model:ir.model.fields,field_description:agreement.field_agreement__rating_ids
+msgid "Ratings"
 msgstr ""
 
 #. module: agreement
@@ -384,18 +381,8 @@ msgstr ""
 "Planifiée : Activités futures."
 
 #. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__partner_id
-msgid "The customer or vendor this agreement is related to."
-msgstr ""
-
-#. module: agreement
-#: model:ir.model.constraint,message:agreement.constraint_agreement_code_partner_company_unique
+#: model:ir.model.constraint,message:agreement.constraint_agreement_code_uniq
 msgid "This agreement code already exists for this commercial entity!"
-msgstr ""
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__name
-msgid "Title"
 msgstr ""
 
 #. module: agreement
@@ -419,20 +406,23 @@ msgid "Use agreement type"
 msgstr "Utiliser le type d'accord"
 
 #. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__end_date
-msgid "When the agreement ends."
+#: model:ir.model.fields,field_description:agreement.field_agreement__website_message_ids
+msgid "Website Messages"
 msgstr ""
 
 #. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__start_date
-msgid "When the agreement starts."
+#: model:ir.model.fields,help:agreement.field_agreement__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: agreement
+#. odoo-python
+#: code:addons/agreement/models/agreement.py:0
+msgid "purchase"
 msgstr ""
 
 #~ msgid "This agreement code already exists for this partner!"
 #~ msgstr "Code accord existant pour ce partenaire !"
-
-#~ msgid "Code"
-#~ msgstr "Code"
 
 #, python-format
 #~ msgid "%s (copy)"

@@ -16,3 +16,5 @@
 - [Trobz](https://www.trobz.com/):
 
   - Nhan Tran \<<nhant@trobz.com>\>
+- [Komit](https://komit-consulting.com):
+  - Vang Nguyen Phu

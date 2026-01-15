@@ -12,11 +12,12 @@ class Partner(models.Model):
 
     @api.depends("agreement_ids")
     def _compute_agreements_count(self):
-        domain = [("partner_id", "in", self.ids)]
-        res = self.env["agreement"].read_group(
-            domain=domain, fields=["partner_id"], groupby=["partner_id"]
+        results = self.env["agreement"]._read_group(
+            [("partner_id", "in", self.ids)],
+            ["partner_id"],
+            ["__count"],
         )
-        agreement_dict = {x["partner_id"][0]: x["partner_id_count"] for x in res}
+        agreement_dict = {partner.id: count for partner, count in results}
         for rec in self:
             rec.agreements_count = agreement_dict.get(rec.id, 0)
 
@@ -24,6 +25,10 @@ class Partner(models.Model):
         self.ensure_one()
         action = self.env.ref("agreement.agreement_action")
         result = action.read()[0]
-        result["domain"] = [("partner_id", "=", self.id)]
-        result["context"] = {"default_partner_id": self.id}
+        result.update(
+            {
+                "domain": [("partner_id", "=", self.id)],
+                "context": {"default_partner_id": self.id},
+            }
+        )
         return result

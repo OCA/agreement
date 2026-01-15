@@ -10,6 +10,11 @@ class Agreement(models.Model):
     _description = "Agreement"
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
+    _code_uniq = models.Constraint(
+        "unique(code, commercial_partner_id, company_id)",
+        "This agreement code already exists for this commercial entity!",
+    )
+
     code = fields.Char(required=True, tracking=True)
     name = fields.Char(required=True, tracking=True)
     partner_id = fields.Many2one(
@@ -74,17 +79,10 @@ class Agreement(models.Model):
             else:
                 rec.domain = "sale"
 
+    @api.depends("code", "name")
     def _compute_display_name(self):
         for rec in self:
             rec.display_name = f"[{rec.code}] {rec.name}"
-
-    _sql_constraints = [
-        (
-            "code_partner_company_unique",
-            "unique(code, commercial_partner_id, company_id)",
-            "This agreement code already exists for this commercial entity!",
-        )
-    ]
 
     def copy(self, default=None):
         """Always assign a value for code because is required"""
