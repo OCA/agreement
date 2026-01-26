@@ -18,13 +18,21 @@
         </field>
     </record>
 
-    <!-- Agreement Form View -->
-    <record model="ir.ui.view" id="partner_agreement_form_view">
+    <!-- Agreement Form View-->
+    <!-- inherit agreement.agreement_form and transform it into the legal partner form -->
+    <record id="partner_agreement_form_view" model="ir.ui.view">
         <field name="name">Agreement Form</field>
         <field name="model">agreement</field>
-        <field name="priority" eval="1" />
+        <field name="priority" eval="99" />
+        <field name="inherit_id" ref="agreement.agreement_form" />
         <field name="arch" type="xml">
-            <form js_class="agreement_template_form" string="Agreement">
+            <!-- 1) form attribute: js_class -->
+            <xpath expr="//form" position="attributes">
+                <attribute name="js_class">agreement_template_form</attribute>
+            </xpath>
+
+            <!-- 2) add header before sheet -->
+            <xpath expr="//form/sheet" position="before">
                 <header>
                     <button
                         string="New Version"
@@ -43,359 +51,435 @@
                     <field
                         name="stage_id"
                         widget="statusbar"
-                        clickable="True"
+                        clickable="1"
                         options="{'clickable': 1, 'fold_field': 'fold'}"
                         domain="[('stage_type', '=', 'agreement')]"
                     />
                 </header>
-                <sheet>
-                    <div class="oe_button_box" name="button_box" />
-                    <widget
-                        name="web_ribbon"
-                        title="Template"
-                        bg_color="bg-info"
-                        invisible="is_template == False"
-                    />
-                    <div class="oe_title">
-                        <label
-                            for="name"
-                            class="oe_edit_only"
-                            string="Agreement Name"
+            </xpath>
+
+            <!-- 3) edit widget -->
+            <xpath expr="//widget[@name='web_ribbon']" position="attributes">
+                <attribute name="title">Template</attribute>
+                <attribute name="bg_color">bg-info</attribute>
+                <attribute name="invisible">is_template == False</attribute>
+            </xpath>
+
+            <!-- 4) Add string "General" to group main -->
+            <xpath expr="//group[@name='main']" position="attributes">
+                <attribute name="string">General</attribute>
+            </xpath>
+
+            <!-- 5) make code readonly -->
+            <xpath expr="//field[@name='code']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+
+            <!-- 6) parent_agreement_id after code -->
+            <xpath expr="//field[@name='code']" position="after">
+                <field
+                    name="parent_agreement_id"
+                    domain="[('partner_id', '=', partner_id)]"
+                />
+            </xpath>
+
+            <!-- 7) remove "domain" field from base form -->
+            <xpath expr="//field[@name='domain']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <!-- 8) is_template: make invisible and remove groups restriction -->
+            <xpath expr="//field[@name='is_template']" position="attributes">
+                <attribute name="invisible">1</attribute>
+                <attribute name="groups" />
+            </xpath>
+
+            <!-- 9) add template_id -->
+            <xpath expr="//field[@name='is_template']" position="after">
+                <field name="template_id" invisible="is_template == True" />
+            </xpath>
+
+            <!-- 10) move agreement_type_id to right group and add extra fields -->
+            <xpath
+                expr="//sheet/group[@name='main']/group[@name='right']"
+                position="inside"
+            >
+                <field name="agreement_type_id" position="move" />
+                <field
+                    name="agreement_subtype_id"
+                    widget="selection"
+                    domain="[('agreement_type_id', '=', agreement_type_id)]"
+                />
+                <field
+                    name="assigned_user_id"
+                    invisible="is_template == True"
+                    readonly="is_template == True"
+                />
+                <field name="active" invisible="1" />
+                <field name="state" invisible="1" />
+                <field name="readonly" invisible="1" />
+            </xpath>
+
+            <!-- 11) edit agreement_type_id attributes -->
+            <xpath expr="//field[@name='agreement_type_id']" position="attributes">
+                <attribute name="widget">selection</attribute>
+                <attribute name="required">1</attribute>
+                <attribute name="groups" />
+            </xpath>
+
+            <!-- 12) Add description after main group -->
+            <xpath expr="//sheet/group[@name='main']" position="after">
+                <field name="description" required="1" />
+                <!-- 13) Add dynamic fields block after description -->
+                <group class="oe_edit_only">
+                    <group>
+                        <field
+                            name="field_id"
+                            domain="[('model_id', '=', 'agreement'),
+                                        ('ttype', '!=', 'one2many'),
+                                        ('ttype', '!=', 'many2many')]"
                         />
-                        <h1>
-                            <field name="name" />
-                        </h1>
-                    </div>
-                    <group string="General">
-                        <group>
-                            <field name="code" readonly="1" />
-                            <field
-                                name="parent_agreement_id"
-                                domain="[('partner_id', '=', partner_id)]"
-                            />
-                            <field name="is_template" invisible="1" />
-                            <field name="template_id" invisible="is_template == True" />
-                        </group>
-                        <group>
-                            <field
-                                name="agreement_type_id"
-                                widget="selection"
-                                required="True"
-                            />
-                            <field
-                                name="agreement_subtype_id"
-                                widget="selection"
-                                domain="[('agreement_type_id', '=', agreement_type_id)]"
-                            />
-                            <field
-                                name="assigned_user_id"
-                                invisible="is_template == True"
-                                readonly="is_template == True"
-                            />
-                            <field name="active" invisible="1" />
-                            <field name="state" invisible="1" />
-                            <field name="readonly" invisible="1" />
-                        </group>
-                    </group>
-                    <field name="description" required="True" />
-                    <group class="oe_edit_only">
-                        <group>
-                            <field
-                                name="field_id"
-                                domain="[('model_id', '=', 'agreement'),
-                                            ('ttype', '!=', 'one2many'),
-                                            ('ttype', '!=', 'many2many')]"
-                            />
-                            <field name="sub_object_id" readonly="1" />
-                            <field
-                                name="sub_model_object_field_id"
-                                domain="[('model_id', '=', sub_object_id),
-                                            ('ttype', '!=', 'one2many'),
-                                            ('ttype', '!=', 'many2many')]"
-                                readonly="sub_object_id == False"
-                                required="sub_object_id != False"
-                            />
-                            <field name="default_value" />
-                            <field name="copyvalue" />
-                        </group>
-                        <p>
-                            This section (on the left) allows you to add dynamic fields inside the description and special terms.
-                            <ol>
-                            <li>Select the agreement field</li>
-                            <li>Select the sub-field</li>
-                            <li>Enter the default value if the field is empty</li>
-                            <li
-                            >Copy and paste the placeholder expression in the description or the special terms</li>
-                        </ol>
-                        </p>
-                    </group>
-                    <group name="parties" string="Parties">
-                        <group name="cust_parties">
-                            <field
-                                name="use_parties_content"
-                                string="Use custom content"
-                            />
-                        </group>
-                        <!--                        <group name="cust_parties">-->
-                        <p>
-                                This section (on the left) allows you to replace the default listing of the parties with custom dynamic content.
-                            </p>
-                        <!--                        </group>-->
-                        <group name="partner" string="Partner">
-                            <field
-                                name="partner_id"
-                                colspan="2"
-                                context="{'show_address': 1}"
-                                options="{'always_reload': True}"
-                                nolabel="1"
-                                class="o_address_format"
-                            />
-                        </group>
-                        <group name="company" string="Company">
-                            <!--                            <div class="o_address_format">-->
-                            <field
-                                name="company_id"
-                                readonly="1"
-                                context="{'show_address': 1}"
-                                options="{'always_reload': True}"
-                                nolabel="1"
-                                colspan="2"
-                                class="o_address_format"
-                            />
-                            <!--                            </div>-->
-                            <field name="company_partner_id" invisible="1" />
-                        </group>
-                        <group name="partner_left" string="Primary Contact">
-                            <field
-                                name="partner_contact_id"
-                                domain="[('parent_id', '=', partner_id)]"
-                                nolabel="1"
-                                colspan="2"
-                            />
-                            <field
-                                name="partner_contact_phone"
-                                widget="phone"
-                                readonly="1"
-                                nolabel="1"
-                                colspan="2"
-                            />
-                            <field
-                                name="partner_contact_email"
-                                widget="email"
-                                readonly="1"
-                                nolabel="1"
-                                colspan="2"
-                            />
-                        </group>
-                        <group name="contact_right" string="Primary Contact">
-                            <field
-                                name="company_contact_id"
-                                domain="[('parent_id', '=', company_partner_id)]"
-                                nolabel="1"
-                                colspan="2"
-                            />
-                            <field
-                                name="company_contact_phone"
-                                widget="phone"
-                                readonly="1"
-                                nolabel="1"
-                                colspan="2"
-                            />
-                            <field
-                                name="company_contact_email"
-                                widget="email"
-                                readonly="1"
-                                nolabel="1"
-                                colspan="2"
-                            />
-                        </group>
-                    </group>
-                    <group
-                        name="parties_content"
-                        string="Parties Content"
-                        invisible="use_parties_content == False"
-                    >
-                        <field name="parties" nolabel="1" colspan="2" />
-                    </group>
-                    <group name="term_information">
-                        <group name="termdates_left" string="Term Dates">
-                            <field
-                                name="signature_date"
-                                invisible="is_template == True"
-                            />
-                            <field
-                                name="start_date"
-                                required="is_template == False"
-                                invisible="is_template == True"
-                            />
-                            <field
-                                name="end_date"
-                                required="is_template == False"
-                                invisible="is_template == True"
-                            />
-                            <field
-                                name="to_review_date"
-                                required="is_template == False and end_date != False"
-                                invisible="is_template == True"
-                            />
-                            <field name="expiration_notice" />
-                            <field name="change_notice" />
-                            <field
-                                name="notification_address_id"
-                                domain="['|', ('parent_id', '=', partner_id), ('parent_id', '=', company_partner_id)]"
-                            />
-                            <field name="termination_requested" />
-                            <field name="termination_date" />
-                        </group>
-                    </group>
-                    <group string="Special Terms">
-                        <field name="special_terms" nolabel="1" />
-                    </group>
-                    <notebook>
-                        <page name="structure" string="Structure">
-                            <div>
-                                <button
-                                    name="%(partner_agreement_contract_document_preview)d"
-                                    string="Preview"
-                                    type="action"
-                                    class="oe_highlight mx-1"
-                                />
-                                <button
-                                    name="%(partner_agreement_contract_document)d"
-                                    string="Print"
-                                    type="action"
-                                    class="oe_highlight mx-1"
-                                />
-                            </div>
-                            <separator string="Recitals" />
-                            <field
-                                name="recital_ids"
-                                nolabel="1"
-                                context="{'list_view_ref': 'agreement_legal.agreement_recital_tree2', 'form_view_ref': 'agreement_legal.agreement_recital_form2'}"
-                            />
-                            <separator string="Sections" />
-                            <field
-                                name="sections_ids"
-                                nolabel="1"
-                                context="{'list_view_ref': 'agreement_legal.partner_agreement_section_list_view2', 'form_view_ref': 'agreement_legal.partner_agreement_section_form_view2'}"
-                            />
-                            <separator string="Clauses" />
-                            <field
-                                name="clauses_ids"
-                                nolabel="1"
-                                context="{'list_view_ref': 'agreement_legal.partner_agreement_clause_list_view2', 'form_view_ref': 'agreement_legal.partner_agreement_clause_form_view2', 'default_temp_agreement_id': id}"
-                            />
-                            <separator string="Appendices" />
-                            <field
-                                name="appendix_ids"
-                                nolabel="1"
-                                context="{'list_view_ref': 'agreement_legal.agreement_appendix_tree2', 'form_view_ref': 'agreement_legal.agreement_appendix_form2'}"
-                            />
-                        </page>
-                        <page name="signature" string="Signatures">
-                            <group>
-                                <group string="Partner">
-                                    <field name="partner_signed_date" />
-                                    <field
-                                        name="partner_signed_user_id"
-                                        domain="[('parent_id', '=', partner_id)]"
-                                    />
-                                </group>
-                                <group string="Company">
-                                    <field name="company_signed_date" />
-                                    <field name="company_signed_user_id" />
-                                    <field
-                                        name="signed_contract"
-                                        filename="signed_contract_filename"
-                                    />
-                                    <field
-                                        name="signed_contract_filename"
-                                        invisible="1"
-                                    />
-                                </group>
-                            </group>
-                        </page>
-                        <page name="products" string="Products/Services">
-                            <field name="line_ids" nolabel="1">
-                                <list editable="top">
-                                    <field name="product_id" />
-                                    <field name="name" />
-                                    <field name="qty" />
-                                    <field name="uom_id" groups="uom.group_uom" />
-                                </list>
-                            </field>
-                        </page>
-                        <page name="child_agreements" string="Child Agreements">
-                            <field name="child_agreements_ids">
-                                <list default_order="version desc">
-                                    <field name="name" />
-                                    <field name="version" />
-                                    <field name="revision" />
-                                </list>
-                            </field>
-                        </page>
-                        <page name="old_versions" string="Revisions">
-                            <field
-                                name="previous_version_agreements_ids"
-                                string="Previouse Versions"
-                                readonly="1"
-                            >
-                                <list default_order="version desc">
-                                    <field name="name" />
-                                    <field name="version" />
-                                    <field name="revision" />
-                                </list>
-                            </field>
-                        </page>
-                        <page name="performance" string="Performance">
-                            <p
-                            >This section is a place where financial records will show the current performance of this agreement.</p>
-                            <p>Perhaps include invoices with total vs costs? </p>
-                        </page>
-                    </notebook>
-                    <separator string="Administration" />
-                    <!--                    <group string="Administration">-->
-                    <div name="Administration">
-                        <p class="oe_inline">Reviewed by <field
-                            name="reviewed_user_id"
-                            class="oe_inline"
-                        /> on <field name="reviewed_date" class="oe_inline" />.</p>
-                        <p>Approved by <field
-                            name="approved_user_id"
-                            class="oe_inline"
-                        /> on <field name="approved_date" class="oe_inline" />.</p>
-                    </div>
-                    <!--                    </group>-->
-                    <p name="footer">
-                        Version: <field name="version" readonly="True" />.<field
-                        name="revision"
-                        readonly="True"
-                    />
-                        |  Created By:
+                        <field name="sub_object_id" readonly="1" />
                         <field
-                        name="create_uid"
-                        readonly="True"
-                        invisible="parent_agreement_id != False"
-                    />
-                        <field
-                        name="create_uid_parent"
-                        invisible="parent_agreement_id == False"
-                    />
-                        |  Created On:
-                        <field
-                        name="create_date"
-                        readonly="True"
-                        invisible="parent_agreement_id != False"
-                    />
-                        <field
-                        name="create_date_parent"
-                        readonly="True"
-                        invisible="parent_agreement_id == False"
-                    />
+                            name="sub_model_object_field_id"
+                            domain="[('model_id', '=', sub_object_id),
+                                        ('ttype', '!=', 'one2many'),
+                                        ('ttype', '!=', 'many2many')]"
+                            readonly="sub_object_id == False"
+                            required="sub_object_id != False"
+                        />
+                        <field name="default_value" />
+                        <field name="copyvalue" />
+                    </group>
+                    <p>
+                        This section (on the left) allows you to add dynamic fields inside the description and special terms.
+                        <ol>
+                        <li>Select the agreement field</li>
+                        <li>Select the sub-field</li>
+                        <li>Enter the default value if the field is empty</li>
+                        <li
+                        >Copy and paste the placeholder expression in the description or the special terms</li>
+                    </ol>
                     </p>
-                </sheet>
-                <chatter />
-            </form>
+                </group>
+            </xpath>
+
+            <!-- 14) edit partner_id attributes -->
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="colspan">2</attribute>
+                <attribute name="context">{'show_address': 1}</attribute>
+                <attribute name="options">{'always_reload': True}</attribute>
+                <attribute name="nolabel">1</attribute>
+                <attribute name="class">o_address_format</attribute>
+                <!-- remove required="not is_template" -->
+                <attribute name="required">0</attribute>
+            </xpath>
+
+            <!-- 15) edit company_id attributes -->
+            <xpath expr="//field[@name='company_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+                <attribute name="context">{'show_address': 1}</attribute>
+                <attribute name="options">{'always_reload': True}</attribute>
+                <attribute name="nolabel">1</attribute>
+                <attribute name="colspan">2</attribute>
+                <attribute name="class">o_address_format</attribute>
+                <!-- remove groups="base.group_multi_company" -->
+                <attribute name="groups" />
+            </xpath>
+
+            <!-- 16) Insert Parties block after dynamic fields block -->
+            <xpath expr="//sheet/group[hasclass('oe_edit_only')]" position="after">
+                <group name="parties" string="Parties">
+                    <group name="cust_parties">
+                        <field name="use_parties_content" string="Use custom content" />
+                    </group>
+
+                    <p>
+                        This section (on the left) allows you to replace the default listing of the parties with custom dynamic content.
+                    </p>
+
+                    <group name="partner" string="Partner" />
+
+                    <group name="company" string="Company">
+                        <field name="company_partner_id" invisible="1" />
+                    </group>
+
+                    <group name="partner_left" string="Primary Contact">
+                        <field
+                            name="partner_contact_id"
+                            domain="[('parent_id', '=', partner_id)]"
+                            nolabel="1"
+                            colspan="2"
+                        />
+                        <field
+                            name="partner_contact_phone"
+                            widget="phone"
+                            readonly="1"
+                            nolabel="1"
+                            colspan="2"
+                        />
+                        <field
+                            name="partner_contact_email"
+                            widget="email"
+                            readonly="1"
+                            nolabel="1"
+                            colspan="2"
+                        />
+                    </group>
+
+                    <group name="contact_right" string="Primary Contact">
+                        <field
+                            name="company_contact_id"
+                            domain="[('parent_id', '=', company_partner_id)]"
+                            nolabel="1"
+                            colspan="2"
+                        />
+                        <field
+                            name="company_contact_phone"
+                            widget="phone"
+                            readonly="1"
+                            nolabel="1"
+                            colspan="2"
+                        />
+                        <field
+                            name="company_contact_email"
+                            widget="email"
+                            readonly="1"
+                            nolabel="1"
+                            colspan="2"
+                        />
+                    </group>
+                </group>
+
+                <group
+                    name="parties_content"
+                    string="Parties Content"
+                    invisible="use_parties_content == False"
+                >
+                    <field name="parties" nolabel="1" colspan="2" />
+                </group>
+            </xpath>
+            <!-- 17) move company_id and partner_id -->
+
+            <xpath expr="//group[@name='company']" position="inside">
+                <field name="company_id" position="move" />
+            </xpath>
+            <xpath expr="//group[@name='partner']" position="inside">
+                <field name="partner_id" position="move" />
+            </xpath>
+
+            <!-- 17) Insert "Term Dates" and "Special Terms" after parties_content -->
+            <xpath expr="//group[@name='parties_content']" position="after">
+                <group name="term_information">
+                    <group name="termdates_left" string="Term Dates">
+                        <!-- position="move" is only supported 1 lvl below xpath -->
+
+                        <field
+                            name="to_review_date"
+                            required="is_template == False and end_date != False"
+                            invisible="is_template == True"
+                        />
+                        <field name="expiration_notice" />
+                        <field name="change_notice" />
+                        <field
+                            name="notification_address_id"
+                            domain="['|', ('parent_id', '=', partner_id), ('parent_id', '=', company_partner_id)]"
+                        />
+                        <field name="termination_requested" />
+                        <field name="termination_date" />
+                    </group>
+                </group>
+
+                <group string="Special Terms">
+                    <field name="special_terms" nolabel="1" />
+                </group>
+            </xpath>
+
+            <xpath expr="//field[@name='to_review_date']" position="before">
+                <!-- position="move" is only supported 1 lvl below xpath -->
+                <field name="signature_date" position="move" />
+                <field name="start_date" position="move" />
+                <field name="end_date" position="move" />
+            </xpath>
+
+            <!-- 18) edit attributes of moved date fields -->
+            <xpath expr="//field[@name='signature_date']" position="attributes">
+                <attribute name="invisible">is_template == True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='start_date']" position="attributes">
+                <attribute name="required">is_template == False</attribute>
+                <attribute name="invisible">is_template == True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='end_date']" position="attributes">
+                <attribute name="required">is_template == False</attribute>
+                <attribute name="invisible">is_template == True</attribute>
+            </xpath>
+
+            <!-- 19) insert page into notebook -->
+            <xpath expr="//notebook" position="inside">
+                <page name="structure" string="Structure">
+                    <div>
+                        <button
+                            name="%(partner_agreement_contract_document_preview)d"
+                            string="Preview"
+                            type="action"
+                            class="oe_highlight mx-1"
+                        />
+                        <button
+                            name="%(partner_agreement_contract_document)d"
+                            string="Print"
+                            type="action"
+                            class="oe_highlight mx-1"
+                        />
+                    </div>
+
+                    <separator string="Recitals" />
+                    <field
+                        name="recital_ids"
+                        nolabel="1"
+                        context="{'list_view_ref': 'agreement_legal.agreement_recital_tree2',
+                                    'form_view_ref': 'agreement_legal.agreement_recital_form2'}"
+                    />
+
+                    <separator string="Sections" />
+                    <field
+                        name="sections_ids"
+                        nolabel="1"
+                        context="{'list_view_ref': 'agreement_legal.partner_agreement_section_list_view2',
+                                    'form_view_ref': 'agreement_legal.partner_agreement_section_form_view2'}"
+                    />
+
+                    <separator string="Clauses" />
+                    <field
+                        name="clauses_ids"
+                        nolabel="1"
+                        context="{'list_view_ref': 'agreement_legal.partner_agreement_clause_list_view2',
+                                    'form_view_ref': 'agreement_legal.partner_agreement_clause_form_view2',
+                                    'default_temp_agreement_id': id}"
+                    />
+
+                    <separator string="Appendices" />
+                    <field
+                        name="appendix_ids"
+                        nolabel="1"
+                        context="{'list_view_ref': 'agreement_legal.agreement_appendix_tree2',
+                                    'form_view_ref': 'agreement_legal.agreement_appendix_form2'}"
+                    />
+                </page>
+
+                <page name="signature" string="Signatures">
+                    <group>
+                        <group string="Partner">
+                            <field name="partner_signed_date" />
+                            <field
+                                name="partner_signed_user_id"
+                                domain="[('parent_id', '=', partner_id)]"
+                            />
+                        </group>
+                        <group string="Company">
+                            <field name="company_signed_date" />
+                            <field name="company_signed_user_id" />
+                            <field
+                                name="signed_contract"
+                                filename="signed_contract_filename"
+                            />
+                            <field name="signed_contract_filename" invisible="1" />
+                        </group>
+                    </group>
+                </page>
+
+                <page name="products" string="Products/Services">
+                    <field name="line_ids" nolabel="1">
+                        <list editable="top">
+                            <field name="product_id" />
+                            <field name="name" />
+                            <field name="qty" />
+                            <field name="uom_id" groups="uom.group_uom" />
+                        </list>
+                    </field>
+                </page>
+
+                <page name="child_agreements" string="Child Agreements">
+                    <field name="child_agreements_ids">
+                        <list default_order="version desc">
+                            <field name="name" />
+                            <field name="version" />
+                            <field name="revision" />
+                        </list>
+                    </field>
+                </page>
+
+                <page name="old_versions" string="Revisions">
+                    <field
+                        name="previous_version_agreements_ids"
+                        string="Previouse Versions"
+                        readonly="1"
+                    >
+                        <list default_order="version desc">
+                            <field name="name" />
+                            <field name="version" />
+                            <field name="revision" />
+                        </list>
+                    </field>
+                </page>
+
+                <page name="performance" string="Performance">
+                    <p
+                    >This section is a place where financial records will show the current performance of this agreement.</p>
+                    <p>Perhaps include invoices with total vs costs?</p>
+                </page>
+            </xpath>
+
+            <!-- 20) Insert Administration + footer after notebook -->
+            <xpath expr="//sheet/notebook" position="after">
+                <separator string="Administration" />
+
+                <div name="Administration">
+                    <p class="oe_inline">
+                        Reviewed by
+                        <field name="reviewed_user_id" class="oe_inline" />
+                        on
+                        <field name="reviewed_date" class="oe_inline" />.
+                    </p>
+                    <p>
+                        Approved by
+                        <field name="approved_user_id" class="oe_inline" />
+                        on
+                        <field name="approved_date" class="oe_inline" />.
+                    </p>
+                </div>
+
+                <p name="footer">
+                    Version:
+                    <field name="version" readonly="1" />.<field
+                    name="revision"
+                    readonly="1"
+                />
+                    |
+                    Created By:
+                    <field
+                    name="create_uid"
+                    readonly="1"
+                    invisible="parent_agreement_id != False"
+                />
+                    <field
+                    name="create_uid_parent"
+                    invisible="parent_agreement_id == False"
+                />
+                    |
+                    Created On:
+                    <field
+                    name="create_date"
+                    readonly="1"
+                    invisible="parent_agreement_id != False"
+                />
+                    <field
+                    name="create_date_parent"
+                    readonly="1"
+                    invisible="parent_agreement_id == False"
+                />
+                </p>
+            </xpath>
         </field>
     </record>
 
