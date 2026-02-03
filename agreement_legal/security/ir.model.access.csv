@@ -19,6 +19,7 @@ access_agreement_recital_readonly,recital readonly,model_agreement_recital,group
 access_agreement_recital_allusers,recital all users,model_agreement_recital,group_agreement_user,1,1,1,1
 access_agreement_recital_manager,recital manager,model_agreement_recital,group_agreement_manager,1,1,1,1
 access_create_agreement_wizard_allusers,create agreement wizard users,model_create_agreement_wizard,group_agreement_user,1,1,1,1
+access_recompute_agreement_from_template_wizard_allusers,recompute agreement from template wizard users,model_recompute_agreement_from_template_wizard,group_agreement_user,1,1,1,1
 access_agreement_readonly,agreement readonly,model_agreement,group_agreement_readonly,1,0,0,0
 access_agreement_allusers,agreement all users,model_agreement,group_agreement_user,1,1,1,0
 access_agreement_manager,agreement manager,model_agreement,group_agreement_manager,1,1,1,1

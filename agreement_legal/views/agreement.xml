@@ -97,6 +97,17 @@
             <!-- 9) add template_id -->
             <xpath expr="//field[@name='is_template']" position="after">
                 <field name="template_id" invisible="is_template == True" />
+                <label for="template_id" invisible="is_template == True" />
+                <div class="o_row" invisible="is_template == True">
+                    <field name="template_id" nolabel="1" />
+                    <button
+                        string="Reset"
+                        type="object"
+                        name="action_open_recompute_from_template_wizard"
+                        invisible="template_id == False"
+                        groups="agreement_legal.group_agreement_user"
+                    />
+                </div>
             </xpath>
 
             <!-- 10) move agreement_type_id to right group and add extra fields -->

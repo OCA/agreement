@@ -161,3 +161,106 @@ class TestAgreement(TransactionCase):
             self.test_agreement, self.env[action["res_model"]].search(action["domain"])
         )
         self.assertEqual(1, self.test_agreement.partner_id.agreements_count)
+
+    def test_recompute_logic(self):
+        self.template = self.env["agreement"].create(
+            {
+                "name": "Template Agreement",
+                "is_template": True,
+            }
+        )
+
+        self.section = self.env["agreement.section"].create(
+            {
+                "name": "Section Test",
+                "agreement_id": self.template.id,
+            }
+        )
+
+        self.clause = self.env["agreement.clause"].create(
+            {
+                "name": "Clause Test",
+                "agreement_id": self.template.id,
+                "section_id": self.section.id,
+            }
+        )
+
+        self.appendix = self.env["agreement.appendix"].create(
+            {
+                "name": "Appendix A",
+                "agreement_id": self.template.id,
+                "title": "Anex A",
+            }
+        )
+
+        self.test_agreement.template_id = self.template.id
+
+        self.old_appendix = self.env["agreement.appendix"].create(
+            {
+                "name": "Appendix Old",
+                "agreement_id": self.test_agreement.id,
+                "title": "Anex Old",
+            }
+        )
+        self.test_agreement.with_context(
+            active_ids=self.test_agreement.ids,
+        ).recompute_from_template()
+
+        self.assertEqual(len(self.test_agreement.sections_ids), 1)
+        new_section = self.test_agreement.sections_ids[0]
+        self.assertEqual(len(new_section.clauses_ids), 1)
+        self.assertEqual(len(self.test_agreement.clauses_ids), 1)
+        self.assertEqual(self.test_agreement.clauses_ids.section_id, new_section)
+        child_template = self.env["agreement"].create(
+            {
+                "name": "Child Agreement of Template",
+                "parent_agreement_id": self.template.id,
+                "is_template": True,
+            }
+        )
+        self.template.child_agreements_ids = [(4, child_template.id)]
+
+        self.test_agreement.with_context(
+            active_ids=self.test_agreement.ids
+        ).recompute_from_template()
+
+        self.assertEqual(
+            len(self.test_agreement.child_agreements_ids),
+            1,
+        )
+
+        new_child = self.test_agreement.child_agreements_ids[0]
+
+        self.assertEqual(
+            new_child.name,
+            "Child Agreement of Template",
+            "El nombre del acuerdo hijo no coincide",
+        )
+        self.assertEqual(
+            new_child.parent_agreement_id.id,
+            self.test_agreement.id,
+        )
+        self.assertNotEqual(
+            new_child.id,
+            child_template.id,
+        )
+
+    def test_action_open_recompute_from_template_wizard(self):
+        template = self.env["agreement"].create(
+            {
+                "name": "Template Agreement",
+                "is_template": True,
+            }
+        )
+        self.test_agreement.template_id = template
+
+        action = self.test_agreement.action_open_recompute_from_template_wizard()
+
+        self.assertEqual(
+            action["res_model"], "recompute.agreement.from.template.wizard"
+        )
+        self.assertEqual(action["target"], "new")
+        self.assertEqual(
+            action["context"]["default_agreement_id"],
+            self.test_agreement.id,
+        )

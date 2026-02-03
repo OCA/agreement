@@ -32,6 +32,7 @@
         "views/agreement.xml",
         "views/menu.xml",
         "wizards/create_agreement_wizard.xml",
+        "wizards/recompute_agreement_from_template_wizard.xml",
     ],
     "demo": [
         "demo/agreement_subtype.xml",
