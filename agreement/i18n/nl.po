@@ -66,7 +66,6 @@ msgstr "Overeenkomst naam"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__agreement_type_id
-#: model:ir.ui.menu,name:agreement.agreement_type_menu_main
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_form_view
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
 msgid "Agreement Type"
@@ -75,7 +74,6 @@ msgstr "Overeenkomst type"
 #. module: agreement
 #: model:ir.actions.act_window,name:agreement.agreement_type_action
 #: model:ir.model,name:agreement.model_agreement_type
-#: model:ir.ui.menu,name:agreement.agreement_type_menu
 msgid "Agreement Types"
 msgstr "Overeenkomst types"
 
@@ -106,6 +104,11 @@ msgstr "Gearchiveerd"
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_attachment_count
 msgid "Attachment Count"
+msgstr ""
+
+#. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__code
+msgid "Code"
 msgstr ""
 
 #. module: agreement
@@ -143,6 +146,7 @@ msgstr "Aangemaakt op"
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__display_name
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__display_name
+#: model:ir.model.fields,field_description:agreement.field_res_partner__display_name
 msgid "Display Name"
 msgstr ""
 
@@ -182,12 +186,8 @@ msgstr ""
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__id
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__id
+#: model:ir.model.fields,field_description:agreement.field_res_partner__id
 msgid "ID"
-msgstr ""
-
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__code
-msgid "ID used for internal contract tracking."
 msgstr ""
 
 #. module: agreement
@@ -208,12 +208,6 @@ msgstr ""
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
-
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__active
-msgid ""
-"If unchecked, it will allow you to hide the agreement without removing it."
 msgstr ""
 
 #. module: agreement
@@ -254,6 +248,7 @@ msgid "My Activity Deadline"
 msgstr ""
 
 #. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__name
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__name
 msgid "Name"
 msgstr ""
@@ -310,11 +305,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
 msgid "Purchase"
-msgstr ""
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__code
-msgid "Reference"
 msgstr ""
 
 #. module: agreement
@@ -378,18 +368,8 @@ msgid ""
 msgstr ""
 
 #. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__partner_id
-msgid "The customer or vendor this agreement is related to."
-msgstr ""
-
-#. module: agreement
-#: model:ir.model.constraint,message:agreement.constraint_agreement_code_partner_company_unique
+#: model:ir.model.constraint,message:agreement.constraint_agreement_code_uniq
 msgid "This agreement code already exists for this commercial entity!"
-msgstr ""
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__name
-msgid "Title"
 msgstr ""
 
 #. module: agreement
@@ -413,11 +393,17 @@ msgid "Use agreement type"
 msgstr ""
 
 #. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__end_date
-msgid "When the agreement ends."
+#: model:ir.model.fields,field_description:agreement.field_agreement__website_message_ids
+msgid "Website Messages"
 msgstr ""
 
 #. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__start_date
-msgid "When the agreement starts."
+#: model:ir.model.fields,help:agreement.field_agreement__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: agreement
+#. odoo-python
+#: code:addons/agreement/models/agreement.py:0
+msgid "purchase"
 msgstr ""

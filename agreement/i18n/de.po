@@ -66,7 +66,6 @@ msgstr "Vereinbarungsname"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__agreement_type_id
-#: model:ir.ui.menu,name:agreement.agreement_type_menu_main
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_form_view
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
 msgid "Agreement Type"
@@ -75,7 +74,6 @@ msgstr "Vereinbarungstyp"
 #. module: agreement
 #: model:ir.actions.act_window,name:agreement.agreement_type_action
 #: model:ir.model,name:agreement.model_agreement_type
-#: model:ir.ui.menu,name:agreement.agreement_type_menu
 msgid "Agreement Types"
 msgstr "Vereinbarungsarten"
 
@@ -107,6 +105,11 @@ msgstr "Archiviert"
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_attachment_count
 msgid "Attachment Count"
 msgstr "Anzahl der Anhänge"
+
+#. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__code
+msgid "Code"
+msgstr ""
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__commercial_partner_id
@@ -143,6 +146,7 @@ msgstr "Erstellt am"
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__display_name
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__display_name
+#: model:ir.model.fields,field_description:agreement.field_res_partner__display_name
 msgid "Display Name"
 msgstr "Anzeigename"
 
@@ -182,13 +186,9 @@ msgstr "Hat Nachricht"
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__id
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__id
+#: model:ir.model.fields,field_description:agreement.field_res_partner__id
 msgid "ID"
 msgstr "ID"
-
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__code
-msgid "ID used for internal contract tracking."
-msgstr "ID, die zur internen Vertragsverfolgung verwendet wird."
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_exception_icon
@@ -213,14 +213,6 @@ msgid "If checked, some messages have a delivery error."
 msgstr ""
 "Wenn diese Option aktiviert ist, liegt bei einigen Nachrichten ein "
 "Zustellungsfehler vor."
-
-#. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__active
-msgid ""
-"If unchecked, it will allow you to hide the agreement without removing it."
-msgstr ""
-"Wenn diese Option deaktiviert ist, können Sie die Vereinbarung ausblenden, "
-"ohne sie zu entfernen."
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_is_follower
@@ -260,6 +252,7 @@ msgid "My Activity Deadline"
 msgstr "Meine Aktivitätsfrist"
 
 #. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__name
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__name
 msgid "Name"
 msgstr "Bezeichnung"
@@ -317,11 +310,6 @@ msgstr "Partner"
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
 msgid "Purchase"
 msgstr "Einkauf"
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__code
-msgid "Reference"
-msgstr "Referenz"
 
 #. module: agreement
 #: model:ir.ui.menu,name:agreement.agreement_reporting_menu
@@ -390,19 +378,9 @@ msgstr ""
 "Geplant: Zukünftige Aktivitäten."
 
 #. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__partner_id
-msgid "The customer or vendor this agreement is related to."
-msgstr "Der Kunde oder Lieferant, auf den sich diese Vereinbarung bezieht."
-
-#. module: agreement
-#: model:ir.model.constraint,message:agreement.constraint_agreement_code_partner_company_unique
+#: model:ir.model.constraint,message:agreement.constraint_agreement_code_uniq
 msgid "This agreement code already exists for this commercial entity!"
 msgstr ""
-
-#. module: agreement
-#: model:ir.model.fields,field_description:agreement.field_agreement__name
-msgid "Title"
-msgstr "Titel"
 
 #. module: agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_list_view
@@ -425,20 +403,44 @@ msgid "Use agreement type"
 msgstr "Verwenden Sie den Vereinbarungstyp"
 
 #. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__end_date
-msgid "When the agreement ends."
-msgstr "Wann die Vereinbarung endet."
+#: model:ir.model.fields,field_description:agreement.field_agreement__website_message_ids
+msgid "Website Messages"
+msgstr "Website-Nachrichten"
 
 #. module: agreement
-#: model:ir.model.fields,help:agreement.field_agreement__start_date
-msgid "When the agreement starts."
-msgstr "Wann die Vereinbarung startet."
+#: model:ir.model.fields,help:agreement.field_agreement__website_message_ids
+msgid "Website communication history"
+msgstr "Kommunikationshistorie der Website"
 
-#~ msgid "Website Messages"
-#~ msgstr "Website-Nachrichten"
+#. module: agreement
+#. odoo-python
+#: code:addons/agreement/models/agreement.py:0
+msgid "purchase"
+msgstr ""
 
-#~ msgid "Website communication history"
-#~ msgstr "Kommunikationshistorie der Website"
+#~ msgid "ID used for internal contract tracking."
+#~ msgstr "ID, die zur internen Vertragsverfolgung verwendet wird."
+
+#~ msgid ""
+#~ "If unchecked, it will allow you to hide the agreement without removing it."
+#~ msgstr ""
+#~ "Wenn diese Option deaktiviert ist, können Sie die Vereinbarung "
+#~ "ausblenden, ohne sie zu entfernen."
+
+#~ msgid "Reference"
+#~ msgstr "Referenz"
+
+#~ msgid "The customer or vendor this agreement is related to."
+#~ msgstr "Der Kunde oder Lieferant, auf den sich diese Vereinbarung bezieht."
+
+#~ msgid "Title"
+#~ msgstr "Titel"
+
+#~ msgid "When the agreement ends."
+#~ msgstr "Wann die Vereinbarung endet."
+
+#~ msgid "When the agreement starts."
+#~ msgstr "Wann die Vereinbarung startet."
 
 #~ msgid "This agreement code already exists for this partner!"
 #~ msgstr "Dieser Vereinbarungscode existiert bereits für diesen Partner!"
