@@ -53,7 +53,6 @@ msgstr "高级功能"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__agreement_id
 #: model:ir.model.fields.selection,name:agreement_legal.selection__agreement_stage__stage_type__agreement
 #: model:ir.module.category,name:agreement_legal.module_agreement_legal_category
-#: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.report_agreement_document
 msgid "Agreement"
 msgstr "协议"
@@ -72,11 +71,6 @@ msgstr "协议条款"
 #: model:ir.model,name:agreement_legal.model_agreement_line
 msgid "Agreement Lines"
 msgstr "协议行"
-
-#. module: agreement_legal
-#: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
-msgid "Agreement Name"
-msgstr "协议名称"
 
 #. module: agreement_legal
 #: model:ir.actions.report,name:agreement_legal.partner_agreement_contract_document_preview
@@ -1486,6 +1480,11 @@ msgid "User assigned automatically the activity on review date"
 msgstr ""
 
 #. module: agreement_legal
+#: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
+msgid "V:"
+msgstr ""
+
+#. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__version
 msgid "Version"
 msgstr "版本"
@@ -1574,13 +1573,26 @@ msgstr "用户和图片"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
-msgid "|  Created By:"
-msgstr "|  创建者:"
+msgid ""
+"|\n"
+"                    Created By:"
+msgstr ""
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
-msgid "|  Created On:"
-msgstr "|  创建于："
+msgid ""
+"|\n"
+"                    Created On:"
+msgstr ""
+
+#~ msgid "Agreement Name"
+#~ msgstr "协议名称"
+
+#~ msgid "|  Created By:"
+#~ msgstr "|  创建者:"
+
+#~ msgid "|  Created On:"
+#~ msgstr "|  创建于："
 
 #~ msgid "Contact"
 #~ msgstr "联系人"
