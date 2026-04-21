@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-02-05 12:06+0000\n"
+"PO-Revision-Date: 2026-04-21 11:45+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
@@ -1509,7 +1509,7 @@ msgstr "Utente assegnato automaticamente alla attività alla data revisione"
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
 msgid "V:"
-msgstr ""
+msgstr "V:"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__version
@@ -1615,6 +1615,8 @@ msgid ""
 "|\n"
 "                    Created By:"
 msgstr ""
+"|\n"
+"                    Creato da:"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
@@ -1622,6 +1624,8 @@ msgid ""
 "|\n"
 "                    Created On:"
 msgstr ""
+"|\n"
+"                    Creato il:"
 
 #~ msgid "Agreement Name"
 #~ msgstr "Nome contratto"
