@@ -507,14 +507,16 @@
                         </header>
                         <main>
                             <field name="agreement_type_id" /> — <field
-                                name="agreement_subtype_id"
-                            />
+                            name="agreement_subtype_id"
+                        />
                             <div
-                                t-if="record.end_date.raw_value and record.end_date.raw_value lt (new Date())"
-                                class="text-danger"
-                            >
-                                <i><field name="end_date" /></i>
-                            </div>
+                            t-if="record.end_date.raw_value and record.end_date.raw_value lt (new Date())"
+                            class="text-danger"
+                        >
+                            <i>
+                                <field name="end_date" />
+                            </i>
+                        </div>
                         </main>
                         <footer>
                             <span>V: <field name="version" /></span>

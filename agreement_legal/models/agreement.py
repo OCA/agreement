@@ -5,7 +5,7 @@ from datetime import timedelta
 
 from lxml import etree
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 
 
 class Agreement(models.Model):
@@ -64,7 +64,7 @@ class Agreement(models.Model):
     code = fields.Char(
         string="Reference",
         required=True,
-        default=lambda self: _("New"),
+        default=lambda self: self.env._("New"),
         tracking=True,
         copy=False,
         help="ID used for internal contract tracking.",
@@ -142,7 +142,10 @@ class Agreement(models.Model):
         """
         return deftext
 
-    parties = fields.Html(default=_get_default_parties, help="Parties of the agreement")
+    parties = fields.Html(
+        default=lambda self: self._get_default_parties(),
+        help="Parties of the agreement",
+    )
     dynamic_parties = fields.Html(
         compute="_compute_dynamic_parties", help="Compute dynamic parties"
     )
@@ -262,7 +265,7 @@ class Agreement(models.Model):
                 agreement.activity_schedule(
                     "agreement_legal.mail_activity_review_agreement",
                     user_id=agreement.agreement_type_id.review_user_id.id,
-                    note=_("Your activity is going to end soon"),
+                    note=self.env._("Your activity is going to end soon"),
                 )
 
     def _get_render_partner(self):
@@ -363,8 +366,11 @@ class Agreement(models.Model):
         return self.action_view_agreement(res)
 
     def _fill_create_vals(self, vals):
-        if vals.get("code", _("New")) == _("New"):
-            vals["code"] = self.env["ir.sequence"].next_by_code("agreement") or _("New")
+        new_label = self.env._("New")
+        if vals.get("code", new_label) == new_label:
+            vals["code"] = (
+                self.env["ir.sequence"].next_by_code("agreement") or new_label
+            )
         if not vals.get("stage_id"):
             vals["stage_id"] = self._get_default_stage_id()
         return vals
@@ -391,7 +397,7 @@ class Agreement(models.Model):
         self.ensure_one()
         default = dict(default or {})
         if not default.get("code", False):
-            default.setdefault("code", _("New"))
+            default.setdefault("code", self.env._("New"))
         res = super().copy(default)
         res.sections_ids.mapped("clauses_ids").write({"agreement_id": res.id})
         return res

@@ -1,19 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Copyright (C) 2018 - TODAY, Pavlov Media
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
 <odoo>
-    <record id="module_agreement_legal_category" model="ir.module.category">
-        <field name="name">Agreement</field>
-        <field name="sequence">17</field>
-    </record>
-
     <!-- Readonly group -->
     <record id="group_agreement_readonly" model="res.groups">
         <field name="name">Read-Only Users</field>
         <field
-            name="category_id"
-            ref="agreement_legal.module_agreement_legal_category"
-        />
-        <field
             name="implied_ids"
-            eval="[(4, ref('base.group_user')), (4, ref('agreement.group_use_agreement_type')), (4, ref('agreement.group_use_agreement_template'))]"
+            eval="[
+                Command.link(ref('base.group_user')),
+                Command.link(ref('agreement.group_use_agreement_type')),
+                Command.link(ref('agreement.group_use_agreement_template')),
+            ]"
         />
     </record>
 
@@ -21,23 +21,21 @@
     <record id="group_agreement_user" model="res.groups">
         <field name="name">User</field>
         <field
-            name="category_id"
-            ref="agreement_legal.module_agreement_legal_category"
+            name="implied_ids"
+            eval="[Command.link(ref('group_agreement_readonly'))]"
         />
-        <field name="implied_ids" eval="[(4, ref('group_agreement_readonly'))]" />
     </record>
 
     <!-- Manager group -->
     <record id="group_agreement_manager" model="res.groups">
         <field name="name">Manager</field>
+        <field name="implied_ids" eval="[Command.link(ref('group_agreement_user'))]" />
         <field
-            name="category_id"
-            ref="agreement_legal.module_agreement_legal_category"
-        />
-        <field name="implied_ids" eval="[(4, ref('group_agreement_user'))]" />
-        <field
-            name="users"
-            eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
+            name="user_ids"
+            eval="[
+                Command.link(ref('base.user_root')),
+                Command.link(ref('base.user_admin')),
+            ]"
         />
     </record>
 </odoo>
