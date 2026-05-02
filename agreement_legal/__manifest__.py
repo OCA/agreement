@@ -34,12 +34,6 @@
         "wizards/create_agreement_wizard.xml",
     ],
     "demo": ["demo/demo.xml"],
-    "assets": {
-        "web.assets_backend": [
-            "agreement_legal/static/src/js/**/*",
-            "agreement_legal/static/src/xml/**/*",
-        ],
-    },
     "application": True,
     "development_status": "Beta",
     "maintainers": ["max3903", "ygol"],

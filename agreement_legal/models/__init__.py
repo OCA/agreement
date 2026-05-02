@@ -2,6 +2,7 @@
 
 from . import res_config_settings
 from . import agreement_stage
+from . import agreement_dynamic_content_mixin
 from . import agreement
 from . import agreement_appendix
 from . import agreement_clause

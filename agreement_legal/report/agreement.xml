@@ -62,7 +62,7 @@
                         </t>
                         <h2>Agreement</h2>
                         <h3>Recitals</h3>
-                        <table class="table table-condensed">
+                        <table class="table table-sm">
                             <tbody>
                                 <tr>
                                     <td>
@@ -78,7 +78,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <table class="table table-condensed">
+                        <table class="table table-sm">
                             <tbody class="section_tbody">
                                 <tr>
                                     <td>
@@ -114,7 +114,7 @@
                             </div>
                         </t>
                         <h2>Signatures</h2>
-                        <table class="table table-condensed">
+                        <table class="table table-sm">
                             <theader>
                                 <tr>
                                     <th>Partner</th>

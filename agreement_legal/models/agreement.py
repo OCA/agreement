@@ -9,7 +9,7 @@ from odoo import _, api, fields, models
 
 
 class Agreement(models.Model):
-    _inherit = "agreement"
+    _inherit = ["agreement", "agreement.dynamic.content.mixin"]
 
     name = fields.Char(string="Title", required=True)
     version = fields.Integer(
@@ -164,8 +164,7 @@ class Agreement(models.Model):
         "res.users",
         string="Signed By",
         tracking=True,
-        help="The user at our company who authorized/signed the agreement or "
-        "contract.",
+        help="The user at our company who authorized/signed the agreement or contract.",
     )
     partner_signed_user_id = fields.Many2one(
         "res.partner",
@@ -226,34 +225,6 @@ class Agreement(models.Model):
     )
     signed_contract_filename = fields.Char(string="Filename")
     signed_contract = fields.Binary(string="Signed Document", tracking=True)
-    field_id = fields.Many2one(
-        "ir.model.fields",
-        string="Field",
-        help="""You can select a target field from the related document model.
-        If it is a relationship field you will be able to select a target field
-        at the destination of the relationship.""",
-    )
-    sub_object_id = fields.Many2one(
-        "ir.model",
-        string="Sub-model",
-        help="""When a relationship field is selected as first field, this
-         field shows the document model the relationship goes to.""",
-    )
-    sub_model_object_field_id = fields.Many2one(
-        "ir.model.fields",
-        string="Sub-field",
-        help="""When a relationship field is selected as first field, this
-         field lets you select the target field within the destination document
-          model (sub-model).""",
-    )
-    default_value = fields.Char(
-        help="Optional value to use if the target field is empty."
-    )
-    copyvalue = fields.Char(
-        string="Placeholder Expression",
-        help="""Final placeholder expression, to be copy-pasted in the desired
-         template field.""",
-    )
     template_id = fields.Many2one(
         "agreement", string="Template", domain=[("is_template", "=", True)]
     )
@@ -265,7 +236,7 @@ class Agreement(models.Model):
         help="Date used to warn us some days before agreement expires",
     )
 
-    @api.depends("agreement_type_id", "end_date")
+    @api.depends("agreement_type_id.review_days", "end_date")
     def _compute_to_review_date(self):
         for record in self:
             if record.end_date:
@@ -294,61 +265,28 @@ class Agreement(models.Model):
                     note=_("Your activity is going to end soon"),
                 )
 
-    # compute the dynamic content for jinja expression
+    def _get_render_partner(self):
+        return self.partner_id
+
+    @api.depends("description", "partner_id.lang")
     def _compute_dynamic_description(self):
-        MailTemplates = self.env["mail.template"]
         for agreement in self:
-            lang = agreement.partner_id.lang or "en_US"
-            description = MailTemplates.with_context(lang=lang)._render_template(
-                agreement.description, "agreement", [agreement.id]
-            )[agreement.id]
-            agreement.dynamic_description = description
+            agreement.dynamic_description = agreement._render_dynamic("description")
 
+    @api.depends("parties", "partner_id.lang")
     def _compute_dynamic_parties(self):
-        MailTemplates = self.env["mail.template"]
         for agreement in self:
-            lang = agreement.partner_id.lang or "en_US"
-            parties = MailTemplates.with_context(lang=lang)._render_template(
-                agreement.parties, "agreement", [agreement.id]
-            )[agreement.id]
-            agreement.dynamic_parties = parties
+            agreement.dynamic_parties = agreement._render_dynamic("parties")
 
+    @api.depends("special_terms", "partner_id.lang")
     def _compute_dynamic_special_terms(self):
-        MailTemplates = self.env["mail.template"]
         for agreement in self:
-            lang = agreement.partner_id.lang or "en_US"
-            special_terms = MailTemplates.with_context(lang=lang)._render_template(
-                agreement.special_terms, "agreement", [agreement.id]
-            )[agreement.id]
-            agreement.dynamic_special_terms = special_terms
-
-    @api.onchange("field_id", "sub_model_object_field_id", "default_value")
-    def onchange_copyvalue(self):
-        self.sub_object_id = False
-        self.copyvalue = False
-        if self.field_id and not self.field_id.relation:
-            self.copyvalue = "{{{{object.{} or {}}}}}".format(
-                self.field_id.name, self.default_value or "''"
-            )
-            self.sub_model_object_field_id = False
-        if self.field_id and self.field_id.relation:
-            self.sub_object_id = self.env["ir.model"].search(
-                [("model", "=", self.field_id.relation)]
-            )[0]
-        if self.sub_model_object_field_id:
-            self.copyvalue = "{{{{object.{}.{} or {}}}}}".format(
-                self.field_id.name,
-                self.sub_model_object_field_id.name,
-                self.default_value or "''",
-            )
+            agreement.dynamic_special_terms = agreement._render_dynamic("special_terms")
 
     # Used for Kanban grouped_by view
     @api.model
-    def _read_group_stage_ids(self, stages, domain, order=None):
-        stage_ids = self.env["agreement.stage"].search(
-            [("stage_type", "=", "agreement")]
-        )
-        return stage_ids
+    def _read_group_stage_ids(self, stages, domain):
+        return self.env["agreement.stage"].search([("stage_type", "=", "agreement")])
 
     stage_id = fields.Many2one(
         "agreement.stage",
@@ -417,7 +355,6 @@ class Agreement(models.Model):
             "res_model": "agreement",
             "type": "ir.actions.act_window",
             "view_mode": "form",
-            "view_type": "form",
             "res_id": agreement.id,
         }
 
@@ -451,6 +388,7 @@ class Agreement(models.Model):
 
     def copy(self, default=None):
         """Assign a value for code is New"""
+        self.ensure_one()
         default = dict(default or {})
         if not default.get("code", False):
             default.setdefault("code", _("New"))

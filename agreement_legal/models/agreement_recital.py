@@ -6,6 +6,7 @@ from odoo import api, fields, models
 
 class AgreementRecital(models.Model):
     _name = "agreement.recital"
+    _inherit = "agreement.dynamic.content.mixin"
     _description = "Agreement Recitals"
     _order = "sequence"
 
@@ -23,64 +24,10 @@ class AgreementRecital(models.Model):
         "removing it.",
     )
 
-    # Dynamic field editor
-    field_id = fields.Many2one(
-        "ir.model.fields",
-        string="Field",
-        help="""Select target field from the related document model. If it is a
-         relationship field you will be able to select a target field at the
-         destination of the relationship.""",
-    )
-    sub_object_id = fields.Many2one(
-        "ir.model",
-        string="Sub-model",
-        help="""When a relationship field is selected as first field, this
-         field shows the document model the relationship goes to.""",
-    )
-    sub_model_object_field_id = fields.Many2one(
-        "ir.model.fields",
-        string="Sub-field",
-        help="""When a relationship field is selected as first field, this
-         field lets you select the target field within the destination document
-          model (sub-model).""",
-    )
-    default_value = fields.Char(
-        help="Optional value to use if the target field is empty."
-    )
-    copyvalue = fields.Char(
-        string="Placeholder Expression",
-        help="""Final placeholder expression, to be copy-pasted in the desired
-         template field.""",
-    )
+    def _get_render_partner(self):
+        return self.agreement_id.partner_id
 
-    @api.onchange("field_id", "sub_model_object_field_id", "default_value")
-    def onchange_copyvalue(self):
-        self.sub_object_id = False
-        self.copyvalue = False
-        if self.field_id and not self.field_id.relation:
-            self.copyvalue = "{{{{object.{} or {}}}}}".format(
-                self.field_id.name, self.default_value or "''"
-            )
-            self.sub_model_object_field_id = False
-        if self.field_id and self.field_id.relation:
-            self.sub_object_id = self.env["ir.model"].search(
-                [("model", "=", self.field_id.relation)]
-            )[0]
-        if self.sub_model_object_field_id:
-            self.copyvalue = "{{{{object.{}.{} or {}}}}}".format(
-                self.field_id.name,
-                self.sub_model_object_field_id.name,
-                self.default_value or "''",
-            )
-
-    # compute the dynamic content for jinja expression
+    @api.depends("content", "agreement_id.partner_id.lang")
     def _compute_dynamic_content(self):
-        MailTemplates = self.env["mail.template"]
         for recital in self:
-            lang = (
-                recital.agreement_id and recital.agreement_id.partner_id.lang or "en_US"
-            )
-            content = MailTemplates.with_context(lang=lang)._render_template(
-                recital.content, "agreement.recital", [recital.id]
-            )[recital.id]
-            recital.dynamic_content = content
+            recital.dynamic_content = recital._render_dynamic("content")
