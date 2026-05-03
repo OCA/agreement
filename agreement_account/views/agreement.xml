@@ -1,13 +1,13 @@
 <odoo>
     <record id="agreement.agreement_menu" model="ir.ui.menu">
-        <field name="parent_id" ref="account.account_management_menu" />
+        <field name="parent_id" ref="account.menu_finance_configuration" />
         <field name="sequence">150</field>
     </record>
 
     <menuitem
         id="agreement_type_menu"
         action="agreement.agreement_type_action"
-        parent="account.account_management_menu"
+        parent="account.menu_finance_configuration"
         sequence="155"
         groups="agreement.group_use_agreement_type"
     />
