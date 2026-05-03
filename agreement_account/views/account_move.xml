@@ -45,13 +45,17 @@
             <field name="date" position="after">
                 <field name="agreement_id" />
             </field>
-            <group expand="0" position="inside">
+            <!--
+              19.0: the parent search view's group-by container is a plain
+              <group> (no expand="0"). Match by position instead of attribute.
+            -->
+            <xpath expr="//search/group[1]" position="inside">
                 <filter
                     string="Agreement"
                     name="agreement_groupby"
                     context="{'group_by': 'agreement_id'}"
                 />
-            </group>
+            </xpath>
         </field>
     </record>
 </odoo>
