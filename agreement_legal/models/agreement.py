@@ -9,6 +9,7 @@ from odoo import api, fields, models
 
 
 class Agreement(models.Model):
+    _name = "agreement"
     _inherit = ["agreement", "agreement.dynamic.content.mixin"]
 
     name = fields.Char(string="Title", required=True)
