@@ -22,18 +22,18 @@ class Agreement(models.Model):
     def _compute_invoice_count(self):
         base_domain = [("agreement_id", "in", self.ids)]
         aio = self.env["account.move"]
-        out_rg_res = aio.read_group(
+        out_rg = aio._read_group(
             base_domain + [("move_type", "in", ("out_invoice", "out_refund"))],
-            ["agreement_id"],
-            ["agreement_id"],
+            groupby=["agreement_id"],
+            aggregates=["__count"],
         )
-        out_data = {x["agreement_id"][0]: x["agreement_id_count"] for x in out_rg_res}
-        in_rg_res = aio.read_group(
+        out_data = {agreement.id: count for agreement, count in out_rg}
+        in_rg = aio._read_group(
             base_domain + [("move_type", "in", ("in_invoice", "in_refund"))],
-            ["agreement_id"],
-            ["agreement_id"],
+            groupby=["agreement_id"],
+            aggregates=["__count"],
         )
-        in_data = {x["agreement_id"][0]: x["agreement_id_count"] for x in in_rg_res}
+        in_data = {agreement.id: count for agreement, count in in_rg}
         for agreement in self:
             agreement.out_invoice_count = out_data.get(agreement.id, 0)
             agreement.in_invoice_count = in_data.get(agreement.id, 0)

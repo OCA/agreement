@@ -1,1 +1,1 @@
-This module adds *Agreement* field on invoices.
+This module adds _Agreement_ field on invoices.
