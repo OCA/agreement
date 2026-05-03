@@ -21,6 +21,9 @@
         "security/res_groups.xml",
         "security/ir.model.access.csv",
         "report/agreement.xml",
+        # Wizards before views: views/agreement.xml references the
+        # create_agreement_from_template_action defined in the wizard XML.
+        "wizards/create_agreement_wizard.xml",
         "views/res_config_settings.xml",
         "views/agreement_appendix.xml",
         "views/agreement_clause.xml",
@@ -31,7 +34,6 @@
         "views/agreement_subtype.xml",
         "views/agreement.xml",
         "views/menu.xml",
-        "wizards/create_agreement_wizard.xml",
     ],
     "demo": ["demo/demo.xml"],
     "application": True,
