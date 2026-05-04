@@ -50,6 +50,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_line__agreement_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital__agreement_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__agreement_id
+#: model:ir.model.fields,field_description:agreement_legal.field_recompute_agreement_from_template_wizard__agreement_id
 #: model:ir.model.fields.selection,name:agreement_legal.selection__agreement_stage__stage_type__agreement
 #: model:ir.module.category,name:agreement_legal.module_agreement_legal_category
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
@@ -142,6 +143,13 @@ msgstr ""
 #. module: agreement_legal
 #: model:mail.activity.type,name:agreement_legal.mail_activity_review_agreement
 msgid "Agreement needs a review"
+msgstr ""
+
+#. module: agreement_legal
+#. odoo-python
+#: code:addons/agreement_legal/models/agreement.py:0
+#, python-format
+msgid "Agreement recomputed from template %s"
 msgstr ""
 
 #. module: agreement_legal
@@ -242,6 +250,11 @@ msgid "Archived"
 msgstr ""
 
 #. module: agreement_legal
+#: model_terms:ir.ui.view,arch_db:agreement_legal.recompute_agreement_from_template_form_view
+msgid "Are you sure you want to recompute this agreement from its template?"
+msgstr ""
+
+#. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__assigned_user_id
 msgid "Assigned To"
 msgstr ""
@@ -253,6 +266,7 @@ msgstr ""
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.create_agreement_from_template_form_view
+#: model_terms:ir.ui.view,arch_db:agreement_legal.recompute_agreement_from_template_form_view
 msgid "Cancel"
 msgstr ""
 
@@ -423,6 +437,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage__create_uid
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype__create_uid
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__create_uid
+#: model:ir.model.fields,field_description:agreement_legal.field_recompute_agreement_from_template_wizard__create_uid
 msgid "Created by"
 msgstr ""
 
@@ -440,6 +455,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage__create_date
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype__create_date
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__create_date
+#: model:ir.model.fields,field_description:agreement_legal.field_recompute_agreement_from_template_wizard__create_date
 msgid "Created on"
 msgstr ""
 
@@ -512,6 +528,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage__display_name
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype__display_name
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__display_name
+#: model:ir.model.fields,field_description:agreement_legal.field_recompute_agreement_from_template_wizard__display_name
 msgid "Display Name"
 msgstr ""
 
@@ -627,6 +644,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage__id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype__id
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__id
+#: model:ir.model.fields,field_description:agreement_legal.field_recompute_agreement_from_template_wizard__id
 msgid "ID"
 msgstr ""
 
@@ -679,6 +697,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage__write_uid
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype__write_uid
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__write_uid
+#: model:ir.model.fields,field_description:agreement_legal.field_recompute_agreement_from_template_wizard__write_uid
 msgid "Last Updated by"
 msgstr ""
 
@@ -691,6 +710,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage__write_date
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype__write_date
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__write_date
+#: model:ir.model.fields,field_description:agreement_legal.field_recompute_agreement_from_template_wizard__write_date
 msgid "Last Updated on"
 msgstr ""
 
@@ -1053,6 +1073,23 @@ msgid "Recitals"
 msgstr ""
 
 #. module: agreement_legal
+#: model_terms:ir.ui.view,arch_db:agreement_legal.recompute_agreement_from_template_form_view
+msgid "Recompute"
+msgstr ""
+
+#. module: agreement_legal
+#: model:ir.model,name:agreement_legal.model_recompute_agreement_from_template_wizard
+msgid "Recompute Agreement From Template Wizard"
+msgstr ""
+
+#. module: agreement_legal
+#. odoo-python
+#: code:addons/agreement_legal/models/agreement.py:0
+#, python-format
+msgid "Recompute From Template"
+msgstr ""
+
+#. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
 msgid "Record's Colour"
 msgstr ""
@@ -1075,6 +1112,11 @@ msgstr ""
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.report_agreement_document
 msgid "Represented by"
+msgstr ""
+
+#. module: agreement_legal
+#: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
+msgid "Reset"
 msgstr ""
 
 #. module: agreement_legal
@@ -1348,6 +1390,7 @@ msgstr ""
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__template_id
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__template_id
+#: model:ir.model.fields,field_description:agreement_legal.field_recompute_agreement_from_template_wizard__template_id
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Template"
 msgstr ""
@@ -1475,6 +1518,14 @@ msgid "This stage is folded in the kanban view by default."
 msgstr ""
 
 #. module: agreement_legal
+#: model_terms:ir.ui.view,arch_db:agreement_legal.recompute_agreement_from_template_form_view
+msgid ""
+"This will replace recitals, sections, clauses, appendices,\n"
+"                    products/services, and child agreements with the current content\n"
+"                    from the selected template."
+msgstr ""
+
+#. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__name
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__title
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__title
@@ -1538,6 +1589,11 @@ msgstr ""
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement_type__review_user_id
 msgid "User assigned automatically the activity on review date"
+msgstr ""
+
+#. module: agreement_legal
+#: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
+msgid "V:"
 msgstr ""
 
 #. module: agreement_legal
