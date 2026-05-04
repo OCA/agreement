@@ -53,6 +53,7 @@ msgstr "高级功能"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_line__agreement_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital__agreement_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__agreement_id
+#: model:ir.model.fields,field_description:agreement_legal.field_recompute_agreement_from_template_wizard__agreement_id
 #: model:ir.model.fields.selection,name:agreement_legal.selection__agreement_stage__stage_type__agreement
 #: model:ir.module.category,name:agreement_legal.module_agreement_legal_category
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
@@ -145,6 +146,13 @@ msgstr "协议类型"
 #. module: agreement_legal
 #: model:mail.activity.type,name:agreement_legal.mail_activity_review_agreement
 msgid "Agreement needs a review"
+msgstr ""
+
+#. module: agreement_legal
+#. odoo-python
+#: code:addons/agreement_legal/models/agreement.py:0
+#, python-format
+msgid "Agreement recomputed from template %s"
 msgstr ""
 
 #. module: agreement_legal
@@ -245,6 +253,11 @@ msgid "Archived"
 msgstr "已归档"
 
 #. module: agreement_legal
+#: model_terms:ir.ui.view,arch_db:agreement_legal.recompute_agreement_from_template_form_view
+msgid "Are you sure you want to recompute this agreement from its template?"
+msgstr ""
+
+#. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__assigned_user_id
 msgid "Assigned To"
 msgstr "分配给"
@@ -256,6 +269,7 @@ msgstr "经过："
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.create_agreement_from_template_form_view
+#: model_terms:ir.ui.view,arch_db:agreement_legal.recompute_agreement_from_template_form_view
 msgid "Cancel"
 msgstr ""
 
@@ -427,6 +441,7 @@ msgstr "确认销售订单时创建协议"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage__create_uid
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype__create_uid
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__create_uid
+#: model:ir.model.fields,field_description:agreement_legal.field_recompute_agreement_from_template_wizard__create_uid
 msgid "Created by"
 msgstr "创建者"
 
@@ -444,6 +459,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage__create_date
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype__create_date
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__create_date
+#: model:ir.model.fields,field_description:agreement_legal.field_recompute_agreement_from_template_wizard__create_date
 msgid "Created on"
 msgstr "创建时间"
 
@@ -516,6 +532,7 @@ msgstr "协议说明"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage__display_name
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype__display_name
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__display_name
+#: model:ir.model.fields,field_description:agreement_legal.field_recompute_agreement_from_template_wizard__display_name
 msgid "Display Name"
 msgstr "显示名称"
 
@@ -633,6 +650,7 @@ msgstr "服务台"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage__id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype__id
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__id
+#: model:ir.model.fields,field_description:agreement_legal.field_recompute_agreement_from_template_wizard__id
 msgid "ID"
 msgstr "ID"
 
@@ -685,6 +703,7 @@ msgstr "是折叠"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage__write_uid
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype__write_uid
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__write_uid
+#: model:ir.model.fields,field_description:agreement_legal.field_recompute_agreement_from_template_wizard__write_uid
 msgid "Last Updated by"
 msgstr "最后更新者"
 
@@ -697,6 +716,7 @@ msgstr "最后更新者"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage__write_date
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype__write_date
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__write_date
+#: model:ir.model.fields,field_description:agreement_legal.field_recompute_agreement_from_template_wizard__write_date
 msgid "Last Updated on"
 msgstr "最后更新时间"
 
@@ -1057,6 +1077,23 @@ msgid "Recitals"
 msgstr "叙述"
 
 #. module: agreement_legal
+#: model_terms:ir.ui.view,arch_db:agreement_legal.recompute_agreement_from_template_form_view
+msgid "Recompute"
+msgstr ""
+
+#. module: agreement_legal
+#: model:ir.model,name:agreement_legal.model_recompute_agreement_from_template_wizard
+msgid "Recompute Agreement From Template Wizard"
+msgstr ""
+
+#. module: agreement_legal
+#. odoo-python
+#: code:addons/agreement_legal/models/agreement.py:0
+#, python-format
+msgid "Recompute From Template"
+msgstr ""
+
+#. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
 msgid "Record's Colour"
 msgstr "记录的颜色"
@@ -1080,6 +1117,11 @@ msgstr "报告"
 #: model_terms:ir.ui.view,arch_db:agreement_legal.report_agreement_document
 msgid "Represented by"
 msgstr "代表人"
+
+#. module: agreement_legal
+#: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
+msgid "Reset"
+msgstr ""
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
@@ -1353,6 +1395,7 @@ msgstr ""
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__template_id
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__template_id
+#: model:ir.model.fields,field_description:agreement_legal.field_recompute_agreement_from_template_wizard__template_id
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Template"
 msgstr ""
@@ -1480,6 +1523,15 @@ msgid "This stage is folded in the kanban view by default."
 msgstr "默认情况下，此阶段折叠在看板视图中。"
 
 #. module: agreement_legal
+#: model_terms:ir.ui.view,arch_db:agreement_legal.recompute_agreement_from_template_form_view
+msgid ""
+"This will replace recitals, sections, clauses, appendices,\n"
+"                    products/services, and child agreements with the current "
+"content\n"
+"                    from the selected template."
+msgstr ""
+
+#. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__name
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__title
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__title
@@ -1543,6 +1595,11 @@ msgstr "用户"
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement_type__review_user_id
 msgid "User assigned automatically the activity on review date"
+msgstr ""
+
+#. module: agreement_legal
+#: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
+msgid "V:"
 msgstr ""
 
 #. module: agreement_legal
