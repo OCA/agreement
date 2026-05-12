@@ -473,8 +473,23 @@ class Agreement(models.Model):
         default = dict(default or {})
         if not default.get("code", False):
             default.setdefault("code", _("New"))
+        # Prevent automatic clause copy through sections to avoid duplication.
+        default.setdefault("sections_ids", [])
         res = super().copy(default)
-        res.sections_ids.mapped("clauses_ids").write({"agreement_id": res.id})
+        section_map = {}
+        for section in self.sections_ids:
+            new_section = section.copy(
+                {
+                    "agreement_id": res.id,
+                    "clauses_ids": False,
+                }
+            )
+            section_map[section.id] = new_section.id
+        for clause in self.clauses_ids:
+            values = {"agreement_id": res.id}
+            if clause.section_id:
+                values["section_id"] = section_map.get(clause.section_id.id)
+            clause.copy(values)
         return res
 
     def _exclude_readonly_field(self):
