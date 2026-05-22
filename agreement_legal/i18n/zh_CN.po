@@ -68,6 +68,11 @@ msgid "Agreement Clauses"
 msgstr "协议条款"
 
 #. module: agreement_legal
+#: model:ir.model,name:agreement_legal.model_agreement_dynamic_content_mixin
+msgid "Agreement Dynamic Content Mixin"
+msgstr ""
+
+#. module: agreement_legal
 #: model:ir.model,name:agreement_legal.model_agreement_line
 msgid "Agreement Lines"
 msgstr "协议行"
@@ -458,6 +463,7 @@ msgstr "日期："
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__default_value
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__default_value
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__default_value
+#: model:ir.model.fields,field_description:agreement_legal.field_agreement_dynamic_content_mixin__default_value
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital__default_value
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__default_value
 msgid "Default Value"
@@ -547,6 +553,7 @@ msgstr "到期通知（天数）"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__field_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__field_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__field_id
+#: model:ir.model.fields,field_description:agreement_legal.field_agreement_dynamic_content_mixin__field_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital__field_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__field_id
 msgid "Field"
@@ -566,6 +573,7 @@ msgstr "文件名"
 #: model:ir.model.fields,help:agreement_legal.field_agreement__copyvalue
 #: model:ir.model.fields,help:agreement_legal.field_agreement_appendix__copyvalue
 #: model:ir.model.fields,help:agreement_legal.field_agreement_clause__copyvalue
+#: model:ir.model.fields,help:agreement_legal.field_agreement_dynamic_content_mixin__copyvalue
 #: model:ir.model.fields,help:agreement_legal.field_agreement_recital__copyvalue
 #: model:ir.model.fields,help:agreement_legal.field_agreement_section__copyvalue
 msgid ""
@@ -840,6 +848,7 @@ msgstr "操作"
 #: model:ir.model.fields,help:agreement_legal.field_agreement__default_value
 #: model:ir.model.fields,help:agreement_legal.field_agreement_appendix__default_value
 #: model:ir.model.fields,help:agreement_legal.field_agreement_clause__default_value
+#: model:ir.model.fields,help:agreement_legal.field_agreement_dynamic_content_mixin__default_value
 #: model:ir.model.fields,help:agreement_legal.field_agreement_recital__default_value
 #: model:ir.model.fields,help:agreement_legal.field_agreement_section__default_value
 msgid "Optional value to use if the target field is empty."
@@ -918,6 +927,7 @@ msgstr "电话"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__copyvalue
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__copyvalue
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__copyvalue
+#: model:ir.model.fields,field_description:agreement_legal.field_agreement_dynamic_content_mixin__copyvalue
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital__copyvalue
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__copyvalue
 msgid "Placeholder Expression"
@@ -1095,8 +1105,10 @@ msgid "Sections"
 msgstr "章节"
 
 #. module: agreement_legal
+#: model:ir.model.fields,help:agreement_legal.field_agreement__field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_appendix__field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_clause__field_id
+#: model:ir.model.fields,help:agreement_legal.field_agreement_dynamic_content_mixin__field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_recital__field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_section__field_id
 msgid ""
@@ -1270,6 +1282,7 @@ msgstr "子类型"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__sub_model_object_field_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__sub_model_object_field_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__sub_model_object_field_id
+#: model:ir.model.fields,field_description:agreement_legal.field_agreement_dynamic_content_mixin__sub_model_object_field_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital__sub_model_object_field_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__sub_model_object_field_id
 msgid "Sub-field"
@@ -1279,6 +1292,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__sub_object_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__sub_object_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__sub_object_id
+#: model:ir.model.fields,field_description:agreement_legal.field_agreement_dynamic_content_mixin__sub_object_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital__sub_object_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__sub_object_id
 msgid "Sub-model"
@@ -1498,6 +1512,7 @@ msgstr "版本："
 #: model:ir.model.fields,help:agreement_legal.field_agreement__sub_model_object_field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_appendix__sub_model_object_field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_clause__sub_model_object_field_id
+#: model:ir.model.fields,help:agreement_legal.field_agreement_dynamic_content_mixin__sub_model_object_field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_recital__sub_model_object_field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_section__sub_model_object_field_id
 msgid ""
@@ -1511,6 +1526,7 @@ msgstr ""
 #: model:ir.model.fields,help:agreement_legal.field_agreement__sub_object_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_appendix__sub_object_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_clause__sub_object_id
+#: model:ir.model.fields,help:agreement_legal.field_agreement_dynamic_content_mixin__sub_object_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_recital__sub_object_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_section__sub_object_id
 msgid ""
@@ -1527,15 +1543,6 @@ msgstr "协议结束时。"
 #: model:ir.model.fields,help:agreement_legal.field_agreement__start_date
 msgid "When the agreement starts."
 msgstr "协议开始时。"
-
-#. module: agreement_legal
-#: model:ir.model.fields,help:agreement_legal.field_agreement__field_id
-msgid ""
-"You can select a target field from the related document model.\n"
-"        If it is a relationship field you will be able to select a target "
-"field\n"
-"        at the destination of the relationship."
-msgstr ""
 
 #. module: agreement_legal
 #. odoo-python
