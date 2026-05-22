@@ -70,6 +70,7 @@ msgstr "Tip sporazuma"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__agreement_type_id
+#: model:ir.ui.menu,name:agreement.agreement_type_menu_main
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_form_view
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
 msgid "Agreement Type"
@@ -78,6 +79,7 @@ msgstr "Tip sporazuma"
 #. module: agreement
 #: model:ir.actions.act_window,name:agreement.agreement_type_action
 #: model:ir.model,name:agreement.model_agreement_type
+#: model:ir.ui.menu,name:agreement.agreement_type_menu
 msgid "Agreement Types"
 msgstr "Tipovi sporazuma"
 
