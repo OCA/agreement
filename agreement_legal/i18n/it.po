@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-04-21 11:45+0000\n"
+"PO-Revision-Date: 2026-05-25 22:46+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -71,7 +71,7 @@ msgstr "Clausole contratto"
 #. module: agreement_legal
 #: model:ir.model,name:agreement_legal.model_agreement_dynamic_content_mixin
 msgid "Agreement Dynamic Content Mixin"
-msgstr ""
+msgstr "Mixin contenuto dinamico accordo"
 
 #. module: agreement_legal
 #: model:ir.model,name:agreement_legal.model_agreement_line
