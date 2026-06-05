@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="report_agreement_document_custom"
+        inherit_id="agreement_legal.report_agreement_document"
+    >
+        <xpath
+            expr="//t[@t-name='agreement.report_agreement_document']"
+            position="replace"
+        >
+            <t t-name="agreement.report_agreement_document">
+                <t t-call="web.html_container">
+                    <t t-foreach="docs" t-as="doc">
+                        <t t-call="web.external_layout">
+                            <style type="text/css">
+                                body { font-family: 'Arial', sans-serif; font-size: 10pt; color: #1a1a1a; }
+                                p, li { text-align: justify; line-height: 1.2; margin-bottom: 6px; margin-top: 0; }
+                                .doc-title-block { text-align: center; padding: 40px 0 30px 0; border-bottom: 3px solid #2c2c2c; margin-bottom: 30px; }
+                                .doc-title-block img { width: 220px; margin-bottom: 30px; display: block; margin-left: auto; margin-right: auto; }
+                                .doc-title-block h1 { font-size: 22pt; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: #1a1a1a; margin-bottom: 8px; }
+                                .doc-title-block .subtitle { font-size: 11pt; color: #555555; font-style: italic; margin-top: 6px; }
+                                h2 { font-size: 13pt; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; color: #1a1a1a; border-bottom: 2px solid #1a1a1a; padding-bottom: 4px; margin-top: 36px; margin-bottom: 12px; }
+                                h3 { font-size: 11pt; font-weight: bold; color: #2c2c2c; margin-top: 18px; margin-bottom: 8px; border-left: 3px solid #555555; padding-left: 8px; }
+                                h4 { font-size: 10pt; font-weight: bold; color: #333333; margin-top: 12px; margin-bottom: 6px; text-decoration: underline; }
+                                .section_tbody td p { margin-bottom: 3px; margin-top: 3px; line-height: 1.5; }
+                                ul, ol { margin-left: 20px; margin-bottom: 8px; padding-left: 16px; }
+                                li { margin-bottom: 4px; }
+                                .signature-table { width: 100%; border-collapse: collapse; margin-top: 40px; }
+                                .signature-table th { background-color: #2c2c2c; color: #ffffff; font-size: 10pt; font-weight: bold; text-align: center; padding: 8px 12px; border: 1px solid #2c2c2c; }
+                                .signature-table td { vertical-align: top; padding: 16px 20px; border: 1px solid #cccccc; width: 50%; }
+                                .signature-table td p { margin-bottom: 6px; text-align: left; }
+                                .signature-table img { height: 80px; margin-top: 10px; }
+                                .page-break-after { page-break-after: always; }
+                                .appendix-title { font-size: 16pt; font-weight: bold; text-transform: uppercase; border-bottom: 2px solid #1a1a1a; padding-bottom: 6px; margin-bottom: 20px; page-break-before: always; }
+                                .non-contractuel { font-size: 8pt; color: #888888; text-align: center; margin-top: 20px; font-style: italic; }
+                                address { font-style: normal; line-height: 1.6; margin-bottom: 8px; }
+                            </style>
+                            <div id="couverture" class="page-break-after">
+                                <div style="text-align: center; padding: 20px 0;">
+                                    <img
+                                        t-if="doc.company_id.logo"
+                                        t-attf-src="data:image/*;base64,{{doc.company_id.logo}}"
+                                        style="width: 250px;"
+                                    />
+                                    <h1 t-field="doc.template_id.name" />
+                                    <div name="description">
+                                        <span t-field="doc.partner_id.name" />
+                                    </div>
+                                </div>
+                                <h2>Parties</h2>
+                                <t t-if="doc.use_parties_content">
+                                    <div name="parties">
+                                        <p t-field="doc.dynamic_parties" />
+                                    </div>
+                                </t>
+                                <t t-if="not doc.use_parties_content">
+                                    <div name="parties">
+                                        <h3>ENTRE LES SOUSSIGNÉS :</h3>
+                                        <p>
+                                            La Société <strong><span
+                                                    t-field="doc.company_id.partner_id.name"
+                                                /></strong>,
+                                            SAS au capital de 10 000€, dont le siège social est situé au
+                                            <span t-field="doc.company_id.partner_id.street" />,
+                                            <span t-field="doc.company_id.partner_id.zip" />
+                                            <span t-field="doc.company_id.partner_id.city" />
+                                            (<span
+                                                t-field="doc.company_id.partner_id.country_id.name"
+                                            />),
+                                            immatriculée au registre du commerce et des sociétés de
+                                            <span t-field="doc.company_id.company_registry" />,
+                                            sous le n°<t
+                                                t-if="'siren' in doc.company_id._fields"
+                                            ><span t-field="doc.company_id.siren" /></t>,
+                                            représentée par <span
+                                                t-field="doc.company_contact_id.name"
+                                            />,
+                                            <span t-field="doc.company_contact_id.title.name" />,
+                                            son représentant légal actuellement en fonctions, domicilié en cette qualité audit siège,
+                                        </p>
+                                        <p><em>Ci-après désignée "le Prestataire",</em></p>
+                                        <p>D'UNE PART,</p>
+                                        <h3>ET :</h3>
+                                        <p>
+                                            <strong><span t-field="doc.partner_id.name" /></strong>,
+                                            <span t-field="doc.partner_id.company_type" />,
+                                            dont le siège social est situé
+                                            <span t-field="doc.partner_id.street" />,
+                                            <span t-field="doc.partner_id.zip" />
+                                            <span t-field="doc.partner_id.city" />
+                                            (<span t-field="doc.partner_id.country_id.name" />),
+                                            immatriculée au registre du commerce et des sociétés de
+                                            <t
+                                                t-if="'company_registry' in doc.partner_id._fields"
+                                            ><span t-field="doc.partner_id.company_registry" /></t>
+                                            sous le n°<t
+                                                t-if="'siren' in doc.partner_id._fields"
+                                            ><span t-field="doc.partner_id.siren" /></t>,
+                                            représentée par <span
+                                                t-field="doc.partner_contact_id.name"
+                                            />,
+                                            <span t-field="doc.partner_contact_id.function" />,
+                                            son représentant légal actuellement en fonctions, domicilié en cette qualité audit siège,
+                                        </p>
+                                        <p><em>Ci-après désignée "le Client",</em></p>
+                                        <p>D'AUTRE PART,</p>
+                                        <p><strong>INDIVIDUELLEMENT DÉNOMMÉE «PARTIE» ET ENSEMBLE DÉNOMMÉES «PARTIES».</strong></p>
+                                    </div>
+                                </t>
+                            </div>
+                            <div id="contenu" class="page-break-after">
+                                <t t-if="doc.recital_ids">
+                                    <div t-foreach="doc.recital_ids" t-as="r">
+                                        <t t-if="r.title">
+                                            <h3 t-field="r.title" />
+                                        </t>
+                                        <p t-field="r.dynamic_content" />
+                                    </div>
+                                </t>
+                                <div t-foreach="doc.sections_ids" t-as="s">
+                                    <t t-if="s.title">
+                                        <h3 t-field="s.title" />
+                                    </t>
+                                    <p t-field="s.dynamic_content" />
+                                    <div t-foreach="s.clauses_ids" t-as="c">
+                                        <t t-if="c.title">
+                                            <h4 t-field="c.title" />
+                                        </t>
+                                        <p t-field="c.dynamic_content" />
+                                    </div>
+                                </div>
+                                <t t-if="special_term">
+                                    <h2>Special Terms</h2>
+                                    <div name="special_term">
+                                        <p t-field="doc.dynamic_special_terms" />
+                                    </div>
+                                </t>
+                                <h2>Signatures</h2>
+                                <table class="table table-condensed">
+                                    <theader>
+                                        <tr>
+                                            <th width="50%">Partner</th>
+                                            <th width="50%">Company</th>
+                                        </tr>
+                                    </theader>
+                                    <tbody class="section_tbody">
+                                        <tr>
+                                            <td>
+                                                <p t-field="doc.partner_id" />
+                                                <p>
+                                                    By:
+                                                    <span t-field="doc.partner_contact_id.name" />,
+                                                    <span t-field="doc.partner_contact_id.function" />
+                                                </p>
+                                                <p>Date:</p>
+                                            </td>
+                                            <td>
+                                                <p t-field="doc.company_id.partner_id" />
+                                                <p>
+                                                    By:
+                                                    <span t-field="doc.company_contact_id.name" />,
+                                                    <span t-field="doc.company_contact_id.function" />
+                                                </p>
+                                                <p>
+                                                    Date:
+                                                    <span t-field="doc.company_signed_date" />
+                                                </p>
+                                                <img
+                                                    t-if="doc.signed_contract"
+                                                    t-attf-src="data:image/*;base64,{{doc.signed_contract}}"
+                                                    style="height: 80px;"
+                                                />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="annexes">
+                                <div t-foreach="doc.appendix_ids" t-as="a">
+                                    <div class="page-break-after">
+                                        <h1 t-field="a.title" />
+                                        <p t-field="a.dynamic_content" />
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </t>
+                </t>
+            </t>
+        </xpath>
+    </template>
+</odoo>
