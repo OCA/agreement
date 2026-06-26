@@ -310,6 +310,11 @@ msgid "Purchase"
 msgstr "Achat"
 
 #. module: agreement
+#: model:ir.model.fields,field_description:agreement.field_agreement__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: agreement
 #: model:ir.ui.menu,name:agreement.agreement_reporting_menu
 msgid "Reporting"
 msgstr ""
