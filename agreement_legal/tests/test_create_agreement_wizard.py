@@ -69,6 +69,7 @@ class TestCreateAgreementWizard(TransactionCase):
         self.assertEqual(agreement.is_template, False)
         self.assertEqual(agreement.recital_ids.name, template.recital_ids.name)
         self.assertEqual(agreement.sections_ids.name, template.sections_ids.name)
+        self.assertEqual(len(agreement.clauses_ids), len(template.clauses_ids))
         self.assertEqual(agreement.clauses_ids.name, template.clauses_ids.name)
         self.assertEqual(agreement.clauses_ids.section_id, agreement.sections_ids)
         self.assertEqual(agreement.appendix_ids.name, template.appendix_ids.name)
