@@ -17,11 +17,6 @@ msgstr ""
 "X-Generator: Weblate 5.10.4\n"
 
 #. module: agreement_legal
-#: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
-msgid "<span class=\"fa fa-ellipsis-v\" aria-hidden=\"true\" title=\"Icon\"/>"
-msgstr "<span class=\"fa fa-ellipsis-v\" aria-hidden=\"true\" title=\"Ikon\"/>"
-
-#. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__active
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__active
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__active
@@ -154,6 +149,7 @@ msgstr "Avtal: Kontrollera för att granska dagar"
 #: model:ir.actions.act_window,name:agreement_legal.agreement_dashboard_agreement
 #: model:ir.actions.act_window,name:agreement_legal.agreement_operations_agreement
 #: model:ir.ui.menu,name:agreement_legal.agreement_agreement_reporting
+#: model:ir.ui.menu,name:agreement_legal.agreement_legal_menu_root
 #: model:ir.ui.menu,name:agreement_legal.dashboard_agreements
 #: model:ir.ui.menu,name:agreement_legal.operations_agreements
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_graph_view
@@ -1015,11 +1011,6 @@ msgid "Recitals"
 msgstr "Skäl"
 
 #. module: agreement_legal
-#: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
-msgid "Record's Colour"
-msgstr "Postens färg"
-
-#. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__code
 msgid "Reference"
 msgstr "Referens"
@@ -1618,6 +1609,14 @@ msgid ""
 "|\n"
 "                    Created On:"
 msgstr ""
+
+#~ msgid ""
+#~ "<span class=\"fa fa-ellipsis-v\" aria-hidden=\"true\" title=\"Icon\"/>"
+#~ msgstr ""
+#~ "<span class=\"fa fa-ellipsis-v\" aria-hidden=\"true\" title=\"Ikon\"/>"
+
+#~ msgid "Record's Colour"
+#~ msgstr "Postens färg"
 
 #~ msgid ""
 #~ "You can select a target field from the related document model.\n"
