@@ -17,11 +17,6 @@ msgstr ""
 "X-Generator: Weblate 3.10\n"
 
 #. module: agreement_legal
-#: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
-msgid "<span class=\"fa fa-ellipsis-v\" aria-hidden=\"true\" title=\"Icon\"/>"
-msgstr ""
-
-#. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__active
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__active
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__active
@@ -154,6 +149,7 @@ msgstr ""
 #: model:ir.actions.act_window,name:agreement_legal.agreement_dashboard_agreement
 #: model:ir.actions.act_window,name:agreement_legal.agreement_operations_agreement
 #: model:ir.ui.menu,name:agreement_legal.agreement_agreement_reporting
+#: model:ir.ui.menu,name:agreement_legal.agreement_legal_menu_root
 #: model:ir.ui.menu,name:agreement_legal.dashboard_agreements
 #: model:ir.ui.menu,name:agreement_legal.operations_agreements
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_graph_view
@@ -1014,11 +1010,6 @@ msgid "Recitals"
 msgstr "Considerandos"
 
 #. module: agreement_legal
-#: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
-msgid "Record's Colour"
-msgstr "Cor do Registo"
-
-#. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__code
 msgid "Reference"
 msgstr "Referência"
@@ -1607,6 +1598,9 @@ msgid ""
 "|\n"
 "                    Created On:"
 msgstr ""
+
+#~ msgid "Record's Colour"
+#~ msgstr "Cor do Registo"
 
 #~ msgid "Agreement Name"
 #~ msgstr "Nome"
