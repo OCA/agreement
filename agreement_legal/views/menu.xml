@@ -1,11 +1,13 @@
 <odoo>
-    <!-- Remove top menu from agreement module -->
-    <!-- <delete model="ir.ui.menu" id="agreement.agreement_menu" /> -->
+    <!-- Hide base agreement app menu; restored on module uninstall. -->
+    <record id="agreement.agreement_menu_root" model="ir.ui.menu">
+        <field name="active" eval="False" />
+    </record>
 
     <!-- Top menu item -->
     <menuitem
         name="Agreements"
-        id="agreement.agreement_menu"
+        id="agreement_legal_menu_root"
         web_icon="agreement_legal,static/description/icon.png"
         sequence="80"
         action="agreement_legal.agreement_dashboard_agreement"
@@ -14,7 +16,7 @@
     <menuitem
         name="Dashboard"
         id="agreement_dashboard"
-        parent="agreement.agreement_menu"
+        parent="agreement_legal_menu_root"
         sequence="10"
     />
     <menuitem
@@ -29,7 +31,7 @@
     <menuitem
         name="Operations"
         id="agreement_operations"
-        parent="agreement.agreement_menu"
+        parent="agreement_legal_menu_root"
         sequence="20"
     />
     <menuitem
@@ -44,7 +46,7 @@
     <menuitem
         name="Master Data"
         id="agreement_masterdata"
-        parent="agreement.agreement_menu"
+        parent="agreement_legal_menu_root"
         sequence="30"
     />
     <menuitem
@@ -94,7 +96,7 @@
         name="Reporting"
         id="agreement_reporting"
         sequence="40"
-        parent="agreement.agreement_menu"
+        parent="agreement_legal_menu_root"
         groups="agreement_legal.group_agreement_manager"
     />
 
@@ -111,7 +113,7 @@
         name="Configuration"
         id="agreement_configuration"
         sequence="50"
-        parent="agreement.agreement_menu"
+        parent="agreement_legal_menu_root"
         groups="agreement_legal.group_agreement_manager"
     />
     <menuitem

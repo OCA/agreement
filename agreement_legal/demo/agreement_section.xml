@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+     © 2019 Ygol Internetwork (yves@ygol.com)
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo noupdate="1">
+    <record id="agreement_section_market1_scope" model="agreement.section">
+        <field name="name">Scope of Supply</field>
+        <field name="title">1. Scope of Supply</field>
+        <field name="sequence">10</field>
+        <field
+            name="content"
+        ><![CDATA[<p>This section defines the hardware IT equipment covered by {{object.agreement_id.name or ''}}.</p>]]></field>
+        <field name="agreement_id" ref="agreement.market1" />
+    </record>
+
+    <record id="agreement_section_market1_payment" model="agreement.section">
+        <field name="name">Payment Terms</field>
+        <field name="title">2. Payment Terms</field>
+        <field name="sequence">20</field>
+        <field
+            name="content"
+        ><![CDATA[<p>Payment terms for the supply agreement {{object.agreement_id.code or ''}}.</p>]]></field>
+        <field name="agreement_id" ref="agreement.market1" />
+    </record>
+
+    <record id="agreement_section_market2_terms" model="agreement.section">
+        <field name="name">Service Terms</field>
+        <field name="title">1. Service Terms</field>
+        <field name="sequence">10</field>
+        <field
+            name="content"
+        ><![CDATA[<p>Fiber access service terms for {{object.agreement_id.name or ''}}.</p>]]></field>
+        <field name="agreement_id" ref="agreement.market2" />
+    </record>
+
+    <record id="agreement_section_market6_template" model="agreement.section">
+        <field name="name">Template Section</field>
+        <field name="title">1. General Provisions</field>
+        <field name="sequence">10</field>
+        <field
+            name="content"
+        ><![CDATA[<p>General provisions applicable to SIP-ISDN gateway agreements.</p>]]></field>
+        <field name="agreement_id" ref="agreement.market6" />
+    </record>
+</odoo>
