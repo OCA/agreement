@@ -33,7 +33,15 @@
         "views/menu.xml",
         "wizards/create_agreement_wizard.xml",
     ],
-    "demo": ["demo/demo.xml"],
+    "demo": [
+        "demo/agreement_subtype.xml",
+        "demo/agreement.xml",
+        "demo/agreement_recital.xml",
+        "demo/agreement_section.xml",
+        "demo/agreement_clause.xml",
+        "demo/agreement_appendix.xml",
+        "demo/agreement_line.xml",
+    ],
     "assets": {
         "web.assets_backend": [
             "agreement_legal/static/src/js/**/*",
