@@ -7,3 +7,4 @@ from . import test_agreement_line
 from . import test_agreement_recital
 from . import test_agreement_section
 from . import test_create_agreement_wizard
+from . import test_menu_uninstall

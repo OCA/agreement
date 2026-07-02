@@ -1,5 +1,5 @@
 <odoo>
-    <!-- Hide base agreement app menu; restored on module uninstall. -->
+    <!-- Hide base agreement app menu; restored by uninstall_hook. -->
     <record id="agreement.agreement_menu_root" model="ir.ui.menu">
         <field name="active" eval="False" />
     </record>
