@@ -1,0 +1,9 @@
+- Patrick Wilson \<<pwilson@pavlovmedia.com>\>
+- [Gray Matter Logic](https://www.graymatterlogic.com):
+  - Bhavesh Odedra \<<bodedra@graymatterlogic.com>\>
+  - Wolfgang Hall \<<whall@graymatterlogic.com>\>
+  - Maxime Chambreuil \<<maxime.chambreuil@graymatterlogic.com>\>
+  - Sandip Mangukiya \<<smangukiya@graymatterlogic.com>\>
+- Yves Goldberg \<<yves@ygol.com>\>
+- Tharathip Chaweewongphan \<<tharathipc@ecosoft.co.th>\>
+- Italo LOPES \<<italo.lopes@camptocamp.com>\>
