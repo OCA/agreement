@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-07-06 15:46+0000\n"
+"PO-Revision-Date: 2026-07-06 18:46+0000\n"
 "Last-Translator: Cándido Martínez <candido@supermercadoscooperativos.com>\n"
 "Language-Team: none\n"
 "Language: gl\n"
@@ -191,52 +191,52 @@ msgstr "Número de mensaxes que requiren atención"
 #. module: agreement_serviceprofile
 #: model:ir.model.fields,help:agreement_serviceprofile.field_agreement_serviceprofile__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Número de mensaxes con erro de entrega"
 
 #. module: agreement_serviceprofile
 #: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement_serviceprofile__partner_id
 msgid "Partner"
-msgstr ""
+msgstr "Contacto"
 
 #. module: agreement_serviceprofile
 #: model:ir.model,name:agreement_serviceprofile.model_product_template
 #: model_terms:ir.ui.view,arch_db:agreement_serviceprofile.agreement_serviceprofile_search
 msgid "Product"
-msgstr ""
+msgstr "Produto"
 
 #. module: agreement_serviceprofile
 #: model:ir.model.fields,field_description:agreement_serviceprofile.field_product_product__detailed_type
 #: model:ir.model.fields,field_description:agreement_serviceprofile.field_product_template__detailed_type
 msgid "Product Type"
-msgstr ""
+msgstr "Tipo de produto"
 
 #. module: agreement_serviceprofile
 #: model_terms:ir.ui.view,arch_db:agreement_serviceprofile.agreement_serviceprofile_search
 msgid "Product Variant"
-msgstr ""
+msgstr "Variante de produto"
 
 #. module: agreement_serviceprofile
 #: model_terms:ir.ui.view,arch_db:agreement_serviceprofile.product_product_form_view
 #: model_terms:ir.ui.view,arch_db:agreement_serviceprofile.product_template_form_view
 msgid "Service"
-msgstr ""
+msgstr "Servizo"
 
 #. module: agreement_serviceprofile
 #: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement_serviceprofile__product_id
 msgid "Service Product"
-msgstr ""
+msgstr "Servizo de produto"
 
 #. module: agreement_serviceprofile
 #: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement_serviceprofile__product_variant_id
 msgid "Service Product Variant"
-msgstr ""
+msgstr "Variante de produto de servizo"
 
 #. module: agreement_serviceprofile
 #: model:ir.model.fields.selection,name:agreement_serviceprofile.selection__agreement_stage__stage_type__serviceprofile
 #: model:ir.model.fields.selection,name:agreement_serviceprofile.selection__product_template__detailed_type__serviceprofile
 #: model_terms:ir.ui.view,arch_db:agreement_serviceprofile.agreement_serviceprofile_form
 msgid "Service Profile"
-msgstr ""
+msgstr "Perfil de servizo"
 
 #. module: agreement_serviceprofile
 #: model:ir.actions.act_window,name:agreement_serviceprofile.agreement_serviceprofile_action
@@ -246,34 +246,34 @@ msgstr ""
 #: model:ir.ui.menu,name:agreement_serviceprofile.dashboard_serviceprofiles
 #: model_terms:ir.ui.view,arch_db:agreement_serviceprofile.agreement_fsm_order_form_view
 msgid "Service Profiles"
-msgstr ""
+msgstr "Perfiles de servizo"
 
 #. module: agreement_serviceprofile
 #: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement_serviceprofile__stage_id
 msgid "Stage"
-msgstr ""
+msgstr "Etapa"
 
 #. module: agreement_serviceprofile
 #: model:ir.model.fields,help:agreement_serviceprofile.field_agreement_serviceprofile__partner_id
 msgid "The customer or vendor this agreement is related to."
-msgstr ""
+msgstr "O cliente ou provedor co que está relacionado este acordo."
 
 #. module: agreement_serviceprofile
 #: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement_stage__stage_type
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 #. module: agreement_serviceprofile
 #: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement_serviceprofile__use_product_variant
 msgid "Use Product Variant"
-msgstr ""
+msgstr "Usar variante de produto"
 
 #. module: agreement_serviceprofile
 #: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement_serviceprofile__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Mensaxes do sitio web"
 
 #. module: agreement_serviceprofile
 #: model:ir.model.fields,help:agreement_serviceprofile.field_agreement_serviceprofile__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Historial de comunicación do sitio web"
