@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-07-06 15:46+0000\n"
+"PO-Revision-Date: 2026-07-06 18:46+0000\n"
 "Last-Translator: Cándido Martínez <candido@supermercadoscooperativos.com>\n"
 "Language-Team: none\n"
 "Language: gl\n"
@@ -200,101 +200,101 @@ msgstr "Se non está marcada, permitiralle ocultar o acordo sen eliminalo."
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "É seguidor"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__is_template
 msgid "Is a Template?"
-msgstr ""
+msgstr "É un modelo?"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement____last_update
 #: model:ir.model.fields,field_description:agreement.field_agreement_type____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última modificación o"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__write_uid
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Última actualización por"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__write_date
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Última actualización no"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Adxuntos principais"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Erro de envío de mensaxe"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Mensaxes"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Data límite da miña actividade"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__name
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #. module: agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 msgid "Name or Number"
-msgstr ""
+msgstr "Nome ou número"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Data límite da vindeira actividade"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Resumo da seguinte actividade"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Seguinte tipo de actividade"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Número de accións"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Erros"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "Número de mensaxes que require intervención"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Número de mensaxes con erro no envío"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__partner_id
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 msgid "Partner"
-msgstr ""
+msgstr "Contacto"
 
 #. module: agreement
 #. odoo-python
@@ -303,22 +303,22 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
 #, python-format
 msgid "Purchase"
-msgstr ""
+msgstr "Compra"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__code
 msgid "Reference"
-msgstr ""
+msgstr "Referencia"
 
 #. module: agreement
 #: model:ir.ui.menu,name:agreement.agreement_reporting_menu
 msgid "Reporting"
-msgstr ""
+msgstr "Informes"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "Usuario responsable"
 
 #. module: agreement
 #. odoo-python
@@ -327,7 +327,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
 #, python-format
 msgid "Sale"
-msgstr ""
+msgstr "Venda"
 
 #. module: agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
@@ -360,7 +360,7 @@ msgstr ""
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__start_date
 msgid "Start Date"
-msgstr ""
+msgstr "Data de inicio"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__activity_state
@@ -370,6 +370,10 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Estado baseado en actividades\n"
+"Vencida: A data de vencemento xa pasou\n"
+"Hoxe: A data de vencemento é hoxe\n"
+"Planificada: Actividades futuras."
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__partner_id
@@ -384,44 +388,44 @@ msgstr ""
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__name
 msgid "Title"
-msgstr ""
+msgstr "Título"
 
 #. module: agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_list_view
 msgid "Type Name"
-msgstr ""
+msgstr "Tipo de acordo"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Tipo de excepción de actividade no rexistro."
 
 #. module: agreement
 #: model:res.groups,name:agreement.group_use_agreement_template
 msgid "Use agreement template"
-msgstr ""
+msgstr "Usar modelo de acordo"
 
 #. module: agreement
 #: model:res.groups,name:agreement.group_use_agreement_type
 msgid "Use agreement type"
-msgstr ""
+msgstr "Usar tipo de acordo"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Mensaxes do sitio wb"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Historial de comunicación do sitio web"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__end_date
 msgid "When the agreement ends."
-msgstr ""
+msgstr "Cando remata o acordo."
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__start_date
 msgid "When the agreement starts."
-msgstr ""
+msgstr "Cando comeza o acordo."
