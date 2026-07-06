@@ -6,13 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2026-07-06 08:48+0000\n"
+"Last-Translator: Cándido Martínez <candido@supermercadoscooperativos.com>\n"
 "Language-Team: none\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: agreement_serviceprofile
 #: model:ir.model.fields,help:agreement_serviceprofile.field_product_product__detailed_type
@@ -22,33 +24,38 @@ msgid ""
 "A consumable product is a product for which stock is not managed.\n"
 "A service is a non-material product you provide."
 msgstr ""
+"Un produto almacenable é un produto para o cal ti xestionas as existencias. "
+"A aplicación de inventario foi instalada.\n"
+"Un produto consumible é un produto para o cal non se xestionan as "
+"existencias.\n"
+"Un servizo é un produto non material que ti proporcionas."
 
 #. module: agreement_serviceprofile
 #: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement_serviceprofile__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Acción necesaria"
 
 #. module: agreement_serviceprofile
 #: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement_serviceprofile__active
 msgid "Active"
-msgstr ""
+msgstr "Activo"
 
 #. module: agreement_serviceprofile
 #: model_terms:ir.ui.view,arch_db:agreement_serviceprofile.agreement_fsm_order_form_view
 msgid "Add notes here..."
-msgstr ""
+msgstr "Agrega notas aquí ..."
 
 #. module: agreement_serviceprofile
 #: model:ir.model,name:agreement_serviceprofile.model_agreement
 #: model:ir.model.fields,field_description:agreement_serviceprofile.field_agreement_serviceprofile__agreement_id
 #: model_terms:ir.ui.view,arch_db:agreement_serviceprofile.agreement_serviceprofile_search
 msgid "Agreement"
-msgstr ""
+msgstr "Acordo"
 
 #. module: agreement_serviceprofile
 #: model:ir.model,name:agreement_serviceprofile.model_agreement_serviceprofile
 msgid "Agreement Service Profiles"
-msgstr ""
+msgstr "Acordo de perfiles de servizo"
 
 #. module: agreement_serviceprofile
 #: model:ir.model,name:agreement_serviceprofile.model_agreement_stage
