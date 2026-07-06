@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-07-06 08:48+0000\n"
+"PO-Revision-Date: 2026-07-06 15:46+0000\n"
 "Last-Translator: Cándido Martínez <candido@supermercadoscooperativos.com>\n"
 "Language-Team: none\n"
 "Language: gl\n"
@@ -49,19 +49,19 @@ msgstr "Dispoñer dun tipo especial de acordos que actúen como modelos"
 #. module: agreement_sale
 #: model_terms:ir.ui.view,arch_db:agreement_sale.res_config_settings_view_form
 msgid "Manage agreements by types"
-msgstr ""
+msgstr "Xestionar os acordos por tipos"
 
 #. module: agreement_sale
 #: model:ir.model,name:agreement_sale.model_sale_order
 msgid "Sales Order"
-msgstr ""
+msgstr "Orde de venda"
 
 #. module: agreement_sale
 #: model:ir.model.fields,field_description:agreement_sale.field_res_config_settings__group_use_agreement_template
 msgid "Use agreement template"
-msgstr ""
+msgstr "Usar modelo de acordo"
 
 #. module: agreement_sale
 #: model:ir.model.fields,field_description:agreement_sale.field_res_config_settings__group_use_agreement_type
 msgid "Use agreement types"
-msgstr ""
+msgstr "Usar tipos de acordo"
