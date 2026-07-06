@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-07-06 18:46+0000\n"
+"PO-Revision-Date: 2026-07-06 20:52+0000\n"
 "Last-Translator: Cándido Martínez <candido@supermercadoscooperativos.com>\n"
 "Language-Team: none\n"
 "Language: gl\n"
@@ -337,7 +337,7 @@ msgstr "Busca de acordos"
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__agreement_type_id
 msgid "Select the type of agreement"
-msgstr ""
+msgstr "Seleccione o tipo de acordo"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__is_template
@@ -345,17 +345,18 @@ msgid ""
 "Set if the agreement is a template. Template agreements don't require a "
 "partner."
 msgstr ""
+"Establecer se o acordo é un modelo. O modelo de acordo non require contacto."
 
 #. module: agreement
 #: model:ir.ui.menu,name:agreement.agreement_setting_menu
 msgid "Settings"
-msgstr ""
+msgstr "Configuracións"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__signature_date
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 msgid "Signature Date"
-msgstr ""
+msgstr "Data de sinatura"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__start_date
@@ -378,12 +379,12 @@ msgstr ""
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__partner_id
 msgid "The customer or vendor this agreement is related to."
-msgstr ""
+msgstr "Cliente ou provedor co que está relacionado este acordo."
 
 #. module: agreement
 #: model:ir.model.constraint,message:agreement.constraint_agreement_code_partner_company_unique
 msgid "This agreement code already exists for this partner!"
-msgstr ""
+msgstr "Este código de acordo xa existe para este contacto!"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__name
