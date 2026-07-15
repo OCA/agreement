@@ -56,8 +56,8 @@ class Agreement(models.Model):
     )
     active = fields.Boolean(default=True)
     signature_date = fields.Date(tracking=True)
-    start_date = fields.Date(tracking=True)
-    end_date = fields.Date(tracking=True)
+    start_date = fields.Date(tracking=True, help="When the agreement starts.")
+    end_date = fields.Date(tracking=True, help="When the agreement ends.")
 
     @api.model
     def _domain_selection(self):

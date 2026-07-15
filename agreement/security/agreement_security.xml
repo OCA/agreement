@@ -31,4 +31,60 @@
           ]"
         />
     </record>
+    <record id="res_groups_privilege_agreement" model="res.groups.privilege">
+        <field name="name">Agreement</field>
+        <field name="sequence">17</field>
+    </record>
+
+    <!-- Readonly group -->
+    <record id="group_agreement_readonly" model="res.groups">
+        <field name="name">Read-Only Users</field>
+        <field name="privilege_id" ref="res_groups_privilege_agreement" />
+        <field
+            name="implied_ids"
+            eval="[
+                Command.link(ref('group_use_agreement_type')),
+                Command.link(ref('group_use_agreement_template')),
+            ]"
+        />
+    </record>
+
+    <!-- User group -->
+    <record id="group_agreement_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="privilege_id" ref="res_groups_privilege_agreement" />
+        <field
+            name="implied_ids"
+            eval="[
+                Command.link(ref('group_agreement_readonly'))
+            ]"
+        />
+    </record>
+
+    <!-- Add the agreement user group to all existing users -->
+    <function model="res.users" name="write">
+        <value
+            model="res.users"
+            search="[
+                ('group_ids', 'in', [ref('base.group_user')]),
+                '|',
+                ('active', '=', True),
+                ('active', '=', False)
+            ]"
+        />
+        <value
+            eval="{'group_ids': [Command.link(ref('agreement.group_agreement_user'))]}"
+        />
+    </function>
+
+    <!-- Manager group -->
+    <record id="group_agreement_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="privilege_id" ref="res_groups_privilege_agreement" />
+        <field name="implied_ids" eval="[Command.link(ref('group_agreement_user'))]" />
+        <field
+            name="user_ids"
+            eval="[Command.link(ref('base.user_root')), Command.link(ref('base.user_admin'))]"
+        />
+    </record>
 </odoo>

@@ -18,3 +18,5 @@
   - Nhan Tran \<<nhant@trobz.com>\>
 - [Komit](https://komit-consulting.com):
   - Vang Nguyen Phu
+- [glueckkanja AG](https://glueckkanja.com):
+  - Christopher Rogos

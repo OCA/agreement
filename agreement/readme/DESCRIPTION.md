@@ -10,4 +10,4 @@ This module adds an *Agreement* object with the following properties:
 Optionally, you can also enable using: \* agreement types \* a flag to
 set an agreement as a template agreement
 
-(Install agreement_sale to get the configuration settings for these).
+![Agreement Form](../static/description/screenshot_form.png)
