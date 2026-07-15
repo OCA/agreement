@@ -2,9 +2,9 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    "name": "Agreement",
+    "name": "Agreements",
     "summary": "Adds an agreement object",
-    "version": "19.0.1.0.0",
+    "version": "19.0.2.1.0",
     "category": "Contract",
     "author": "Akretion, "
     "Yves Goldberg (Ygol Internetwork), "
@@ -13,10 +13,11 @@
     "license": "AGPL-3",
     "depends": ["mail"],
     "data": [
-        "security/ir.model.access.csv",
         "security/agreement_security.xml",
+        "security/ir.model.access.csv",
         "views/agreement.xml",
         "views/agreement_type.xml",
+        "views/res_config_settings.xml",
         "views/agreement_menu.xml",
         "views/res_partner.xml",
     ],
@@ -27,4 +28,5 @@
         "alexis-via",
     ],
     "installable": True,
+    "application": True,
 }
