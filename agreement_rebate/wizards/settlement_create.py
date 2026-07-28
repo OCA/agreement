@@ -116,30 +116,21 @@ class AgreementSettlementCreateWiz(models.TransientModel):
         return domain
 
     def _target_line_domain(self, agreement_domain, agreement, line=False):
-        domain = agreement_domain.copy()
+        domain = Domain(agreement_domain)
         if agreement.start_date:
-            domain.append(
-                (
-                    "invoice_date",
-                    ">=",
-                    fields.Date.to_string(agreement.start_date),
-                )
+            domain &= Domain(
+                "invoice_date", ">=", fields.Date.to_string(agreement.start_date)
             )
         if agreement.end_date:
-            domain.append(
-                (
-                    "invoice_date",
-                    "<=",
-                    fields.Date.to_string(agreement.end_date),
-                )
+            domain &= Domain(
+                "invoice_date", "<=", fields.Date.to_string(agreement.end_date)
             )
         if line:
-            domain += safe_eval(line.rebate_domain)
+            domain &= Domain(safe_eval(line.rebate_domain))
         elif agreement.rebate_line_ids:
-            line_domains = Domain.OR(
+            domain &= Domain.OR(
                 [Domain(safe_eval(x.rebate_domain)) for x in agreement.rebate_line_ids]
             )
-            domain = Domain(domain) & line_domains
         return domain
 
     def get_agregate_fields(self):
