@@ -25,6 +25,6 @@ class Agreement(models.Model):
 
     def _compute_lot_count(self):
         for ag_rec in self:
-            ag_rec.lot_count = self.env["stock.production.lot"].search_count(
+            ag_rec.lot_count = self.env["stock.lot"].search_count(
                 [("agreement_id", "in", ag_rec.ids)]
             )

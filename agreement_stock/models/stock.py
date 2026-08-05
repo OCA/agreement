@@ -19,7 +19,7 @@ class StockMove(models.Model):
 
 
 class StockProductionLot(models.Model):
-    _inherit = "stock.production.lot"
+    _inherit = "stock.lot"
 
     agreement_id = fields.Many2one("agreement", "Agreement")
     serviceprofile_id = fields.Many2one("agreement.serviceprofile", "Service Profile")

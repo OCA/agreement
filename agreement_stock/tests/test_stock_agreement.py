@@ -9,7 +9,7 @@ class TestStockAgreement(common.TransactionCase):
         agreement_1 = self._create_agreement()
         partner_1 = self.env["res.partner"].create({"name": "TestPartner1"})
         product_1 = self.env["product.product"].search(
-            [("type", "=", "product")], limit=1
+            [("is_storable", "=", True)], limit=1
         )
         picking_1 = self.env["stock.picking"].create(
             {
@@ -25,7 +25,6 @@ class TestStockAgreement(common.TransactionCase):
                 "product_id": product_1.id,
                 "name": product_1.partner_ref,
                 "product_uom_qty": 5,
-                "quantity_done": 5,
                 "picking_id": picking_1.id,
                 "product_uom": product_1.uom_id.id,
                 "location_id": picking_1.location_id.id,

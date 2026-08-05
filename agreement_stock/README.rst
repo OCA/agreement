@@ -16,23 +16,25 @@ Agreement - Stock
 .. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
-.. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fcontract-lightgray.png?logo=github
-    :target: https://github.com/OCA/contract/tree/14.0/agreement_stock
-    :alt: OCA/contract
+.. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fagreement-lightgray.png?logo=github
+    :target: https://github.com/OCA/agreement/tree/18.0/agreement_stock
+    :alt: OCA/agreement
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/contract-14-0/contract-14-0-agreement_stock
+    :target: https://translation.odoo-community.org/projects/agreement-18-0/agreement-18-0-agreement_stock
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/contract&target_branch=14.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/agreement&target_branch=18.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-Odoo Agreement App does not provide an easy way to access stock transfers related to an agreement.
-Some organizations needs to have a quick access to stock transfers to track the performance of an agreement.
+Odoo Agreement App does not provide an easy way to access stock
+transfers related to an agreement. Some organizations needs to have a
+quick access to stock transfers to track the performance of an
+agreement.
 
-This module allows you to link a transfer to an agreement and
-adds a smart button on the agreement to look at the list of related transfers.
+This module allows you to link a transfer to an agreement and adds a
+smart button on the agreement to look at the list of related transfers.
 
 **Table of contents**
 
@@ -44,28 +46,31 @@ Usage
 
 To use this module, you need to:
 
-* Go to Inventory > Transfers
-* Select or create a transfer and set the agreement
-* Select or create a lot/serial number and set the agreement
-* Go to Agreement > Agreements
-* Open the previous agreement
-* Click on the smart button "Transfers" to see the list of related transfers
-* Click on the smart button "Stock Moves" to see the list of related stock moves
-* Click on the smart button "Lot/SN #" to see the list of related lot/serial numbers
+- Go to Inventory > Transfers
+- Select or create a transfer and set the agreement
+- Select or create a lot/serial number and set the agreement
+- Go to Agreement > Agreements
+- Open the previous agreement
+- Click on the smart button "Transfers" to see the list of related
+  transfers
+- Click on the smart button "Stock Moves" to see the list of related
+  stock moves
+- Click on the smart button "Lot/SN #" to see the list of related
+  lot/serial numbers
 
 Known issues / Roadmap
 ======================
 
 The roadmap of the Agreement application is documented on
-`Github <https://github.com/OCA/contract/issues>`_.
+`Github <https://github.com/OCA/contract/issues>`__.
 
 Bug Tracker
 ===========
 
-Bugs are tracked on `GitHub Issues <https://github.com/OCA/contract/issues>`_.
+Bugs are tracked on `GitHub Issues <https://github.com/OCA/agreement/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/contract/issues/new?body=module:%20agreement_stock%0Aversion:%2014.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/agreement/issues/new?body=module:%20agreement_stock%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -73,25 +78,25 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Open Source Integrators
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Sandip Mangukiya <smangukiya@opensourceintegrators.com>
-* Serpent Consulting Services Pvt. Ltd. <support@serpentcs.com>
+- Sandip Mangukiya <smangukiya@opensourceintegrators.com>
+- Serpent Consulting Services Pvt. Ltd. <support@serpentcs.com>
 
 Other credits
-~~~~~~~~~~~~~
+-------------
 
 The development of this module has been financially supported by:
 
-* Open Source Integrators <https://opensourceintegrators.com>
+- Open Source Integrators <https://opensourceintegrators.com>
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
@@ -109,11 +114,14 @@ promote its widespread use.
 .. |maintainer-max3903| image:: https://github.com/max3903.png?size=40px
     :target: https://github.com/max3903
     :alt: max3903
+.. |maintainer-marcos-mendez| image:: https://github.com/marcos-mendez.png?size=40px
+    :target: https://github.com/marcos-mendez
+    :alt: marcos-mendez
 
 Current `maintainers <https://odoo-community.org/page/maintainer-role>`__:
 
-|maintainer-smangukiya| |maintainer-max3903| 
+|maintainer-smangukiya| |maintainer-max3903| |maintainer-marcos-mendez| 
 
-This module is part of the `OCA/contract <https://github.com/OCA/contract/tree/14.0/agreement_stock>`_ project on GitHub.
+This module is part of the `OCA/agreement <https://github.com/OCA/agreement/tree/18.0/agreement_stock>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
