@@ -62,6 +62,29 @@ class TestAgreementPortal(HttpCase):
         response = self.url_open(f"/my/agreements/{self.other_agreement.id}")
         self.assertNotIn(b"Foreign Agreement", response.content)
 
+    def test_home_counter(self):
+        self.authenticate("portal-agreement@test.example.com", "portal-agreement")
+        result = self.make_jsonrpc_request(
+            "/my/counters", {"counters": ["agreement_count"]}
+        )
+        self.assertEqual(result["agreement_count"], 1)
+
+    def test_list_and_counter_without_read_access(self):
+        self.env.ref("agreement_portal.access_agreement_portal").perm_read = False
+        self.authenticate("portal-agreement@test.example.com", "portal-agreement")
+        response = self.url_open("/my/agreements")
+        self.assertTrue(response.url.rstrip("/").endswith("/my"))
+        result = self.make_jsonrpc_request(
+            "/my/counters", {"counters": ["agreement_count"]}
+        )
+        self.assertEqual(result["agreement_count"], 0)
+
+    def test_sort_by_reference(self):
+        self.authenticate("portal-agreement@test.example.com", "portal-agreement")
+        response = self.url_open("/my/agreements?sortby=code")
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b"My Portal Agreement", response.content)
+
     def test_portal_detail_with_access_token(self):
         self.other_agreement._portal_ensure_token()
         response = self.url_open(
