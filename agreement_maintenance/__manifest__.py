@@ -11,7 +11,7 @@
     "website": "https://github.com/OCA/agreement",
     "category": "Maintenance",
     "license": "AGPL-3",
-    "version": "16.0.1.0.0",
+    "version": "18.0.1.0.0",
     "depends": [
         "maintenance",
         "agreement_serviceprofile",
@@ -23,5 +23,5 @@
         "views/maintenance_equipment_view.xml",
     ],
     "development_status": "Beta",
-    "maintainers": ["max3903"],
+    "maintainers": ["max3903", "marcos-mendez"],
 }

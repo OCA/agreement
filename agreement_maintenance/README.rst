@@ -17,13 +17,13 @@ Maintenance Agreements
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fagreement-lightgray.png?logo=github
-    :target: https://github.com/OCA/agreement/tree/16.0/agreement_maintenance
+    :target: https://github.com/OCA/agreement/tree/18.0/agreement_maintenance
     :alt: OCA/agreement
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/agreement-16-0/agreement-16-0-agreement_maintenance
+    :target: https://translation.odoo-community.org/projects/agreement-18-0/agreement-18-0-agreement_maintenance
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/agreement&target_branch=16.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/agreement&target_branch=18.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
@@ -40,24 +40,25 @@ Configuration
 
 To configure this module:
 
-* Go to Agreement > Configuration > Templates
-* Create a new template with sections and clauses and their respective content
-* Go to Agreement > Configuration > Stages
-* Create and reorder stages to match your process
+- Go to Agreement > Configuration > Templates
+- Create a new template with sections and clauses and their respective
+  content
+- Go to Agreement > Configuration > Stages
+- Create and reorder stages to match your process
 
 Usage
 =====
 
 To use this module:
 
-* Go to Maintenance
-* Create or select a maintenance request
-* Select the Agreement
-* Select the Service Profile related to the select agreement
-* Go to Agreement
-* Open the previous agreement and click on the smart button
-  "Maintenance Requests" to see the list of related maintenance requests
-* Group the requests by Service Profile
+- Go to Maintenance
+- Create or select a maintenance request
+- Select the Agreement
+- Select the Service Profile related to the select agreement
+- Go to Agreement
+- Open the previous agreement and click on the smart button "Maintenance
+  Requests" to see the list of related maintenance requests
+- Group the requests by Service Profile
 
 Bug Tracker
 ===========
@@ -65,7 +66,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/agreement/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/agreement/issues/new?body=module:%20agreement_maintenance%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/agreement/issues/new?body=module:%20agreement_maintenance%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -73,30 +74,30 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Pavlov Media
 * Open Source Integrators
 
 Contributors
-~~~~~~~~~~~~
+------------
 
-* Patrick Wilson <pwilson@pavlovmedia.com>
-* Bhavesh Odedra <bodedra@opensourceintegrators.com>
-* Wolfgang Hall <whall@opensourceintegrators.com>
-* Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
-* Serpent Consulting Services Pvt. Ltd. <support@serpentcs.com>
+- Patrick Wilson <pwilson@pavlovmedia.com>
+- Bhavesh Odedra <bodedra@opensourceintegrators.com>
+- Wolfgang Hall <whall@opensourceintegrators.com>
+- Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
+- Serpent Consulting Services Pvt. Ltd. <support@serpentcs.com>
 
 Other credits
-~~~~~~~~~~~~~
+-------------
 
 The development of this module has been financially supported by:
 
-* Pavlov Media
-* Open Source Integrators
+- Pavlov Media
+- Open Source Integrators
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is maintained by the OCA.
 
@@ -111,11 +112,14 @@ promote its widespread use.
 .. |maintainer-max3903| image:: https://github.com/max3903.png?size=40px
     :target: https://github.com/max3903
     :alt: max3903
+.. |maintainer-marcos-mendez| image:: https://github.com/marcos-mendez.png?size=40px
+    :target: https://github.com/marcos-mendez
+    :alt: marcos-mendez
 
-Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
+Current `maintainers <https://odoo-community.org/page/maintainer-role>`__:
 
-|maintainer-max3903| 
+|maintainer-max3903| |maintainer-marcos-mendez| 
 
-This module is part of the `OCA/agreement <https://github.com/OCA/agreement/tree/16.0/agreement_maintenance>`_ project on GitHub.
+This module is part of the `OCA/agreement <https://github.com/OCA/agreement/tree/18.0/agreement_maintenance>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.

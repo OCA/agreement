@@ -7,7 +7,7 @@ from odoo import fields
 
 class TestAgreementMaintenance(common.TransactionCase):
     def setUp(self):
-        super(TestAgreementMaintenance, self).setUp()
+        super().setUp()
 
         self.agreement_obj = self.env["agreement"]
         self.agreement_type_id = self.env["agreement.type"].create(
