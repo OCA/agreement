@@ -295,7 +295,10 @@ class Agreement(models.Model):
                 section_map[section.id] = new_section.id
 
             for clause in template.clauses_ids:
-                values = {"agreement_id": agreement.id}
+                values = {
+                    "agreement_id": agreement.id,
+                    "temp_agreement_id": agreement.id,
+                }
                 if clause.section_id:
                     values["section_id"] = section_map.get(clause.section_id.id)
                 clause.copy(values)
@@ -486,7 +489,10 @@ class Agreement(models.Model):
             )
             section_map[section.id] = new_section.id
         for clause in self.clauses_ids:
-            values = {"agreement_id": res.id}
+            values = {
+                "agreement_id": res.id,
+                "temp_agreement_id": res.id,
+            }
             if clause.section_id:
                 values["section_id"] = section_map.get(clause.section_id.id)
             clause.copy(values)

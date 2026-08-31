@@ -245,6 +245,65 @@ class TestAgreement(TransactionCase):
             child_template.id,
         )
 
+    def test_copy_sets_temp_agreement_id_on_clauses(self):
+        section = self.env["agreement.section"].create(
+            {
+                "name": "Section for Copy",
+                "agreement_id": self.test_agreement.id,
+            }
+        )
+        self.env["agreement.clause"].create(
+            {
+                "name": "Clause with temp agreement",
+                "agreement_id": self.test_agreement.id,
+                "section_id": section.id,
+            }
+        )
+
+        copied_agreement = self.test_agreement.copy()
+
+        self.assertTrue(copied_agreement.clauses_ids)
+        self.assertTrue(
+            all(
+                clause.temp_agreement_id.id == copied_agreement.id
+                for clause in copied_agreement.clauses_ids
+            )
+        )
+
+    def test_recompute_sets_temp_agreement_id_on_clauses(self):
+        template = self.env["agreement"].create(
+            {
+                "name": "Template for Temp Agreement",
+                "is_template": True,
+            }
+        )
+        template_section = self.env["agreement.section"].create(
+            {
+                "name": "Template Section",
+                "agreement_id": template.id,
+            }
+        )
+        self.env["agreement.clause"].create(
+            {
+                "name": "Template Clause",
+                "agreement_id": template.id,
+                "section_id": template_section.id,
+            }
+        )
+
+        self.test_agreement.template_id = template.id
+        self.test_agreement.with_context(
+            active_ids=self.test_agreement.ids,
+        ).recompute_from_template()
+
+        self.assertTrue(self.test_agreement.clauses_ids)
+        self.assertTrue(
+            all(
+                clause.temp_agreement_id.id == self.test_agreement.id
+                for clause in self.test_agreement.clauses_ids
+            )
+        )
+
     def test_action_open_recompute_from_template_wizard(self):
         template = self.env["agreement"].create(
             {
