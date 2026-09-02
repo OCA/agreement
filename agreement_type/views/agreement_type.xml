@@ -1,0 +1,50 @@
+<odoo>
+    <!-- Agreement Type List View (show sub-types) -->
+    <record model="ir.ui.view" id="partner_agreement_type_list_view">
+        <field name="name">Agreement Type List</field>
+        <field name="model">agreement.type</field>
+        <field name="inherit_id" ref="agreement.agreement_type_list_view" />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="child_type_ids" widget="many2many_tags" />
+            </field>
+        </field>
+    </record>
+
+    <!-- Agreement Type Form View (parent, review, sub-types) -->
+    <record model="ir.ui.view" id="partner_agreement_type_form_view">
+        <field name="name">Agreement Type Form</field>
+        <field name="model">agreement.type</field>
+        <field name="inherit_id" ref="agreement.agreement_type_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='main']" position="inside">
+                <field name="parent_type_id" />
+                <field name="review_user_id" />
+                <field name="review_days" />
+            </xpath>
+            <xpath expr="//sheet" position="inside">
+                <separator string="Sub-Types" />
+                <field name="child_type_ids" nolabel="1">
+                    <list editable="bottom">
+                        <field name="name" />
+                    </list>
+                </field>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Actions opening views on models -->
+    <record model="ir.actions.act_window" id="partner_agreement_action_type">
+        <field name="name">Agreement Types</field>
+        <field name="res_model">agreement.type</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('parent_type_id', '=', False)]</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="partner_agreement_action_subtype">
+        <field name="name">Agreement Sub-Types</field>
+        <field name="res_model">agreement.type</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('parent_type_id', '!=', False)]</field>
+    </record>
+</odoo>
