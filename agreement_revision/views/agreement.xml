@@ -1,0 +1,106 @@
+<odoo>
+    <!-- Add the parent agreement column to the agreement list -->
+    <record id="agreement_list_view_parent" model="ir.ui.view">
+        <field name="name">agreement.list.parent</field>
+        <field name="model">agreement</field>
+        <field name="inherit_id" ref="agreement.agreement_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="parent_agreement_id" />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Add version/revision tracking to the agreement form -->
+    <record id="partner_agreement_form_view" model="ir.ui.view">
+        <field name="name">agreement.form.revision</field>
+        <field name="model">agreement</field>
+        <field name="inherit_id" ref="agreement.agreement_form" />
+        <field name="arch" type="xml">
+            <!-- New Version button in the header -->
+            <xpath expr="//header" position="inside">
+                <field name="state" invisible="1" />
+                <button
+                    string="New Version"
+                    type="object"
+                    name="create_new_version"
+                    class="oe_highlight"
+                    invisible="state == 'active'"
+                />
+            </xpath>
+            <!-- Show version/revision in the form footer -->
+
+            <xpath expr="//div[@name='button_box']" position="after">
+                <div
+                    name="version_footer"
+                    class="float-end badge rounded-pill fw-bold text-bg-info"
+                ><field name="version" readonly="1" />.<field
+                    name="revision"
+                    readonly="1"
+                /></div>
+            </xpath>
+            <!-- parent_agreement_id after code -->
+            <xpath expr="//field[@name='code']" position="after">
+                <field
+                    name="parent_agreement_id"
+                    domain="[('partner_id', '=', partner_id)]"
+                />
+            </xpath>
+
+            <!-- Child Agreements page -->
+            <xpath expr="//notebook" position="inside">
+                <page name="child_agreements" string="Child Agreements">
+                    <field name="child_agreements_ids">
+                        <list default_order="version desc">
+                            <field name="name" />
+                            <field name="agreement_type_id" />
+                            <field name="version" />
+                            <field name="revision" />
+                        </list>
+                    </field>
+                </page>
+                <page name="old_versions" string="Revisions">
+                    <field
+                        name="previous_version_agreements_ids"
+                        string="Previouse Versions"
+                        readonly="1"
+                    >
+                        <list default_order="version desc">
+                            <field name="name" />
+                            <field name="version" />
+                            <field name="revision" />
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+
+            <!-- Footer: show the parent's creator/date on child agreements -->
+            <!-- <xpath
+                expr="//p[@name='footer']/field[@name='create_uid']"
+                position="attributes"
+            >
+                <attribute name="create_uid">create_uid_parent</attribute>
+                <attribute name="string">Created by</attribute>
+            </xpath>
+            <xpath
+                expr="//p[@name='footer']/field[@name='create_date']"
+                position="attributes"
+            >
+                <attribute name="create_date">create_date_parent</attribute>
+                <attribute name="string">Created on</attribute>
+            </xpath> -->
+        </field>
+    </record>
+
+    <!-- Show the version on the agreement kanban card -->
+    <record id="view_project_agreement_kanban" model="ir.ui.view">
+        <field name="name">agreement.kanban.revision</field>
+        <field name="model">agreement</field>
+        <field name="inherit_id" ref="agreement.agreement_kanban" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='activity_ids']" position="after">
+                V: <field name="version" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
