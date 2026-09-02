@@ -1,0 +1,10 @@
+<odoo>
+    <menuitem
+        name="Stages"
+        id="agreement_stages"
+        parent="agreement.agreement_setting_menu"
+        groups="agreement.group_agreement_manager"
+        sequence="30"
+        action="partner_agreement_action_stage"
+    />
+</odoo>

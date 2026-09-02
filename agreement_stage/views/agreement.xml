@@ -1,0 +1,86 @@
+<odoo>
+    <!-- Add the stage column to the agreement list -->
+    <record id="partner_agreement_form_view" model="ir.ui.view">
+        <field name="name">agreement.form.stage</field>
+        <field name="model">agreement</field>
+        <field name="inherit_id" ref="agreement.agreement_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <field name="readonly" invisible="1" />
+                <field
+                    name="stage_id"
+                    widget="statusbar"
+                    clickable="1"
+                    options="{'clickable': 1, 'fold_field': 'fold'}"
+                    domain="[('stage_type', '=', 'agreement')]"
+                />
+            </xpath>
+        </field>
+    </record>
+    <record id="partner_agreement_list_view" model="ir.ui.view">
+        <field name="name">agreement.list.stage</field>
+        <field name="model">agreement</field>
+        <field name="inherit_id" ref="agreement.agreement_tree" />
+        <field name="arch" type="xml">
+            <field name="end_date" position="after">
+                <field name="stage_id" />
+            </field>
+        </field>
+    </record>
+
+    <!-- Group the agreement kanban by stage -->
+    <record id="view_project_agreement_kanban" model="ir.ui.view">
+        <field name="name">agreement.kanban.stage</field>
+        <field name="model">agreement</field>
+        <field name="inherit_id" ref="agreement.agreement_kanban" />
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="default_group_by">stage_id</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Add the Status group-by filter to the agreement search -->
+    <record id="partner_agreement_search_view" model="ir.ui.view">
+        <field name="name">agreement.search.stage</field>
+        <field name="model">agreement</field>
+        <field name="inherit_id" ref="agreement.agreement_search" />
+        <field name="arch" type="xml">
+            <search position="inside">
+                <filter
+                    name="group_status"
+                    string="Status"
+                    icon="terp-partner"
+                    context="{'group_by':'stage_id'}"
+                />
+            </search>
+        </field>
+    </record>
+
+    <!-- Add the stage row to the reporting graph/pivot -->
+    <!-- <record id="agreement_graph_view" model="ir.ui.view">
+        <field name="name">agreement.graph.stage</field>
+        <field name="model">agreement</field>
+        <field name="inherit_id" ref="agreement_legal.agreement_graph_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//graph" position="inside">
+                <field name="stage_id" type="row" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="agreement_pivot_view" model="ir.ui.view">
+        <field name="name">agreement.pivot.stage</field>
+        <field name="model">agreement</field>
+        <field name="inherit_id" ref="agreement_legal.agreement_pivot_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//pivot" position="inside">
+                <field name="stage_id" type="row" />
+            </xpath>
+        </field>
+    </record> -->
+
+    <record model="ir.actions.act_window" id="agreement.agreement_action">
+        <field name="view_mode">kanban,list,form</field>
+    </record>
+</odoo>
