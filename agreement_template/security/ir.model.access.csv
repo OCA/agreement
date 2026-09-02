@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_create_agreement_wizard_template,create agreement wizard users,model_create_agreement_wizard,agreement.group_use_agreement_template,1,1,1,1
+access_recompute_agreement_from_template_wizard_template,recompute agreement from template wizard users,model_recompute_agreement_from_template_wizard,agreement.group_use_agreement_template,1,1,1,1
