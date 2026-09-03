@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+     © 2019 Ygol Internetwork (yves@ygol.com)
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo noupdate="1">
+    <record id="agreement_appendix_market1_specs" model="agreement.appendix">
+        <field name="name">Technical Specifications</field>
+        <field name="title">Appendix A - Technical Specifications</field>
+        <field name="sequence">10</field>
+        <field
+            name="content"
+        ><![CDATA[<p>Detailed technical specifications for hardware IT equipment under {{object.agreement_id.code or ''}}.</p>]]></field>
+        <field name="agreement_id" ref="agreement.market1" />
+    </record>
+
+    <record id="agreement_appendix_market6_template" model="agreement.appendix">
+        <field name="name">Equipment List</field>
+        <field name="title">Appendix A - Equipment List</field>
+        <field name="sequence">10</field>
+        <field
+            name="content"
+        ><![CDATA[<p>Standard SIP-ISDN gateway models covered by this template agreement.</p>]]></field>
+        <field name="agreement_id" ref="agreement.market6" />
+    </record>
+</odoo>
