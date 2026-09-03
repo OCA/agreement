@@ -97,7 +97,7 @@
         id="agreement_reporting"
         sequence="40"
         parent="agreement_legal_menu_root"
-        groups="agreement_legal.group_agreement_manager"
+        groups="agreement.group_agreement_manager"
     />
 
     <menuitem
@@ -114,7 +114,7 @@
         id="agreement_configuration"
         sequence="50"
         parent="agreement_legal_menu_root"
-        groups="agreement_legal.group_agreement_manager"
+        groups="agreement.group_agreement_manager"
     />
     <menuitem
         name="Settings"

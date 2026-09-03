@@ -3,32 +3,35 @@
 from datetime import timedelta
 
 from odoo import fields
-from odoo.tests.common import TransactionCase
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestAgreementSection(TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.test_customer = self.env["res.partner"].create({"name": "TestCustomer"})
-        self.agreement_type = self.env["agreement.type"].create(
+class TestAgreementSection(BaseCommon):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+        cls.test_customer = cls.env["res.partner"].create({"name": "TestCustomer"})
+        cls.agreement_type = cls.env["agreement.type"].create(
             {"name": "Test Agreement Type", "domain": "sale"}
         )
-        self.test_agreement = self.env["agreement"].create(
+        cls.test_agreement = cls.env["agreement"].create(
             {
                 "name": "TestAgreement",
                 "description": "Test",
                 "special_terms": "Test",
-                "partner_id": self.test_customer.id,
+                "partner_id": cls.test_customer.id,
                 "start_date": fields.Date.today(),
                 "end_date": fields.Date.today() + timedelta(days=365),
             }
         )
-        self.test_section = self.env["agreement.section"].create(
+        cls.test_section = cls.env["agreement.section"].create(
             {
                 "name": "TestSection",
                 "title": "Test",
                 "content": "Test",
-                "agreement_id": self.test_agreement.id,
+                "agreement_id": cls.test_agreement.id,
             }
         )
 

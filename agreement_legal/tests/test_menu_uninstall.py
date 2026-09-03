@@ -1,13 +1,18 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html)
 
 from odoo.tests import tagged
-from odoo.tests.common import TransactionCase
 
 from odoo.addons.agreement_legal import uninstall_hook
+from odoo.addons.base.tests.common import BaseCommon
 
 
 @tagged("post_install", "-at_install")
-class TestAgreementLegalMenuUninstall(TransactionCase):
+class TestAgreementLegalMenuUninstall(BaseCommon):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+
     def test_agreement_menu_not_replaced_by_legal_root(self):
         """agreement_legal must use its own root menu, not agreement.agreement_menu."""
         legal_root = self.env.ref("agreement_legal.agreement_legal_menu_root")
@@ -31,3 +36,23 @@ class TestAgreementLegalMenuUninstall(TransactionCase):
 
         self.assertTrue(agreement_root.active)
         self.assertTrue(agreement_menu.active)
+
+    def test_uninstall_hook_no_menu(self):
+        """uninstall_hook is a no-op when the base menu xmlid is missing."""
+        root = self.env.ref("agreement.agreement_menu_root")
+        root_data = self.env["ir.model.data"].search(
+            [
+                ("module", "=", "agreement"),
+                ("name", "=", "agreement_menu_root"),
+            ]
+        )
+        root_data.unlink()
+        uninstall_hook(self.env)
+        self.env["ir.model.data"].create(
+            {
+                "module": "agreement",
+                "name": "agreement_menu_root",
+                "model": "ir.ui.menu",
+                "res_id": root.id,
+            }
+        )

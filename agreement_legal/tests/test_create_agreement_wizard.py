@@ -1,59 +1,61 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html)
 
-from odoo.tests.common import TransactionCase
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestCreateAgreementWizard(TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.agreement_type = self.env["agreement.type"].create(
+class TestCreateAgreementWizard(BaseCommon):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+        cls.agreement_type = cls.env["agreement.type"].create(
             {"name": "Test Agreement Type", "domain": "sale"}
         )
         # Create Agreement Template
-        self.agreement_template = self.env["agreement"].create(
+        cls.agreement_template = cls.env["agreement"].create(
             {
                 "name": "Test Agreement Template",
                 "description": "Test",
                 "state": "active",
-                "agreement_type_id": self.agreement_type.id,
+                "agreement_type_id": cls.agreement_type.id,
                 "is_template": True,
             }
         )
         # Create Recital
-        self.env["agreement.recital"].create(
+        cls.env["agreement.recital"].create(
             {
                 "name": "Test Recital",
                 "title": "Test",
                 "content": "Test",
-                "agreement_id": self.agreement_template.id,
+                "agreement_id": cls.agreement_template.id,
             }
         )
         # Create Section
-        self.section = self.env["agreement.section"].create(
+        cls.section = cls.env["agreement.section"].create(
             {
                 "name": "Test Section",
                 "title": "Test",
                 "content": "Test",
-                "agreement_id": self.agreement_template.id,
+                "agreement_id": cls.agreement_template.id,
             }
         )
         # Create Clause
-        self.env["agreement.clause"].create(
+        cls.env["agreement.clause"].create(
             {
                 "name": "Test Clause",
                 "title": "Test",
                 "content": "Test",
-                "agreement_id": self.agreement_template.id,
-                "section_id": self.section.id,
+                "agreement_id": cls.agreement_template.id,
+                "section_id": cls.section.id,
             }
         )
         # Create Appendix
-        self.env["agreement.appendix"].create(
+        cls.env["agreement.appendix"].create(
             {
                 "name": "Test Appendices",
                 "title": "Test",
                 "content": "Test",
-                "agreement_id": self.agreement_template.id,
+                "agreement_id": cls.agreement_template.id,
             }
         )
 

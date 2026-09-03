@@ -10,7 +10,7 @@
                     data-string="Agreements"
                     string="Agreements"
                     name="agreement_legal"
-                    groups="agreement_legal.group_agreement_manager"
+                    groups="agreement.group_agreement_manager"
                 >
                     <block title="Operations">
                         <setting>
@@ -134,7 +134,7 @@
         <field name="res_model">res.config.settings</field>
         <field name="view_id" ref="res_config_settings_view_form" />
         <field name="view_mode">form</field>
-        <field name="target">inline</field>
+        <field name="target">current</field>
         <field name="context">{'module': 'agreement_legal'}</field>
     </record>
 </odoo>

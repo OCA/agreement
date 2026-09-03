@@ -5,22 +5,25 @@ from datetime import timedelta
 from lxml import etree
 
 from odoo import fields
-from odoo.tests.common import TransactionCase
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestAgreement(TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.test_customer = self.env["res.partner"].create({"name": "TestCustomer"})
-        self.agreement_type = self.env["agreement.type"].create(
+class TestAgreement(BaseCommon):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+        cls.test_customer = cls.env["res.partner"].create({"name": "TestCustomer"})
+        cls.agreement_type = cls.env["agreement.type"].create(
             {"name": "Test Agreement Type", "domain": "sale"}
         )
-        self.test_agreement = self.env["agreement"].create(
+        cls.test_agreement = cls.env["agreement"].create(
             {
                 "name": "TestAgreement",
                 "description": "Test",
                 "special_terms": "Test",
-                "partner_id": self.test_customer.id,
+                "partner_id": cls.test_customer.id,
                 "start_date": fields.Date.today(),
                 "end_date": fields.Date.today() + timedelta(days=365),
                 "state": "active",
@@ -263,4 +266,152 @@ class TestAgreement(TransactionCase):
         self.assertEqual(
             action["context"]["default_agreement_id"],
             self.test_agreement.id,
+        )
+
+    def test_recompute_wizard_action(self):
+        template = self.env["agreement"].create(
+            {
+                "name": "Template for Wizard",
+                "is_template": True,
+            }
+        )
+        self.env["agreement.recital"].create(
+            {
+                "name": "Template Recital",
+                "title": "Recital",
+                "content": "Content",
+                "agreement_id": template.id,
+            }
+        )
+        product = self.env["product.product"].create({"name": "Agreement Product"})
+        self.env["agreement.line"].create(
+            {
+                "name": product.name,
+                "agreement_id": template.id,
+                "product_id": product.id,
+                "qty": 1.0,
+                "uom_id": product.uom_id.id,
+            }
+        )
+        self.env["agreement.clause"].create(
+            {
+                "name": "Orphan Clause",
+                "title": "Orphan",
+                "content": "No section",
+                "agreement_id": template.id,
+            }
+        )
+        self.test_agreement.template_id = template
+        wizard = self.env["recompute.agreement.from.template.wizard"].create(
+            {"agreement_id": self.test_agreement.id}
+        )
+        result = wizard.action_recompute_from_template()
+        self.assertEqual(result["type"], "ir.actions.act_window_close")
+        self.assertEqual(len(self.test_agreement.recital_ids), 1)
+        self.assertEqual(len(self.test_agreement.line_ids), 1)
+        orphan = self.test_agreement.clauses_ids.filtered(
+            lambda c: c.name == "Orphan Clause"
+        )
+        self.assertEqual(len(orphan), 1)
+        self.assertFalse(orphan.section_id)
+
+    def test_create_new_version_already_draft(self):
+        self.test_agreement.state = "draft"
+        self.test_agreement.create_new_version()
+        self.assertEqual(self.test_agreement.state, "draft")
+        self.assertEqual(self.test_agreement.version, 2)
+
+    def test_get_view_non_form(self):
+        res = self.env["agreement"].get_view(view_type="list")
+        self.assertIn("arch", res)
+        # Non-form views must not get the readonly rewrite applied
+        self.assertNotIn("bool(readonly)", res["arch"])
+
+    def test_get_view_merges_existing_readonly(self):
+        res = self.env["agreement"].get_view(
+            view_id=self.ref("agreement_legal.partner_agreement_form_view"),
+            view_type="form",
+        )
+        doc = etree.XML(res["arch"])
+        stage = doc.xpath("//field[@name='stage_id']")
+        self.assertTrue(stage)
+        # stage_id is excluded from the readonly rewrite
+        self.assertNotEqual(stage[0].get("readonly", ""), "bool(readonly)")
+
+    def test_copy_with_orphan_clause(self):
+        section = self.env["agreement.section"].create(
+            {
+                "name": "Section",
+                "agreement_id": self.test_agreement.id,
+            }
+        )
+        self.env["agreement.clause"].create(
+            {
+                "name": "With Section",
+                "agreement_id": self.test_agreement.id,
+                "section_id": section.id,
+            }
+        )
+        self.env["agreement.clause"].create(
+            {
+                "name": "Without Section",
+                "agreement_id": self.test_agreement.id,
+            }
+        )
+        copy = self.test_agreement.copy()
+        self.assertEqual(len(copy.clauses_ids), 2)
+        self.assertTrue(
+            copy.clauses_ids.filtered(lambda c: c.name == "Without Section")
+        )
+        self.assertFalse(
+            copy.clauses_ids.filtered(lambda c: c.name == "Without Section").section_id
+        )
+
+    def test_get_default_stage_id_missing_xmlid(self):
+        stage = self.env.ref("agreement_legal.agreement_stage_new")
+        stage_xmlid = self.env["ir.model.data"].search(
+            [
+                ("module", "=", "agreement_legal"),
+                ("name", "=", "agreement_stage_new"),
+            ]
+        )
+        stage_xmlid.unlink()
+        self.assertFalse(self.env["agreement"]._get_default_stage_id())
+        # Restore xmlid for other tests / teardown safety
+        self.env["ir.model.data"].create(
+            {
+                "module": "agreement_legal",
+                "name": "agreement_stage_new",
+                "model": "agreement.stage",
+                "res_id": stage.id,
+            }
+        )
+
+    def test_alert_skips_when_activity_exists(self):
+        self.agreement_type.write(
+            {"review_user_id": self.env.user.id, "review_days": 0}
+        )
+        self.test_agreement.write(
+            {
+                "agreement_type_id": self.agreement_type.id,
+                "to_review_date": fields.Date.today(),
+            }
+        )
+        self.env["agreement"]._alert_to_review_date()
+        count_after_first = self.env["mail.activity"].search_count(
+            [
+                ("res_id", "=", self.test_agreement.id),
+                ("res_model", "=", self.test_agreement._name),
+            ]
+        )
+        self.assertTrue(count_after_first)
+        self.env["agreement"]._alert_to_review_date()
+        self.assertEqual(
+            count_after_first,
+            self.env["mail.activity"].search_count(
+                [
+                    ("res_id", "=", self.test_agreement.id),
+                    ("res_model", "=", self.test_agreement._name),
+                ]
+            ),
         )
