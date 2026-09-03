@@ -5,7 +5,7 @@ from datetime import timedelta
 
 from lxml import etree
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 
 
 class Agreement(models.Model):
@@ -65,7 +65,7 @@ class Agreement(models.Model):
     code = fields.Char(
         string="Reference",
         required=True,
-        default=lambda self: _("New"),
+        default=lambda self: self.env._("New"),
         tracking=True,
         copy=False,
         help="ID used for internal contract tracking.",
@@ -87,6 +87,8 @@ class Agreement(models.Model):
         string="Partner",
         required=False,
         copy=True,
+        ondelete="restrict",
+        tracking=True,
         help="The customer or vendor this agreement is related to.",
     )
     partner_contact_id = fields.Many2one(
@@ -143,7 +145,10 @@ class Agreement(models.Model):
         """
         return deftext
 
-    parties = fields.Html(default=_get_default_parties, help="Parties of the agreement")
+    parties = fields.Html(
+        default=lambda self: self._get_default_parties(),
+        help="Parties of the agreement",
+    )
     dynamic_parties = fields.Html(
         compute="_compute_dynamic_parties", help="Compute dynamic parties"
     )
@@ -165,8 +170,7 @@ class Agreement(models.Model):
         "res.users",
         string="Signed By",
         tracking=True,
-        help="The user at our company who authorized/signed the agreement or "
-        "contract.",
+        help="The user at our company who authorized/signed the agreement or contract.",
     )
     partner_signed_user_id = fields.Many2one(
         "res.partner",
@@ -264,7 +268,7 @@ class Agreement(models.Model):
                 agreement.activity_schedule(
                     "agreement_legal.mail_activity_review_agreement",
                     user_id=agreement.agreement_type_id.review_user_id.id,
-                    note=_("Your activity is going to end soon"),
+                    note=self.env._("Your activity is going to end soon"),
                 )
 
     @api.model
@@ -316,13 +320,16 @@ class Agreement(models.Model):
                 }
             )
             agreement.message_post(
-                body=_("Agreement recomputed from template %s") % template.display_name
+                body=self.env._(
+                    "Agreement recomputed from template %s",
+                    template.display_name,
+                )
             )
 
     def action_open_recompute_from_template_wizard(self):
         self.ensure_one()
         return {
-            "name": _("Recompute From Template"),
+            "name": self.env._("Recompute From Template"),
             "res_model": "recompute.agreement.from.template.wizard",
             "type": "ir.actions.act_window",
             "view_mode": "form",
@@ -436,7 +443,6 @@ class Agreement(models.Model):
             "res_model": "agreement",
             "type": "ir.actions.act_window",
             "view_mode": "form",
-            "view_type": "form",
             "res_id": agreement.id,
         }
 
@@ -445,8 +451,10 @@ class Agreement(models.Model):
         return self.action_view_agreement(res)
 
     def _fill_create_vals(self, vals):
-        if vals.get("code", _("New")) == _("New"):
-            vals["code"] = self.env["ir.sequence"].next_by_code("agreement") or _("New")
+        if vals.get("code", self.env._("New")) == self.env._("New"):
+            vals["code"] = self.env["ir.sequence"].next_by_code(
+                "agreement"
+            ) or self.env._("New")
         if not vals.get("stage_id"):
             vals["stage_id"] = self._get_default_stage_id()
         return vals
@@ -472,7 +480,7 @@ class Agreement(models.Model):
         """Assign a value for code is New"""
         default = dict(default or {})
         if not default.get("code", False):
-            default.setdefault("code", _("New"))
+            default.setdefault("code", self.env._("New"))
         # Prevent automatic clause copy through sections to avoid duplication.
         default.setdefault("sections_ids", [])
         res = super().copy(default)

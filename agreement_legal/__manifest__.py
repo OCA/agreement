@@ -5,20 +5,19 @@
     "name": "Agreements Legal",
     "summary": "Manage Agreements, LOI and Contracts",
     "author": "Pavlov Media, "
-    "Open Source Integrators, "
+    "Gray Matter Logic, "
     "Yves Goldberg (Ygol Internetwork), "
     "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/agreement",
     "category": "Partner",
     "license": "AGPL-3",
-    "version": "18.0.1.4.0",
+    "version": "19.0.1.0.0",
     "depends": ["contacts", "agreement", "product", "web"],
     "data": [
         "data/cron.xml",
         "data/ir_sequence.xml",
         "data/agreement_stage.xml",
         "data/agreement_type.xml",
-        "security/res_groups.xml",
         "security/ir.model.access.csv",
         "report/agreement.xml",
         "views/res_config_settings.xml",
@@ -49,6 +48,7 @@
             "agreement_legal/static/src/xml/**/*",
         ],
     },
+    "installable": True,
     "application": True,
     "uninstall_hook": "uninstall_hook",
     "development_status": "Beta",

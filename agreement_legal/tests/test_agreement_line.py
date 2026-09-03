@@ -3,34 +3,37 @@
 from datetime import timedelta
 
 from odoo import fields
-from odoo.tests.common import TransactionCase
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
-class TestAgreementLine(TransactionCase):
-    def setUp(self):
-        super().setUp()
-        self.test_customer = self.env["res.partner"].create({"name": "TestCustomer"})
-        self.agreement_type = self.env["agreement.type"].create(
+class TestAgreementLine(BaseCommon):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+        cls.test_customer = cls.env["res.partner"].create({"name": "TestCustomer"})
+        cls.agreement_type = cls.env["agreement.type"].create(
             {"name": "Test Agreement Type", "domain": "sale"}
         )
-        self.test_agreement = self.env["agreement"].create(
+        cls.test_agreement = cls.env["agreement"].create(
             {
                 "name": "TestAgreement",
                 "description": "Test",
                 "special_terms": "Test",
-                "partner_id": self.test_customer.id,
+                "partner_id": cls.test_customer.id,
                 "start_date": fields.Date.today(),
                 "end_date": fields.Date.today() + timedelta(days=365),
             }
         )
-        self.test_product1 = self.env["product.product"].create({"name": "TEST1"})
-        self.test_product2 = self.env["product.product"].create({"name": "TEST2"})
-        self.test_line = self.env["agreement.line"].create(
+        cls.test_product1 = cls.env["product.product"].create({"name": "TEST1"})
+        cls.test_product2 = cls.env["product.product"].create({"name": "TEST2"})
+        cls.test_line = cls.env["agreement.line"].create(
             {
-                "product_id": self.test_product1.id,
+                "product_id": cls.test_product1.id,
                 "name": "Test",
                 "uom_id": 1,
-                "agreement_id": self.test_agreement.id,
+                "agreement_id": cls.test_agreement.id,
             }
         )
 
