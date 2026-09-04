@@ -36,6 +36,13 @@ class Agreement(models.Model):
         string="Company",
         default=lambda self: self.env.company,
     )
+    user_id = fields.Many2one(
+        "res.users",
+        string="Responsible",
+        default=lambda self: self.env.user,
+        tracking=True,
+        help="User in charge of this agreement.",
+    )
     is_template = fields.Boolean(
         string="Is a Template?",
         copy=False,
