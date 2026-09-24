@@ -1,0 +1,3 @@
+- Rafnix Guzman \<rafnixg@gmail.com\>
+- Víctor Martínez (portal controller patterns from Tecnativa portal modules)
+- Marcos Mendez \<m@pop.coop\>

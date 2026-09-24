@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="portal_my_home_menu_agreement"
+        name="Portal layout : Agreement menu entries"
+        inherit_id="portal.portal_breadcrumbs"
+        priority="35"
+    >
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li
+                t-if="page_name == 'Agreements'"
+                t-attf-class="breadcrumb-item #{'active ' if not agreement else ''}"
+            >
+                <a
+                    t-if="agreement"
+                    t-attf-href="/my/agreements?{{ keep_query() }}"
+                >Agreements</a>
+                <t t-else="">Agreements</t>
+            </li>
+            <li t-if="agreement" class="breadcrumb-item active">
+                <t t-esc="agreement.name" />
+            </li>
+        </xpath>
+    </template>
+    <template
+        id="portal_my_home_agreement"
+        name="Portal My Home : Agreement entries"
+        inherit_id="portal.portal_my_home"
+        priority="30"
+    >
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Agreements</t>
+                <t t-set="url" t-value="'/my/agreements'" />
+                <t t-set="placeholder_count" t-value="'agreement_count'" />
+            </t>
+        </xpath>
+    </template>
+    <template id="portal_my_agreements" name="My Agreements">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True" />
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Agreements</t>
+            </t>
+            <t t-if="agreements" t-call="portal.portal_table">
+                <thead>
+                    <tr class="active">
+                        <th>Agreement #</th>
+                        <th class="d-none d-md-table-cell">Reference</th>
+                        <th class="d-none d-md-table-cell">Date Start</th>
+                        <th class="d-none d-md-table-cell">Date End</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="agreements" t-as="agreement">
+                        <tr>
+                            <td>
+                                <a
+                                    t-att-href="agreement.get_portal_url()"
+                                    t-att-title="agreement.name"
+                                >
+                                    <t t-esc="agreement.name" />
+                                </a>
+                            </td>
+                            <td class="d-none d-md-table-cell">
+                                <span t-field="agreement.code" />
+                            </td>
+                            <td class="d-none d-md-table-cell">
+                                <span t-field="agreement.start_date" />
+                            </td>
+                            <td class="d-none d-md-table-cell">
+                                <span t-field="agreement.end_date" />
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </t>
+        </t>
+    </template>
+    <template id="portal_agreement_page" name="My Agreement">
+        <t t-call="portal.portal_layout">
+            <div class="card" id="agreement_portal_card">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">
+                        <span>
+                            Agreement - <span t-field="agreement.name" />
+                        </span>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-4">
+                        <div class="col-12 col-md-6 mb-1">
+                            <strong>Reference:</strong>
+                            <span t-field="agreement.code" />
+                        </div>
+                        <div class="col-12 col-md-6 mb-1" t-if="agreement.partner_id">
+                            <strong>Partner:</strong>
+                            <span t-field="agreement.partner_id.name" />
+                        </div>
+                        <div class="col-12 col-md-6" t-if="agreement.start_date">
+                            <strong>Date:</strong>
+                            <span
+                                t-field="agreement.start_date"
+                                t-options='{"widget": "date"}'
+                            />
+                        </div>
+                        <div class="col-12 col-md-6" t-if="agreement.end_date">
+                            <strong>Deadline:</strong>
+                            <span
+                                t-field="agreement.end_date"
+                                t-options='{"widget": "date"}'
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
