@@ -8,7 +8,7 @@ from odoo import api, fields, models
 class Agreement(models.Model):
     _name = "agreement"
     _description = "Agreement"
-    _inherit = ["mail.thread", "mail.activity.mixin"]
+    _inherit = ["mail.thread", "mail.activity.mixin"]  # noqa: RUF012
 
     _code_uniq = models.Constraint(
         "unique(code, commercial_partner_id, company_id)",
@@ -19,7 +19,6 @@ class Agreement(models.Model):
     name = fields.Char(required=True, tracking=True)
     partner_id = fields.Many2one(
         "res.partner",
-        string="Partner",
         ondelete="restrict",
         tracking=True,
     )
@@ -33,7 +32,6 @@ class Agreement(models.Model):
     )
     company_id = fields.Many2one(
         "res.company",
-        string="Company",
         default=lambda self: self.env.company,
     )
     is_template = fields.Boolean(
@@ -44,7 +42,6 @@ class Agreement(models.Model):
     )
     agreement_type_id = fields.Many2one(
         "agreement.type",
-        string="Agreement Type",
         help="Select the type of agreement",
     )
     domain = fields.Selection(
