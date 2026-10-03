@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <menuitem
         id="agreement_menu_root"
@@ -27,23 +27,23 @@
         sequence="20"
     />
     <menuitem
-        name="Settings"
         id="agreement_settings"
+        name="Settings"
         sequence="10"
         parent="agreement_setting_menu"
         groups="group_agreement_manager"
         action="action_agreement_config"
     />
     <menuitem
-        name="Templates"
         id="agreement_template"
+        name="Templates"
         parent="agreement_setting_menu"
         groups="group_use_agreement_template"
         action="agreement_template_action"
     />
     <menuitem
-        name="Types"
         id="agreement_type"
+        name="Types"
         parent="agreement_setting_menu"
         groups="group_use_agreement_type"
         action="agreement_type_action"
