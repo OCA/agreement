@@ -1,0 +1,96 @@
+<odoo>
+    <record id="agreement_form_template_fields" model="ir.ui.view">
+        <field name="name">agreement.form.template.fields</field>
+        <field name="model">agreement</field>
+        <field name="inherit_id" ref="agreement.agreement_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button
+                    string="New Agreement"
+                    type="object"
+                    name="create_new_agreement"
+                    class="oe_highlight"
+                    invisible="not is_template"
+                />
+                <button
+                    string="Create From Template"
+                    type="action"
+                    name="%(create_agreement_from_template_action)d"
+                    class="btn-primary"
+                    invisible="is_template"
+                    groups="agreement.group_use_agreement_template"
+                />
+            </xpath>
+            <xpath expr="//widget[@name='web_ribbon']" position="attributes">
+                <attribute name="title">Template</attribute>
+                <attribute name="bg_color">bg-info</attribute>
+                <attribute name="invisible">not is_template</attribute>
+            </xpath>
+            <field name="is_template" position="attributes">
+                <attribute
+                    name="invisible"
+                >template_id or context.get('default_is_template')</attribute>
+            </field>
+            <xpath expr="//field[@name='is_template']" position="after">
+                <label
+                    for="template_id"
+                    invisible="is_template"
+                    groups="agreement.group_use_agreement_template"
+                />
+                <div
+                    class="o_row"
+                    invisible="is_template"
+                    groups="agreement.group_use_agreement_template"
+                >
+                    <field name="template_id" nolabel="1" />
+                    <button
+                        string="Reset"
+                        type="object"
+                        name="action_open_recompute_from_template_wizard"
+                        invisible="not template_id"
+                    />
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="agreement_kanban_create_from_template" model="ir.ui.view">
+        <field name="name">agreement.kanban.create.from.template</field>
+        <field name="inherit_id" ref="agreement.agreement_kanban" />
+        <field name="model">agreement</field>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="inside">
+                <header>
+                    <button
+                        string="Create From Template"
+                        type="action"
+                        name="%(create_agreement_from_template_action)d"
+                        class="btn-primary"
+                        display="always"
+                        groups="agreement.group_use_agreement_template"
+                    />
+                </header>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="agreement_list_create_from_template" model="ir.ui.view">
+        <field name="name">agreement.list.create.from.template</field>
+        <field name="inherit_id" ref="agreement.agreement_tree" />
+        <field name="model">agreement</field>
+        <field name="arch" type="xml">
+            <xpath expr="//list" position="inside">
+                <header>
+                    <button
+                        string="Create From Template"
+                        type="action"
+                        name="%(create_agreement_from_template_action)d"
+                        class="btn-primary"
+                        display="always"
+                        groups="agreement.group_use_agreement_template"
+                    />
+                </header>
+            </xpath>
+        </field>
+    </record>
+</odoo>

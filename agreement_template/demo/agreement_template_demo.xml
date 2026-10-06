@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright 2026 C4A8 Odoo
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+-->
+<odoo noupdate="1">
+    <record id="agreement_template_demo_software_support" model="agreement">
+        <field name="name">Software Support Agreement Template</field>
+        <field name="code">TEMPLATE-SUPPORT-001</field>
+        <field name="is_template">True</field>
+        <field name="domain">sale</field>
+    </record>
+</odoo>
