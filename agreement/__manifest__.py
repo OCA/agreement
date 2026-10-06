@@ -4,7 +4,7 @@
 {
     "name": "Agreements",
     "summary": "Adds an agreement object",
-    "version": "19.0.2.1.0",
+    "version": "19.0.2.2.0",
     "category": "Contract",
     "author": "Akretion, "
     "Yves Goldberg (Ygol Internetwork), "
