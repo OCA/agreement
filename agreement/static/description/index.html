@@ -375,32 +375,235 @@ ul.auto-toc {
 !! source digest: sha256:76f111e5925db3acde364ae238cb211d26ae9594aa2887175a9fec132d324265
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 <p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/license-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/agreement/tree/19.0/agreement"><img alt="OCA/agreement" src="https://img.shields.io/badge/github-OCA%2Fagreement-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/agreement-19-0/agreement-19-0-agreement"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/agreement&amp;target_branch=19.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
-<p>This module adds an <em>Agreement</em> object with the following properties:</p>
-<ul class="simple">
-<li>code,</li>
-<li>name,</li>
-<li>link to a partner,</li>
-<li>signature date.</li>
-<li>start date.</li>
-<li>end date.</li>
-</ul>
-<p>Optionally, you can also enable using: * agreement types * a flag to
-set an agreement as a template agreement</p>
-<p><img alt="Agreement Form" src="https://raw.githubusercontent.com/OCA/agreement/19.0/agreement/static/description/screenshot_form.png" /></p>
+<p>This module adds an <em>Agreement</em> object to Odoo so that contracts and
+other agreements concluded with customers and suppliers can be
+registered and followed in one place. Each agreement has a code, a name,
+a partner, a <em>Sale</em> or <em>Purchase</em> domain, and signature, start and end
+dates. The partner may be a contact person of a company: the company is
+stored on the agreement as <em>Commercial Entity</em>, and the agreement code
+must be unique per commercial entity and company.</p>
+<p>Agreements have a chatter with tracked field changes and activities, can
+be archived, are listed on the partner form through a smart button, and
+are protected by three access roles (Read-Only Users, User and Manager).
+Optionally, agreements can be classified with <em>agreement types</em>, which
+preset the domain, and flagged as <em>templates</em> that can be duplicated to
+create new agreements.</p>
+<p>This module is the base of the OCA agreement modules. Its settings page
+lets you install extensions for stages, signatures, revisions,
+termination, legal content, and links to sales, products, projects and
+rebates.</p>
 <p><strong>Table of contents</strong></p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#bug-tracker" id="toc-entry-1">Bug Tracker</a></li>
-<li><a class="reference internal" href="#credits" id="toc-entry-2">Credits</a><ul>
-<li><a class="reference internal" href="#authors" id="toc-entry-3">Authors</a></li>
-<li><a class="reference internal" href="#contributors" id="toc-entry-4">Contributors</a></li>
-<li><a class="reference internal" href="#maintainers" id="toc-entry-5">Maintainers</a></li>
+<li><a class="reference internal" href="#use-cases-context" id="toc-entry-1">Use Cases / Context</a></li>
+<li><a class="reference internal" href="#configuration" id="toc-entry-2">Configuration</a><ul>
+<li><a class="reference internal" href="#access-rights" id="toc-entry-3">Access rights</a></li>
+<li><a class="reference internal" href="#settings" id="toc-entry-4">Settings</a></li>
+<li><a class="reference internal" href="#agreement-types" id="toc-entry-5">Agreement types</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#usage" id="toc-entry-6">Usage</a><ul>
+<li><a class="reference internal" href="#create-an-agreement" id="toc-entry-7">Create an agreement</a></li>
+<li><a class="reference internal" href="#find-agreements" id="toc-entry-8">Find agreements</a></li>
+<li><a class="reference internal" href="#duplicate-and-archive-agreements" id="toc-entry-9">Duplicate and archive agreements</a></li>
+<li><a class="reference internal" href="#agreement-templates" id="toc-entry-10">Agreement templates</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#known-issues-roadmap" id="toc-entry-11">Known issues / Roadmap</a></li>
+<li><a class="reference internal" href="#changelog" id="toc-entry-12">Changelog</a><ul>
+<li><a class="reference internal" href="#section-1" id="toc-entry-13">19.0.2.1.0 (2026-09-04)</a></li>
+<li><a class="reference internal" href="#section-2" id="toc-entry-14">19.0.2.0.0 (2026-07-15)</a></li>
+<li><a class="reference internal" href="#section-3" id="toc-entry-15">19.0.1.0.0 (2026-01-15)</a></li>
+<li><a class="reference internal" href="#section-4" id="toc-entry-16">18.0.1.1.0 (2025-09-22)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bug-tracker" id="toc-entry-17">Bug Tracker</a></li>
+<li><a class="reference internal" href="#credits" id="toc-entry-18">Credits</a><ul>
+<li><a class="reference internal" href="#authors" id="toc-entry-19">Authors</a></li>
+<li><a class="reference internal" href="#contributors" id="toc-entry-20">Contributors</a></li>
+<li><a class="reference internal" href="#maintainers" id="toc-entry-21">Maintainers</a></li>
 </ul>
 </li>
 </ul>
 </div>
+<div class="section" id="use-cases-context">
+<h2><a class="toc-backref" href="#toc-entry-1">Use Cases / Context</a></h2>
+<p>Companies sign many contracts with their customers and suppliers:
+maintenance contracts, framework agreements, supply and service
+agreements, non-disclosure agreements. Without a dedicated record, these
+documents end up as attachments on a partner or on a sales order, and
+nobody can quickly answer which agreements exist, with whom, and when
+they start or end.</p>
+<p>This module answers that need with a dedicated <em>Agreement</em> record. It is
+deliberately minimal and only stores what every agreement has in common:
+identification, partner, sale or purchase domain and dates. It also
+provides the <em>Agreements</em> application menu, the access roles and the
+settings page that the other modules of the OCA <tt class="docutils literal">agreement</tt> repository
+build upon, so a company installs only the features it needs:</p>
+<ul class="simple">
+<li><tt class="docutils literal">agreement_stage</tt>: stage workflow for agreements.</li>
+<li><tt class="docutils literal">agreement_signature</tt>: signatories and signed document of
+agreements.</li>
+<li><tt class="docutils literal">agreement_revision</tt>: versions and revisions of agreements.</li>
+<li><tt class="docutils literal">agreement_termination</tt>: term dates, notices and termination
+tracking.</li>
+<li><tt class="docutils literal">agreement_type</tt>: hierarchical agreement types with sub-types.</li>
+<li><tt class="docutils literal">agreement_legal</tt> and <tt class="docutils literal">agreement_legal_content</tt>: legal aspects
+and legal content of agreements.</li>
+<li><tt class="docutils literal">agreement_sale</tt>, <tt class="docutils literal">agreement_product</tt>, <tt class="docutils literal">agreement_project</tt> and
+<tt class="docutils literal">agreement_rebate</tt>: links between agreements and sales, products,
+projects and rebates.</li>
+</ul>
+<p>The module is multi-company aware: an agreement belongs to a company and
+is only visible to users allowed to work in that company. Agreements
+without a company are shared.</p>
+</div>
+<div class="section" id="configuration">
+<h2><a class="toc-backref" href="#toc-entry-2">Configuration</a></h2>
+<div class="section" id="access-rights">
+<h3><a class="toc-backref" href="#toc-entry-3">Access rights</a></h3>
+<p>The module creates an <em>Agreement</em> privilege with three roles. Assign
+them in <em>Settings &gt; Users &amp; Companies &gt; Users</em>, tab <em>Access Rights</em>:</p>
+<ul class="simple">
+<li><em>Read-Only Users</em>: see the <em>Agreements</em> menu and read agreements.</li>
+<li><em>User</em>: create, edit, delete and archive agreements, and read
+agreement types. When the module is installed, every existing
+internal user receives this role.</li>
+<li><em>Manager</em>: in addition, manage agreement types and the <em>Agreements</em>
+settings.</li>
+</ul>
+<p>Agreement types and agreement templates are available to every user with
+one of these roles.</p>
+</div>
+<div class="section" id="settings">
+<h3><a class="toc-backref" href="#toc-entry-4">Settings</a></h3>
+<p>Go to <em>Agreements &gt; Configuration &gt; Settings</em> (Manager role required).</p>
+<img alt="Agreements settings" src="https://raw.githubusercontent.com/OCA/agreement/19.0/agreement/static/description/screenshot_settings.png" />
+<ul class="simple">
+<li><em>Advanced Features</em> offers shortcuts to the agreement types and
+agreement templates and lets you install the extension modules for
+signatures, termination, stages, hierarchical types, revisions and
+legal content.</li>
+<li><em>Connections</em> lets you install the modules linking agreements to
+projects, sales, rebates and products.</li>
+</ul>
+</div>
+<div class="section" id="agreement-types">
+<h3><a class="toc-backref" href="#toc-entry-5">Agreement types</a></h3>
+<p>Go to <em>Agreements &gt; Configuration &gt; Types</em> (Manager role required) and
+create the types you need. Each type has a name and a default domain
+(<em>Sale</em> or <em>Purchase</em>) that is applied to agreements of that type. Types
+can be archived.</p>
+</div>
+</div>
+<div class="section" id="usage">
+<h2><a class="toc-backref" href="#toc-entry-6">Usage</a></h2>
+<div class="section" id="create-an-agreement">
+<h3><a class="toc-backref" href="#toc-entry-7">Create an agreement</a></h3>
+<ol class="arabic simple">
+<li>Go to <em>Agreements &gt; Agreements</em> and click <em>New</em>.</li>
+<li>Enter the <em>Agreement Name</em> and the <em>Code</em>. The code must be unique
+per commercial entity and company. Agreements are displayed as
+<tt class="docutils literal">[code] name</tt> everywhere.</li>
+<li>Select the <em>Partner</em>. You can pick a contact person of a company: the
+company is then shown as <em>Commercial Entity</em> above the partner.</li>
+<li>Choose the <em>Domain</em>: <em>Sale</em> for agreements with customers, <em>Purchase</em>
+for agreements with suppliers. If you select an <em>Agreement Type</em>, the
+domain of the type is applied; you can still change it.</li>
+<li>Enter the <em>Signature Date</em>, <em>Start Date</em> and <em>End Date</em>.</li>
+<li>In a multi-company setup, check the <em>Company</em> of the agreement.</li>
+</ol>
+<img alt="Agreement form" src="https://raw.githubusercontent.com/OCA/agreement/19.0/agreement/static/description/screenshot_form.png" />
+<p>Changes to the code, name, partner, domain and dates are tracked in the
+chatter, where you can also log notes, send messages and schedule
+activities.</p>
+</div>
+<div class="section" id="find-agreements">
+<h3><a class="toc-backref" href="#toc-entry-8">Find agreements</a></h3>
+<p>The agreement list can be searched by name or code and by partner. The
+<em>Sale</em> and <em>Purchase</em> filters restrict the list to one domain, and the
+<em>Archived</em> filter shows archived agreements. Group the list by partner,
+commercial entity, signature date or domain. The <em>Commercial Entity</em>
+column is optional and can be shown from the column selector.</p>
+<img alt="Agreement list grouped by commercial entity" src="https://raw.githubusercontent.com/OCA/agreement/19.0/agreement/static/description/screenshot_list.png" />
+<p>On the partner form, the <em>Agreements</em> smart button shows the number of
+agreements linked directly to that partner and opens them. A new
+agreement created from there is pre-filled with the partner.</p>
+<img alt="Agreements smart button on the partner form" src="https://raw.githubusercontent.com/OCA/agreement/19.0/agreement/static/description/screenshot_partner.png" />
+</div>
+<div class="section" id="duplicate-and-archive-agreements">
+<h3><a class="toc-backref" href="#toc-entry-9">Duplicate and archive agreements</a></h3>
+<ul class="simple">
+<li><em>Actions &gt; Duplicate</em> copies an agreement. As the code must be
+unique, the copy gets the code of the original followed by <em>(copy)</em>.</li>
+<li><em>Actions &gt; Archive</em> hides an agreement without deleting it. Archived
+agreements are shown with the <em>Archived</em> filter and can be unarchived
+from there.</li>
+</ul>
+</div>
+<div class="section" id="agreement-templates">
+<h3><a class="toc-backref" href="#toc-entry-10">Agreement templates</a></h3>
+<p>Templates are agreements used as a starting point for new agreements.
+They do not require a partner and are not shown in the main agreement
+list.</p>
+<ol class="arabic simple">
+<li>Go to <em>Agreements &gt; Configuration &gt; Templates</em> and create a template,
+or tick <em>Is a Template?</em> on an existing agreement.</li>
+<li>To create an agreement from a template, open the template and use
+<em>Actions &gt; Duplicate</em>. The copy is a regular agreement: the template
+flag is not copied. Rename it, set the code and the partner.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="known-issues-roadmap">
+<h2><a class="toc-backref" href="#toc-entry-11">Known issues / Roadmap</a></h2>
+<ul class="simple">
+<li>The <em>Use agreement types</em> and <em>Use agreement template</em> toggles in
+<em>Agreements &gt; Configuration &gt; Settings</em> have no visible effect, as
+the <em>Read-Only Users</em> role already grants both features to all
+agreement users.</li>
+<li>The <em>Agreements &gt; Reporting</em> menu is empty; entries are added by
+extension modules.</li>
+<li>The agreement code is entered manually; there is no sequence to
+generate it.</li>
+<li>The <em>Agreements</em> smart button on a company only counts agreements
+linked directly to the company, not those linked to its contact
+persons.</li>
+</ul>
+</div>
+<div class="section" id="changelog">
+<h2><a class="toc-backref" href="#toc-entry-12">Changelog</a></h2>
+<div class="section" id="section-1">
+<h3><a class="toc-backref" href="#toc-entry-13">19.0.2.1.0 (2026-09-04)</a></h3>
+<ul class="simple">
+<li>[IMP] Show the commercial entity in the agreement list and allow
+grouping agreements by commercial entity.</li>
+</ul>
+</div>
+<div class="section" id="section-2">
+<h3><a class="toc-backref" href="#toc-entry-14">19.0.2.0.0 (2026-07-15)</a></h3>
+<ul class="simple">
+<li>[ADD] <em>Read-Only Users</em>, <em>User</em> and <em>Manager</em> roles for agreements.</li>
+<li>[ADD] <em>Agreements</em> settings page with shortcuts to agreement types
+and templates and toggles to install the extension modules.</li>
+</ul>
+</div>
+<div class="section" id="section-3">
+<h3><a class="toc-backref" href="#toc-entry-15">19.0.1.0.0 (2026-01-15)</a></h3>
+<ul class="simple">
+<li>[MIG] Migration to Odoo 19.0.</li>
+</ul>
+</div>
+<div class="section" id="section-4">
+<h3><a class="toc-backref" href="#toc-entry-16">18.0.1.1.0 (2025-09-22)</a></h3>
+<ul class="simple">
+<li>[IMP] The <em>Agreements</em> smart button on the partner form moved from
+<tt class="docutils literal">agreement_legal</tt> to this module.</li>
+</ul>
+</div>
+</div>
 <div class="section" id="bug-tracker">
-<h2><a class="toc-backref" href="#toc-entry-1">Bug Tracker</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-17">Bug Tracker</a></h2>
 <p>Bugs are tracked on <a class="reference external" href="https://github.com/OCA/agreement/issues">GitHub Issues</a>.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
@@ -408,16 +611,16 @@ If you spotted it first, help us to smash it by providing a detailed and welcome
 <p>Do not contact contributors directly about support or help with technical issues.</p>
 </div>
 <div class="section" id="credits">
-<h2><a class="toc-backref" href="#toc-entry-2">Credits</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-18">Credits</a></h2>
 <div class="section" id="authors">
-<h3><a class="toc-backref" href="#toc-entry-3">Authors</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-19">Authors</a></h3>
 <ul class="simple">
 <li>Akretion</li>
 <li>Yves Goldberg (Ygol Internetwork)</li>
 </ul>
 </div>
 <div class="section" id="contributors">
-<h3><a class="toc-backref" href="#toc-entry-4">Contributors</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-20">Contributors</a></h3>
 <ul>
 <li><p class="first">Alexis de Lattre &lt;<a class="reference external" href="mailto:alexis.delattre&#64;akretion.com">alexis.delattre&#64;akretion.com</a>&gt;</p>
 </li>
@@ -457,7 +660,7 @@ If you spotted it first, help us to smash it by providing a detailed and welcome
 </ul>
 </div>
 <div class="section" id="maintainers">
-<h3><a class="toc-backref" href="#toc-entry-5">Maintainers</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-21">Maintainers</a></h3>
 <p>This module is maintained by the OCA.</p>
 <a class="reference external image-reference" href="https://odoo-community.org">
 <img alt="Odoo Community Association" src="https://odoo-community.org/logo.png" />
