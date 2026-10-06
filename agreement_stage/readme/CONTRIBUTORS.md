@@ -1,0 +1,5 @@
+- Pavlov Media
+- Open Source Integrators
+- Yves Goldberg (Ygol Internetwork)
+- [glueckkanja AG](https://www.glueckkanja.com/):
+  - Christopher Rogos
