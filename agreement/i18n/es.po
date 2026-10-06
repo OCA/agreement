@@ -165,6 +165,7 @@ msgstr "Código"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__commercial_partner_id
+#: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 msgid "Commercial Entity"
 msgstr ""
 
