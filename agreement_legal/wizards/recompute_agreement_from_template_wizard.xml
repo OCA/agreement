@@ -1,0 +1,29 @@
+<odoo>
+    <record id="recompute_agreement_from_template_form_view" model="ir.ui.view">
+        <field name="name">Recompute Agreement From Template</field>
+        <field name="model">recompute.agreement.from.template.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="agreement_id" />
+                    <field name="template_id" />
+                </group>
+                <p>
+                    This will replace recitals, sections, clauses, appendices,
+                    products/services, and child agreements with the current content
+                    from the selected template.
+                </p>
+                <footer>
+                    <button
+                        name="action_recompute_from_template"
+                        string="Recompute"
+                        class="btn-primary"
+                        type="object"
+                        confirm="Are you sure you want to recompute this agreement from its template?"
+                    />
+                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

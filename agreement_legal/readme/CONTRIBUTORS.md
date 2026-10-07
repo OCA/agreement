@@ -1,0 +1,12 @@
+- Patrick Wilson \<<pwilson@pavlovmedia.com>\>
+- Bhavesh Odedra \<<bodedra@opensourceintegrators.com>\>
+- Wolfgang Hall \<<whall@opensourceintegrators.com>\>
+- Sandip Mangukiya \<<smangukiya@opensourceintegrators.com>\>
+- Yves Goldberg \<<yves@ygol.com>\>
+- Tharathip Chaweewongphan \<<tharathipc@ecosoft.co.th>\>
+- Italo LOPES \<<italo.lopes@camptocamp.com>\>
+- [APSL-Nagarro](https://www.apsl.tech):
+  - Antoni Marroig \<<amarroig@apsl.net>\>
+  - Miquel Alzanillas \<<miquel.alzanillas@nagarro.com>\>
+- [Gray Matter Logic](https://www.graymatterlogic.com):
+  - Maxime Chambreuil \<<maxime.chambreuil@graymatterlogic.com>\>
