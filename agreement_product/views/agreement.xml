@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Add the Products/Services tab to the agreement form -->
+    <record id="partner_agreement_form_view" model="ir.ui.view">
+        <field name="name">agreement.form.products</field>
+        <field name="model">agreement</field>
+        <field name="inherit_id" ref="agreement.agreement_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="products" string="Products/Services">
+                    <field name="line_ids" nolabel="1">
+                        <list editable="top">
+                            <field name="product_id" />
+                            <field name="name" />
+                            <field name="qty" />
+                            <field name="uom_id" groups="uom.group_uom" />
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
