@@ -1,0 +1,6 @@
+id,name,model_id,group_id/id,operation,domain
+access_agreement_type_read,Read access on agreement type to employees,agreement.type,agreement.group_agreement_user,r,
+access_agreement_type_full,Full access on agreement type to manager,agreement.type,agreement.group_agreement_manager,crud,
+access_agreement_readonly,agreement readonly,agreement,agreement.group_agreement_readonly,r,
+access_agreement_allusers,agreement all users,agreement,agreement.group_agreement_user,crud,
+agreement_rule,Agreement multi-company,agreement,,crud,"['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]"
