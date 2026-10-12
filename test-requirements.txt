@@ -1,0 +1,1 @@
+odoo-addon-agreement_template @ git+https://github.com/oca/agreement.git@refs/pull/134/head#subdirectory=agreement_template
