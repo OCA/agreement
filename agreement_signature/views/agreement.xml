@@ -1,0 +1,35 @@
+<odoo>
+    <!-- Add the Signatures page to the legal agreement form -->
+    <record id="partner_agreement_form_view" model="ir.ui.view">
+        <field name="name">agreement.form.signature</field>
+        <field name="model">agreement</field>
+        <field name="inherit_id" ref="agreement.agreement_form" />
+        <field name="arch" type="xml">
+            <field name="signature_date" position="attributes">
+                <attribute name="invisible" separator=" or " add="True" />
+            </field>
+            <xpath expr="//notebook" position="inside">
+                <page name="signature" string="Signatures">
+                    <group>
+                        <group string="Partner">
+                            <field name="partner_signed_date" />
+                            <field
+                                name="partner_signed_user_id"
+                                domain="[('parent_id', '=', partner_id)]"
+                            />
+                        </group>
+                        <group string="Company">
+                            <field name="company_signed_date" />
+                            <field name="company_signed_user_id" />
+                            <field
+                                name="signed_contract"
+                                filename="signed_contract_filename"
+                            />
+                            <field name="signed_contract_filename" invisible="1" />
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
