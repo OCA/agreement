@@ -1,0 +1,44 @@
+<odoo>
+    <!-- Add "Term Dates" (notices + termination) to the agreement form -->
+    <record id="partner_agreement_form_view" model="ir.ui.view">
+        <field name="name">agreement.form.termination</field>
+        <field name="model">agreement</field>
+        <field name="inherit_id" ref="agreement.agreement_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='main']/group[@name='right']" position="inside">
+                <field name="expiration_notice" />
+                <field name="change_notice" />
+                <field
+                    name="notification_address_id"
+                    domain="[('parent_id', '=', partner_id)]"
+                />
+                <field
+                    name="to_review_date"
+                    required="not is_template and end_date"
+                    invisible="is_template"
+                />
+                <field name="termination_requested" />
+                <field name="termination_date" />
+            </xpath>
+            <xpath expr="//group[@name='main']/group[@name='left']" position="inside">
+                <field name="company_id" position="move" />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Add a to-review filter to the agreement search -->
+    <record id="partner_agreement_search_view" model="ir.ui.view">
+        <field name="name">agreement.search.termination</field>
+        <field name="model">agreement</field>
+        <field name="inherit_id" ref="agreement.agreement_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <filter
+                    name="filter_to_review"
+                    string="Agreements to review"
+                    domain="[('to_review_date', '&lt;=', context_today().strftime('%Y-%m-%d')), ('end_date', '&gt;=', context_today().strftime('%Y-%m-%d'))]"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
