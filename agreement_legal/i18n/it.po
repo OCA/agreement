@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-05-25 22:46+0000\n"
+"PO-Revision-Date: 2026-10-22 14:46+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -19,42 +19,42 @@ msgstr ""
 #. module: agreement_legal
 #: model:agreement.section,title:agreement_legal.agreement_section_market6_template
 msgid "1. General Provisions"
-msgstr ""
+msgstr "1. Disposizioni generali"
 
 #. module: agreement_legal
 #: model:agreement.section,title:agreement_legal.agreement_section_market1_scope
 msgid "1. Scope of Supply"
-msgstr ""
+msgstr "1. Oggetto della fornitura"
 
 #. module: agreement_legal
 #: model:agreement.section,title:agreement_legal.agreement_section_market2_terms
 msgid "1. Service Terms"
-msgstr ""
+msgstr "1. Termini del servizio"
 
 #. module: agreement_legal
 #: model:agreement.clause,title:agreement_legal.agreement_clause_market1_scope_delivery
 msgid "1.1 Delivery"
-msgstr ""
+msgstr "1.1 Consegna"
 
 #. module: agreement_legal
 #: model:agreement.clause,title:agreement_legal.agreement_clause_market2_terms_sla
 msgid "1.1 Service Level"
-msgstr ""
+msgstr "1.1 Livello del servizio"
 
 #. module: agreement_legal
 #: model:agreement.clause,title:agreement_legal.agreement_clause_market6_template_warranty
 msgid "1.1 Warranty"
-msgstr ""
+msgstr "1.1 Garanzia"
 
 #. module: agreement_legal
 #: model:agreement.section,title:agreement_legal.agreement_section_market1_payment
 msgid "2. Payment Terms"
-msgstr ""
+msgstr "2. Termini di pagamento"
 
 #. module: agreement_legal
 #: model:agreement.clause,title:agreement_legal.agreement_clause_market1_payment_invoicing
 msgid "2.1 Invoicing"
-msgstr ""
+msgstr "2.1 Fatturazione"
 
 #. module: agreement_legal
 #: model:agreement.stage,name:agreement_legal.agreement_stage_active
@@ -186,7 +186,7 @@ msgstr "Il contratto richiede una revisione"
 #. odoo-python
 #: code:addons/agreement_legal/models/agreement.py:0
 msgid "Agreement recomputed from template %s"
-msgstr ""
+msgstr "Contratto ricalcolato dal modello %s"
 
 #. module: agreement_legal
 #: model:ir.actions.server,name:agreement_legal.ir_cron_test_acc_move_except_ir_actions_server
@@ -253,12 +253,12 @@ msgstr "Integrazione"
 #. module: agreement_legal
 #: model:agreement.appendix,title:agreement_legal.agreement_appendix_market6_template
 msgid "Appendix A - Equipment List"
-msgstr ""
+msgstr "Appendice A - Elenco attrezzature"
 
 #. module: agreement_legal
 #: model:agreement.appendix,title:agreement_legal.agreement_appendix_market1_specs
 msgid "Appendix A - Technical Specifications"
-msgstr ""
+msgstr "Appendice A - Specifiche tecniche"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__approved_user_id
@@ -291,7 +291,7 @@ msgstr "In archivio"
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.recompute_agreement_from_template_form_view
 msgid "Are you sure you want to recompute this agreement from its template?"
-msgstr ""
+msgstr "Si è sicuri di voler ricalcolare questo contratto da questo modello?"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__assigned_user_id
@@ -302,7 +302,7 @@ msgstr "Assegnato a"
 #: model:agreement.recital,name:agreement_legal.agreement_recital_market2_background
 #: model:agreement.recital,title:agreement_legal.agreement_recital_market2_background
 msgid "Background"
-msgstr ""
+msgstr "Sfondo"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.report_agreement_document
@@ -318,7 +318,7 @@ msgstr "Annulla"
 #. module: agreement_legal
 #: model:agreement.stage,name:agreement_legal.agreement_stage_cancelled
 msgid "Cancelled"
-msgstr ""
+msgstr "Annullato"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__change_notice
@@ -423,7 +423,7 @@ msgstr "Contenuti"
 #. module: agreement_legal
 #: model:agreement.type,name:agreement_legal.agreement_type_contract
 msgid "Contract"
-msgstr ""
+msgstr "Contratto"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_appendix_form
@@ -554,7 +554,7 @@ msgstr "Valore predefinito"
 #. module: agreement_legal
 #: model:agreement.clause,name:agreement_legal.agreement_clause_market1_scope_delivery
 msgid "Delivery"
-msgstr ""
+msgstr "Consegna"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__description
@@ -573,6 +573,8 @@ msgid ""
 "Detailed technical specifications for hardware IT equipment under "
 "{{object.agreement_id.code or ''}}."
 msgstr ""
+"Specifiche tecniche dettagliate per le apparecchiature hardware IT "
+"nell'ambito di {{object.agreement_id.code or ''}}."
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__display_name
@@ -643,12 +645,12 @@ msgstr "Inserire il valore predefinito se il campo è vuoto"
 #. module: agreement_legal
 #: model:agreement.appendix,name:agreement_legal.agreement_appendix_market6_template
 msgid "Equipment List"
-msgstr ""
+msgstr "Elenco attrezzature"
 
 #. module: agreement_legal
 #: model_terms:agreement.clause,content:agreement_legal.agreement_clause_market6_template_warranty
 msgid "Equipment is warranted for twelve (12) months from delivery date."
-msgstr ""
+msgstr "L'attrezzatura è garantita per dodici (12) mesi dalla data di consegna."
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__expiration_notice
@@ -658,12 +660,14 @@ msgstr "Avviso scad. (giorni)"
 #. module: agreement_legal
 #: model:agreement.stage,name:agreement_legal.agreement_stage_expired
 msgid "Expired"
-msgstr ""
+msgstr "Scaduta"
 
 #. module: agreement_legal
 #: model_terms:agreement.section,content:agreement_legal.agreement_section_market2_terms
 msgid "Fiber access service terms for {{object.agreement_id.name or ''}}."
 msgstr ""
+"Termini del servizio di accesso in fibra per {{object.agreement_id.name or "
+"''}}."
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__field_id
@@ -708,6 +712,7 @@ msgstr "Generale"
 #: model_terms:agreement.section,content:agreement_legal.agreement_section_market6_template
 msgid "General provisions applicable to SIP-ISDN gateway agreements."
 msgstr ""
+"Disposizioni generali applicabili agli accordi relativi ai gateway SIP-ISDN."
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
@@ -769,11 +774,12 @@ msgstr "Inventario"
 #: model_terms:agreement.clause,content:agreement_legal.agreement_clause_market1_payment_invoicing
 msgid "Invoices shall be payable within thirty (30) days of receipt."
 msgstr ""
+"Le fatture devono essere pagate entro trenta (30) giorni dal ricevimento."
 
 #. module: agreement_legal
 #: model:agreement.clause,name:agreement_legal.agreement_clause_market1_payment_invoicing
 msgid "Invoicing"
-msgstr ""
+msgstr "Fatturazione"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage__fold
@@ -809,7 +815,7 @@ msgstr "Ultimo aggiornamento il"
 #. module: agreement_legal
 #: model:agreement.type,name:agreement_legal.agreement_type_loi
 msgid "Letter of Intent"
-msgstr ""
+msgstr "Lettera di intento"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__parent_agreement_id
@@ -948,7 +954,7 @@ msgstr "Nome:"
 #. module: agreement_legal
 #: model:agreement.stage,name:agreement_legal.agreement_stage_negotiation
 msgid "Negotiation"
-msgstr ""
+msgstr "Trattativa"
 
 #. module: agreement_legal
 #. odoo-python
@@ -1006,7 +1012,7 @@ msgstr "Valore opzionale da utilizzare se il campo destinazione è vuoto."
 #. module: agreement_legal
 #: model:agreement.stage,name:agreement_legal.agreement_stage_out
 msgid "Out for Customer Signature"
-msgstr ""
+msgstr "Fuori per firma cliente"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__parent_agreement_id
@@ -1065,18 +1071,20 @@ msgstr "Partner"
 #. module: agreement_legal
 #: model:agreement.subtype,name:agreement_legal.agreement_subtype_loi_partnership
 msgid "Partnership LOI"
-msgstr ""
+msgstr "Lettera di intenti (LOI) per una partnership"
 
 #. module: agreement_legal
 #: model:agreement.section,name:agreement_legal.agreement_section_market1_payment
 msgid "Payment Terms"
-msgstr ""
+msgstr "Termini di pagamento"
 
 #. module: agreement_legal
 #: model_terms:agreement.section,content:agreement_legal.agreement_section_market1_payment
 msgid ""
 "Payment terms for the supply agreement {{object.agreement_id.code or ''}}."
 msgstr ""
+"Condizioni di pagamento per il contratto di fornitura {"
+"{object.agreement_id.code or ''}}."
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
@@ -1185,18 +1193,18 @@ msgstr "Dichiarazioni"
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.recompute_agreement_from_template_form_view
 msgid "Recompute"
-msgstr ""
+msgstr "Ricalcola"
 
 #. module: agreement_legal
 #: model:ir.model,name:agreement_legal.model_recompute_agreement_from_template_wizard
 msgid "Recompute Agreement From Template Wizard"
-msgstr ""
+msgstr "Procedura guidata ricalcolo contratto da modello"
 
 #. module: agreement_legal
 #. odoo-python
 #: code:addons/agreement_legal/models/agreement.py:0
 msgid "Recompute From Template"
-msgstr ""
+msgstr "Ricalcola da modello"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__code
@@ -1221,7 +1229,7 @@ msgstr "Rappresentato da"
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Reset"
-msgstr ""
+msgstr "Resetta"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.res_config_settings_view_form
@@ -1241,7 +1249,7 @@ msgstr "Utente revisione"
 #. module: agreement_legal
 #: model:agreement.stage,name:agreement_legal.agreement_stage_reviewed
 msgid "Reviewed"
-msgstr ""
+msgstr "Revisionato"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__reviewed_user_id
@@ -1281,7 +1289,7 @@ msgstr "Vendite"
 #. module: agreement_legal
 #: model:agreement.section,name:agreement_legal.agreement_section_market1_scope
 msgid "Scope of Supply"
-msgstr ""
+msgstr "Oggetto della fornitura"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__section_id
@@ -1395,12 +1403,12 @@ msgstr "Sequenza"
 #. module: agreement_legal
 #: model:agreement.clause,name:agreement_legal.agreement_clause_market2_terms_sla
 msgid "Service Level"
-msgstr ""
+msgstr "Livello del servizio"
 
 #. module: agreement_legal
 #: model:agreement.section,name:agreement_legal.agreement_section_market2_terms
 msgid "Service Terms"
-msgstr ""
+msgstr "Termini del servizio"
 
 #. module: agreement_legal
 #: model:ir.actions.act_window,name:agreement_legal.action_agreement_config
@@ -1464,7 +1472,7 @@ msgstr "Fasi"
 #. module: agreement_legal
 #: model_terms:agreement.appendix,content:agreement_legal.agreement_appendix_market6_template
 msgid "Standard SIP-ISDN gateway models covered by this template agreement."
-msgstr ""
+msgstr "Modelli standard di gateway SIP-ISDN oggetto del presente accordo tipo."
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__start_date
@@ -1520,17 +1528,17 @@ msgstr "Sotto modello"
 #. module: agreement_legal
 #: model:agreement.subtype,name:agreement_legal.agreement_subtype_agreement_supply
 msgid "Supply Agreement"
-msgstr ""
+msgstr "Contratto di fornitura"
 
 #. module: agreement_legal
 #: model:agreement.subtype,name:agreement_legal.agreement_subtype_contract_support
 msgid "Support Contract"
-msgstr ""
+msgstr "Contratto di supporto"
 
 #. module: agreement_legal
 #: model:agreement.appendix,name:agreement_legal.agreement_appendix_market1_specs
 msgid "Technical Specifications"
-msgstr ""
+msgstr "Specifiche tecniche"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__temp_agreement_id
@@ -1548,12 +1556,12 @@ msgstr "Modello"
 #. module: agreement_legal
 #: model:agreement.recital,name:agreement_legal.agreement_recital_market6_template
 msgid "Template Recital"
-msgstr ""
+msgstr "Preambolo del modello"
 
 #. module: agreement_legal
 #: model:agreement.section,name:agreement_legal.agreement_section_market6_template
 msgid "Template Section"
-msgstr ""
+msgstr "Sezione del modello"
 
 #. module: agreement_legal
 #: model:ir.actions.act_window,name:agreement_legal.partner_agreement_agreement_templates
@@ -1570,7 +1578,7 @@ msgstr "Date di scadenza"
 #. module: agreement_legal
 #: model:agreement.stage,name:agreement_legal.agreement_stage_terminated
 msgid "Terminated"
-msgstr ""
+msgstr "Terminato"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__termination_date
@@ -1586,6 +1594,8 @@ msgstr "Data di richiesta chiusura"
 #: model_terms:agreement.clause,content:agreement_legal.agreement_clause_market2_terms_sla
 msgid "The Provider shall maintain 99.9% fiber link availability."
 msgstr ""
+"Il fornitore deve garantire una disponibilità del collegamento in fibra pari "
+"al 99,9%."
 
 #. module: agreement_legal
 #: model_terms:agreement.clause,content:agreement_legal.agreement_clause_market1_scope_delivery
@@ -1593,6 +1603,8 @@ msgid ""
 "The Supplier shall deliver hardware IT equipment within thirty (30) days of "
 "order confirmation."
 msgstr ""
+"Il fornitore dovrà consegnare le apparecchiature hardware IT entro trenta "
+"(30) giorni dalla conferma dell'ordine."
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__notification_address_id
@@ -1694,6 +1706,8 @@ msgid ""
 "This section defines the hardware IT equipment covered by "
 "{{object.agreement_id.name or ''}}."
 msgstr ""
+"Questa sezione definisce l'attrezzatura IT hardware coperta da {"
+"{object.agreement_id.name o ''}}."
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
@@ -1717,6 +1731,10 @@ msgid ""
 "content\n"
 "                    from the selected template."
 msgstr ""
+"Questo sostituirà i preamboli, le sezioni, le clausole, gli allegati,\n"
+"                    i prodotti/servizi e i contratti minori con il contenuto "
+"corrente\n"
+"                    del modello selezionato."
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__name
@@ -1805,6 +1823,8 @@ msgid ""
 "WHEREAS the Partner requires fiber access at the Lausanne office under "
 "reference {{object.agreement_id.code or ''}}."
 msgstr ""
+"LADDOVE il partner richiede l'accesso in fibra ottica presso la sede di "
+"Losanna con riferimento {{object.agreement_id.code o ''}}."
 
 #. module: agreement_legal
 #: model_terms:agreement.recital,content:agreement_legal.agreement_recital_market6_template
@@ -1812,6 +1832,8 @@ msgid ""
 "WHEREAS the parties wish to enter into a telecommunications equipment "
 "agreement."
 msgstr ""
+"LADDOVE le parti desiderano stipulare un contratto relativo ad "
+"apparecchiature per telecomunicazioni."
 
 #. module: agreement_legal
 #: model_terms:agreement.recital,content:agreement_legal.agreement_recital_market1_witnesseth
@@ -1819,16 +1841,18 @@ msgid ""
 "WHEREAS the parties wish to enter into an agreement for the supply of "
 "hardware IT equipment ({{object.agreement_id.code or ''}})."
 msgstr ""
+"LADDOVE le parti intendono stipulare un accordo per la fornitura di "
+"apparecchiature hardware informatiche ({{object.agreement_id.code or ''}})."
 
 #. module: agreement_legal
 #: model:agreement.stage,name:agreement_legal.agreement_stage_internal
 msgid "Waiting Internal Signature"
-msgstr ""
+msgstr "In attesa di firma interna"
 
 #. module: agreement_legal
 #: model:agreement.clause,name:agreement_legal.agreement_clause_market6_template_warranty
 msgid "Warranty"
-msgstr ""
+msgstr "Garanzia"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__sub_model_object_field_id
@@ -1875,7 +1899,7 @@ msgstr "Quando inizia il contratto."
 #. module: agreement_legal
 #: model:agreement.recital,name:agreement_legal.agreement_recital_market1_witnesseth
 msgid "Witnesseth"
-msgstr ""
+msgstr "Attesta che"
 
 #. module: agreement_legal
 #. odoo-python
