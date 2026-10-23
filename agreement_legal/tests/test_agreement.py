@@ -323,3 +323,7 @@ class TestAgreement(TransactionCase):
             action["context"]["default_agreement_id"],
             self.test_agreement.id,
         )
+
+    def test_agreement_stage_default_stage_type(self):
+        stage = self.env["agreement.stage"].create({"name": "Test Stage"})
+        self.assertEqual(stage.stage_type, "agreement")
