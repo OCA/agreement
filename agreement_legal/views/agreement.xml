@@ -140,38 +140,48 @@
 
             <!-- 12) Add description after main group -->
             <xpath expr="//sheet/group[@name='main']" position="after">
-                <field name="description" required="1" />
-                <!-- 13) Add dynamic fields block after description -->
-                <group class="oe_edit_only">
-                    <group>
-                        <field
-                            name="field_id"
-                            domain="[('model_id', '=', 'agreement'),
-                                        ('ttype', '!=', 'one2many'),
-                                        ('ttype', '!=', 'many2many')]"
-                        />
-                        <field name="sub_object_id" readonly="1" />
-                        <field
-                            name="sub_model_object_field_id"
-                            domain="[('model_id', '=', sub_object_id),
-                                        ('ttype', '!=', 'one2many'),
-                                        ('ttype', '!=', 'many2many')]"
-                            readonly="sub_object_id == False"
-                            required="sub_object_id != False"
-                        />
-                        <field name="default_value" />
-                        <field name="copyvalue" />
-                    </group>
-                    <p>
-                        This section (on the left) allows you to add dynamic fields inside the description and special terms.
-                        <ol>
-                        <li>Select the agreement field</li>
-                        <li>Select the sub-field</li>
-                        <li>Enter the default value if the field is empty</li>
-                        <li
-                        >Copy and paste the placeholder expression in the description or the special terms</li>
-                    </ol>
-                    </p>
+                <group string="Description">
+                    <field
+                        name="description"
+                        required="True"
+                        nolabel="1"
+                        colspan="2"
+                        placeholder="Enter description here..."
+                    />
+                    <div
+                        class="oe_edit_only alert alert-light d-flex justify-content-between flex-xl-row flex-column"
+                        role="status"
+                    >
+                        <group class="flex-fill">
+                            <field
+                                name="field_id"
+                                domain="[('model_id', '=', 'agreement'),
+                                            ('ttype', '!=', 'one2many'),
+                                            ('ttype', '!=', 'many2many')]"
+                            />
+                            <field name="sub_object_id" readonly="1" />
+                            <field
+                                name="sub_model_object_field_id"
+                                domain="[('model_id', '=', sub_object_id),
+                                            ('ttype', '!=', 'one2many'),
+                                            ('ttype', '!=', 'many2many')]"
+                                readonly="sub_object_id == False"
+                                required="sub_object_id != False"
+                            />
+                            <field name="default_value" />
+                            <field name="copyvalue" />
+                        </group>
+                        <p class="px-xl-4">
+                            This section (on the left) allows you to add dynamic fields inside the description and special terms.
+                            <ol>
+                            <li>Select the agreement field</li>
+                            <li>Select the sub-field</li>
+                            <li>Enter the default value if the field is empty</li>
+                            <li
+                            >Copy and paste the placeholder expression in the description or the special terms</li>
+                        </ol>
+                        </p>
+                    </div>
                 </group>
             </xpath>
 
