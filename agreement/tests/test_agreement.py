@@ -2,6 +2,9 @@
 # Copyright 2021 Sergio Teruel - Tecnativa
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html)
 
+from lxml import etree
+
+from odoo import Command
 from odoo.tests.common import TransactionCase
 
 
@@ -20,6 +23,13 @@ class TestAgreement(TransactionCase):
             {
                 "code": "TEST-AGREEMENT",
                 "name": "Test agreement",
+            }
+        )
+        cls.user_no_agreement = cls.env["res.users"].create(
+            {
+                "name": "User without agreement access",
+                "login": "user_without_agreement_access",
+                "group_ids": [Command.link(cls.env.ref("base.group_user").id)],
             }
         )
 
@@ -41,3 +51,24 @@ class TestAgreement(TransactionCase):
         agreement2 = self.agreement.copy()
         self.assertEqual(agreement1.code, "Test Code")
         self.assertEqual(agreement2.code, f"{self.agreement.code} (copy)")
+
+    def test_agreements_count_no_agreement_access(self):
+        """Users without any agreement group can still open a partner form."""
+        partner = self.env["res.partner"].create({"name": "Partner with agreement"})
+        self.agreement.partner_id = partner
+        self.assertFalse(
+            self.user_no_agreement.has_group("agreement.group_agreement_readonly")
+        )
+        self.assertEqual(partner.with_user(self.user_no_agreement).agreements_count, 1)
+
+    def test_agreement_button_hidden_without_access(self):
+        """The Agreements stat button is restricted to agreement users."""
+        arch = etree.fromstring(
+            self.env.ref("agreement.partner_form").get_combined_arch()
+        )
+        button = arch.xpath("//button[@name='action_open_agreement']")
+        self.assertEqual(len(button), 1)
+        self.assertEqual(button[0].get("groups"), "agreement.group_agreement_readonly")
+        self.assertFalse(
+            self.user_no_agreement.has_group("agreement.group_agreement_readonly")
+        )
