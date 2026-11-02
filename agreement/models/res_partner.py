@@ -12,10 +12,17 @@ class Partner(models.Model):
 
     @api.depends("agreement_ids")
     def _compute_agreements_count(self):
-        results = self.env["agreement"]._read_group(
-            [("partner_id", "in", self.ids)],
-            ["partner_id"],
-            ["__count"],
+        # sudo: the statinfo field is shown on the partner form for users
+        # without any agreement group; the count must not leak record data
+        # but should not block opening the contact either.
+        results = (
+            self.env["agreement"]
+            .sudo()
+            ._read_group(
+                [("partner_id", "in", self.ids)],
+                ["partner_id"],
+                ["__count"],
+            )
         )
         agreement_dict = {partner.id: count for partner, count in results}
         for rec in self:

@@ -8,6 +8,7 @@
                     name="action_open_agreement"
                     type="object"
                     icon="fa-file-archive-o"
+                    groups="agreement.group_agreement_readonly"
                 >
                     <field
                         name="agreements_count"
