@@ -13,7 +13,6 @@ class AgreementSettlementInvoiceCreateWiz(models.TransientModel):
     domain = fields.Selection("_domain_selection", default="sale")
     journal_id = fields.Many2one(
         comodel_name="account.journal",
-        string="Journal",
         required=True,
     )
     agreement_type_ids = fields.Many2many(
@@ -30,7 +29,6 @@ class AgreementSettlementInvoiceCreateWiz(models.TransientModel):
     )
     product_id = fields.Many2one(
         comodel_name="product.product",
-        string="Product",
         required=True,
     )
     invoice_group = fields.Selection(

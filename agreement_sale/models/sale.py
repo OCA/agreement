@@ -10,7 +10,6 @@ class SaleOrder(models.Model):
 
     agreement_id = fields.Many2one(
         comodel_name="agreement",
-        string="Agreement",
         ondelete="restrict",
         tracking=True,
         copy=False,
@@ -18,7 +17,6 @@ class SaleOrder(models.Model):
 
     agreement_type_id = fields.Many2one(
         comodel_name="agreement.type",
-        string="Agreement Type",
         ondelete="restrict",
         tracking=True,
     )

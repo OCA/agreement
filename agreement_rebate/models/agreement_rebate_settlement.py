@@ -14,7 +14,6 @@ class AgreementRebateSettlement(models.Model):
     name = fields.Char(required=True, default="/")
     company_id = fields.Many2one(
         comodel_name="res.company",
-        string="Company",
         required=True,
         index=True,
         default=lambda self: self.env.company,
@@ -24,7 +23,6 @@ class AgreementRebateSettlement(models.Model):
     date_to = fields.Date()
     partner_id = fields.Many2one(
         comodel_name="res.partner",
-        string="Partner",
     )
     line_ids = fields.One2many(
         comodel_name="agreement.rebate.settlement.line",
@@ -33,7 +31,7 @@ class AgreementRebateSettlement(models.Model):
     )
     amount_invoiced = fields.Float()
     amount_rebate = fields.Float()
-    invoice_id = fields.Many2one(comodel_name="account.move", string="Invoice")
+    invoice_id = fields.Many2one(comodel_name="account.move")
     active = fields.Boolean(default=True)
 
     @api.model_create_multi
@@ -154,11 +152,9 @@ class AgreementRebateSettlementLine(models.Model):
     )
     partner_id = fields.Many2one(
         comodel_name="res.partner",
-        string="Partner",
     )
     rebate_line_id = fields.Many2one(
         comodel_name="agreement.rebate.line",
-        string="Rebate Line",
     )
     rebate_section_id = fields.Many2one(
         comodel_name="agreement.rebate.section",
@@ -173,7 +169,6 @@ class AgreementRebateSettlementLine(models.Model):
     amount_rebate = fields.Float()
     agreement_id = fields.Many2one(
         comodel_name="agreement",
-        string="Agreement",
         required=True,
     )
     rebate_type = fields.Selection(
