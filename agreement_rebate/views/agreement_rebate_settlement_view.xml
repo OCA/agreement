@@ -221,10 +221,50 @@
             </search>
         </field>
     </record>
+    <record id="agreement_rebate_settlement_kanban" model="ir.ui.view">
+        <field name="model">agreement.rebate.settlement</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" sample="1">
+                <templates>
+                    <t t-name="card">
+                        <div class="d-flex align-items-baseline">
+                            <field name="name" class="fw-bold fs-5" />
+                            <field name="date" class="ms-auto text-muted" />
+                        </div>
+                        <field name="partner_id" />
+                        <div
+                            t-if="record.date_from.raw_value or record.date_to.raw_value"
+                            class="text-muted"
+                        >
+                            <i class="fa fa-calendar me-1" title="Period" />
+                            <field name="date_from" />
+                            <span
+                                t-if="record.date_from.raw_value and record.date_to.raw_value"
+                            > - </span>
+                            <field name="date_to" />
+                        </div>
+                        <field
+                            name="invoice_id"
+                            class="badge text-bg-success align-self-start"
+                            invisible="not invoice_id"
+                        />
+                        <footer>
+                            <div class="text-muted">
+                                Invoiced: <field name="amount_invoiced" />
+                            </div>
+                            <div class="ms-auto fw-bold">
+                                Rebate: <field name="amount_rebate" />
+                            </div>
+                        </footer>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
     <record id="agreement_rebate_settlement_action" model="ir.actions.act_window">
         <field name="name">Agreement settlements</field>
         <field name="res_model">agreement.rebate.settlement</field>
-        <field name="view_mode">list,form</field>
+        <field name="view_mode">list,kanban,form</field>
         <field name="context">{'search_default_not_invoiced': 1}</field>
     </record>
     <record id="agreement_rebate_settlement_line_action" model="ir.actions.act_window">
