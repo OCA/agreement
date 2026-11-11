@@ -1,3 +1,11 @@
+## 19.0.2.3.0 (2026-11-11)
+
+- [IMP] The *Agreements* smart button on the partner form can also include
+  the agreements of the partner's contacts, enabled with the system
+  parameter `agreement.partner_show_child_agreements`.
+- [FIX] Users without administrator rights can open the agreements from the
+  *Agreements* smart button.
+
 ## 19.0.2.1.0 (2026-09-04)
 
 - [IMP] Show the commercial entity in the agreement list and allow grouping
