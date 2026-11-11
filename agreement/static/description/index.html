@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="Docutils: https://docutils.sourceforge.io/" />
-<title>Agreements</title>
+<title>README.rst</title>
 <style type="text/css">
 
 /*
@@ -399,29 +399,31 @@ rebates.</p>
 <li><a class="reference internal" href="#configuration" id="toc-entry-2">Configuration</a><ul>
 <li><a class="reference internal" href="#access-rights" id="toc-entry-3">Access rights</a></li>
 <li><a class="reference internal" href="#settings" id="toc-entry-4">Settings</a></li>
-<li><a class="reference internal" href="#agreement-types" id="toc-entry-5">Agreement types</a></li>
+<li><a class="reference internal" href="#agreements-of-contacts-on-the-partner-form" id="toc-entry-5">Agreements of contacts on the partner form</a></li>
+<li><a class="reference internal" href="#agreement-types" id="toc-entry-6">Agreement types</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#usage" id="toc-entry-6">Usage</a><ul>
-<li><a class="reference internal" href="#create-an-agreement" id="toc-entry-7">Create an agreement</a></li>
-<li><a class="reference internal" href="#find-agreements" id="toc-entry-8">Find agreements</a></li>
-<li><a class="reference internal" href="#duplicate-and-archive-agreements" id="toc-entry-9">Duplicate and archive agreements</a></li>
-<li><a class="reference internal" href="#agreement-templates" id="toc-entry-10">Agreement templates</a></li>
+<li><a class="reference internal" href="#usage" id="toc-entry-7">Usage</a><ul>
+<li><a class="reference internal" href="#create-an-agreement" id="toc-entry-8">Create an agreement</a></li>
+<li><a class="reference internal" href="#find-agreements" id="toc-entry-9">Find agreements</a></li>
+<li><a class="reference internal" href="#duplicate-and-archive-agreements" id="toc-entry-10">Duplicate and archive agreements</a></li>
+<li><a class="reference internal" href="#agreement-templates" id="toc-entry-11">Agreement templates</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#known-issues-roadmap" id="toc-entry-11">Known issues / Roadmap</a></li>
-<li><a class="reference internal" href="#changelog" id="toc-entry-12">Changelog</a><ul>
-<li><a class="reference internal" href="#section-1" id="toc-entry-13">19.0.2.1.0 (2026-09-04)</a></li>
-<li><a class="reference internal" href="#section-2" id="toc-entry-14">19.0.2.0.0 (2026-07-15)</a></li>
-<li><a class="reference internal" href="#section-3" id="toc-entry-15">19.0.1.0.0 (2026-01-15)</a></li>
-<li><a class="reference internal" href="#section-4" id="toc-entry-16">18.0.1.1.0 (2025-09-22)</a></li>
+<li><a class="reference internal" href="#known-issues-roadmap" id="toc-entry-12">Known issues / Roadmap</a></li>
+<li><a class="reference internal" href="#changelog" id="toc-entry-13">Changelog</a><ul>
+<li><a class="reference internal" href="#section-1" id="toc-entry-14">19.0.2.3.0 (2026-11-11)</a></li>
+<li><a class="reference internal" href="#section-2" id="toc-entry-15">19.0.2.1.0 (2026-09-04)</a></li>
+<li><a class="reference internal" href="#section-3" id="toc-entry-16">19.0.2.0.0 (2026-07-15)</a></li>
+<li><a class="reference internal" href="#section-4" id="toc-entry-17">19.0.1.0.0 (2026-01-15)</a></li>
+<li><a class="reference internal" href="#section-5" id="toc-entry-18">18.0.1.1.0 (2025-09-22)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#bug-tracker" id="toc-entry-17">Bug Tracker</a></li>
-<li><a class="reference internal" href="#credits" id="toc-entry-18">Credits</a><ul>
-<li><a class="reference internal" href="#authors" id="toc-entry-19">Authors</a></li>
-<li><a class="reference internal" href="#contributors" id="toc-entry-20">Contributors</a></li>
-<li><a class="reference internal" href="#maintainers" id="toc-entry-21">Maintainers</a></li>
+<li><a class="reference internal" href="#bug-tracker" id="toc-entry-19">Bug Tracker</a></li>
+<li><a class="reference internal" href="#credits" id="toc-entry-20">Credits</a><ul>
+<li><a class="reference internal" href="#authors" id="toc-entry-21">Authors</a></li>
+<li><a class="reference internal" href="#contributors" id="toc-entry-22">Contributors</a></li>
+<li><a class="reference internal" href="#maintainers" id="toc-entry-23">Maintainers</a></li>
 </ul>
 </li>
 </ul>
@@ -448,8 +450,8 @@ agreements.</li>
 <li><tt class="docutils literal">agreement_termination</tt>: term dates, notices and termination
 tracking.</li>
 <li><tt class="docutils literal">agreement_type</tt>: hierarchical agreement types with sub-types.</li>
-<li><tt class="docutils literal">agreement_legal</tt> and <tt class="docutils literal">agreement_legal_content</tt>: legal aspects and
-legal content of agreements.</li>
+<li><tt class="docutils literal">agreement_legal</tt> and <tt class="docutils literal">agreement_legal_content</tt>: legal aspects
+and legal content of agreements.</li>
 <li><tt class="docutils literal">agreement_sale</tt>, <tt class="docutils literal">agreement_product</tt>, <tt class="docutils literal">agreement_project</tt> and
 <tt class="docutils literal">agreement_rebate</tt>: links between agreements and sales, products,
 projects and rebates.</li>
@@ -467,8 +469,8 @@ them in <em>Settings &gt; Users &amp; Companies &gt; Users</em>, tab <em>Access 
 <ul class="simple">
 <li><em>Read-Only Users</em>: see the <em>Agreements</em> menu and read agreements.</li>
 <li><em>User</em>: create, edit, delete and archive agreements, and read
-agreement types. When the module is installed, every existing internal
-user receives this role.</li>
+agreement types. When the module is installed, every existing
+internal user receives this role.</li>
 <li><em>Manager</em>: in addition, manage agreement types and the <em>Agreements</em>
 settings.</li>
 </ul>
@@ -478,7 +480,7 @@ one of these roles.</p>
 <div class="section" id="settings">
 <h3><a class="toc-backref" href="#toc-entry-4">Settings</a></h3>
 <p>Go to <em>Agreements &gt; Configuration &gt; Settings</em> (Manager role required).</p>
-<p><img alt="Agreements settings" src="https://raw.githubusercontent.com/OCA/agreement/19.0/agreement/static/description/screenshot_settings.png" /></p>
+<img alt="Agreements settings" src="https://raw.githubusercontent.com/OCA/agreement/19.0/agreement/static/description/screenshot_settings.png" />
 <ul class="simple">
 <li><em>Advanced Features</em> offers shortcuts to the agreement types and
 agreement templates and lets you install the extension modules for
@@ -488,8 +490,24 @@ legal content.</li>
 projects, sales, rebates and products.</li>
 </ul>
 </div>
+<div class="section" id="agreements-of-contacts-on-the-partner-form">
+<h3><a class="toc-backref" href="#toc-entry-5">Agreements of contacts on the partner form</a></h3>
+<p>By default, the <em>Agreements</em> smart button on the partner form only shows
+the agreements linked directly to that partner. To also show the
+agreements of its contacts on a company:</p>
+<ol class="arabic simple">
+<li>Activate the developer mode.</li>
+<li>Go to <em>Settings &gt; Technical &gt; System Parameters</em> and create a
+parameter with the key <tt class="docutils literal">agreement.partner_show_child_agreements</tt>
+and the value <tt class="docutils literal">True</tt>.</li>
+</ol>
+<p>The smart button of a company then counts and opens its own agreements
+and the agreements of all its contacts. The smart button of a contact
+still shows only the agreements of that contact. Delete the parameter to
+restore the default behavior.</p>
+</div>
 <div class="section" id="agreement-types">
-<h3><a class="toc-backref" href="#toc-entry-5">Agreement types</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-6">Agreement types</a></h3>
 <p>Go to <em>Agreements &gt; Configuration &gt; Types</em> (Manager role required) and
 create the types you need. Each type has a name and a default domain
 (<em>Sale</em> or <em>Purchase</em>) that is applied to agreements of that type. Types
@@ -497,9 +515,9 @@ can be archived.</p>
 </div>
 </div>
 <div class="section" id="usage">
-<h2><a class="toc-backref" href="#toc-entry-6">Usage</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-7">Usage</a></h2>
 <div class="section" id="create-an-agreement">
-<h3><a class="toc-backref" href="#toc-entry-7">Create an agreement</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-8">Create an agreement</a></h3>
 <ol class="arabic simple">
 <li>Go to <em>Agreements &gt; Agreements</em> and click <em>New</em>.</li>
 <li>Enter the <em>Agreement Name</em> and the <em>Code</em>. The code must be unique
@@ -513,36 +531,38 @@ domain of the type is applied; you can still change it.</li>
 <li>Enter the <em>Signature Date</em>, <em>Start Date</em> and <em>End Date</em>.</li>
 <li>In a multi-company setup, check the <em>Company</em> of the agreement.</li>
 </ol>
-<p><img alt="Agreement form" src="https://raw.githubusercontent.com/OCA/agreement/19.0/agreement/static/description/screenshot_form.png" /></p>
+<img alt="Agreement form" src="https://raw.githubusercontent.com/OCA/agreement/19.0/agreement/static/description/screenshot_form.png" />
 <p>Changes to the code, name, partner, domain and dates are tracked in the
 chatter, where you can also log notes, send messages and schedule
 activities.</p>
 </div>
 <div class="section" id="find-agreements">
-<h3><a class="toc-backref" href="#toc-entry-8">Find agreements</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-9">Find agreements</a></h3>
 <p>The agreement list can be searched by name or code and by partner. The
 <em>Sale</em> and <em>Purchase</em> filters restrict the list to one domain, and the
 <em>Archived</em> filter shows archived agreements. Group the list by partner,
 commercial entity, signature date or domain. The <em>Commercial Entity</em>
 column is optional and can be shown from the column selector.</p>
-<p><img alt="Agreement list grouped by commercial entity" src="https://raw.githubusercontent.com/OCA/agreement/19.0/agreement/static/description/screenshot_list.png" /></p>
+<img alt="Agreement list grouped by commercial entity" src="https://raw.githubusercontent.com/OCA/agreement/19.0/agreement/static/description/screenshot_list.png" />
 <p>On the partner form, the <em>Agreements</em> smart button shows the number of
 agreements linked directly to that partner and opens them. A new
-agreement created from there is pre-filled with the partner.</p>
-<p><img alt="Agreements smart button on the partner form" src="https://raw.githubusercontent.com/OCA/agreement/19.0/agreement/static/description/screenshot_partner.png" /></p>
+agreement created from there is pre-filled with the partner. The smart
+button can also include the agreements of the partner’s contacts, see
+<em>Configuration</em>.</p>
+<img alt="Agreements smart button on the partner form" src="https://raw.githubusercontent.com/OCA/agreement/19.0/agreement/static/description/screenshot_partner.png" />
 </div>
 <div class="section" id="duplicate-and-archive-agreements">
-<h3><a class="toc-backref" href="#toc-entry-9">Duplicate and archive agreements</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-10">Duplicate and archive agreements</a></h3>
 <ul class="simple">
-<li><em>Actions &gt; Duplicate</em> copies an agreement. As the code must be unique,
-the copy gets the code of the original followed by <em>(copy)</em>.</li>
+<li><em>Actions &gt; Duplicate</em> copies an agreement. As the code must be
+unique, the copy gets the code of the original followed by <em>(copy)</em>.</li>
 <li><em>Actions &gt; Archive</em> hides an agreement without deleting it. Archived
 agreements are shown with the <em>Archived</em> filter and can be unarchived
 from there.</li>
 </ul>
 </div>
 <div class="section" id="agreement-templates">
-<h3><a class="toc-backref" href="#toc-entry-10">Agreement templates</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-11">Agreement templates</a></h3>
 <p>Templates are agreements used as a starting point for new agreements.
 They do not require a partner and are not shown in the main agreement
 list.</p>
@@ -556,12 +576,12 @@ flag is not copied. Rename it, set the code and the partner.</li>
 </div>
 </div>
 <div class="section" id="known-issues-roadmap">
-<h2><a class="toc-backref" href="#toc-entry-11">Known issues / Roadmap</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-12">Known issues / Roadmap</a></h2>
 <ul class="simple">
 <li>The <em>Use agreement types</em> and <em>Use agreement template</em> toggles in
-<em>Agreements &gt; Configuration &gt; Settings</em> have no visible effect, as the
-<em>Read-Only Users</em> role already grants both features to all agreement
-users.</li>
+<em>Agreements &gt; Configuration &gt; Settings</em> have no visible effect, as
+the <em>Read-Only Users</em> role already grants both features to all
+agreement users.</li>
 <li>The <em>Agreements &gt; Reporting</em> menu is empty; entries are added by
 extension modules.</li>
 <li>The agreement code is entered manually; there is no sequence to
@@ -572,30 +592,40 @@ persons.</li>
 </ul>
 </div>
 <div class="section" id="changelog">
-<h2><a class="toc-backref" href="#toc-entry-12">Changelog</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-13">Changelog</a></h2>
 <div class="section" id="section-1">
-<h3><a class="toc-backref" href="#toc-entry-13">19.0.2.1.0 (2026-09-04)</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-14">19.0.2.3.0 (2026-11-11)</a></h3>
+<ul class="simple">
+<li>[IMP] The <em>Agreements</em> smart button on the partner form can also
+include the agreements of the partner’s contacts, enabled with the
+system parameter <tt class="docutils literal">agreement.partner_show_child_agreements</tt>.</li>
+<li>[FIX] Users without administrator rights can open the agreements from
+the <em>Agreements</em> smart button.</li>
+</ul>
+</div>
+<div class="section" id="section-2">
+<h3><a class="toc-backref" href="#toc-entry-15">19.0.2.1.0 (2026-09-04)</a></h3>
 <ul class="simple">
 <li>[IMP] Show the commercial entity in the agreement list and allow
 grouping agreements by commercial entity.</li>
 </ul>
 </div>
-<div class="section" id="section-2">
-<h3><a class="toc-backref" href="#toc-entry-14">19.0.2.0.0 (2026-07-15)</a></h3>
+<div class="section" id="section-3">
+<h3><a class="toc-backref" href="#toc-entry-16">19.0.2.0.0 (2026-07-15)</a></h3>
 <ul class="simple">
 <li>[ADD] <em>Read-Only Users</em>, <em>User</em> and <em>Manager</em> roles for agreements.</li>
-<li>[ADD] <em>Agreements</em> settings page with shortcuts to agreement types and
-templates and toggles to install the extension modules.</li>
+<li>[ADD] <em>Agreements</em> settings page with shortcuts to agreement types
+and templates and toggles to install the extension modules.</li>
 </ul>
 </div>
-<div class="section" id="section-3">
-<h3><a class="toc-backref" href="#toc-entry-15">19.0.1.0.0 (2026-01-15)</a></h3>
+<div class="section" id="section-4">
+<h3><a class="toc-backref" href="#toc-entry-17">19.0.1.0.0 (2026-01-15)</a></h3>
 <ul class="simple">
 <li>[MIG] Migration to Odoo 19.0.</li>
 </ul>
 </div>
-<div class="section" id="section-4">
-<h3><a class="toc-backref" href="#toc-entry-16">18.0.1.1.0 (2025-09-22)</a></h3>
+<div class="section" id="section-5">
+<h3><a class="toc-backref" href="#toc-entry-18">18.0.1.1.0 (2025-09-22)</a></h3>
 <ul class="simple">
 <li>[IMP] The <em>Agreements</em> smart button on the partner form moved from
 <tt class="docutils literal">agreement_legal</tt> to this module.</li>
@@ -603,7 +633,7 @@ templates and toggles to install the extension modules.</li>
 </div>
 </div>
 <div class="section" id="bug-tracker">
-<h2><a class="toc-backref" href="#toc-entry-17">Bug Tracker</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-19">Bug Tracker</a></h2>
 <p>Bugs are tracked on <a class="reference external" href="https://github.com/OCA/agreement/issues">GitHub Issues</a>.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
@@ -611,16 +641,16 @@ If you spotted it first, help us to smash it by providing a detailed and welcome
 <p>Do not contact contributors directly about support or help with technical issues.</p>
 </div>
 <div class="section" id="credits">
-<h2><a class="toc-backref" href="#toc-entry-18">Credits</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-20">Credits</a></h2>
 <div class="section" id="authors">
-<h3><a class="toc-backref" href="#toc-entry-19">Authors</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-21">Authors</a></h3>
 <ul class="simple">
 <li>Akretion</li>
 <li>Yves Goldberg (Ygol Internetwork)</li>
 </ul>
 </div>
 <div class="section" id="contributors">
-<h3><a class="toc-backref" href="#toc-entry-20">Contributors</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-22">Contributors</a></h3>
 <ul>
 <li><p class="first">Alexis de Lattre &lt;<a class="reference external" href="mailto:alexis.delattre&#64;akretion.com">alexis.delattre&#64;akretion.com</a>&gt;</p>
 </li>
@@ -660,7 +690,7 @@ If you spotted it first, help us to smash it by providing a detailed and welcome
 </ul>
 </div>
 <div class="section" id="maintainers">
-<h3><a class="toc-backref" href="#toc-entry-21">Maintainers</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-23">Maintainers</a></h3>
 <p>This module is maintained by the OCA.</p>
 <a class="reference external image-reference" href="https://odoo-community.org">
 <img alt="Odoo Community Association" src="https://odoo-community.org/logo.png" />

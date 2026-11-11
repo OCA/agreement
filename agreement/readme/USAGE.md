@@ -30,7 +30,8 @@ is optional and can be shown from the column selector.
 
 On the partner form, the *Agreements* smart button shows the number of
 agreements linked directly to that partner and opens them. A new agreement
-created from there is pre-filled with the partner.
+created from there is pre-filled with the partner. The smart button can
+also include the agreements of the partner's contacts, see *Configuration*.
 
 ![Agreements smart button on the partner form](../static/description/screenshot_partner.png)
 
