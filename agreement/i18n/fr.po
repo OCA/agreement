@@ -23,6 +23,11 @@ msgid "%(code)s (copy)"
 msgstr "%(code)s (copie)"
 
 #. module: agreement
+#: model_terms:ir.ui.view,arch_db:agreement.agreement_kanban
+msgid "<i class=\"fa fa-calendar me-1\" title=\"Dates\"/>"
+msgstr ""
+
+#. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_needaction
 msgid "Action Needed"
 msgstr "Action nécessaire"
