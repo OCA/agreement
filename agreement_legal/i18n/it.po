@@ -650,7 +650,8 @@ msgstr "Elenco attrezzature"
 #. module: agreement_legal
 #: model_terms:agreement.clause,content:agreement_legal.agreement_clause_market6_template_warranty
 msgid "Equipment is warranted for twelve (12) months from delivery date."
-msgstr "L'attrezzatura è garantita per dodici (12) mesi dalla data di consegna."
+msgstr ""
+"L'attrezzatura è garantita per dodici (12) mesi dalla data di consegna."
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__expiration_notice
@@ -1083,8 +1084,8 @@ msgstr "Termini di pagamento"
 msgid ""
 "Payment terms for the supply agreement {{object.agreement_id.code or ''}}."
 msgstr ""
-"Condizioni di pagamento per il contratto di fornitura {"
-"{object.agreement_id.code or ''}}."
+"Condizioni di pagamento per il contratto di fornitura "
+"{{object.agreement_id.code or ''}}."
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
@@ -1472,7 +1473,8 @@ msgstr "Fasi"
 #. module: agreement_legal
 #: model_terms:agreement.appendix,content:agreement_legal.agreement_appendix_market6_template
 msgid "Standard SIP-ISDN gateway models covered by this template agreement."
-msgstr "Modelli standard di gateway SIP-ISDN oggetto del presente accordo tipo."
+msgstr ""
+"Modelli standard di gateway SIP-ISDN oggetto del presente accordo tipo."
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__start_date
@@ -1706,8 +1708,8 @@ msgid ""
 "This section defines the hardware IT equipment covered by "
 "{{object.agreement_id.name or ''}}."
 msgstr ""
-"Questa sezione definisce l'attrezzatura IT hardware coperta da {"
-"{object.agreement_id.name o ''}}."
+"Questa sezione definisce l'attrezzatura IT hardware coperta da "
+"{{object.agreement_id.name o ''}}."
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
@@ -1921,19 +1923,9 @@ msgid "note"
 msgstr "nota"
 
 #. module: agreement_legal
-#: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
-msgid "oe_kanban_text_red"
-msgstr "oe_kanban_text_red"
-
-#. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "on"
 msgstr "su"
-
-#. module: agreement_legal
-#: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
-msgid "user & picture"
-msgstr "utente e immagine"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
@@ -1952,6 +1944,12 @@ msgid ""
 msgstr ""
 "|\n"
 "                    Creato il:"
+
+#~ msgid "oe_kanban_text_red"
+#~ msgstr "oe_kanban_text_red"
+
+#~ msgid "user & picture"
+#~ msgstr "utente e immagine"
 
 #~ msgid ""
 #~ "<span class=\"fa fa-ellipsis-v\" aria-hidden=\"true\" title=\"Icon\"/>"

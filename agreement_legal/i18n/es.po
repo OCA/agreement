@@ -1902,19 +1902,9 @@ msgid "note"
 msgstr "nota"
 
 #. module: agreement_legal
-#: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
-msgid "oe_kanban_text_red"
-msgstr ""
-
-#. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "on"
 msgstr "en"
-
-#. module: agreement_legal
-#: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
-msgid "user & picture"
-msgstr "usuario y foto"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
@@ -1929,3 +1919,6 @@ msgid ""
 "|\n"
 "                    Created On:"
 msgstr ""
+
+#~ msgid "user & picture"
+#~ msgstr "usuario y foto"
