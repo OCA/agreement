@@ -22,6 +22,11 @@ msgid "% Dto"
 msgstr "% Sc"
 
 #. module: agreement_rebate
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_kanban
+msgid "<i class=\"fa fa-calendar me-1\" title=\"Period\"/>"
+msgstr ""
+
+#. module: agreement_rebate
 #: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_form
 msgid ""
 "<i class=\"fa fa-filter\"/>\n"
@@ -390,6 +395,11 @@ msgid "Invoiced"
 msgstr "Fatturato"
 
 #. module: agreement_rebate
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_kanban
+msgid "Invoiced:"
+msgstr ""
+
+#. module: agreement_rebate
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement__is_rebate
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_type__is_rebate
 msgid "Is rebate agreement type"
@@ -603,6 +613,11 @@ msgstr "Liquidazioni sconto"
 #: model:ir.model.fields,field_description:agreement_rebate.field_agreement_rebate_settlement_line__rebate_type
 msgid "Rebate type"
 msgstr "Tipo sconto"
+
+#. module: agreement_rebate
+#: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_kanban
+msgid "Rebate:"
+msgstr ""
 
 #. module: agreement_rebate
 #: model_terms:ir.ui.view,arch_db:agreement_rebate.agreement_rebate_settlement_search
