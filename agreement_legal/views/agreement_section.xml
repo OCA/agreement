@@ -46,9 +46,16 @@
                     </group>
                     <notebook>
                         <page string="Content">
-                            <field name='content' nolabel="1" />
-                            <group class="oe_edit_only">
-                                <group>
+                            <field
+                                name='content'
+                                nolabel="1"
+                                placeholder="Enter content here..."
+                            />
+                            <div
+                                class="oe_edit_only alert alert-light d-flex justify-content-between flex-xl-row flex-column"
+                                role="status"
+                            >
+                                <group class="flex-fill">
                                     <field
                                         name="field_id"
                                         domain="[('model_id', '=', 'agreement.section'),
@@ -67,7 +74,7 @@
                                     <field name="default_value" />
                                     <field name="copyvalue" />
                                 </group>
-                                <p>
+                                <p class="px-xl-4">
                                     This section (on the left) allows you to add dynamic fields inside the content.
                                     <ol>
                                     <li>Select the section field</li>
@@ -78,7 +85,7 @@
                                     >Copy and paste the placeholder expression in the content</li>
                                 </ol>
                                 </p>
-                            </group>
+                            </div>
                         </page>
                         <page string="Clauses">
                             <field
