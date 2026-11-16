@@ -8,6 +8,12 @@
             <xpath expr="//form" position="inside">
                 <app data-string="Agreements" string="Agreements" name="agreement">
                     <block title="Advanced Features">
+                        <setting id="agreement_show_child_agreements_setting">
+                            <field name="agreement_show_child_agreements" />
+                            <div class="text-muted">
+                                The Agreements smart button of a contact also shows the agreements of its child contacts
+                            </div>
+                        </setting>
                         <setting id="sales_settings_agreement_type_group">
                             <field name="group_use_agreement_type" />
                             <div class="text-muted">
