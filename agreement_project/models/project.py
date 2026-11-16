@@ -7,7 +7,7 @@ from odoo import fields, models
 class ProjectProject(models.Model):
     _inherit = "project.project"
 
-    agreement_id = fields.Many2one("agreement", "Agreement")
+    agreement_id = fields.Many2one("agreement")
 
 
 class ProjectTask(models.Model):
