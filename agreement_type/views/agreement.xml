@@ -1,0 +1,33 @@
+<odoo>
+    <!-- Add sub-type + review date to the agreement form -->
+    <record id="partner_agreement_form_view" model="ir.ui.view">
+        <field name="name">agreement.form.subtype</field>
+        <field name="model">agreement</field>
+        <field name="inherit_id" ref="agreement.agreement_form" />
+        <field name="arch" type="xml">
+            <field name="end_date" position="after">
+                <field
+                    name="to_review_date"
+                    required="not is_template and end_date"
+                    invisible="is_template"
+                />
+            </field>
+        </field>
+    </record>
+
+    <!-- Add sub-type group-by and to-review filter to the agreement search -->
+    <record id="partner_agreement_search_view" model="ir.ui.view">
+        <field name="name">agreement.search.subtype</field>
+        <field name="model">agreement</field>
+        <field name="inherit_id" ref="agreement.agreement_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <filter
+                    name="filter_to_review"
+                    string="Agreements to review"
+                    domain="[('to_review_date', '&lt;=', context_today().strftime('%Y-%m-%d')), ('end_date', '&gt;=', context_today().strftime('%Y-%m-%d'))]"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
