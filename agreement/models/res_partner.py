@@ -2,6 +2,9 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
+from odoo.tools import str2bool
+
+SHOW_CHILD_AGREEMENTS_PARAM = "agreement.partner_show_child_agreements"
 
 
 class Partner(models.Model):
@@ -10,25 +13,55 @@ class Partner(models.Model):
     agreement_ids = fields.One2many("agreement", "partner_id", string="Agreements")
     agreements_count = fields.Integer(compute="_compute_agreements_count")
 
+    @api.model
+    def _agreement_show_child_agreements(self):
+        """Return whether the Agreements smart button also includes the
+        agreements of the child contacts (system parameter)."""
+        return str2bool(
+            self.env["ir.config_parameter"]
+            .sudo()
+            .get_param(SHOW_CHILD_AGREEMENTS_PARAM, "False"),
+            default=False,
+        )
+
     @api.depends("agreement_ids")
     def _compute_agreements_count(self):
+        self.agreements_count = 0
+        show_child = self._agreement_show_child_agreements()
+        partners = self
+        if show_child:
+            partners = self.with_context(active_test=False).search_fetch(
+                [("id", "child_of", self.ids)], ["parent_id"]
+            )
         results = self.env["agreement"]._read_group(
-            [("partner_id", "in", self.ids)],
+            [("partner_id", "in", partners.ids)],
             ["partner_id"],
             ["__count"],
         )
-        agreement_dict = {partner.id: count for partner, count in results}
-        for rec in self:
-            rec.agreements_count = agreement_dict.get(rec.id, 0)
+        self_ids = set(self._ids)
+        parent_of = {p.id: p.parent_id.id for p in partners} if show_child else {}
+        for partner, count in results:
+            if not show_child:
+                if partner.id in self_ids:
+                    partner.agreements_count = count
+                continue
+            # add the count to the partner and to all its parents in self
+            partner_id = partner.id
+            while partner_id:
+                if partner_id in self_ids:
+                    self.browse(partner_id).agreements_count += count
+                partner_id = parent_of.get(partner_id)
 
     def action_open_agreement(self):
         self.ensure_one()
-        action = self.env.ref("agreement.agreement_action")
-        result = action.read()[0]
-        result.update(
+        action = self.env["ir.actions.act_window"]._for_xml_id(
+            "agreement.agreement_action"
+        )
+        operator = "child_of" if self._agreement_show_child_agreements() else "="
+        action.update(
             {
-                "domain": [("partner_id", "=", self.id)],
+                "domain": [("partner_id", operator, self.id)],
                 "context": {"default_partner_id": self.id},
             }
         )
-        return result
+        return action
