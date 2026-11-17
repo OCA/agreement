@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+     © 2019 Ygol Internetwork (yves@ygol.com)
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo noupdate="1">
+    <record id="agreement_line_market1_server" model="agreement.line">
+        <field name="product_id" ref="product.product_product_4" />
+        <field name="name">Server hardware unit</field>
+        <field name="qty">2</field>
+        <field name="uom_id" ref="uom.product_uom_unit" />
+        <field name="agreement_id" ref="agreement.market1" />
+    </record>
+
+    <record id="agreement_line_market1_switch" model="agreement.line">
+        <field name="product_id" ref="product.product_product_5" />
+        <field name="name">Network switch</field>
+        <field name="qty">4</field>
+        <field name="uom_id" ref="uom.product_uom_unit" />
+        <field name="agreement_id" ref="agreement.market1" />
+    </record>
+
+    <record id="agreement_line_market5_phone" model="agreement.line">
+        <field name="product_id" ref="product.product_product_6" />
+        <field name="name">SIP phone handset</field>
+        <field name="qty">50</field>
+        <field name="uom_id" ref="uom.product_uom_unit" />
+        <field name="agreement_id" ref="agreement.market5" />
+    </record>
+</odoo>

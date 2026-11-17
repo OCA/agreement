@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <!-- web.KanbanView.Buttons is empty in 19.0; do not xpath role="toolbar". -->
+    <t t-name="agreement_legal.KanbanViewButtons">
+        <t t-call="agreement_legal.TemplateButton" />
+    </t>
+    <t
+        t-name="agreement_legal.KanbanView"
+        t-inherit="web.KanbanView"
+        t-inherit-mode="primary"
+    >
+        <xpath expr="//button[hasclass('o-kanban-button-new')]" position="attributes">
+            <attribute
+                name="t-if"
+            >canCreate and props.showButtons and canCreateTemplate</attribute>
+        </xpath>
+    </t>
+</templates>

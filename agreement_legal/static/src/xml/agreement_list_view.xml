@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <!-- web.ListView.Buttons is empty in 19.0; do not xpath o_list_buttons. -->
+    <t t-name="agreement_legal.ListView">
+        <t t-call="agreement_legal.TemplateButton" />
+    </t>
+</templates>
