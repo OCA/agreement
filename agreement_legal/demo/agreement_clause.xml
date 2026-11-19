@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!--
      © 2019 Ygol Internetwork (yves@ygol.com)
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
@@ -7,7 +7,7 @@
     <record id="agreement_clause_market1_scope_delivery" model="agreement.clause">
         <field name="name">Delivery</field>
         <field name="title">1.1 Delivery</field>
-        <field name="sequence">10</field>
+        <field name="sequence" eval="10" />
         <field
             name="content"
         ><![CDATA[<p>The Supplier shall deliver hardware IT equipment within thirty (30) days of order confirmation.</p>]]></field>
@@ -18,7 +18,7 @@
     <record id="agreement_clause_market1_payment_invoicing" model="agreement.clause">
         <field name="name">Invoicing</field>
         <field name="title">2.1 Invoicing</field>
-        <field name="sequence">10</field>
+        <field name="sequence" eval="10" />
         <field
             name="content"
         ><![CDATA[<p>Invoices shall be payable within thirty (30) days of receipt.</p>]]></field>
@@ -29,7 +29,7 @@
     <record id="agreement_clause_market2_terms_sla" model="agreement.clause">
         <field name="name">Service Level</field>
         <field name="title">1.1 Service Level</field>
-        <field name="sequence">10</field>
+        <field name="sequence" eval="10" />
         <field
             name="content"
         ><![CDATA[<p>The Provider shall maintain 99.9% fiber link availability.</p>]]></field>
@@ -40,7 +40,7 @@
     <record id="agreement_clause_market6_template_warranty" model="agreement.clause">
         <field name="name">Warranty</field>
         <field name="title">1.1 Warranty</field>
-        <field name="sequence">10</field>
+        <field name="sequence" eval="10" />
         <field
             name="content"
         ><![CDATA[<p>Equipment is warranted for twelve (12) months from delivery date.</p>]]></field>

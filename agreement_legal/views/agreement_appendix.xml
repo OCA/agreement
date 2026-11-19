@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <!-- Agreement Appendix List View-->
-    <record model="ir.ui.view" id="agreement_appendix_tree">
+    <record id="agreement_appendix_tree" model="ir.ui.view">
         <field name="name">Agreement Appendix Tree</field>
         <field name="model">agreement.appendix</field>
         <field name="arch" type="xml">
@@ -15,7 +16,7 @@
     </record>
 
     <!-- Agreement Appendix Form View -->
-    <record model="ir.ui.view" id="agreement_appendix_form">
+    <record id="agreement_appendix_form" model="ir.ui.view">
         <field name="name">Agreement Appendix Form</field>
         <field name="model">agreement.appendix</field>
         <field name="arch" type="xml">
@@ -82,7 +83,7 @@
     </record>
 
     <!-- Agreement Appendix Search View -->
-    <record model="ir.ui.view" id="agreement_appendix_search">
+    <record id="agreement_appendix_search" model="ir.ui.view">
         <field name="name">Agreement Appendix Search</field>
         <field name="model">agreement.appendix</field>
         <field name="arch" type="xml">
@@ -98,19 +99,19 @@
     </record>
 
     <!-- Actions opening views on models -->
-    <record model="ir.actions.act_window" id="agreement_appendix_action">
+    <record id="agreement_appendix_action" model="ir.actions.act_window">
         <field name="name">Appendices</field>
         <field name="res_model">agreement.appendix</field>
         <field name="view_mode">list,form</field>
     </record>
 
     <!-- Agreement Appendix List View 2 (Call this view from agreement)-->
-    <record model="ir.ui.view" id="agreement_appendix_tree2">
+    <record id="agreement_appendix_tree2" model="ir.ui.view">
         <field name="name">Agreement Appendix Tree2</field>
         <field name="model">agreement.appendix</field>
         <field name="inherit_id" ref="agreement_appendix_tree" />
         <field name="mode">primary</field>
-        <field name="priority">999</field>
+        <field name="priority" eval="999" />
         <field name="arch" type="xml">
             <list position="attributes">
                 <attribute name="default_order">sequence</attribute>
@@ -122,12 +123,12 @@
     </record>
 
     <!-- Agreement Appendix Form View 2 (Call this view from agreement)-->
-    <record model="ir.ui.view" id="agreement_appendix_form2">
+    <record id="agreement_appendix_form2" model="ir.ui.view">
         <field name="name">Agreement Appendix Form2</field>
         <field name="model">agreement.appendix</field>
         <field name="inherit_id" ref="agreement_appendix_form" />
         <field name="mode">primary</field>
-        <field name="priority">999</field>
+        <field name="priority" eval="999" />
         <field name="arch" type="xml">
             <field name="agreement_id" position="attributes">
                 <attribute name="invisible">1</attribute>

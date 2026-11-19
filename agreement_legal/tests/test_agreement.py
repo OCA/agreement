@@ -10,6 +10,13 @@ from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestAgreement(BaseCommon):
+    _test_user_groups = (
+        "base.group_user",
+        "agreement.group_agreement_manager",
+        "base.group_erp_manager",
+        "base.group_system",
+    )
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -28,6 +35,21 @@ class TestAgreement(BaseCommon):
                 "end_date": fields.Date.today() + timedelta(days=365),
                 "state": "active",
             }
+        )
+
+    def test_review_date_without_end_date(self):
+        self.test_agreement.end_date = False
+        self.assertFalse(self.test_agreement.to_review_date)
+
+    def test_review_date_follows_review_days(self):
+        self.test_agreement.agreement_type_id = self.agreement_type
+        self.agreement_type.review_days = 7
+        expected_date = self.test_agreement.end_date - timedelta(days=7)
+        self.assertEqual(self.test_agreement.to_review_date, expected_date)
+        self.agreement_type.review_days = 14
+        self.assertEqual(
+            self.test_agreement.to_review_date,
+            self.test_agreement.end_date - timedelta(days=14),
         )
 
     # TEST 01: Set 'Field' for dynamic placeholder, test onchange method
@@ -113,7 +135,11 @@ class TestAgreement(BaseCommon):
             view_id=self.ref("agreement_legal.partner_agreement_form_view"),
             view_type="form",
         )
-        doc = etree.XML(res["arch"])
+        self.assertIsInstance(res["arch"], str)
+        doc = etree.XML(res["arch"].encode())
+        dynamic_fields = doc.xpath("//field[@name='field_id']")
+        self.assertTrue(dynamic_fields)
+        self.assertIn("model_id.model", dynamic_fields[0].get("domain", ""))
         field = doc.xpath("//field[@name='partner_contact_id']")
         self.assertEqual(field[0].get("readonly", ""), "bool(readonly)")
 
@@ -414,4 +440,30 @@ class TestAgreement(BaseCommon):
                     ("res_model", "=", self.test_agreement._name),
                 ]
             ),
+        )
+
+    def test_review_activity_ignores_other_activity_types(self):
+        self.agreement_type.write(
+            {"review_user_id": self.env.user.id, "review_days": 0}
+        )
+        self.test_agreement.write(
+            {
+                "agreement_type_id": self.agreement_type.id,
+                "to_review_date": fields.Date.today(),
+            }
+        )
+        self.test_agreement.activity_schedule(
+            "mail.mail_activity_data_todo", user_id=self.env.user.id
+        )
+        self.env["agreement"]._alert_to_review_date()
+        review_type = self.env.ref("agreement_legal.mail_activity_review_agreement")
+        self.assertEqual(
+            self.env["mail.activity"].search_count(
+                [
+                    ("res_id", "=", self.test_agreement.id),
+                    ("res_model", "=", "agreement"),
+                    ("activity_type_id", "=", review_type.id),
+                ]
+            ),
+            1,
         )

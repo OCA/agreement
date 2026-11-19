@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates>
-    <!-- web.KanbanView.Buttons is empty in 19.0; do not xpath role="toolbar". -->
-    <t t-name="agreement_legal.KanbanViewButtons">
-        <t t-call="agreement_legal.TemplateButton" />
-    </t>
     <t
-        t-name="agreement_legal.KanbanView"
-        t-inherit="web.KanbanView"
+        t-name="agreement_legal.KanbanViewButtons"
+        t-inherit="web.KanbanView.Buttons"
         t-inherit-mode="primary"
     >
         <xpath expr="//button[hasclass('o-kanban-button-new')]" position="attributes">
             <attribute
                 name="t-if"
-            >canCreate and props.showButtons and canCreateTemplate</attribute>
+            >!this.env.inDialog and this.canCreate and this.canCreateTemplate</attribute>
+        </xpath>
+        <xpath expr="//button[hasclass('o-kanban-button-new')]" position="after">
+            <t t-if="!this.env.inDialog and this.canCreate and !this.canCreateTemplate">
+                <t t-call="agreement_legal.TemplateButton" />
+            </t>
         </xpath>
     </t>
 </templates>

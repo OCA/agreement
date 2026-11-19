@@ -17,7 +17,7 @@ export class AgreementListController extends ListController {
 export const AgreementListView = {
     ...listView,
     Controller: AgreementListController,
-    buttonTemplate: "agreement_legal.ListView",
+    buttonTemplate: "agreement_legal.ListViewButtons",
 };
 
 registry.category("views").add("agreement_template_tree", AgreementListView);

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <!-- Hide base agreement app menu; restored by uninstall_hook. -->
     <record id="agreement.agreement_menu_root" model="ir.ui.menu">
@@ -6,22 +7,22 @@
 
     <!-- Top menu item -->
     <menuitem
-        name="Agreements"
         id="agreement_legal_menu_root"
+        name="Agreements"
         web_icon="agreement_legal,static/description/icon.png"
         sequence="80"
         action="agreement_legal.agreement_dashboard_agreement"
     />
     <!-- Dashboard -->
     <menuitem
-        name="Dashboard"
         id="agreement_dashboard"
+        name="Dashboard"
         parent="agreement_legal_menu_root"
         sequence="10"
     />
     <menuitem
-        name="Agreements"
         id="dashboard_agreements"
+        name="Agreements"
         parent="agreement_dashboard"
         sequence="10"
         action="agreement_legal.agreement_dashboard_agreement"
@@ -29,14 +30,14 @@
 
     <!-- Operations -->
     <menuitem
-        name="Operations"
         id="agreement_operations"
+        name="Operations"
         parent="agreement_legal_menu_root"
         sequence="20"
     />
     <menuitem
-        name="Agreements"
         id="operations_agreements"
+        name="Agreements"
         parent="agreement_operations"
         sequence="10"
         action="agreement_operations_agreement"
@@ -44,48 +45,48 @@
 
     <!-- Master Data -->
     <menuitem
-        name="Master Data"
         id="agreement_masterdata"
+        name="Master Data"
         parent="agreement_legal_menu_root"
         sequence="30"
     />
     <menuitem
-        name="Contents"
         id="agreement_data_contents"
+        name="Contents"
         parent="agreement_masterdata"
         sequence="10"
     />
     <menuitem
-        name="Recitals"
         id="agreement_recitals"
+        name="Recitals"
         parent="agreement_data_contents"
         sequence="10"
         action="agreement_recital_action"
     />
     <menuitem
-        name="Clauses"
         id="agreement_clauses"
+        name="Clauses"
         parent="agreement_data_contents"
         sequence="20"
         action="partner_agreement_action_clause"
     />
     <menuitem
-        name="Sections"
         id="agreement_sections"
+        name="Sections"
         parent="agreement_data_contents"
         sequence="30"
         action="partner_agreement_action_section"
     />
     <menuitem
-        name="Appendices"
         id="agreement_appendices"
+        name="Appendices"
         parent="agreement_data_contents"
         sequence="40"
         action="agreement_appendix_action"
     />
     <menuitem
-        name="Products"
         id="agreement_products"
+        name="Products"
         sequence="100"
         parent="agreement_masterdata"
         action="product.product_template_action"
@@ -93,16 +94,16 @@
 
     <!-- Reporting -->
     <menuitem
-        name="Reporting"
         id="agreement_reporting"
+        name="Reporting"
         sequence="40"
         parent="agreement_legal_menu_root"
         groups="agreement.group_agreement_manager"
     />
 
     <menuitem
-        name="Agreements"
         id="agreement_agreement_reporting"
+        name="Agreements"
         sequence="10"
         parent="agreement_reporting"
         action="action_agreement_report_order"
@@ -110,43 +111,43 @@
 
     <!-- Configuration -->
     <menuitem
-        name="Configuration"
         id="agreement_configuration"
+        name="Configuration"
         sequence="50"
         parent="agreement_legal_menu_root"
         groups="agreement.group_agreement_manager"
     />
     <menuitem
-        name="Settings"
         id="agreement_settings"
+        name="Settings"
         sequence="10"
         parent="agreement_configuration"
         action="agreement_legal.action_agreement_config"
     />
     <menuitem
-        name="Templates"
         id="template"
+        name="Templates"
         parent="agreement_configuration"
         sequence="20"
         action="partner_agreement_agreement_templates"
     />
     <menuitem
-        name="Stages"
         id="agreement_stages"
+        name="Stages"
         parent="agreement_configuration"
         sequence="30"
         action="partner_agreement_action_stage"
     />
     <menuitem
-        name="Types"
         id="agreement_types"
+        name="Types"
         parent="agreement_configuration"
         sequence="40"
         action="partner_agreement_action_type"
     />
     <menuitem
-        name="Sub-Types"
         id="agreement_subtypes"
+        name="Sub-Types"
         parent="agreement_configuration"
         sequence="50"
         action="partner_agreement_action_subtype"

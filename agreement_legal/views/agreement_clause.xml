@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <!-- Agreement Clause List View-->
-    <record model="ir.ui.view" id="partner_agreement_clause_list_view">
+    <record id="partner_agreement_clause_list_view" model="ir.ui.view">
         <field name="name">Agreement Clause List</field>
         <field name="model">agreement.clause</field>
         <field name="arch" type="xml">
@@ -16,7 +17,7 @@
     </record>
 
     <!-- Agreement Clause Form View -->
-    <record model="ir.ui.view" id="partner_agreement_clause_form_view">
+    <record id="partner_agreement_clause_form_view" model="ir.ui.view">
         <field name="name">Agreement clause Form</field>
         <field name="model">agreement.clause</field>
         <field name="arch" type="xml">
@@ -87,7 +88,7 @@
     </record>
 
     <!-- Agreement Clause Search View -->
-    <record model="ir.ui.view" id="agreement_clause_search_view">
+    <record id="agreement_clause_search_view" model="ir.ui.view">
         <field name="name">Agreement Clause Search</field>
         <field name="model">agreement.clause</field>
         <field name="arch" type="xml">
@@ -108,19 +109,19 @@
     </record>
 
     <!-- Actions opening views on models -->
-    <record model="ir.actions.act_window" id="partner_agreement_action_clause">
+    <record id="partner_agreement_action_clause" model="ir.actions.act_window">
         <field name="name">Clauses</field>
         <field name="res_model">agreement.clause</field>
         <field name="view_mode">list,form</field>
     </record>
 
     <!-- Agreement Clause List View 2 (Call this view from agreement)-->
-    <record model="ir.ui.view" id="partner_agreement_clause_list_view2">
+    <record id="partner_agreement_clause_list_view2" model="ir.ui.view">
         <field name="name">Agreement Clause List2</field>
         <field name="model">agreement.clause</field>
         <field name="inherit_id" ref="partner_agreement_clause_list_view" />
         <field name="mode">primary</field>
-        <field name="priority">999</field>
+        <field name="priority" eval="999" />
         <field name="arch" type="xml">
             <list position="attributes">
                 <attribute name="default_order">sequence</attribute>
@@ -132,12 +133,12 @@
     </record>
 
     <!-- Agreement Clause Form View 2 (Call this view from agreement)-->
-    <record model="ir.ui.view" id="partner_agreement_clause_form_view2">
+    <record id="partner_agreement_clause_form_view2" model="ir.ui.view">
         <field name="name">Agreement Clause Form2</field>
         <field name="model">agreement.clause</field>
         <field name="inherit_id" ref="partner_agreement_clause_form_view" />
         <field name="mode">primary</field>
-        <field name="priority">999</field>
+        <field name="priority" eval="999" />
         <field name="arch" type="xml">
             <field name="agreement_id" position="after">
                 <field name="temp_agreement_id" invisible="1" />

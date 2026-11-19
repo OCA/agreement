@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="partner_agreement_contract_document" model="ir.actions.report">
         <field name="name">Agreement</field>
@@ -5,7 +6,6 @@
         <field name="binding_model_id" ref="model_agreement" />
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">agreement_legal.report_agreement_document</field>
-        <field name="report_file">agreement_legal.report_agreement_document</field>
         <field name="binding_view_types">list,form</field>
     </record>
 
@@ -15,7 +15,6 @@
         <field name="binding_model_id" ref="model_agreement" />
         <field name="report_type">qweb-html</field>
         <field name="report_name">agreement_legal.report_agreement_document</field>
-        <field name="report_file">agreement_legal.report_agreement_document</field>
         <field name="binding_view_types">list,form</field>
     </record>
 
@@ -107,7 +106,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <t t-if="special_term">
+                        <t t-if="doc.special_terms">
                             <h2>Special Terms</h2>
                             <div name="special_term">
                                 <p t-field="doc.dynamic_special_terms" />
@@ -115,12 +114,12 @@
                         </t>
                         <h2>Signatures</h2>
                         <table class="table table-condensed">
-                            <theader>
+                            <thead>
                                 <tr>
                                     <th>Partner</th>
                                     <th>Company</th>
                                 </tr>
-                            </theader>
+                            </thead>
                             <tbody class="section_tbody">
                                 <tr>
                                     <td>

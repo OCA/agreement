@@ -19,7 +19,10 @@ class AgreementStage(models.Model):
         help="This stage is folded in the kanban view by default.",
     )
     stage_type = fields.Selection(
-        [("agreement", "Agreement")], string="Type", required=True
+        [("agreement", "Agreement")],
+        string="Type",
+        required=True,
+        default="agreement",
     )
     active = fields.Boolean(default=True)
     readonly = fields.Boolean(

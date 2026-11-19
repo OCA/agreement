@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <!-- Agreement List View-->
-    <record model="ir.ui.view" id="partner_agreement_list_view">
+    <record id="partner_agreement_list_view" model="ir.ui.view">
         <field name="name">Agreement List</field>
         <field name="model">agreement</field>
         <field name="arch" type="xml">
@@ -146,7 +147,7 @@
                     <group>
                         <field
                             name="field_id"
-                            domain="[('model_id', '=', 'agreement'),
+                            domain="[('model_id.model', '=', 'agreement'),
                                         ('ttype', '!=', 'one2many'),
                                         ('ttype', '!=', 'many2many')]"
                         />
@@ -530,11 +531,9 @@
                                             class="o_kanban_record_subtitle text-muted"
                                         >
                                             <field name="partner_id" />
-                                            <t
-                                                t-if="record.end_date.raw_value and record.end_date.raw_value lt (new Date())"
-                                                t-set="red"
-                                            >oe_kanban_text_red</t>
-                                            <div t-attf-class="#{red || ''}">
+                                            <div
+                                                t-att-class="record.end_date.raw_value &amp;&amp; new Date(record.end_date.raw_value) &lt; new Date() ? 'text-danger' : ''"
+                                            >
                                                 <i>
                                                     <field name="end_date" />
                                                 </i>
@@ -552,8 +551,8 @@
                                         V: <field name="version" />
                                     </div>
                                     <div
-                                        class="oe_kanban_bottom_right"
                                         t-if="record.assigned_user_id.raw_value"
+                                        class="oe_kanban_bottom_right"
                                     >
                                         <img
                                             t-att-src="'/web/image/res.users/' + record.assigned_user_id.raw_value + '/avatar_128'"
@@ -572,7 +571,7 @@
     </record>
 
     <!-- Agreement Search View -->
-    <record model="ir.ui.view" id="partner_agreement_search_view">
+    <record id="partner_agreement_search_view" model="ir.ui.view">
         <field name="name">Agreement Search</field>
         <field name="model">agreement</field>
         <field name="arch" type="xml">
@@ -659,7 +658,7 @@
 
     <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="agreement_dashboard_agreement">
+    <record id="agreement_dashboard_agreement" model="ir.actions.act_window">
         <field name="name">Agreements</field>
         <field name="res_model">agreement</field>
         <field name="domain">[('is_template', '=', False)]</field>
@@ -669,7 +668,7 @@
         <field name="view_mode">kanban,list,form</field>
     </record>
 
-    <record model="ir.actions.act_window" id="agreement_operations_agreement">
+    <record id="agreement_operations_agreement" model="ir.actions.act_window">
         <field name="name">Agreements</field>
         <field name="res_model">agreement</field>
         <field name="domain">[('is_template', '=', False)]</field>
@@ -677,7 +676,7 @@
         <field name="view_mode">list,form</field>
     </record>
 
-    <record model="ir.actions.act_window" id="partner_agreement_agreement_templates">
+    <record id="partner_agreement_agreement_templates" model="ir.actions.act_window">
         <field name="name">Templates</field>
         <field name="res_model">agreement</field>
         <field name="domain">[('is_template', '=', True)]</field>

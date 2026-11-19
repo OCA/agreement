@@ -7,7 +7,6 @@ class AgreementDynamicContentMixin(models.AbstractModel):
 
     field_id = fields.Many2one(
         "ir.model.fields",
-        string="Field",
         help="""Select target field from the related document model. If it is a
          relationship field you will be able to select a target field at the
          destination of the relationship.""",
@@ -33,6 +32,24 @@ class AgreementDynamicContentMixin(models.AbstractModel):
         help="""Final placeholder expression, to be copy-pasted in the desired
          template field.""",
     )
+
+    def copy_data(self, default=None):
+        vals_list = super().copy_data(default)
+        name_field = self._fields.get("name")
+        if name_field and "name" not in (default or {}):
+            for record, vals in zip(self, vals_list, strict=True):
+                if vals is not None:
+                    translations = (
+                        record._get_stored_translations("name")
+                        if name_field.translate
+                        else None
+                    )
+                    vals["name"] = (
+                        translations.normalize(record.env, name_field)
+                        if translations
+                        else record.name
+                    )
+        return vals_list
 
     @api.onchange("field_id", "sub_model_object_field_id", "default_value")
     def onchange_copyvalue(self):

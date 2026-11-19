@@ -8,9 +8,9 @@ class AgreementLine(models.Model):
     _name = "agreement.line"
     _description = "Agreement Lines"
 
-    product_id = fields.Many2one("product.product", string="Product")
+    product_id = fields.Many2one("product.product")
     name = fields.Char(string="Description", required=True)
-    agreement_id = fields.Many2one("agreement", string="Agreement", ondelete="cascade")
+    agreement_id = fields.Many2one("agreement", ondelete="cascade")
     qty = fields.Float(string="Quantity")
     uom_id = fields.Many2one("uom.uom", string="Unit of Measure", required=True)
 

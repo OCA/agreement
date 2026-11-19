@@ -15,13 +15,11 @@ class AgreementClause(models.Model):
         help="The title is displayed on the PDF. The name is not.", translate=True
     )
     sequence = fields.Integer()
-    agreement_id = fields.Many2one("agreement", string="Agreement", ondelete="cascade")
+    agreement_id = fields.Many2one("agreement", ondelete="cascade")
     temp_agreement_id = fields.Many2one(
-        "agreement", string="Temp Agreement", help="This field help to filter section."
+        "agreement", help="This field help to filter section."
     )
-    section_id = fields.Many2one(
-        "agreement.section", string="Section", ondelete="cascade"
-    )
+    section_id = fields.Many2one("agreement.section", ondelete="cascade")
     content = fields.Html(string="Clause Content", translate=True)
     dynamic_content = fields.Html(
         compute="_compute_dynamic_content",

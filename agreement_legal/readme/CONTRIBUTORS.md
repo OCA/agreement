@@ -10,3 +10,4 @@
   - Miquel Alzanillas \<<miquel.alzanillas@nagarro.com>\>
 - [Gray Matter Logic](https://www.graymatterlogic.com):
   - Maxime Chambreuil \<<maxime.chambreuil@graymatterlogic.com>\>
+- Kevin Kahumba \<<kkahumba@therp.nl>\>

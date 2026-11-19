@@ -10,7 +10,6 @@ class CreateAgreementWizard(models.TransientModel):
 
     template_id = fields.Many2one(
         "agreement",
-        string="Template",
         required=True,
         domain=[("is_template", "=", True)],
     )

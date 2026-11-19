@@ -15,10 +15,8 @@ class AgreementSection(models.Model):
         help="The title is displayed on the PDF. The name is not.", translate=True
     )
     sequence = fields.Integer()
-    agreement_id = fields.Many2one("agreement", string="Agreement", ondelete="cascade")
-    clauses_ids = fields.One2many(
-        "agreement.clause", "section_id", string="Clauses", copy=True
-    )
+    agreement_id = fields.Many2one("agreement", ondelete="cascade")
+    clauses_ids = fields.One2many("agreement.clause", "section_id", copy=True)
     content = fields.Html(string="Section Content", translate=True)
     dynamic_content = fields.Html(
         compute="_compute_dynamic_content",

@@ -84,7 +84,6 @@ class Agreement(models.Model):
     approved_user_id = fields.Many2one("res.users", string="Approved By", tracking=True)
     partner_id = fields.Many2one(
         "res.partner",
-        string="Partner",
         required=False,
         copy=True,
         ondelete="restrict",
@@ -93,7 +92,6 @@ class Agreement(models.Model):
     )
     partner_contact_id = fields.Many2one(
         "res.partner",
-        string="Partner Contact",
         copy=True,
         help="The primary partner contact (If Applicable).",
     )
@@ -105,7 +103,6 @@ class Agreement(models.Model):
     )
     company_contact_id = fields.Many2one(
         "res.partner",
-        string="Company Contact",
         copy=True,
         help="The primary contact in the company.",
     )
@@ -180,7 +177,6 @@ class Agreement(models.Model):
     )
     parent_agreement_id = fields.Many2one(
         "agreement",
-        string="Parent Agreement",
         help="Link this agreement to a parent agreement. For example if this "
         "agreement is an amendment to another agreement. This list will "
         "only show other agreements related to the same account.",
@@ -194,10 +190,8 @@ class Agreement(models.Model):
     recital_ids = fields.One2many(
         "agreement.recital", "agreement_id", string="Recitals", copy=True
     )
-    sections_ids = fields.One2many(
-        "agreement.section", "agreement_id", string="Sections", copy=True
-    )
-    clauses_ids = fields.One2many("agreement.clause", "agreement_id", string="Clauses")
+    sections_ids = fields.One2many("agreement.section", "agreement_id", copy=True)
+    clauses_ids = fields.One2many("agreement.clause", "agreement_id")
     appendix_ids = fields.One2many(
         "agreement.appendix", "agreement_id", string="Appendices", copy=True
     )
@@ -211,7 +205,6 @@ class Agreement(models.Model):
     child_agreements_ids = fields.One2many(
         "agreement",
         "parent_agreement_id",
-        string="Child Agreements",
         copy=False,
         domain=[("active", "=", True)],
     )
@@ -225,15 +218,12 @@ class Agreement(models.Model):
     )
     notification_address_id = fields.Many2one(
         "res.partner",
-        string="Notification Address",
         help="The address to send notifications to, if different from "
         "customer address.(Address Type = Other)",
     )
     signed_contract_filename = fields.Char(string="Filename")
     signed_contract = fields.Binary(string="Signed Document")
-    template_id = fields.Many2one(
-        "agreement", string="Template", domain=[("is_template", "=", True)]
-    )
+    template_id = fields.Many2one("agreement", domain=[("is_template", "=", True)])
     readonly = fields.Boolean(related="stage_id.readonly")
     to_review_date = fields.Date(
         compute="_compute_to_review_date",
@@ -242,13 +232,14 @@ class Agreement(models.Model):
         help="Date used to warn us some days before agreement expires",
     )
 
-    @api.depends("agreement_type_id", "end_date")
+    @api.depends("agreement_type_id.review_days", "end_date")
     def _compute_to_review_date(self):
         for record in self:
-            if record.end_date:
-                record.to_review_date = record.end_date + timedelta(
-                    days=-record.agreement_type_id.review_days
-                )
+            record.to_review_date = (
+                record.end_date - timedelta(days=record.agreement_type_id.review_days)
+                if record.end_date
+                else False
+            )
 
     @api.model
     def _alert_to_review_date(self):
@@ -258,10 +249,21 @@ class Agreement(models.Model):
                 ("agreement_type_id.review_user_id", "!=", False),
             ]
         )
+        review_activity_type = self.env.ref(
+            "agreement_legal.mail_activity_review_agreement"
+        )
         for agreement in agreements:
             if (
                 self.env["mail.activity"].search_count(
-                    [("res_id", "=", agreement.id), ("res_model", "=", self._name)]
+                    [
+                        ("res_id", "=", agreement.id),
+                        ("res_model", "=", self._name),
+                        (
+                            "activity_type_id",
+                            "=",
+                            review_activity_type.id,
+                        ),
+                    ]
                 )
                 == 0
             ):
@@ -378,7 +380,6 @@ class Agreement(models.Model):
 
     stage_id = fields.Many2one(
         "agreement.stage",
-        string="Stage",
         group_expand="_read_group_stage_ids",
         help="Select the current stage of the agreement.",
         default=lambda self: self._get_default_stage_id(),
@@ -403,7 +404,7 @@ class Agreement(models.Model):
             "parent_agreement_id": self.id,
             "version": self.version,
             "revision": self.revision,
-            "code": f"{self.code}-V{str(self.version)}",
+            "code": f"{self.code}-V{self.version!s}",
             "stage_id": self.stage_id.id,
         }
         return default_vals
@@ -411,7 +412,7 @@ class Agreement(models.Model):
     # Create New Version Button
     def create_new_version(self):
         for rec in self:
-            if not rec.state == "draft":
+            if rec.state != "draft":
                 # Make sure status is draft
                 rec.state = "draft"
             # Make a current copy and mark it as old
@@ -520,5 +521,5 @@ class Agreement(models.Model):
                 if old_r_modifier:
                     new_r_modifier = f"({old_r_modifier}) or ({new_r_modifier})"
                 node.attrib["readonly"] = new_r_modifier
-            res["arch"] = etree.tostring(doc)
+            res["arch"] = etree.tostring(doc, encoding="unicode")
         return res

@@ -17,6 +17,7 @@ export class AgreementFormController extends FormController {
 export const AgreementFormView = {
     ...formView,
     Controller: AgreementFormController,
+    buttonTemplate: "agreement_legal.FormViewButtons",
 };
 
 registry.category("views").add("agreement_template_form", AgreementFormView);

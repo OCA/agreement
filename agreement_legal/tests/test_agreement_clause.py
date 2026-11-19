@@ -8,6 +8,13 @@ from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestAgreementClauses(BaseCommon):
+    _test_user_groups = (
+        "base.group_user",
+        "agreement.group_agreement_manager",
+        "base.group_erp_manager",
+        "base.group_system",
+    )
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()

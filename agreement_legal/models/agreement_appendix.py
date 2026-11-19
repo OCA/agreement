@@ -23,7 +23,7 @@ class AgreementAppendix(models.Model):
         help="compute dynamic Content",
         translate=True,
     )
-    agreement_id = fields.Many2one("agreement", string="Agreement", ondelete="cascade")
+    agreement_id = fields.Many2one("agreement", ondelete="cascade")
     active = fields.Boolean(
         default=True,
         help="If unchecked, it will allow you to hide this appendix without "
