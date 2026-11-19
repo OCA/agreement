@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t
+        t-name="agreement_legal.FormViewButtons"
+        t-inherit="web.FormView.Buttons"
+        t-inherit-mode="primary"
+    >
+        <xpath expr="//button[hasclass('o_form_button_create')]" position="attributes">
+            <attribute name="t-if">this.canCreate and this.canCreateTemplate</attribute>
+        </xpath>
+        <xpath expr="//button[hasclass('o_form_button_create')]" position="after">
+            <t t-if="this.canCreate and !this.canCreateTemplate">
+                <t t-call="agreement_legal.TemplateButton" />
+            </t>
+        </xpath>
+    </t>
+</templates>

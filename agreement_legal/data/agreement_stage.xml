@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="agreement_stage_new" model="agreement.stage">
+        <field name="name">New</field>
+        <field name="sequence" eval="10" />
+        <field name="stage_type">agreement</field>
+    </record>
+
+    <record id="agreement_stage_draft" model="agreement.stage">
+        <field name="name">Draft</field>
+        <field name="sequence" eval="20" />
+        <field name="stage_type">agreement</field>
+    </record>
+
+    <record id="agreement_stage_reviewed" model="agreement.stage">
+        <field name="name">Reviewed</field>
+        <field name="sequence" eval="30" />
+        <field name="stage_type">agreement</field>
+    </record>
+
+    <record id="agreement_stage_negotiation" model="agreement.stage">
+        <field name="name">Negotiation</field>
+        <field name="sequence" eval="40" />
+        <field name="stage_type">agreement</field>
+    </record>
+
+    <record id="agreement_stage_out" model="agreement.stage">
+        <field name="name">Out for Customer Signature</field>
+        <field name="sequence" eval="50" />
+        <field name="stage_type">agreement</field>
+    </record>
+
+    <record id="agreement_stage_internal" model="agreement.stage">
+        <field name="name">Waiting Internal Signature</field>
+        <field name="sequence" eval="60" />
+        <field name="stage_type">agreement</field>
+    </record>
+
+    <record id="agreement_stage_active" model="agreement.stage">
+        <field name="name">Active</field>
+        <field name="sequence" eval="70" />
+        <field name="stage_type">agreement</field>
+    </record>
+
+    <record id="agreement_stage_expired" model="agreement.stage">
+        <field name="name">Expired</field>
+        <field name="sequence" eval="80" />
+        <field name="stage_type">agreement</field>
+    </record>
+
+    <record id="agreement_stage_terminated" model="agreement.stage">
+        <field name="name">Terminated</field>
+        <field name="sequence" eval="90" />
+        <field name="fold">True</field>
+        <field name="stage_type">agreement</field>
+    </record>
+
+    <record id="agreement_stage_cancelled" model="agreement.stage">
+        <field name="name">Cancelled</field>
+        <field name="sequence" eval="100" />
+        <field name="fold">True</field>
+        <field name="stage_type">agreement</field>
+    </record>
+</odoo>
