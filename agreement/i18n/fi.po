@@ -6,66 +6,68 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"Last-Translator: painkin <pasi.inkinen@iodo.fi>\n"
 "Language-Team: none\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Language: fi\n"
+"PO-Revision-Date: 2026-11-21 20:46+0000\n"
+"X-Generator: Weblate 2026.11.2\n"
 
 #. module: agreement
 #. odoo-python
 #: code:addons/agreement/models/agreement.py:0
 msgid "%(code)s (copy)"
-msgstr ""
+msgstr "%(code) (kopio)"
 
 #. module: agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_kanban
 msgid "<i class=\"fa fa-calendar me-1\" title=\"Dates\"/>"
-msgstr ""
+msgstr "<i class=\"fa fa-calendar me-1\" title=\"Päivät\"/>"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Toimenpiteitä vaaditaan"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__active
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__active
 msgid "Active"
-msgstr ""
+msgstr "Aktiivinen"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Toimenpiteet"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Aktiviteetin poikkeuskoriste"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "Aktiviteetin tila"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Aktiviteetin tyypin kuvake"
 
 #. module: agreement
 #: model:ir.model,name:agreement.model_agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_form
 msgid "Agreement"
-msgstr ""
+msgstr "Sopimus"
 
 #. module: agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_form
 msgid "Agreement Name"
-msgstr ""
+msgstr "Sopimuksen nimi"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__agreement_type_id
@@ -73,14 +75,14 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_form_view
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
 msgid "Agreement Type"
-msgstr ""
+msgstr "Sopimuksen tyyppi"
 
 #. module: agreement
 #: model:ir.actions.act_window,name:agreement.agreement_type_action
 #: model:ir.model,name:agreement.model_agreement_type
 #: model:ir.ui.menu,name:agreement.agreement_type_menu
 msgid "Agreement Types"
-msgstr ""
+msgstr "Sopimuksen tyypit"
 
 #. module: agreement
 #: model:ir.actions.act_window,name:agreement.agreement_action
@@ -90,13 +92,13 @@ msgstr ""
 #: model:ir.ui.menu,name:agreement.agreement_menu_root
 #: model_terms:ir.ui.view,arch_db:agreement.partner_form
 msgid "Agreements"
-msgstr ""
+msgstr "Sopimukset"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_res_partner__agreements_count
 #: model:ir.model.fields,field_description:agreement.field_res_users__agreements_count
 msgid "Agreements Count"
-msgstr ""
+msgstr "Sopimusten määrä"
 
 #. module: agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_form
@@ -104,50 +106,50 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_form_view
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
 msgid "Archived"
-msgstr ""
+msgstr "Arkistoitu"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Liitteiden määrä"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__commercial_partner_id
 msgid "Commercial Entity"
-msgstr ""
+msgstr "Kaupallinen toimija"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__company_id
 msgid "Company"
-msgstr ""
+msgstr "Yritys"
 
 #. module: agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_form
 msgid "Configuration"
-msgstr ""
+msgstr "Asetukset"
 
 #. module: agreement
 #: model:ir.model,name:agreement.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Yhteystieto"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__create_uid
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Luonut"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__create_date
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Luotu"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__display_name
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nimi"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__domain
@@ -155,157 +157,157 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
 msgid "Domain"
-msgstr ""
+msgstr "Domain"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__end_date
 msgid "End Date"
-msgstr ""
+msgstr "Päättymispäivä"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Seuraajat"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Seuraajat (Kumppanit)"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+msgstr "Font Awesome -kuvake, esim. fa-tasks"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "On viesti"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__id
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__code
 msgid "ID used for internal contract tracking."
-msgstr ""
+msgstr "Tunniste, jota käytetään sopimusten sisäiseen seurantaan."
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "Kuvake"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Kuvake, joka osoittaa poikkeustoiminnon."
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Jos valittu, uudet viestit vaativat huomiotasi."
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Jos valittu, joissakin viesteissä on toimitusvirhe."
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__active
 msgid ""
 "If unchecked, it will allow you to hide the agreement without removing it."
-msgstr ""
+msgstr "Jos valintaa ei tehdä, voit piilottaa sopimuksen poistamatta sitä."
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "On seuraaja"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__is_template
 msgid "Is a Template?"
-msgstr ""
+msgstr "Onko kyseessä mallipohja?"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__write_uid
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Viimeksi päivittänyt"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__write_date
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Viimeksi päivitetty"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Viestin toimitusvirhe"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Viestit"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Toimenpiteitteni määräpäivä"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement_type__name
 msgid "Name"
-msgstr ""
+msgstr "Nimi"
 
 #. module: agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 msgid "Name or Number"
-msgstr ""
+msgstr "Nimi tai numero"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Seuraavan toimenpiteen määräpäivä"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Seuraavan toimenpiteen yhteenveto"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Seuraavan toimenpiteen tyyppi"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Toimepiteiden määrä"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Virheiden määrä"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "Toimenpiteitä vaativien viestien määrä"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Toimitusvirheen sisältävien viestien määrä"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__partner_id
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 msgid "Partner"
-msgstr ""
+msgstr "Kumppani"
 
 #. module: agreement
 #. odoo-python
@@ -313,22 +315,22 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
 msgid "Purchase"
-msgstr ""
+msgstr "Osto"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__code
 msgid "Reference"
-msgstr ""
+msgstr "Viite"
 
 #. module: agreement
 #: model:ir.ui.menu,name:agreement.agreement_reporting_menu
 msgid "Reporting"
-msgstr ""
+msgstr "Raportointi"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "Vastuuhenkilö"
 
 #. module: agreement
 #. odoo-python
@@ -336,17 +338,17 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_search
 msgid "Sale"
-msgstr ""
+msgstr "Myynti"
 
 #. module: agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 msgid "Search Agreements"
-msgstr ""
+msgstr "Hae sopimuksia"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__agreement_type_id
 msgid "Select the type of agreement"
-msgstr ""
+msgstr "Valitse sopimustyyppi"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__is_template
@@ -354,22 +356,24 @@ msgid ""
 "Set if the agreement is a template. Template agreements don't require a "
 "partner."
 msgstr ""
+"Määritä, onko sopimus mallipohja. Mallipohjasopimukset eivät edellytä "
+"kumppania."
 
 #. module: agreement
 #: model:ir.ui.menu,name:agreement.agreement_setting_menu
 msgid "Settings"
-msgstr ""
+msgstr "Asetukset"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__signature_date
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_search
 msgid "Signature Date"
-msgstr ""
+msgstr "Allekirjoituspäivä"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__start_date
 msgid "Start Date"
-msgstr ""
+msgstr "Aloituspäivämäärä"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__activity_state
@@ -379,48 +383,52 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Tila toimintojen perusteella\n"
+"Myöhässä: Määräaika on jo umpeutunut\n"
+"Tänään: Toiminnon päivämäärä on tänään\n"
+"Suunniteltu: Tulevat toiminnot"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__partner_id
 msgid "The customer or vendor this agreement is related to."
-msgstr ""
+msgstr "Asiakas tai toimittaja, johon tämä sopimus liittyy."
 
 #. module: agreement
 #: model:ir.model.constraint,message:agreement.constraint_agreement_code_partner_company_unique
 msgid "This agreement code already exists for this commercial entity!"
-msgstr ""
+msgstr "Tämä sopimuskoodi on jo olemassa tälle kaupalliselle toimijalle!"
 
 #. module: agreement
 #: model:ir.model.fields,field_description:agreement.field_agreement__name
 msgid "Title"
-msgstr ""
+msgstr "Otsikko"
 
 #. module: agreement
 #: model_terms:ir.ui.view,arch_db:agreement.agreement_type_list_view
 msgid "Type Name"
-msgstr ""
+msgstr "Tyypin nimi"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Tietueessa olevan poikkeustoiminnon tyyppi."
 
 #. module: agreement
 #: model:res.groups,name:agreement.group_use_agreement_template
 msgid "Use agreement template"
-msgstr ""
+msgstr "Käytä sopimuspohjaa"
 
 #. module: agreement
 #: model:res.groups,name:agreement.group_use_agreement_type
 msgid "Use agreement type"
-msgstr ""
+msgstr "Käytä sopimustyyppiä"
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__end_date
 msgid "When the agreement ends."
-msgstr ""
+msgstr "Kun sopimus päättyy."
 
 #. module: agreement
 #: model:ir.model.fields,help:agreement.field_agreement__start_date
 msgid "When the agreement starts."
-msgstr ""
+msgstr "Kun sopimus alkaa."
