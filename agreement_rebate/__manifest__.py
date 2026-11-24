@@ -10,6 +10,7 @@
     "website": "https://github.com/OCA/agreement",
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "license": "AGPL-3",
+    "maintainers": ["carlosdauden", "sergio-teruel"],
     "application": False,
     "installable": True,
     "depends": ["account_invoice_refund_link", "agreement"],

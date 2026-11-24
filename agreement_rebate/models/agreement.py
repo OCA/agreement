@@ -39,7 +39,7 @@ class AgreementRebateLine(models.Model):
     _name = "agreement.rebate.line"
     _description = "Agreement Rebate Lines"
 
-    agreement_id = fields.Many2one(comodel_name="agreement", string="Agreement")
+    agreement_id = fields.Many2one(comodel_name="agreement")
     rebate_target = fields.Selection(
         [
             ("product", "Product variant"),
@@ -113,7 +113,7 @@ class AgreementRebateSection(models.Model):
     _name = "agreement.rebate.section"
     _description = "Agreement Rebate Section"
 
-    agreement_id = fields.Many2one(comodel_name="agreement", string="Agreement")
+    agreement_id = fields.Many2one(comodel_name="agreement")
     amount_from = fields.Float(string="From")
     amount_to = fields.Float(string="To")
     rebate_discount = fields.Float(string="% Dto")
