@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem
+        name="Products"
+        id="agreement_products"
+        sequence="100"
+        parent="agreement.agreement_setting_menu"
+        action="product.product_template_action"
+    />
+</odoo>
