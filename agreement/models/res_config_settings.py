@@ -13,6 +13,13 @@ class ResConfigSettings(models.TransientModel):
     module_agreement_rebate = fields.Boolean(help="Rebate in agreements")
     module_agreement_product = fields.Boolean(help="Agreement on products")
 
+    agreement_show_child_agreements = fields.Boolean(
+        "Show Agreements of Child Contacts",
+        config_parameter="agreement.partner_show_child_agreements",
+        help="The Agreements smart button of a contact also counts and opens "
+        "the agreements of its child contacts.",
+    )
+
     # Extensions
     group_use_agreement_type = fields.Boolean(
         "Use agreement types", implied_group="agreement.group_use_agreement_type"
