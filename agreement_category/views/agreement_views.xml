@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="agreement_form" model="ir.ui.view">
+        <field name="name">agreement.form.category</field>
+        <field name="model">agreement</field>
+        <field name="inherit_id" ref="agreement.agreement_form" />
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field
+                    name="category_ids"
+                    widget="many2many_tags"
+                    options="{'color_field': 'color'}"
+                    placeholder="e.g. NDA"
+                />
+            </field>
+        </field>
+    </record>
+    <record id="agreement_tree" model="ir.ui.view">
+        <field name="name">agreement.list.category</field>
+        <field name="model">agreement</field>
+        <field name="inherit_id" ref="agreement.agreement_tree" />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field
+                    name="category_ids"
+                    widget="many2many_tags"
+                    options="{'color_field': 'color'}"
+                    optional="show"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>
