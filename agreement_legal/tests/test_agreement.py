@@ -1,0 +1,417 @@
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html)
+
+from datetime import timedelta
+
+from lxml import etree
+
+from odoo import fields
+
+from odoo.addons.base.tests.common import BaseCommon
+
+
+class TestAgreement(BaseCommon):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+        cls.test_customer = cls.env["res.partner"].create({"name": "TestCustomer"})
+        cls.agreement_type = cls.env["agreement.type"].create(
+            {"name": "Test Agreement Type", "domain": "sale"}
+        )
+        cls.test_agreement = cls.env["agreement"].create(
+            {
+                "name": "TestAgreement",
+                "description": "Test",
+                "special_terms": "Test",
+                "partner_id": cls.test_customer.id,
+                "start_date": fields.Date.today(),
+                "end_date": fields.Date.today() + timedelta(days=365),
+                "state": "active",
+            }
+        )
+
+    # TEST 01: Set 'Field' for dynamic placeholder, test onchange method
+    def test_onchange_copyvalue(self):
+        agreement_01 = self.test_agreement
+        field_01 = self.env["ir.model.fields"].search(
+            [("model", "=", "agreement"), ("name", "=", "active")]
+        )
+        agreement_01.field_id = field_01.id
+        agreement_01.onchange_copyvalue()
+        self.assertEqual(agreement_01.copyvalue, "{{object.active or ''}}")
+
+    # TEST 02: Set related 'Field' for dynamic placeholder to
+    # test onchange method
+    def test_onchange_copyvalue2(self):
+        agreement_01 = self.test_agreement
+        field_01 = self.env["ir.model.fields"].search(
+            [("model", "=", "agreement"), ("name", "=", "agreement_type_id")]
+        )
+        sub_field_01 = self.env["ir.model.fields"].search(
+            [("model", "=", "agreement.type"), ("name", "=", "active")]
+        )
+        agreement_01.field_id = field_01.id
+        agreement_01.onchange_copyvalue()
+        self.assertEqual(agreement_01.sub_object_id.model, "agreement.type")
+        agreement_01.sub_model_object_field_id = sub_field_01.id
+        agreement_01.onchange_copyvalue()
+        self.assertEqual(
+            agreement_01.copyvalue, "{{object.agreement_type_id.active or ''}}"
+        )
+
+    # TEST 03: Create New Version
+    def test_create_new_version(self):
+        agreement_01 = self.test_agreement
+        agreement_01.create_new_version()
+        old_agreement = self.env["agreement"].search(
+            [("code", "=", agreement_01.code + "-V1"), ("active", "=", False)]
+        )
+        self.assertEqual(len(old_agreement), 1)
+        new_agreement = self.env["agreement"].search(
+            [("name", "=", "TestAgreement"), ("version", "=", 2)]
+        )
+        self.assertEqual(len(new_agreement), 1)
+
+    # TEST 04: Create New Agreement
+    def test_create_new_agreement(self):
+        agreement_01 = self.test_agreement
+        agreement_01.create_new_agreement()
+        new_agreement = self.env["agreement"].search([("name", "=", "New")])
+        self.assertEqual(len(new_agreement), 1)
+
+    # TEST 05: Test Description Dynamic Field
+    def test_compute_dynamic_description(self):
+        agreement_01 = self.test_agreement
+        agreement_01.description = "{{object.name}}"
+        self.assertEqual(agreement_01.dynamic_description, "TestAgreement")
+
+    # TEST 06: Test Parties Dynamic Field
+    def test_compute_dynamic_parties(self):
+        agreement_01 = self.test_agreement
+        agreement_01.parties = "{{object.name}}"
+        self.assertEqual(agreement_01.dynamic_parties, "<p>TestAgreement</p>")
+
+    # TEST 07: Test Special Terms Dynamic Field
+    def test_compute_dynamic_special_terms(self):
+        agreement_01 = self.test_agreement
+        agreement_01.special_terms = "{{object.name}}"
+        self.assertEqual(agreement_01.dynamic_special_terms, "TestAgreement")
+
+    # TEST 02: Check Read Stages
+    def test_read_group_stage_ids(self):
+        agreement_01 = self.test_agreement
+        self.assertEqual(
+            agreement_01._read_group_stage_ids(self.env["agreement.stage"], [], "id"),
+            self.env["agreement.stage"].search(
+                [("stage_type", "=", "agreement")], order="id"
+            ),
+        )
+
+    # Test fields_view_get
+    def test_agreement_fields_view_get(self):
+        res = self.env["agreement"].get_view(
+            view_id=self.ref("agreement_legal.partner_agreement_form_view"),
+            view_type="form",
+        )
+        doc = etree.XML(res["arch"])
+        field = doc.xpath("//field[@name='partner_contact_id']")
+        self.assertEqual(field[0].get("readonly", ""), "bool(readonly)")
+
+    def test_action_create_new_version(self):
+        self.test_agreement.create_new_version()
+        self.assertEqual(self.test_agreement.state, "draft")
+        self.assertEqual(len(self.test_agreement.previous_version_agreements_ids), 1)
+
+    def test_cron(self):
+        self.agreement_type.write(
+            {"review_user_id": self.env.user.id, "review_days": 0}
+        )
+        self.agreement_type.flush_recordset()
+        self.test_agreement.write({"agreement_type_id": self.agreement_type.id})
+        self.test_agreement.flush_recordset()
+        self.test_agreement.invalidate_recordset()
+        self.assertFalse(
+            self.env["mail.activity"].search_count(
+                [
+                    ("res_id", "=", self.test_agreement.id),
+                    ("res_model", "=", self.test_agreement._name),
+                ]
+            )
+        )
+        self.env["agreement"]._alert_to_review_date()
+        self.assertFalse(
+            self.env["mail.activity"].search_count(
+                [
+                    ("res_id", "=", self.test_agreement.id),
+                    ("res_model", "=", self.test_agreement._name),
+                ]
+            )
+        )
+        self.test_agreement.to_review_date = fields.Date.today()
+        self.env["agreement"]._alert_to_review_date()
+        self.assertTrue(
+            self.env["mail.activity"].search_count(
+                [
+                    ("res_id", "=", self.test_agreement.id),
+                    ("res_model", "=", self.test_agreement._name),
+                ]
+            )
+        )
+
+    def test_partner_action(self):
+        action = self.test_agreement.partner_id.action_open_agreement()
+        self.assertIn(
+            self.test_agreement, self.env[action["res_model"]].search(action["domain"])
+        )
+        self.assertEqual(1, self.test_agreement.partner_id.agreements_count)
+
+    def test_recompute_logic(self):
+        self.template = self.env["agreement"].create(
+            {
+                "name": "Template Agreement",
+                "is_template": True,
+            }
+        )
+
+        self.section = self.env["agreement.section"].create(
+            {
+                "name": "Section Test",
+                "agreement_id": self.template.id,
+            }
+        )
+
+        self.clause = self.env["agreement.clause"].create(
+            {
+                "name": "Clause Test",
+                "agreement_id": self.template.id,
+                "section_id": self.section.id,
+            }
+        )
+
+        self.appendix = self.env["agreement.appendix"].create(
+            {
+                "name": "Appendix A",
+                "agreement_id": self.template.id,
+                "title": "Anex A",
+            }
+        )
+
+        self.test_agreement.template_id = self.template.id
+
+        self.old_appendix = self.env["agreement.appendix"].create(
+            {
+                "name": "Appendix Old",
+                "agreement_id": self.test_agreement.id,
+                "title": "Anex Old",
+            }
+        )
+        self.test_agreement.with_context(
+            active_ids=self.test_agreement.ids,
+        ).recompute_from_template()
+
+        self.assertEqual(len(self.test_agreement.sections_ids), 1)
+        new_section = self.test_agreement.sections_ids[0]
+        self.assertEqual(len(new_section.clauses_ids), 1)
+        self.assertEqual(len(self.test_agreement.clauses_ids), 1)
+        self.assertEqual(self.test_agreement.clauses_ids.section_id, new_section)
+        child_template = self.env["agreement"].create(
+            {
+                "name": "Child Agreement of Template",
+                "parent_agreement_id": self.template.id,
+                "is_template": True,
+            }
+        )
+        self.template.child_agreements_ids = [(4, child_template.id)]
+
+        self.test_agreement.with_context(
+            active_ids=self.test_agreement.ids
+        ).recompute_from_template()
+
+        self.assertEqual(
+            len(self.test_agreement.child_agreements_ids),
+            1,
+        )
+
+        new_child = self.test_agreement.child_agreements_ids[0]
+
+        self.assertEqual(
+            new_child.name,
+            "Child Agreement of Template",
+            "El nombre del acuerdo hijo no coincide",
+        )
+        self.assertEqual(
+            new_child.parent_agreement_id.id,
+            self.test_agreement.id,
+        )
+        self.assertNotEqual(
+            new_child.id,
+            child_template.id,
+        )
+
+    def test_action_open_recompute_from_template_wizard(self):
+        template = self.env["agreement"].create(
+            {
+                "name": "Template Agreement",
+                "is_template": True,
+            }
+        )
+        self.test_agreement.template_id = template
+
+        action = self.test_agreement.action_open_recompute_from_template_wizard()
+
+        self.assertEqual(
+            action["res_model"], "recompute.agreement.from.template.wizard"
+        )
+        self.assertEqual(action["target"], "new")
+        self.assertEqual(
+            action["context"]["default_agreement_id"],
+            self.test_agreement.id,
+        )
+
+    def test_recompute_wizard_action(self):
+        template = self.env["agreement"].create(
+            {
+                "name": "Template for Wizard",
+                "is_template": True,
+            }
+        )
+        self.env["agreement.recital"].create(
+            {
+                "name": "Template Recital",
+                "title": "Recital",
+                "content": "Content",
+                "agreement_id": template.id,
+            }
+        )
+        product = self.env["product.product"].create({"name": "Agreement Product"})
+        self.env["agreement.line"].create(
+            {
+                "name": product.name,
+                "agreement_id": template.id,
+                "product_id": product.id,
+                "qty": 1.0,
+                "uom_id": product.uom_id.id,
+            }
+        )
+        self.env["agreement.clause"].create(
+            {
+                "name": "Orphan Clause",
+                "title": "Orphan",
+                "content": "No section",
+                "agreement_id": template.id,
+            }
+        )
+        self.test_agreement.template_id = template
+        wizard = self.env["recompute.agreement.from.template.wizard"].create(
+            {"agreement_id": self.test_agreement.id}
+        )
+        result = wizard.action_recompute_from_template()
+        self.assertEqual(result["type"], "ir.actions.act_window_close")
+        self.assertEqual(len(self.test_agreement.recital_ids), 1)
+        self.assertEqual(len(self.test_agreement.line_ids), 1)
+        orphan = self.test_agreement.clauses_ids.filtered(
+            lambda c: c.name == "Orphan Clause"
+        )
+        self.assertEqual(len(orphan), 1)
+        self.assertFalse(orphan.section_id)
+
+    def test_create_new_version_already_draft(self):
+        self.test_agreement.state = "draft"
+        self.test_agreement.create_new_version()
+        self.assertEqual(self.test_agreement.state, "draft")
+        self.assertEqual(self.test_agreement.version, 2)
+
+    def test_get_view_non_form(self):
+        res = self.env["agreement"].get_view(view_type="list")
+        self.assertIn("arch", res)
+        # Non-form views must not get the readonly rewrite applied
+        self.assertNotIn("bool(readonly)", res["arch"])
+
+    def test_get_view_merges_existing_readonly(self):
+        res = self.env["agreement"].get_view(
+            view_id=self.ref("agreement_legal.partner_agreement_form_view"),
+            view_type="form",
+        )
+        doc = etree.XML(res["arch"])
+        stage = doc.xpath("//field[@name='stage_id']")
+        self.assertTrue(stage)
+        # stage_id is excluded from the readonly rewrite
+        self.assertNotEqual(stage[0].get("readonly", ""), "bool(readonly)")
+
+    def test_copy_with_orphan_clause(self):
+        section = self.env["agreement.section"].create(
+            {
+                "name": "Section",
+                "agreement_id": self.test_agreement.id,
+            }
+        )
+        self.env["agreement.clause"].create(
+            {
+                "name": "With Section",
+                "agreement_id": self.test_agreement.id,
+                "section_id": section.id,
+            }
+        )
+        self.env["agreement.clause"].create(
+            {
+                "name": "Without Section",
+                "agreement_id": self.test_agreement.id,
+            }
+        )
+        copy = self.test_agreement.copy()
+        self.assertEqual(len(copy.clauses_ids), 2)
+        self.assertTrue(
+            copy.clauses_ids.filtered(lambda c: c.name == "Without Section")
+        )
+        self.assertFalse(
+            copy.clauses_ids.filtered(lambda c: c.name == "Without Section").section_id
+        )
+
+    def test_get_default_stage_id_missing_xmlid(self):
+        stage = self.env.ref("agreement_legal.agreement_stage_new")
+        stage_xmlid = self.env["ir.model.data"].search(
+            [
+                ("module", "=", "agreement_legal"),
+                ("name", "=", "agreement_stage_new"),
+            ]
+        )
+        stage_xmlid.unlink()
+        self.assertFalse(self.env["agreement"]._get_default_stage_id())
+        # Restore xmlid for other tests / teardown safety
+        self.env["ir.model.data"].create(
+            {
+                "module": "agreement_legal",
+                "name": "agreement_stage_new",
+                "model": "agreement.stage",
+                "res_id": stage.id,
+            }
+        )
+
+    def test_alert_skips_when_activity_exists(self):
+        self.agreement_type.write(
+            {"review_user_id": self.env.user.id, "review_days": 0}
+        )
+        self.test_agreement.write(
+            {
+                "agreement_type_id": self.agreement_type.id,
+                "to_review_date": fields.Date.today(),
+            }
+        )
+        self.env["agreement"]._alert_to_review_date()
+        count_after_first = self.env["mail.activity"].search_count(
+            [
+                ("res_id", "=", self.test_agreement.id),
+                ("res_model", "=", self.test_agreement._name),
+            ]
+        )
+        self.assertTrue(count_after_first)
+        self.env["agreement"]._alert_to_review_date()
+        self.assertEqual(
+            count_after_first,
+            self.env["mail.activity"].search_count(
+                [
+                    ("res_id", "=", self.test_agreement.id),
+                    ("res_model", "=", self.test_agreement._name),
+                ]
+            ),
+        )

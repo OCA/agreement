@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <!-- 19.0: the form New button is btn-outline-primary inside web.FormView.
+         Scope the extra t-if to agreement so other forms keep canCreate. -->
+    <t t-inherit="web.FormView" t-inherit-mode="extension">
+        <xpath expr="//button[hasclass('o_form_button_create')]" position="after">
+            <t t-if="props.resModel === 'agreement'">
+                <t t-call="agreement_legal.TemplateButton" />
+            </t>
+        </xpath>
+        <xpath expr="//button[hasclass('o_form_button_create')]" position="attributes">
+            <attribute
+                name="t-if"
+            >canCreate and (props.resModel !== 'agreement' or canCreateTemplate)</attribute>
+        </xpath>
+    </t>
+</templates>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+     © 2019 Ygol Internetwork (yves@ygol.com)
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo noupdate="1">
+    <record id="agreement_subtype_contract_support" model="agreement.subtype">
+        <field name="name">Support Contract</field>
+        <field name="agreement_type_id" ref="agreement_type_contract" />
+    </record>
+
+    <record id="agreement_subtype_agreement_supply" model="agreement.subtype">
+        <field name="name">Supply Agreement</field>
+        <field name="agreement_type_id" ref="agreement_type_agreement" />
+    </record>
+
+    <record id="agreement_subtype_loi_partnership" model="agreement.subtype">
+        <field name="name">Partnership LOI</field>
+        <field name="agreement_type_id" ref="agreement_type_loi" />
+    </record>
+</odoo>
