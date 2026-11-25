@@ -49,9 +49,16 @@
                             <field name="sequence" />
                         </group>
                     </group>
-                    <field name="content" widget="html" />
-                    <group class="oe_edit_only">
-                        <group>
+                    <field
+                        name="content"
+                        widget="html"
+                        placeholder="Enter content here..."
+                    />
+                    <div
+                        class="oe_edit_only alert alert-light d-flex justify-content-between flex-xl-row flex-column"
+                        role="status"
+                    >
+                        <group class="flex-fill">
                             <field
                                 name="field_id"
                                 domain="[('model_id', '=', 'agreement.clause'),
@@ -70,7 +77,7 @@
                             <field name="default_value" />
                             <field name="copyvalue" />
                         </group>
-                        <p>
+                        <p class="px-xl-4">
                             This section (on the left) allows you to add dynamic fields inside the content.
                             <ol>
                             <li>Select the clause field</li>
@@ -80,7 +87,7 @@
                             >Copy and paste the placeholder expression in the content</li>
                         </ol>
                         </p>
-                    </group>
+                    </div>
                 </sheet>
             </form>
         </field>
