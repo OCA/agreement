@@ -93,6 +93,12 @@
                 />
                 <field name="partner_id" />
                 <separator />
+                <filter
+                    name="my_agreements"
+                    string="My Agreements"
+                    domain="[('user_id', '=', uid)]"
+                />
+                <separator />
                 <filter name="sale" string="Sale" domain="[('domain', '=', 'sale')]" />
                 <filter
                     name="purchase"
@@ -110,6 +116,11 @@
                         name="partner_groupby"
                         string="Partner"
                         context="{'group_by': 'partner_id'}"
+                    />
+                    <filter
+                        name="user_groupby"
+                        string="Responsible"
+                        context="{'group_by': 'user_id'}"
                     />
                     <filter
                         name="commercial_partner_groupby"

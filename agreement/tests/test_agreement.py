@@ -32,6 +32,12 @@ class TestAgreement(TransactionCase):
         self.agreement.write({"agreement_type_id": self.agreement_type.id})
         self.assertEqual(self.agreement.domain, self.agreement_type.domain)
 
+    def test_user_id_defaults_to_current_user(self):
+        self.assertEqual(self.agreement.user_id, self.env.user)
+        other = self.env["res.users"].create({"name": "Other", "login": "other_user"})
+        self.agreement.user_id = other
+        self.assertEqual(self.agreement.user_id, other)
+
     def test_compute_display_name(self):
         display_name = self.agreement.display_name
         self.assertEqual(display_name, f"[{self.agreement.code}] {self.agreement.name}")
