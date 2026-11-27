@@ -1,0 +1,19 @@
+<!-- Copyright 2019 - TODAY, Open Source Integrators
+     Copyright 2020 - TODAY, Marcel Savegnago - Escodoo
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record model="ir.ui.view" id="helpdesk_ticket_form_view">
+        <field name="name">helpdesk.ticket.form (in agreement_helpdesk_mgmt)</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="inherit_id" ref="helpdesk_mgmt.ticket_view_form" />
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field
+                    name="agreement_id"
+                    domain="[('partner_id', '=', partner_id)]"
+                    widget="selection"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>
