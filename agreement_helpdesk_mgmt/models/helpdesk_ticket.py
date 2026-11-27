@@ -8,6 +8,5 @@ class HelpdeskTicket(models.Model):
     _inherit = "helpdesk.ticket"
 
     agreement_id = fields.Many2one(
-        "agreement",
-        string="Agreement",
+        comodel_name="agreement",
     )

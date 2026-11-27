@@ -8,9 +8,15 @@ from odoo import api, fields, models
 class Agreement(models.Model):
     _inherit = "agreement"
 
-    ticket_ids = fields.One2many("helpdesk.ticket", "agreement_id", string="Tickets")
-
-    ticket_count = fields.Integer(compute="_compute_ticket_count", string="# Tickets")
+    ticket_ids = fields.One2many(
+        comodel_name="helpdesk.ticket",
+        inverse_name="agreement_id",
+        string="Tickets",
+    )
+    ticket_count = fields.Integer(
+        compute="_compute_ticket_count",
+        string="# Tickets",
+    )
 
     @api.depends("ticket_ids")
     def _compute_ticket_count(self):
