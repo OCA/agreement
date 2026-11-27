@@ -1,0 +1,3 @@
+- [glueckkanja AG](https://glueckkanja.com):
+    - Mohamed Osman \<<mohamed.osman@glueckkanja.com>\>
+- Marcos Mendez \<<m@pop.coop>\> (port to 18.0)
